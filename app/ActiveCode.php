@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ActiveCode extends Model
 {
     protected $table = 'active_code';
-    protected $fillable = ['code','user_id','expired_at',];
+    protected $fillable = ['code','user_id','expires_at'];
     public $timestamps = false;
 
     public function user()
@@ -23,5 +23,9 @@ class ActiveCode extends Model
     private function checkCodeIsUnique($user , int $code)
     {
         return !! $this->user()->activeCode()->whereCode($code)->first();
+    }
+    public function scopeValidateCode($query , $code ,User $user)
+    {
+        return !! $user->activeCode()->whereCode((int)$code)->where('expires_at' , '>' , now())->first();
     }
 }

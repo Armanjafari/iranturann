@@ -26,6 +26,5 @@
    </div>
    </div>
    </form>
-   @include('alerts.errors')
 </main>
 @endsection

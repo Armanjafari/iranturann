@@ -31,6 +31,9 @@ Route::post('login/', 'LoginController@login')->name('login');
 Route::post('register/', 'RegisterController@register')->name('register');
 Route::get('register/', 'RegisterController@showRegistrationForm');
 });
-    Route::get('loginwithcode/' , 'Auth\AuthCode\LoginWithCodeController@showLoginForm');
-    Route::post('loginwithcode/', 'LoginController@login')->name('login_with_code');
-    Route::post('a', 'LoginController@verifyCode')->name('verify_login_code');
+Route::namespace('Auth\AuthCode')->group(function () {
+    Route::get('loginwithcode/' , 'LoginWithCodeController@showLoginForm');
+    Route::post('loginwithcode/', 'LoginWithCodeController@login')->name('login_with_code');
+    Route::get('verify', 'LoginWithCodeController@verifyForm')->name('verify_login_code');
+    Route::post('verify', 'LoginWithCodeController@codeValidator')->name('validate_code');
+});

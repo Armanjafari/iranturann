@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\services\Notifications\Notification;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -23,8 +25,7 @@ class AuthController extends Controller
      */
     public function login()
     {
-        $credentials = request(['email', 'password']);
-
+        $credentials = request(['phone_number', 'code']);
         if (! $token = auth('api')->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
@@ -78,5 +79,11 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
+    }
+    public function loginWithCode()
+    {
+        $notif = resolve(Notification::class);
+        $notif->sendSms(request(['phone_number']));
+        return Response()->json('')
     }
 }
