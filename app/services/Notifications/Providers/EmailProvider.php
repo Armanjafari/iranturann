@@ -1,8 +1,8 @@
 <?php
 
-namespace App\services\Notifications\Providers;
+namespace App\Services\Notifications\Providers;
 
-use App\services\Notifications\Providers\Contracts\Provider;
+use App\Services\Notifications\Providers\Contracts\Provider;
 use App\User;
 use Illuminate\Contracts\Mail\Mailable;
 use Illuminate\Support\Facades\Mail;

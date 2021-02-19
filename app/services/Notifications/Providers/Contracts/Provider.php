@@ -1,6 +1,6 @@
 <?php
 
-namespace App\services\Notifications\Providers\Contracts;
+namespace App\Services\Notifications\Providers\Contracts;
 
 use App\User;
 

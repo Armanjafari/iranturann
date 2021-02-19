@@ -1,5 +1,5 @@
 <?php
-namespace App\services\Notifications\Constants;
+namespace App\Services\Notifications\Constants;
 
 class EmailTypes{
     const USER_REGISTERED = 1;
@@ -12,7 +12,7 @@ public static function toString()
         self::USER_REGISTERED => 'ثبت نام کاربر',
         self::TOPIC_CREATED => 'ایجاد مقاله جدید',
         self::FORGET_PASSWORD => 'فراموشی رمز عبور'
-    ]
+    ];
 }
 
 

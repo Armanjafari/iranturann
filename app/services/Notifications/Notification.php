@@ -1,8 +1,8 @@
 <?php
 
-namespace App\services\Notifications;
+namespace App\Services\Notifications;
 
-use App\services\Notifications\Providers\Contracts\Provider;
+use App\Services\Notifications\Providers\Contracts\Provider;
 /*
 * @method sendSms(App\User $user, stirng $code)
 * @method sendEmail(App\User $user, Illuminate\Mail\mailable $mailable)

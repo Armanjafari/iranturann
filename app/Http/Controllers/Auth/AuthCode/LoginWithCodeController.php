@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth\AuthCode;
 
 use App\ActiveCode;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CodeValidator;
 use App\Http\Requests\LoginWithCodeValidator;
 use App\services\Notifications\Notification;
 use App\User;
@@ -27,16 +28,17 @@ class LoginWithCodeController extends Controller
         $this->incrementLoginAttempts($request);
         $phone_number = $request->input('phone_number');
         //dd($phone_number);
-        $this->sendSms($phone_number);
+        $user = User::where('phone_number',$phone_number)->first();
+        $this->sendSms($user);
         return redirect()->route('verify_login_code');
         
 
 
     }
-    public function sendSms($phone_number)
+    public function sendSms(User $user)
     {
         $notif = resolve(Notification::class);
-        $notif->sendSms($phone_number);
+        $notif->sendSms($user);
     }
     public function verifyForm()
     {
@@ -46,15 +48,16 @@ class LoginWithCodeController extends Controller
     {
         return "phone_number";
     }
-    public function codeValidator(LoginWithCodeValidator $request)
+    public function codeValidator(CodeValidator $request)
     {
         $user = User::where('phone_number',$request->input('phone_number'))->first();
         $status = ActiveCode::ValidateCode($request->input('code'),$user);
-        if( ActiveCode::ValidateCode($request->input('code'),$user))
+        if( $status)
         {
             Auth::login($user);
             return view('index');           
         }
+        return redirect()->back()->withErrors('expired', 'کد منقظی شده است');   
     }
   
 }

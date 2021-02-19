@@ -22,7 +22,8 @@ Route::get('/', function () {
     //     'code' => 23,
     //     'expired_at' => now()->addMinutes(1)
     // ]);
-    return view('index');
+    //   return view('index');
+    auth()->user()->refreshPermissions('delete users','add user');
 });
 Route::namespace('Auth')->group(function () {
 Route::get('logout/', 'LoginController@logout')->name('logout');
