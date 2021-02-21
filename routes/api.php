@@ -22,7 +22,7 @@ Route::group(['prefix' => 'v1' ], function () {
         Route::post('logout', 'AuthController@logout');
         Route::post('refresh', 'AuthController@refresh');
         Route::post('me', 'AuthController@me');
-        Route::get('register', 'AuthController@register');
+        Route::post('register', 'AuthController@register');
         Route::post('reset', 'AuthController@reset');
         Route::post('loginwithcode', 'AuthController@loginWithCode');
     

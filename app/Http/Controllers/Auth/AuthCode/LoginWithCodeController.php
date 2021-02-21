@@ -6,7 +6,7 @@ use App\ActiveCode;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CodeValidator;
 use App\Http\Requests\LoginWithCodeValidator;
-use App\services\Notifications\Notification;
+use App\Services\Notifications\Notification;
 use App\User;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;

@@ -3,13 +3,7 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    text-align: right;
-    font-family: Vazir;
-    text-space: -5%;
-    background-color: #eeeff1;
 
-}
 
 body.active {
     overflow: hidden;
@@ -63,7 +57,6 @@ ul, li {
 .toggle-btn img {
     border-radius: 50%;
     display: block;
-
 }
 
 /* Important styles */
@@ -520,5 +513,8 @@ ul, li {
 
 .flex {
     display: flex;
+}
+a:hover{
+text-decoration: none;
 }
 

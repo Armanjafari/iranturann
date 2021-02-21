@@ -23,7 +23,7 @@ Route::get('/', function () {
     //     'expired_at' => now()->addMinutes(1)
     // ]);
     //   return view('index');
-    auth()->user()->refreshPermissions('delete users','add user');
+    dd(auth()->user()->can('add user'));
 });
 Route::namespace('Auth')->group(function () {
 Route::get('logout/', 'LoginController@logout')->name('logout');

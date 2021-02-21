@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\services\Notifications\Notification;
-use Facade\FlareClient\Http\Response;
+namespace App\Http\Controllers\ApiControllers;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use Validator;
+use Illuminate\Support\Facades\Password;
 
 class AuthController extends Controller
 {
@@ -15,7 +17,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register','reset']]);
     }
 
     /**
@@ -25,7 +27,8 @@ class AuthController extends Controller
      */
     public function login()
     {
-        $credentials = request(['phone_number', 'code']);
+        $credentials = request(['phone_number', 'password']);
+
         if (! $token = auth('api')->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
@@ -80,10 +83,33 @@ class AuthController extends Controller
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
     }
-    public function loginWithCode()
+    public function register(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|between:2,100',
+            'phone_number' => 'required|max:100|unique:users',
+            'password' => 'required|string|min:6',
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+        $user = User::create(array_merge(
+                    $validator->validated(),
+                    ['password' => bcrypt($request->password)]
+                ));
+
+        return response()->json([
+            'message' => 'User successfully registered',
+            'user' => $user
+        ], 201);
+    }
+    public function reset()
     {
-        $notif = resolve(Notification::class);
-        $notif->sendSms(request(['phone_number']));
-        return Response()->json('')
+        $phone_number = request()->validate(['phone_number' => 'required']);
+        $user = User::where('phone_number',request('phone_number'));
+        Password::sendResetLink($user);
+        dd("s");
+        return response()->json(["message" => 'sended to your phone']);
+    
     }
 }
