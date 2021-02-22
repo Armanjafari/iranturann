@@ -299,10 +299,18 @@
                         <span>خانه، آشپزخانه و ابزار</span>
                         <img class="item-icon" src="{{ asset('assets/img/download.png') }}" alt=""></a></li>
                 <img src="{{ asset('assets/img/svg element/Iconawesome-shopping-cart.svg') }}" alt="" class="svg-shopp mr-auto ml-3">
+                @guest
+                <button type="button" class="btn-logo">
+                        <i class="far fa-user"></i>
+                        <a class="text-center" href="{{ route('login') }}">ورود به حساب کاربری</a>
+                    </button>
+                @endguest
+                @auth                    
                 <button type="button" class="btn-logo">
                     <i class="far fa-user"></i>
-                    <a class="text-center" href="signup.html">ورود به حساب کاربری</a>
+                    <a class="text-center" href="{{ route('logout') }}">خروج به حساب کاربری</a>
                 </button>
+                @endauth
             </ul><!-- End Menu Level 1 -->
         </div>
     </nav>

@@ -16,6 +16,10 @@ class LoginWithCodeController extends Controller
 {
     use ThrottlesLogins;
     public $code;
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     public function showLoginForm()
     {
         return view('AuthWithCode.login');
@@ -52,6 +56,7 @@ class LoginWithCodeController extends Controller
     {
         $user = User::where('phone_number',$request->input('phone_number'))->first();
         $status = ActiveCode::ValidateCode($request->input('code'),$user);
+        //dd($status);
         if( $status)
         {
             Auth::login($user);

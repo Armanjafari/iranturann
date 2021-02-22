@@ -26,6 +26,10 @@ class ActiveCode extends Model
     }
     public function scopeValidateCode($query , $code ,User $user)
     {
+        //dd($user->activeCode()->whereCode((int)$code)->get('expires_at')->isPast());
+        //if($user->activeCode()->whereCode((int)$code)->expires_at->isPast()) return true;
+
+        //return false;
         return !! $user->activeCode()->whereCode((int)$code)->where('expires_at' , '>' , now())->first();
     }
 }

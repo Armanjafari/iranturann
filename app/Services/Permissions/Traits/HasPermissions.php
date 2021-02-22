@@ -35,7 +35,15 @@ trait HasPermissions
     }
     public function hasPermission(Permission $permission)
     {
-        return $this->permissions->contains($permission);
+        $this->hasPermissionsThroughRole($permission);
+        return $this->hasPermissionsThroughRole($permission) || $this->permissions->contains($permission);
+    }
+    protected function hasPermissionsThroughRole(Permission $permission)
+    {
+        dd($this->roles);
+        foreach ($permission->roles as $role) {
+            if ($this->roles->contains($role)) return true;
+        }
     }
 }
 ?>

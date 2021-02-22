@@ -7,14 +7,14 @@
             <div class="col-lg-6 col-xl-6 col-12 col-sm-6 mt-5">
                 <div class="card border-0">
                     <div class="card-body mt-2">
-                        <img src="img/amazing-summer.916.500-1.jpg" alt="" class="img-mr img-fluid">
+                        <img src="assets/img/amazing-summer.916.500-1.jpg" alt="" class="img-mr img-fluid">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-xl-6 col-12 col-sm-6 mt-5">
                 <div class="card border-0">
                     <div class="card-body mt-2">
-                        <img src="img/JWP8ILOse5N5WLaitIPpa2VITaPKrG9MhnElIq9g.jpeg" alt="" class="img-mr img-fluid">
+                        <img src="assets/img/JWP8ILOse5N5WLaitIPpa2VITaPKrG9MhnElIq9g.jpeg" alt="" class="img-mr img-fluid">
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="card">
                     <div class="card-body text-right mr-4">
                         <span class="mr-5">تضمین کیفیت کالا</span><br>
-                        <img src="img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
+                        <img src="assets/img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
                         <span class="position-absolute mt-2">ضمانت کیفیت کالا توسط ما</span>
                         <span class="position-absolute mt-4">ضمانت کیفیت کالا توسط ما</span>
                     </div>
@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class="card-body text-right mr-4">
                         <span class="mr-5">تضمین کیفیت کالا</span><br>
-                        <img src="img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
+                        <img src="assets/img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
                         <span class="position-absolute mt-2">ضمانت کیفیت کالا توسط ما</span>
                         <span class="position-absolute mt-4">ضمانت کیفیت کالا توسط ما</span>
                     </div>
@@ -42,7 +42,7 @@
                 <div class="card">
                     <div class="card-body text-right mr-4">
                         <span class="mr-5">تضمین کیفیت کالا</span><br>
-                        <img src="img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
+                        <img src="assets/img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
                         <span class="position-absolute mt-2">ضمانت کیفیت کالا توسط ما</span>
                         <span class="position-absolute mt-4">ضمانت کیفیت کالا توسط ما</span>
                     </div>
@@ -52,7 +52,7 @@
                 <div class="card">
                     <div class="card-body text-right mr-4">
                         <span class="mr-5">تضمین کیفیت کالا</span><br>
-                        <img src="img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
+                        <img src="assets/img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
                         <span class="position-absolute mt-2">ضمانت کیفیت کالا توسط ما</span>
                         <span class="position-absolute mt-4">ضمانت کیفیت کالا توسط ما</span>
                     </div>
@@ -62,7 +62,7 @@
                 <div class="card mt-5 Discount text-center border-0">
                     <div class="card-body">
                         <figure>
-                            <img src="img/Untitled.png" alt="">
+                            <img src="assets/img/Untitled.png" alt="">
                         </figure>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 <div class="card mt-5 Discount text-center border-0">
                     <div class="card-body">
                         <figure>
-                            <img src="img/Untitled.png" alt="">
+                            <img src="assets/img/Untitled.png" alt="">
                         </figure>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                 <div class="card mt-5 Discount text-center border-0">
                     <div class="card-body">
                         <figure>
-                            <img src="img/Untitled.png" alt="">
+                            <img src="assets/img/Untitled.png" alt="">
                         </figure>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                 <div class="card mt-5 Discount text-center border-0">
                     <div class="card-body">
                         <figure>
-                            <img src="img/Untitled.png" alt="">
+                            <img src="assets/img/Untitled.png" alt="">
                         </figure>
                     </div>
                 </div>
@@ -97,14 +97,14 @@
             <div class="owl-carousel owl-theme">
                 <div class="item">
                     <div class="card border-0">
-                        <div class="card-body text-center p-2"><img src="img/10.png" class="slide-show mb" alt="">
+                        <div class="card-body text-center p-2"><img src="assets/img/10.png" class="slide-show mb" alt="">
                             <caption><span>فروشگاه رفاه</span></caption>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="card border-0">
-                        <div class="card-body text-center p-2"><img src="img/10.png"
+                        <div class="card-body text-center p-2"><img src="assets/img/10.png"
                                 class="slide-show slide-show-odd mb" alt="">
                             <caption><span>فروشگاه رفاه</span></caption>
                         </div>
@@ -112,14 +112,14 @@
                 </div>
                 <div class="item">
                     <div class="card border-0">
-                        <div class="card-body text-center p-2"><img src="img/10.png" class="slide-show mb" alt="">
+                        <div class="card-body text-center p-2"><img src="assets/img/10.png" class="slide-show mb" alt="">
                             <caption><span>فروشگاه رفاه</span></caption>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="card border-0">
-                        <div class="card-body text-center p-2"><img src="img/10.png"
+                        <div class="card-body text-center p-2"><img src="assets/img/10.png"
                                 class="slide-show slide-show-odd mb" alt="">
                             <caption><span>فروشگاه رفاه</span></caption>
                         </div>
@@ -127,14 +127,14 @@
                 </div>
                 <div class="item">
                     <div class="card border-0">
-                        <div class="card-body text-center p-2"><img src="img/10.png" class="slide-show mb" alt="">
+                        <div class="card-body text-center p-2"><img src="assets/img/10.png" class="slide-show mb" alt="">
                             <caption><span>فروشگاه رفاه</span></caption>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="card border-0">
-                        <div class="card-body text-center p-2"><img src="img/10.png"
+                        <div class="card-body text-center p-2"><img src="assets/img/10.png"
                                 class="slide-show slide-show-odd mb" alt="">
                             <caption><span>فروشگاه رفاه</span></caption>
                         </div>
@@ -142,14 +142,14 @@
                 </div>
                 <div class="item">
                     <div class="card border-0">
-                        <div class="card-body text-center p-2"><img src="img/10.png" class="slide-show mb" alt="">
+                        <div class="card-body text-center p-2"><img src="assets/img/10.png" class="slide-show mb" alt="">
                             <caption><span>فروشگاه رفاه</span></caption>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="card border-0">
-                        <div class="card-body text-center p-2"><img src="img/10.png"
+                        <div class="card-body text-center p-2"><img src="assets/img/10.png"
                                 class="slide-show slide-show-odd mb" alt="">
                             <caption><span>فروشگاه رفاه</span></caption>
                         </div>
@@ -182,7 +182,7 @@
                 <div class="card card-product-warning" style="height: 380px;">
                     <div class="card-body text-center">
                       <figure class="mb-0">
-                          <img src="img/Untitled2.png" alt="">
+                          <img src="assets/img/Untitled2.png" alt="">
                       </figure>
                       <caption>
                         <a href="#">هودی ادی داس طرح زمستانه</a>
@@ -198,7 +198,7 @@
                 <div class="card card-product-warning" style="height: 380px;">
                     <div class="card-body text-center">
                       <figure class="mb-0">
-                          <img src="img/Untitled.png" alt="">
+                          <img src="assets/img/Untitled.png" alt="">
                       </figure>
                       <caption>
                         <a href="#">هودی ادی داس طرح زمستانه</a>
@@ -213,7 +213,7 @@
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                       <figure class="mb-0">
-                          <img src="img/Untitled2.png" alt="">
+                          <img src="assets/img/Untitled2.png" alt="">
                       </figure>
                       <caption>
                         <a href="#">هودی ادی داس طرح زمستانه</a>
@@ -229,7 +229,7 @@
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                       <figure class="mb-0">
-                          <img src="img/Untitled.png" alt="">
+                          <img src="assets/img/Untitled.png" alt="">
                       </figure>
                       <caption>
                         <a href="#">هودی ادی داس طرح زمستانه</a>
@@ -244,7 +244,7 @@
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                       <figure class="mb-0">
-                          <img src="img/Untitled2.png" alt="">
+                          <img src="assets/img/Untitled2.png" alt="">
                       </figure>
                       <caption>
                         <a href="#">هودی ادی داس طرح زمستانه</a>
@@ -260,7 +260,7 @@
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                       <figure class="mb-0">
-                          <img src="img/Untitled.png" alt="">
+                          <img src="assets/img/Untitled.png" alt="">
                       </figure>
                       <caption>
                         <a href="#">هودی ادی داس طرح زمستانه</a>
@@ -275,7 +275,7 @@
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                       <figure class="mb-0">
-                          <img src="img/Untitled2.png" alt="">
+                          <img src="assets/img/Untitled2.png" alt="">
                       </figure>
                       <caption>
                         <a href="#">هودی ادی داس طرح زمستانه</a>
@@ -291,7 +291,7 @@
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                       <figure class="mb-0">
-                          <img src="img/Untitled.png" alt="">
+                          <img src="assets/img/Untitled.png" alt="">
                       </figure>
                       <caption>
                           <a href="#">هودی ادی داس طرح زمستانه</a>
