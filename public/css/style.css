@@ -1,0 +1,369 @@
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('fonts/eot/IRANSansWeb.eot');
+    src: url('fonts/eot/IRANSansWeb_Bold.eot') format('embedded-opentype'),  /* IE6-8 */
+         url('fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+         url('fonts/woff/IRANSansWeb_Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+         url('fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/eot/IRANSansWeb_Medium.eot');
+    src: url('fonts/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+         url('fonts/woff2/IRANSansWeb_Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+         url('fonts/woff/IRANSansWeb_Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+         url('fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/eot/IRANSansWeb_Light.eot');
+    src: url('fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+         url('fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+         url('fonts/woff/IRANSansWeb_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+         url('fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('fonts/eot/IRANSansWeb_UltraLight.eot');
+    src: url('fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+         url('fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+         url('fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+         url('fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/eot/IRANSansWeb.eot');
+    src: url('fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+         url('fonts/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+         url('fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+         url('fonts/ttf/IRANSansWeb.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("../webfonts/fa-brands-400.eot");
+    src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
+  
+  .fab {
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400; }
+  @font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("../webfonts/fa-regular-400.eot");
+    src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
+  
+  .far {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400; }
+  @font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("../webfonts/fa-solid-900.eot");
+    src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
+
+.sidebar{
+    width: 300px;
+    border: 2px solid #1E7070;
+    background-color: yellowgreen;
+    position: absolute;
+    z-index: 2000;
+    padding: 10px;
+    background-color: #1E7070 !important;
+   margin-right: -300px;
+   font-size: 20px;
+   top: 0;
+   transition: all ease 1s;
+   position: fixed;
+}
+.fas{
+    z-index: 2010;
+    cursor: pointer;
+}
+#times{
+    cursor: pointer;
+    visibility: hidden;
+    margin-right: 1em;
+    position: fixed;
+}
+.navbar-nav{
+    margin-top:1.5em;
+    margin-right: -0.5em;
+    display: table !important;
+}
+span{
+    color: white !important;
+}
+*{
+    font-family:IRANSans;
+    box-sizing: border-box;
+}
+.badge{
+    margin-right: 1em;
+}
+a:hover{
+  background-color: #1CBCA7;
+  border-radius: 5px;
+}
+#adminSubmenu{
+ margin-right: -2em;
+}
+#Product-management{
+    margin-right: -2em;
+}
+.nav-under-menu,.nav-submenu{
+    font-size: 17px;
+}
+
+.card{
+    color: white;
+    text-align: center;
+}
+hr{
+    background-color: white;
+}
+b{
+    font-size: 30px;
+}
+.card-item{
+    line-height: 30px;
+}
+.item{
+    cursor: pointer;
+}
+.card-title{
+    cursor: pointer;
+    display: table;
+}
+.icons-box{
+    position: absolute;
+    right: 90%;
+}
+#podcast{
+    background-color: #1E7070;
+    text-align: right;
+}
+
+#small-box{
+    background-color: #00c0ef;
+}
+.first{
+    color: rgb(19, 190, 76);
+}
+#last-child-card{
+    background-color: #91397c;
+}
+.btn-dark{
+    background-color: #81a3a3 !important;
+    border: none;
+    padding: 10px;
+}
+.first-item{
+    width: 35px;
+    height: 35px;
+    background-color: #81A3A3;
+}
+.Internal-text{
+    font-size: 20px;
+    width:30px;
+    height:30px;
+    background-color: #81A3A3;
+    text-align: center;
+    display: inline-block;
+}
+.View-podcasts{
+    width: 230px;
+    margin-top: -23em;
+    margin-right: 3em;
+}
+.text-item{
+    font-size: 20px;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+#myChart{
+    height: 460px !important;
+}
+
+
+.inner{
+    width: 40px;
+}
+.text-left{
+    margin-top: -30px;
+}
+.text-link{
+    color: white;
+}
+h5{
+    display: inline-block;
+}
+.text-success{
+    color: rgb(14, 151, 71);
+}
+.text-success:hover{
+    background-color: #1E7070;
+}
+.text2{
+    color: #B7C4C4 !important;
+    cursor: auto;
+}
+.view-item{
+    text-align: left;
+}
+.btn-success{
+    border-radius: 5px;
+    outline: none !important;
+    cursor: pointer;
+}
+*{
+    margin-left: 0 !important;
+}
+.mr-5{
+    color: #B7C4C4;
+}
+a{
+    color: white;
+}
+.navbar-item{
+    width: 100%;
+    text-align: right;
+    transition: all ease 1s;
+}
+.rounded-circle{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-right: 3em;
+}
+.navbar{
+    padding: 10px !important;
+}
+.content{
+    transition: all ease 1s;
+}
+@media only screen and (max-width:992px){
+    .rounded-circle,.name-admin{
+     display: none;
+    }
+    .navbar-nav{
+        text-align: start;
+    }
+    #times{
+        margin-left: 96% !important;
+        position: relative;
+    }
+    .sidebar{
+        position: absolute;
+    }
+}
+@media only screen and (max-width:1300px){
+    .content{
+        margin-right: 0px !important;
+      }
+      .navbar-item{
+          margin-right: 0px !important;
+      }
+}
+@media (min-width: 300px) and (max-width:500px){
+    .dropdown-menu{
+        width: 15em;
+    }
+    .dropdown-item{
+        font-size: 1em;
+    }
+    .text-link{
+        font-size: 17px;
+    }
+    
+}
+@media (min-width: 501px) and (max-width:992px){
+    .dropdown-menu{
+        width: 20em !important;
+    }
+}
+@media (min-width: 769px) and (max-width:876px){
+.Average{
+font-size: 16px;
+}
+}
+@media (min-width: 769px) and (max-width:2000px){
+    .navbar-toggler-icon{
+        visibility: hidden;
+    }
+}
+@media (min-width: 0px) and (max-width:768px){
+    .col-md-3{
+        margin-top: 20px;
+    }
+    #times{
+        margin-top: -10px;
+        margin-right: 10px;
+    }
+}
+label{
+    color: black;
+}
+#trash{
+    cursor: pointer;
+}
+.button{
+    width: 90px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+th{
+    color: #707070;
+    background-color: #48AEA1;
+}
+td{
+    background-color: #48AEA1;
+    color: #ffffff;
+}
+.text-itembg{
+    color: black;
+}
+.success{
+    width: 200px;
+}
+.info{
+    color: white;
+    border-radius: 10px;
+    outline: none !important;
+}
+.caption-text{
+    color: black;
+    padding: 5px;
+}
+.col-xl-4{
+    font-size: 18px;
+  }
+  .img-thumbnail{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+td{
+vertical-align:baseline !important;
+}

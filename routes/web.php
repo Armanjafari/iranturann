@@ -26,9 +26,7 @@ use App\services\Notifications\Notification;
 use App\User;
 
 Route::get('/', function () {
-    auth()->user()->giveRolesTo('admin');
-    Role::find(1)->givePermissionsTo('delete user');
-    dd(auth()->user()->can('delete user'));
+    auth()->user()->refreshRoles();
 
 });
 Route::namespace('Auth')->group(function () {
@@ -47,8 +45,15 @@ Route::namespace('Auth\AuthCode')->group(function () {
 Route::get('main', function () {
     return view('index');
 });
-Route::prefix('admin')->group(function () {
-    Route::get('users/{id}', function ($id) {
-        
-    });
+// can:add post (for example)
+Route::group(['prefix' => 'admin' , 'middleware' => 'role:admin'],function () { 
+    Route::get('users/', 'UserController@index')->name('users.index');
+    Route::get('users/{user}/edit','UserController@edit' )->name('users.edit');
+    Route::post('users/{user}/edit','UserController@update' )->name('users.update');
+
+    Route::get('roles', 'RoleController@index')->name('roles.index');
+    Route::post('roles','RoleController@store')->name('roles.store');
+    Route::get('roles/{role}/edit', 'RoleController@edit')->name('roles.edit');
+    Route::post('roles/{role}/edit','RoleController@update' )->name('roles.update');
+    
 });

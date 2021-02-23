@@ -9,6 +9,7 @@
   <!--start main-->
     @yield('content')
     @include('alerts.errors')
+    @include('alerts.success')
 </body>
 @include('layout.footer')
 </html>
