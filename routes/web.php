@@ -57,3 +57,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'role:admin'],function () {
     Route::post('roles/{role}/edit','RoleController@update' )->name('roles.update');
     
 });
+
+Route::group([ 'namespace' => 'Product'],function () {
+    Route::get('products', 'ProductController@index')->name('product.index');
+});
