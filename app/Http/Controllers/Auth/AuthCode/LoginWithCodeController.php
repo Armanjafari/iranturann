@@ -62,7 +62,7 @@ class LoginWithCodeController extends Controller
             Auth::login($user);
             return view('index');           
         }
-        return redirect()->back()->withErrors('expired', 'کد منقظی شده است');   
+        return redirect()->back()->withErrors('errors', 'کد منقظی شده است');   
     }
   
 }

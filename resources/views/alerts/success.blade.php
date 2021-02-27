@@ -1,7 +1,7 @@
 @if (session('success'))
-<div class = "alert alert-success">
+<div class = "row alert alert-success">
    <ul>
-      <p> با موفقیت انجام شد </p>
+      {{session('success') }}
    </ul>
 </div>
 @endif

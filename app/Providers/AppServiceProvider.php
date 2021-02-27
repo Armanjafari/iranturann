@@ -5,7 +5,6 @@ namespace App\Providers;
 use App\Support\Storage\Contracts\StorageInterface;
 use App\Support\Storage\SessionStorage;
 use Illuminate\Support\ServiceProvider;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,8 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->singleton(SessionInterface::class, function ($app) {
-            return new SessionStorage('cart');
-        });
+        $this->app->bind(StorageInterface::class, function ($app) {
+			return new SessionStorage('cart');
+		});
+        
+        // $this->app->singleton(Basket::class, function ($app) {
+        //     return new Basket();
+        // });
     }
 }
