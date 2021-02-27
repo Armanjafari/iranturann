@@ -7,7 +7,7 @@
 
         <!--start navbar menu-->
         @include('layout.navbar')
-  <!--start main--> <br>
+  <!--start main-->
   @include('alerts.errors') <!-- TODO Fix this problem (alerts under navbar) !-->
   @include('alerts.success')
     @yield('content')

@@ -63,4 +63,7 @@ Route::group([ 'namespace' => 'Product'],function () {
     Route::get('basket/add/{product}', 'BasketController@add')->name('basket.add');
     Route::get('basket/clear/' , 'BasketController@clear');
     Route::get('basket/','BasketController@index')->name('basket.index');
+    Route::post('basket/update/{product}','BasketController@update')->name('basket.update');
+    Route::get('basket/checkout', 'BasketController@checkoutForm')->name('basket.checkout.form');
+    Route::post('basket/checkout', 'BasketController@checkout')->name('basket.checkout');
 });

@@ -28,7 +28,17 @@
 							<td> {{$item->title}} </td>
 							<td>{{ number_format($item->price) }} تومان</td>
 							<td>
-                                {{ $item->quantity }}
+                                <form action="{{ route('basket.update', $item->id) }}" method="POST" class="form-inline">
+									@csrf
+									
+									<select name="quantity" id="quantity" class="form-control input-sm mr-sm-2">
+										@for ($i = 0; $i <= $item->stock; $i++)
+										 <!-- TODO fix this !-->
+									<option  {{$item->quantity == $i ? 'selected' : ''}} value="{{$i}}">{{$i}}</option>
+										@endfor
+									</select>
+									<button type="submit" class="btn btn-light btn-sm"> بروز رسانی </button>
+								</form>
 							</td>
 						</tr>
 						@endforeach
@@ -39,7 +49,7 @@
 		</div>
 		<div class="col-md-4">
             @include('Product.summary')
-		<a href="#" class="btn mt-4  btn-primary btn-lg w-100 d-block"> ثبت و ادامه سفارش </a>
+		<a href="{{ route('basket.checkout.form') }}" class="btn mt-4  btn-primary btn-lg w-100 d-block"> ثبت و ادامه سفارش </a>
 		</div>
 	</div>
 	@endif

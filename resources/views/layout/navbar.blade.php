@@ -299,7 +299,7 @@
                         <img src="assets/img/download (4).png" alt="">
                         <span>خانه، آشپزخانه و ابزار</span>
                         <img class="item-icon" src="{{ asset('assets/img/download.png') }}" alt=""></a></li>
-                        <a href="{{ route('basket.index')}}">
+                        <a  class="svg-shopp mr-auto ml-3"href="{{ route('basket.index')}}">
                 <img src="{{ asset('assets/img/svg element/Iconawesome-shopping-cart.svg') }}" alt="" class="svg-shopp mr-auto ml-3">
                 {{ $basket->itemCount() }}</a>
                 @guest

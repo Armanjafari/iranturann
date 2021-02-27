@@ -26,6 +26,10 @@ class Basket
         {
             throw new QuantityExceededException();
         }
+        if (!$quantity)
+        {
+            return $this->storage->unset($product->id);
+        }
         $this->storage->set($product->id , [
             'quantity' => $quantity
         ]);
