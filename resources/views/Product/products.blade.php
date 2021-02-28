@@ -1,6 +1,12 @@
 @extends('layout.master')
 @section('content')
-
+@if (session('payment'))
+<div class = "row alert alert-success">
+   <ul>
+      {{session('payment')}}
+   </ul>
+</div>
+@endif
 <div class="row justify-content-center">
 	<div class="col-md-6 mt-5">
 	</div>
