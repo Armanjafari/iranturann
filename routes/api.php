@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiControllers\ProductController;
 use Illuminate\Http\Request;
 
 /*
@@ -27,5 +28,5 @@ Route::group(['prefix' => 'v1' ], function () {
         Route::post('loginwithcode', 'AuthController@loginWithCode');
     
     });
-
+    Route::resource('product', ApiControllers\ProductController::class);
 });
