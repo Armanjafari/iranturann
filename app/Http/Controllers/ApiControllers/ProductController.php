@@ -2,49 +2,17 @@
 
 namespace App\Http\Controllers\ApiControllers;
 
+use App\Exceptions\QuantityExceededException;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Support\Basket\Basket;
+use App\Support\Payment\Transaction;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return Product::all();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    private $basket;
+    private $transaction;
     public function show($id)
     {
         $product = Product::FindOrFail($id);
@@ -53,29 +21,54 @@ class ProductController extends Controller
             'code' => 200
         ]);
     }
-
-
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function __construct(Basket $basket, Transaction $transaction)
     {
-        //
+        $this->middleware('auth:api');
+        $this->basket = $basket;
+        $this->transaction = $transaction;
+        
+    }
+    public function index()
+    {
+        $items = $this->basket->all();
+        //dd($items);
+        return view('Product.basket',compact('items'));
+    }
+    public function add(Product $product)
+    {
+        try {
+            $this->basket->add($product , 1);
+            return response()->json(['success' =>"محصول به سبد خرید اضافه شد"]);
+        } catch (QuantityExceededException $e) {
+            return response()->json(['error' =>" اتمام موجودی "]);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function clear()
     {
-        //
+        resolve(StorageInterface::class)->clear();
     }
+    public function update(Request $request , Product $product)
+    {
+        $this->basket->update($product,$request->quantity);
+        return back();
+    }
+    public function checkoutForm()
+    {
+        return view('Product.checkout');
+    }
+    public function checkout(Request $request)
+    {
+        $this->validateForm($request);
+        $order = $this->transaction->checkout();
+        return redirect('products')->with( 'payment', 'سفارش شما با شماره' .$order->id);
+    }
+    private function validateForm(Request $request)
+    {
+        $request->validate([
+            'method' => ['required'],
+            'gateway' => ['required_if:method,online']
+        ]);
+    }
+
 }

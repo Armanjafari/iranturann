@@ -28,5 +28,13 @@ Route::group(['prefix' => 'v1' ], function () {
         Route::post('loginwithcode', 'AuthController@loginWithCode');
     
     });
-    Route::resource('product', ApiControllers\ProductController::class);
+    Route::group([ 'namespace' => 'ApiControllers'],function () {
+        Route::get('basket/add/{product}', 'ProductController@add')->name('basket.add');
+        Route::get('basket/clear/' , 'ProductController@clear');
+        Route::get('basket/','ProductController@index')->name('basket.index');
+        Route::post('basket/update/{product}','ProductController@update')->name('basket.update');
+        Route::get('basket/checkout', 'ProductController@checkoutForm')->name('basket.checkout.form');
+        Route::post('basket/checkout', 'ProductController@checkout')->name('basket.checkout');
+    
+    });
 });

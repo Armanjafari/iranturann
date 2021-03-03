@@ -66,4 +66,9 @@ Route::group([ 'namespace' => 'Product'],function () {
     Route::post('basket/update/{product}','BasketController@update')->name('basket.update');
     Route::get('basket/checkout', 'BasketController@checkoutForm')->name('basket.checkout.form');
     Route::post('basket/checkout', 'BasketController@checkout')->name('basket.checkout');
+
+});
+Route::group([ 'namespace' => 'Product\Payment'],function () {
+
+Route::post('payment/{gateway}/callback', 'PaymentController@verify')->name('payment.verify');
 });

@@ -43,6 +43,7 @@
 
 							<select name='gateway'  class="custom-select col-md-4  custom-control-inline">
 								<option value="saman">سامان</option>
+								<option value="mellat"> ملت </option>
 								<option value="pasargad">پاسارگاد</option>
 							</select>
 
