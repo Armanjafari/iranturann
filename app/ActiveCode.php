@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ActiveCode extends Model
 {
     protected $table = 'active_code';
-    protected $fillable = ['code','user_id','expires_at'];
+    protected $fillable = ['code','user_id','expired_at'];
     public $timestamps = false;
 
     public function user()
@@ -30,6 +30,7 @@ class ActiveCode extends Model
         //if($user->activeCode()->whereCode((int)$code)->expires_at->isPast()) return true;
 
         //return false;
-        return !! $user->activeCode()->whereCode((int)$code)->where('expires_at' , '>' , now())->first();
+        //dd($user->activeCode()->whereCode($code)->get('expired_at') . 'mytime ' . now());
+        return !! $user->activeCode()->whereCode((int)$code)->where('expired_at' , '>' , now())->first();
     }
 }

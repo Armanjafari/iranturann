@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Role;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -81,9 +80,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth('api')->factory()->getTTL() * 60,
-            'user' => auth('api')->user(),
-            'roles' => Role::find(auth('api')->user()->id)->id
+            'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
     }
     public function register(Request $request) {
@@ -91,7 +88,7 @@ class AuthController extends Controller
             'name' => 'required|string|between:2,100',
             'phone_number' => 'required|max:100|unique:users',
             'password' => 'required|string|min:6',
-        ]);
+        ]); // TODO setup register with code and password
 
         if($validator->fails()){
             return response()->json($validator->errors()->toJson(), 400);
