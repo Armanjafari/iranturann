@@ -23,7 +23,7 @@ class ProductController extends Controller
     }
     public function __construct(Basket $basket, Transaction $transaction)
     {
-        $this->middleware('auth:api');
+        $this->middleware('auth:api')->except('allproducts');
         $this->basket = $basket;
         $this->transaction = $transaction;
         
@@ -69,6 +69,11 @@ class ProductController extends Controller
             'method' => ['required'],
             'gateway' => ['required_if:method,online']
         ]);
+    }
+    public function allproducts()
+    {
+        $products = Product::all();
+        return response()->json(['products' => $products, 'code' => 200]);
     }
 
 }

@@ -2,11 +2,15 @@
 namespace App\Support\Payment\Gateways;
 
 use App\Support\Payment\Gateways\GatewayInterface;
+use DateTime;
 use Illuminate\Http\Request;
+use SoapClient;
+
 class Mellat implements GatewayInterface
 {
     private $merchantID;
     private $callback;
+    protected $serverUrl = 'https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl';
     public function __construct()
     {
         $this->merchantID = '123456789';
@@ -18,23 +22,50 @@ class Mellat implements GatewayInterface
     }
     private function redirectToBank($order)
     {
-        $localdate = date('Ymd');
-        $localTime = date('Gis');
+        $dateTime = new DateTime();
         $amount = $order->amount + 10000;
         $userid = auth()->user()->id;
-        echo "<form id='mellatpeyment' action='https://bpm.shaparak.ir/pgwchannel/startpay.mellat' method='post'>
-        <input type='hidden' name='‫‪terminalId‬‬' value='5453042' />
-        <input type='hidden' name='‫‪userName‬‬' value='iranturan123' />
-        <input type='hidden' name='‫‪userPassword‬‬' value='20862902' />
-		<input type='hidden' name='‫‪orderId‬‬' value='{$order->code}'>
-        <input type='hidden' name='amount' value='{$amount}' />
-        <input type='hidden' name='localDate' value='{$localdate}'>
-        <input type='hidden' name='localTime' value='{$localTime}'>
-		<input type='hidden' name='‫‪additionalData‬‬' value=''/>
-        <input type='hidden' name='‫‪callBackUrl‬‬' value='{$this->callback}'/>
-        <input type='hidden' name='payerId' value='{$userid}'/>
-		</form><script>document.forms['mellatpeyment'].submit()</script>";
-        
+		$this->soapClient = new SoapClient($this->serverUrl);
+
+        if($amount && $amount > 100 && $order->id ) {
+            $parameters = [
+                'terminalId' => '5453042',
+                'userName' => 'iranturan123',
+                'userPassword' => '20862902',
+                'orderId' => $order->id,
+                'amount' => $amount,
+                'localDate' => date("Ymd"),
+                'localTime' => date("His"),
+                'additionalData' => '',
+                'callBackUrl' => $this->callback,
+                'payerId' => '0'
+            ];
+
+            try {
+
+                // Call the SOAP method
+                $result = $this->soapClient->bpPayRequest($parameters);
+                dd($result);
+                // Display the result
+                $res = explode(',', $result->return);
+                if ($res[0] == "0") {
+                    //dd('inja');
+                    return [
+                        'result' => true,
+                        'res_code' => $res[0],
+                        'ref_id' => $res[1]
+                    ];
+                } else {
+                    return [
+                        'result' => false,
+                        'res_code' => $res[0],
+                        'ref_id' => isset($res[1]) ? $res[1] : null
+                    ];
+                }
+            } catch (\Exception $e) {
+                return $e->getMessage();
+            }
+        }
     }
     public function verify(Request $request)
     {

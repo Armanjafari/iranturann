@@ -12,4 +12,5 @@ class Payment extends Model
     {
         return $this->method == 'online';
     }
+
 }

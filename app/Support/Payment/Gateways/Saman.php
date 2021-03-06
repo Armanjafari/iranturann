@@ -42,6 +42,6 @@ class Saman implements GatewayInterface
     }
     public function getName():string
     {
-        return "Saman";
+        return "saman";
     }
 }

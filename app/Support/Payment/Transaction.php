@@ -33,13 +33,22 @@ class Transaction
     }
     private function gatewayFactory()
     {
-        $gateway = [
+        $list = [
             'saman' => Saman::class,
-            'pasargad' => Pasargad::class,
-            'mellat' => Mellat::class
+            'mellat' => Mellat::class,
+            'pasargad' => Pasargad::class
+         ];
+         //dd($list[$this->request->gateway]);
+         $a = resolve($list[$this->request->gateway]);
+         return resolve($list[$this->request->gateway]);
+         
+        // $gateway = [
+        //     'saman' => Saman::class,
+        //     'pasargad' => Pasargad::class,
+        //     'mellat' => Mellat::class
 
-        ][$this->request->gateway];
-        return resolve($gateway);
+        // ][$this->request->gateway];
+        // return resolve($gateway);
     }
     public function verify()
     {
