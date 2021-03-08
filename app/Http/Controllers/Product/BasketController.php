@@ -53,7 +53,7 @@ class BasketController extends Controller
     public function checkout(Request $request)
     {
         $this->validateForm($request);
-        $order = $this->transaction->checkout();
+        $order = $this->transaction->checkout(); // TODO check this
         return redirect('products')->with( 'payment', 'سفارش شما با شماره' .$order->id);
     }
     private function validateForm(Request $request)
