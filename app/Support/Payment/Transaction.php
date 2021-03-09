@@ -1,6 +1,7 @@
 <?php
 namespace App\Support\Payment;
 
+use App\Events\OrderRegistered;
 use App\Order;
 use App\Payment;
 use App\Support\Basket\Basket;
@@ -9,6 +10,7 @@ use App\Support\Payment\Gateways\Mellat;
 use App\Support\Payment\Gateways\Saman;
 use App\Support\Payment\Gateways\Pasargad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class Transaction
@@ -22,12 +24,21 @@ class Transaction
     }
     function checkout()
     {
-        $order = $this->makeOrder();
-        $payment = $this->makePayment($order);
+        DB::beginTransaction();
+        try {
+            $order = $this->makeOrder();
+            $payment = $this->makePayment($order);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return null;
+        }
         if ($payment->isOnline())
         {
         return $this->gatewayFactory()->pay($order);
         }
+        // $this->normalizeQuantity($order);
+        event(new OrderRegistered($order));
         $this->basket->clear();
         return $order;
     }
@@ -55,8 +66,15 @@ class Transaction
         $result = $this->gatewayFactory()->verify($this->request);
         if ($result['status'] == GatewayInterface::TRANSACTION_FAILED) return false;
         $this->confirmPayment($result);
+        $this->normalizeQuantity($result['order']);
         $this->basket->clear();
         return true;
+    }
+    private function normalizeQuantity($order)
+    {
+        foreach ($order->products as $product) {
+            $product->decrementStock($product->pivot->quantity);
+        }
     }
     private function confirmPayment($result)
     {
