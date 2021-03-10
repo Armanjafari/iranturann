@@ -16,11 +16,11 @@ class Mellat implements GatewayInterface
         $this->merchantID = '123456789';
         $this->callback = route('payment.verify' , $this->getName());
     }
-    public function pay($order)
+    public function pay($order , int $amount)
     {
-        $this->redirectToBank($order);
+        $this->redirectToBank($order , $amount);
     }
-    private function redirectToBank($order)
+    private function redirectToBank($order , $amount)
     {
         $dateTime = new DateTime();
         $amount = $order->amount + 10000;

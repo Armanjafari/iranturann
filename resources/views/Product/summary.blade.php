@@ -1,22 +1,21 @@
-@inject('basket' , 'App\Support\Basket\Basket')
+@inject('cost' , 'App\Support\Cost\Contracts\CostInterface')
 <div class="card bg-light">
 	<div class="card-body">
 		<h4> پرداخت </h4>
 		<hr>
 		<div class="well">
 			<table class='table'>
+				@foreach ($cost->getSummary() as $description => $price)
 				<tr>
-					<td> مبلغ کل </td>
-					<td> {{number_format($basket->subTotal())}} تومان </td>
+					<td> {{ $description }} </td>
+					<td> {{number_format($price)}} تومان </td>
 				</tr>
-				<tr>
-					<td> هزینه حمل </td>
-					<td> {{number_format(10000)}} تومان </td>
-				</tr>
-				<tr>
-					<td> مبلغ قابل پرداخت </td>
-					<td> {{number_format($basket->subTotal() + 10000 )}} تومان </td>
-				</tr>
+			@endforeach
+			<tr>
+				<td> مبلغ قابل پرداخت </td>
+				<td> {{number_format($cost->getTotalCosts() )}} تومان </td>
+			</tr>
+
 			</table>
 		</div>
 	</div>

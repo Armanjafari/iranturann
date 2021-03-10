@@ -14,13 +14,12 @@ class Saman implements GatewayInterface
         $this->merchantID = '123456789';
         $this->callback = route('payment.verify' , $this->getName());
     }
-    public function pay($order)
+    public function pay($order , int $amount)
     {
-        $this->redirectToBank($order);
+        $this->redirectToBank($order , $amount);
     }
-    private function redirectToBank($order)
+    private function redirectToBank($order , int $amount)
     {
-        $amount = $order->amount + 10000;
         echo "<form id='samanpeyment' action='https://sep.shaparak.ir/payment.aspx' method='post'>
 		<input type='hidden' name='Amount' value='{$amount}' />
 		<input type='hidden' name='ResNum' value='{$order->code}'>
@@ -37,9 +36,9 @@ class Saman implements GatewayInterface
         $soapClient = new \SoapClient('https://verify.sep.ir/Payments/ReferencePayment.asmx?WSDL');
         $response = $soapClient->VerifyTransaction($request->input('RefNum') , $this->merchantID);
         $order = $this->getOrder($request->input('ResNum'));
-        $response = $order->amount + 10000;
+        $response = $order->payment->amount;
         $request->merge(['RefNum' => 33333333]);
-        return $response == ($order->amount + 10000)
+        return $response == ($order->payment->amount)
         ? $this->transactionSuccess($order , $request->input('ResNum'))
         : $this->transactionFailed();
     }

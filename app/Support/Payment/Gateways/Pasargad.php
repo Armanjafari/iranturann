@@ -12,14 +12,13 @@ class Pasargad implements GatewayInterface
         $this->merchantID = '123456789';
         $this->callback = route('payment.verify' , $this->getName());
     }
-    public function pay($order)
+    public function pay($order , int $amount)
     {
-        $this->redirectToBank($order);
+        $this->redirectToBank($order , $amount);
     }
-    private function redirectToBank($order)
+    private function redirectToBank($order ,int $amount)
     {
         $invoicedate = time();
-        $amount = $order->amount + 10000;
         $userid = auth()->user()->id;
         $data = "#" . $this->merchantID . "#" . 'xKc80O23871hvke72xxF' . "#" . $order->code . "#" . $invoicedate . "#" . $amount . "#" . $this->callback . "#" . '1004' . "#" . $invoicedate . "#";
         $data = sha1($data, true);
