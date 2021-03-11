@@ -72,3 +72,9 @@ Route::group([ 'namespace' => 'Product\Payment'],function () {
 
 Route::post('payment/{gateway}/callback', 'PaymentController@verify')->name('payment.verify');
 });
+
+Route::group(['namespace' => 'Coupons'],function () {
+    Route::post('coupons' , 'CouponsController@store')->name('coupons.store');
+    Route::get('coupons/remove' , 'CouponsController@remove')->name('coupons.remove');
+
+});
