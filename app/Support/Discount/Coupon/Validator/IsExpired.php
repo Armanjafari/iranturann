@@ -9,10 +9,11 @@ class IsExpired extends AbstractCouponValidator
 {
     public function validate(Coupon $coupon)
     {
-        if ($coupon->isExpired())
-        {
+        if ($coupon->isExpired()){
             throw new CouponHasExpiredException();
         }
+        
         return parent::validate($coupon);
+
     }
 }

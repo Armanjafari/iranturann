@@ -2,17 +2,18 @@
 namespace App\Support\Discount\Coupon\Validator;
 
 use App\Coupon;
-use App\Exceptions\IllegalCouponException;
+use App\Exceptions\CouponHasExpiredException;
 use App\Support\Discount\Coupon\Validator\Contracts\AbstractCouponValidator;
 
-class CanUseIt extends AbstractCouponValidator
+class testclass extends AbstractCouponValidator
 {
     public function validate(Coupon $coupon)
     {
-        if (!auth()->user()->coupons->contains($coupon))
-        {
-            throw new IllegalCouponException();
+        if ($coupon->isExpired()){
+            throw new CouponHasExpiredException();
         }
+        
         return parent::validate($coupon);
+
     }
 }

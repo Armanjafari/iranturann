@@ -37,6 +37,6 @@ class CouponsController extends Controller
     public function remove()
     {
         session()->forget('coupon');
-        return back()->withErrors(' کد تخفیف حذف شد ');
+        return back()->withSuccess(' کد تخفیف حذف شد ');
     }
 }

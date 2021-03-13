@@ -4,6 +4,7 @@ namespace App\Support\Discount\Coupon;
 use App\Coupon;
 use App\Support\Discount\Coupon\Validator\CanUseIt;
 use App\Support\Discount\Coupon\Validator\IsExpired;
+use App\Support\Discount\Coupon\Validator\testclass;
 
 class CouponValidator
 {

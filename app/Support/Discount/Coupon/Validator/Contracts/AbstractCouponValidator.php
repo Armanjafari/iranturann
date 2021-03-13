@@ -5,21 +5,20 @@ use App\Coupon;
 
 abstract class AbstractCouponValidator implements CouponValidatorInterface
 {
-    private $nextValidator;
+    private $nextValidator ;
     public function setNextValidator(CouponValidatorInterface $validator)
     {
-        $this->nextValidator = $validator;
-        dd($this->nextValidatorvalidator); // TODO fix this  6:20
-        dd('inja');
+        $this->nextValidator = $validator ; // TODO fix this
     }
+
+
     public function validate(Coupon $coupon)
     {
-        
-        if ($this->nextValidator === null)
-        {
+        if ($this->nextValidator === null ) {
             return true;
         }
         return $this->nextValidator->validate($coupon);
+
     }
 
 }
