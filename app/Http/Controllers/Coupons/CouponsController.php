@@ -31,6 +31,7 @@ class CouponsController extends Controller
             return redirect()->back()->withSuccess(' کد تخفیف اعمال شد ');
 
         } catch (\Exception $e) {
+            dd($e);
             return redirect()->back()->withErrors(' کد تخفیف نامعتبر می باشد ');
         }
     }

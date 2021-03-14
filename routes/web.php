@@ -20,14 +20,15 @@
     //   return view('index');
     //dd(auth()->user()->can('add user'));
     //dd(auth()->user()->hasRole('teacher'));
+    // auth()->user()->refreshRoles();
 
+use App\Product;
 use App\Role;
 use App\services\Notifications\Notification;
 use App\User;
 
 Route::get('/', function () {
-    auth()->user()->refreshRoles();
-
+    dd(Product::find(1)->category->validCoupons());
 });
 Route::namespace('Auth')->group(function () {
 Route::get('logout/', 'LoginController@logout')->name('logout');
@@ -78,3 +79,4 @@ Route::group(['namespace' => 'Coupons'],function () {
     Route::get('coupons/remove' , 'CouponsController@remove')->name('coupons.remove');
 
 });
+Route::get('province/{province}', 'addressController@index')->name('province');
