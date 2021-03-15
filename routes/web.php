@@ -27,9 +27,9 @@ use App\Role;
 use App\services\Notifications\Notification;
 use App\User;
 
-Route::get('/', function () {
-    dd(Product::find(1)->category->validCoupons());
-});
+// Route::get('/', function () {
+//     dd(Product::find(1)->category->validCoupons());
+// });
 Route::namespace('Auth')->group(function () {
 Route::get('logout/', 'LoginController@logout')->name('logout');
 Route::get('login/', 'LoginController@showLoginForm');
@@ -43,7 +43,7 @@ Route::namespace('Auth\AuthCode')->group(function () {
     Route::get('verify', 'LoginWithCodeController@verifyForm')->name('verify_login_code');
     Route::post('verify', 'LoginWithCodeController@codeValidator')->name('validate_code');
 });
-Route::get('main', function () {
+Route::get('/', function () {
     return view('index');
 });
 // can:add post (for example)

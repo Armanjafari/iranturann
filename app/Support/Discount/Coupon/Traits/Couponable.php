@@ -16,3 +16,4 @@ trait  Couponable
         return $this->coupons->where('expire_time' , '>' , Carbon::now());
     }
 }
+

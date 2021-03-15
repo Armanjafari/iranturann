@@ -13,8 +13,7 @@ class addressController extends Controller
         $city = City::where('name' , $province)->first();
         return response()->json([
             'id' => $city->id,
-            'city' => $city->name,
-            'province' => $city->province->name
-            ]);
+            'name' => $city->province->name . '-' . $city->name,
+                ]);
     }
 }

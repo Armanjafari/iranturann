@@ -22,7 +22,6 @@ class Product extends Model
     public function getPriceAttribute($price)
     {
         $coupons = $this->category->validCoupons();
-        dd($coupons );
         if($coupons->isNotEmpty())
         {
             $discountCalculator = resolve(DiscountCalculator::class); 

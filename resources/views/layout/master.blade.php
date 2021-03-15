@@ -1,16 +1,37 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-@include('layout.header')
+  @include('layout.header')
 </head>
-<body dir="rtl">
 
-        <!--start navbar menu-->
-        @include('layout.navbar')
-  <!--start main-->
-  @include('alerts.errors') <!-- TODO Fix this problem (alerts under navbar) !-->
-  @include('alerts.success')
+<body dir="rtl">
+    <!--start navbar menu-->
+            @include('layout.navbar')
+         <!--start main-->
+         @include('alerts.errors') <!-- TODO Fix this problem (alerts under navbar) !-->
+         @include('alerts.success')
     @yield('content')
+        <!--end main-->
+    @include('layout.footer')
+        <!-- start footer -->
+    
 </body>
-@include('layout.footer')
+<!--start bootstrapio jquery and js file-->
+<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!--end bootstrap jquery and js file-->
+<!--start jquery file-->
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<!--end jquery file-->
+<!--start js file-->
+<script src="assets/js/myscript.js"></script>
+<!--end js file-->
+<!--start owl carousel js-->
+<script src="assets/plogin/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+<!--end owl carousel js-->
+<!--start kit fontawesome-->
+<script src="assets/js/a076d05399.js"></script>
+<!--end kit fontawesome-->
 </html>
