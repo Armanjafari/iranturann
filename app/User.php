@@ -12,7 +12,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable , HasPermissions , HasRoles , Couponable;
+    use Notifiable , HasPermissions , Couponable , HasRoles ;
 
     /**
      * The attributes that are mass assignable.
@@ -57,5 +57,9 @@ class User extends Authenticatable implements JWTSubject
     public function activeCode()
     {
         return $this->hasMany(ActiveCode::class);
+    }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }

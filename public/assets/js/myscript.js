@@ -104,7 +104,6 @@ $('.discount-code').click(function(){
 
 $(document).ready(function(){
     $('.row .owl-carousel').owlCarousel({
-     loop:true,
      margin:10,
      nav:true,
      center:true,

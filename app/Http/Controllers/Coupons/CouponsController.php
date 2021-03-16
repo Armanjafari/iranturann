@@ -24,7 +24,7 @@ class CouponsController extends Controller
             ]);
             // can user use it
             // put coupon into session
-            $coupon = Coupon::where('code', $request->coupon)->firstOrFail();
+            $coupon = Coupon::where('code' , $request->coupon)->firstOrFail();
             $this->validator->isValid($coupon);
             session()->put(['coupon' => $coupon]);
             // redirect

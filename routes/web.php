@@ -43,9 +43,7 @@ Route::namespace('Auth\AuthCode')->group(function () {
     Route::get('verify', 'LoginWithCodeController@verifyForm')->name('verify_login_code');
     Route::post('verify', 'LoginWithCodeController@codeValidator')->name('validate_code');
 });
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'homecontroller@index');
 // can:add post (for example)
 Route::group(['prefix' => 'admin' , 'middleware' => 'role:admin'],function () { 
     Route::get('users/', 'UserController@index')->name('users.index');

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Support\Discount\Coupon\Validator;
 
 use App\Coupon;
@@ -9,7 +10,6 @@ class CanUseIt extends AbstractCouponValidator
 {
     public function validate(Coupon $coupon)
     {
-         dd(auth()->user()->coupons);
         if(!auth()->user()->coupons->contains($coupon)){
             throw new IllegalCouponException();
         }
