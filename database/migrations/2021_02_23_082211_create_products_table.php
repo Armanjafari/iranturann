@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->integer('stock');
             $table->timestamps();
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

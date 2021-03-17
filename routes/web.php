@@ -43,7 +43,7 @@ Route::namespace('Auth\AuthCode')->group(function () {
     Route::get('verify', 'LoginWithCodeController@verifyForm')->name('verify_login_code');
     Route::post('verify', 'LoginWithCodeController@codeValidator')->name('validate_code');
 });
-Route::get('/', 'homecontroller@index');
+Route::get('/', 'homecontroller@index')->name('index');
 // can:add post (for example)
 Route::group(['prefix' => 'admin' , 'middleware' => 'role:admin'],function () { 
     Route::get('users/', 'UserController@index')->name('users.index');
@@ -78,3 +78,11 @@ Route::group(['namespace' => 'Coupons'],function () {
 
 });
 Route::get('province/{province}', 'addressController@index')->name('province');
+
+//index
+Route::group(['namespace' => 'Category'],function () {
+    Route::get('productByCategory/{category}' , 'CategoryController@byProduct');
+    Route::get('productByCategory', function(){
+return view('Shoping');
+    });
+});

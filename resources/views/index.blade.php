@@ -5,7 +5,7 @@
             <div class="col-lg-6 mt-5">
 <div class="card mt-5">
 <div class="card-header text-center header-discount">
- <a href="#">تخفیف %20+</a>
+ <a href="#">تخفیف بالای 20 درصد</a>
 </div>
 <div class="owl-carousel owl-theme" id="owl-mobile">
     <div class="card">
@@ -70,18 +70,18 @@
     </div></div>
 </div>
 </div>
-            </div>
+            </div>            
             <div class="col-lg-6 mt-5">
                 <div class="card mt-5">
                     <div class="card-header text-center header-discount">
-                     <a href="#">تخفیف %20-</a>
+                     <a href="#">تخفیف زیر 20 درصد</a>
                     </div>
                     <div class="owl-carousel owl-theme" id="owl-mobile3">
                         <div class="card">
                             <div class="Circle-discount text-center text-light">
                                 <div class="mt-2">
                                 <a href="#" class="text-light discount-percent">15%
-                                </a>
+                            </a>
                                 <p>تخفیف</p>
                             </div>
                             </div>
@@ -139,6 +139,7 @@
                         </div></div>
                     </div>
                     </div> 
+            
             </div>
             <div class="col-lg-3 col-xl-3 mt-5 kala">
                 <div class="card">
@@ -196,26 +197,18 @@
                     <div class="text-center"><caption><a href="#" class="shopping-centre-text"> {{$item->name}} </a></caption></div>
                 </div>     
                 @empty
-                    
+                    چیزی وجود نداره داداش
                 @endforelse
                         
             </div>
             <div class="owl-carousel owl-theme mt-5">
-                <div class="item"><button type="button" class="button btn-Primary-Color"><a class="Materials">مواد
-                            غذایی</a></button></div>
-                <div class="item"><button type="button" class="button btn-Primary-Color"><a class="Materials">لوازم
-                            التحریر</a></button></div>
-                <div class="item"><button type="button" class="button btn-Primary-Color"><a class="Materials">پوشاک
-                            </a></button></div>
-                <div class="item"><button type="button" class="button btn-Primary-Color"><a class="Materials">دیجیتال
-                            </a></button></div>
-                <div class="item"><button type="button" class="button btn-Primary-Color"><a class="Materials">لوازم برقی     
-                            </a></button></div>
-                            <div class="item"><button type="button" class="button btn-Primary-Color"><a class="Materials">لوازم برقی     
-                            </a></button></div>
-                            <div class="item"><button type="button" class="button btn-Primary-Color"><a class="Materials">لوازم
-                                التحریر</a></button></div>
+                @forelse ($categories as $item)
+                    <div class="item"><a href="" class="primary-colora"> {{$item->persian_name}} </a></div>
+                @empty
+                    چیزی وجود نداره داداش
+                @endforelse
             </div>
+
             <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product">فروشندگان</a></div>
             <div class="owl-carousel owl-theme mt-5">
                 @forelse ($seller as $item)
@@ -234,7 +227,28 @@
                     </div>
                     @endif
                 @empty
-                    
+                چیزی وجود نداره داداش
+                @endforelse
+            </div>
+            <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product"><img src="">فروشندگان شبکه های اجتماعی</a></div>
+            <div class="owl-carousel owl-theme mt-5">
+                @forelse ($seller as $item)
+                    @if (!$item->roles->where('name','messenger')->isEmpty())
+                    <div class="item">
+                        <div class="card border-0 card-shopping">
+                            <div class="card-body text-center p-2"><img src="assets/img/10.png"
+                                    class="slide-show-odd mb" alt="">
+                                    <form action="">
+                                    <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                                    </div>
+                                </form>
+                                <caption><a> {{$item->name}} </a></caption>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                @empty
+                چیزی وجود نداره داداش
                 @endforelse
                 
             </div>

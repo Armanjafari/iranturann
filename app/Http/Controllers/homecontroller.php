@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Role;
+use App\Category;
 use App\ShopingCenter;
 use App\User;
-use Illuminate\Http\Request;
 
 class homecontroller extends Controller
 {
@@ -16,6 +15,7 @@ class homecontroller extends Controller
          //dd($users);
         $centers = ShopingCenter::all();
         // dd($seller);
-        return view('index',compact('seller' , 'centers'));
+        $categories = Category::all();
+        return view('index',compact('seller' , 'centers' , 'categories'));
     }
 }

@@ -1326,7 +1326,7 @@ box-shadow: 0 0 2px 2px #ffcc33;
       display: flex;
       flex-direction: row-reverse;
       justify-content: center;
-      height:64px;
+      height:50px;
   }
   
   .rating>input {
@@ -1335,7 +1335,7 @@ box-shadow: 0 0 2px 2px #ffcc33;
   
   .rating>label {
       position: relative;
-      width: 1.2em;
+      width: 1em;
       font-size:2.3em;
       color: #FFD600;
       cursor: pointer;
@@ -1390,5 +1390,13 @@ box-shadow: 0 0 2px 2px #ffcc33;
   background-image: url("../img/iconfinder_search_115695.svg");
 }
 }
-  
+.download-app{
+  font-size: 1.1em;
+  color: $Secendry-Color;
+  font-weight:500;
+}
+.download-app:hover{
+  color: $Secendry-Color;
+} 
+
   

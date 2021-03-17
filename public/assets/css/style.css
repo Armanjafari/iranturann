@@ -1440,7 +1440,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 64px;
+  height: 50px;
 }
 
 .rating > input {
@@ -1449,7 +1449,7 @@ body {
 
 .rating > label {
   position: relative;
-  width: 1.2em;
+  width: 1em;
   font-size: 2.3em;
   color: #FFD600;
   cursor: pointer;
@@ -1500,5 +1500,15 @@ p {
   .serch-box {
     background-image: url("../img/iconfinder_search_115695.svg");
   }
+}
+
+.download-app {
+  font-size: 1.1em;
+  color: #33cccc;
+  font-weight: 500;
+}
+
+.download-app:hover {
+  color: #33cccc;
 }
 /*# sourceMappingURL=style.css.map */

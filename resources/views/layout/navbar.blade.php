@@ -5,7 +5,9 @@
             <div class="container">
                 <ul class="menu-level-1">
                     <!-- Menu Level 1 -->
-                    <img src="assets/img/001.svg" alt="" class="img-thumbnail">
+                    <a href="{{route('index')}}">
+                    <img src="{{asset('assets/img/001.svg')}}" alt="" class="img-thumbnail">
+                    </a>
                     <li class="menu-list-1">
                         <a href="#" class="list-item">
                             <img src="assets/img/download (1).png" alt="">
@@ -299,8 +301,9 @@
                     <li class="menu-list-1"><a href="#" class="list-item">
                             <img src="assets/img/download (4).png" alt="">
                             <span>خانه، آشپزخانه و ابزار</span>
-                            <img class="item-icon" src="assets/img/download.png" alt=""></a></li>  
-                    <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp mr-auto ml-5 mt-2">
+                            <img class="item-icon" src="assets/img/download.png" alt=""></a></li>
+                            <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-5 mt-2">
+                    <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class=""></a>
                         @guest
                         <button type="button" class="btn-logo">
                                 <i class="far fa-user"></i>
@@ -320,7 +323,7 @@
         <!--start mobile nav-->
         <div class="mobile-nav">
             <a href="#" class="toggle-btn" id="toggle"><span></span></a>
-            <img src="assets/img/001.svg" alt="" class="img-thumbnail ml-auto mr-3">
+            <img src="{{ asset('assets/img/001.svg') }}" alt="" class="img-thumbnail ml-auto mr-3">
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-4">
             <i class="far fa-user mt-1"></i>
             <button type="button" class="btn-logo ml-auto btn-logo1 p-3">

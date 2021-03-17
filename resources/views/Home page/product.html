@@ -6,6 +6,7 @@
     <title>Document</title>
     <!--start font awesome-->
     <link rel="stylesheet" href="assets/css/fontawesome-free-5.15.1-web/css/all.min.css">
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
     <!--end fontawesome-->
     <!--start bootstrap css-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -18,14 +19,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!--end style css-->
 </head>
-<body dir="rtl">
-<!--start navbar menu-->
-<header>
+  <body dir="rtl">
+   <!--start navbar menu-->
+   <header>
     <nav class="navigation text-right">
         <div class="container">
             <ul class="menu-level-1">
                 <!-- Menu Level 1 -->
-                <img src="assets/img/iranturan.svg" alt="" class="img-thumbnail ml-5 mt-1">
+                <img src="assets/img/001.svg" alt="" class="img-thumbnail">
                 <li class="menu-list-1">
                     <a href="#" class="list-item">
                         <img src="assets/img/download (1).png" alt="">
@@ -323,18 +324,17 @@
                 <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp mr-auto ml-5 mt-2">
                 <form action="">
                 <button type="button" class="btn-logo d-none d-md-block">
-                    
                     <a class="text-center" href="signup.html">ورود/ثبت نام</a>
                 </button>
                 </form>
-            </ul><!-- End Menu Level 1 -->
+            </ul><!-- End Menu Level 1 --> 
         </div>
     </nav>
     <!--end navbar menu-->
     <!--start mobile nav-->
     <div class="mobile-nav">
         <a href="#" class="toggle-btn" id="toggle"><span></span></a>
-        <img src="assets/img/iranturan.svg" alt="" class="img-thumbnail ml-auto mr-3">
+        <img src="assets/img/001.svg" alt="" class="img-thumbnail ml-auto mr-3">
         <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-4">
         <i class="far fa-user mt-1"></i>
         <button type="button" class="btn-logo ml-auto btn-logo1 p-3">
@@ -342,108 +342,39 @@
         </button>
     </div>
     <!--end mobile nav-->
-</header>
-<!--start main-->
-<main>
-<div class="row">
-        <div class="card-header text-center mt-5 card-header-product w-100 pt-5 pb-5"><a class="new-product">فروشگاه های مرکز خرید بازار بزرگ لارستان</a></div>
-    <div class="owl-carousel owl-theme mt-5" id="owl-mobile5">
-<div class="item">
-    <div class="card card-shopping2">
-        <div class="card-body text-center">
-            <div class="col-lg-8 ml-auto mr-auto col-8"><img src="assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg" alt="" class="rounded-circle"></div>
-            <form action="">
-                <div class="rating"><input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                </div>
-            </form>
-             <caption><a href="#">بوتیک بیت باکس</a></caption><br>
-            <div class="mt-2">
-             <span>طبقه اول ، پلاک01</span>
-        </div>
-        <div class="mt-1">
-                <a href="#" class="download-app">لینک دانلود اپلیکیشن بیت باکس</a>
-        </div>
-        </div>
-    </div>
-</div>
-<div class="item">
-        <div class="card">
-            <div class="card-body text-center">
-                <div class="col-lg-8 ml-auto mr-auto col-8"><img src="assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg" alt="" class="rounded-circle"></div>
-                <form action="">
-                    <div class="rating"><input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                    </div>
+    <!--start header2-->
+    <nav class="navbar navbar-expand-lg  position-fixed nav-box"> 
+    <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control serch-box mt-lg-1">
+        <div class="dropdown dropdown-city mr-auto">
+            <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+              از کجا می خوایی خرید کنی؟
+            </button>
+            <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
+                <form class="px-4 py-2">
+                    <input type="search" class="form-control search-city" id="searchCoin" placeholder="شهر مورد نظر" autofocus="autofocus">
                 </form>
-                 <caption><a href="#">بوتیک بیت باکس</a></caption><br>
-                <div class="mt-2">
-                 <span>طبقه اول ، پلاک01</span>
-            </div>
-            <div class="mt-1">
-                <a href="#" class="download-app">لینک دانلود اپلیکیشن بیت باکس</a>
-            </div>
+                <div id="menuItems"></div>
+                <div id="empty" class="dropdown-header">شهر مورد نظر شما پیدا نشد</div>
             </div>
         </div>
-    </div>
-<div class="item">
+</nav>
+    </header>
+    <!--end header2-->
+    <!--start main-->
+    <main><br><br><br><br>
+       <div class="row">
+               <div class="col-lg-12">
         <div class="card">
-            <div class="card-body text-center">
-                <div class="col-lg-8 ml-auto mr-auto col-8"><img src="assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg" alt="" class="rounded-circle"></div>
-                <form action="">
-                    <div class="rating">
-                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                    </div>
-                </form>
-                 <caption><a href="#">بوتیک بیت باکس</a></caption><br>
-                <div class="mt-2">
-                 <span>طبقه اول ، پلاک01</span>
-            </div>
-            <div class="mt-1">
-                <a href="#" class="download-app">لینک دانلود اپلیکیشن بیت باکس</a>
-            </div>
-            </div>
+     <div class="card-header text-center pt-5 pb-5">
+         <a href="#">بوتیک بیت باکس</a>
+     </div>
         </div>
-    </div>
-    <div class="item">
-        <div class="card">
-            <div class="card-body text-center">
-                <div class="col-lg-8 ml-auto mr-auto col-8"><img src="assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg" alt="" class="rounded-circle"></div>
-                <form action="">
-                    <div class="rating"><input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                    </div>
-                </form>
-                 <caption><a href="#">بوتیک بیت باکس</a></caption><br>
-                <div class="mt-2">
-                 <span>طبقه اول ، پلاک01</span>
-            </div>
-            <div class="mt-1">
-                <a href="#" class="download-app">لینک دانلود اپلیکیشن بیت باکس</a>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="card">
-            <div class="card-body text-center">
-                <div class="col-lg-8 ml-auto mr-auto col-8"><img src="assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg" alt="" class="rounded-circle"></div>
-                <form action="">
-                    <div class="rating"><input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                    </div>
-                </form>
-                 <caption><a href="#">بوتیک بیت باکس</a></caption><br>
-                <div class="mt-2">
-                 <span>طبقه اول ، پلاک01</span>
-            </div>
-            <div class="mt-1">
-                 <a href="#" class="download-app">لینک دانلود اپلیکیشن بیت باکس</a>
-            </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-   
-</main>
-<!--start bootstrapio jquery and js file-->
+      </div>
+       </div>
+    </main>
+    </body>
+    <!--start bootstrapio jquery and js file-->
 <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
@@ -460,4 +391,4 @@
 <!--start kit fontawesome-->
 <script src="assets/js/a076d05399.js"></script>
 <!--end kit fontawesome-->
-</body>
+    </html>
