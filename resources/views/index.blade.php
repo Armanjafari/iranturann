@@ -194,7 +194,7 @@
                         <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                         </div>
                     </form>
-                    <div class="text-center"><caption><a href="#" class="shopping-centre-text"> {{$item->name}} </a></caption></div>
+                    <div class="text-center"><caption><a href="{{ route('sellers.by.centers', $item->id) }}" class="shopping-centre-text"> {{$item->name}} </a></caption></div>
                 </div>     
                 @empty
                     چیزی وجود نداره داداش
@@ -203,7 +203,7 @@
             </div>
             <div class="owl-carousel owl-theme mt-5">
                 @forelse ($categories as $item)
-                    <div class="item"><a href="" class="primary-colora"> {{$item->persian_name}} </a></div>
+                    <div class="item"><a href="{{ route('product.by.category', $item->id) }}" class="primary-colora"> {{$item->persian_name}} </a></div>
                 @empty
                     چیزی وجود نداره داداش
                 @endforelse

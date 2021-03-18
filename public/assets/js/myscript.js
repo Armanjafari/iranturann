@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $('#owl-mobile').owlCarousel({
-     loop:true,
      margin:10,
      nav:true,
      responsive:{
@@ -16,7 +15,7 @@ $(document).ready(function(){
      }   
  })
  $('#owl-mobile5').owlCarousel({
-    loop:true,
+    
     margin:10,
     nav:true,
     center:true,
@@ -36,7 +35,7 @@ $(document).ready(function(){
     }   
 })
  $('#owl-mobile3').owlCarousel({
-    loop:true,
+    
     margin:10,
     nav:true,
     responsive:{
@@ -52,7 +51,7 @@ $(document).ready(function(){
     }   
 })
 $('#owl-mobile4').owlCarousel({
-    loop:true,
+    
     margin:10,
     nav:true,
     center:true,
@@ -69,7 +68,7 @@ $('#owl-mobile4').owlCarousel({
     }   
 })
  $('#owl-mobile-2').owlCarousel({
-    loop:true,
+    
     margin:10,
     nav:true,
     center:true,
@@ -104,6 +103,7 @@ $('.discount-code').click(function(){
 
 $(document).ready(function(){
     $('.row .owl-carousel').owlCarousel({
+     
      margin:10,
      nav:true,
      center:true,
@@ -218,14 +218,7 @@ $(document).ready(function(){
               menuLevel2.removeClass('flex');
               menuLevel3.removeClass('flex');
               temp = true;
-              $(window).resize(function (){
-                if ($(window).width() <= 768){
-                    $(".dropdown-city-button").text("خرید کن");
-                    
-                }else{
-                    $(".dropdown-city-button").text("از کجا می خوای خرید کنی؟"); 
-                }
-            });
+         
           }
           else {
               body.removeClass('active');
@@ -331,4 +324,12 @@ $(document).scroll(function () {
      }else{
         $(".nav-box").attr('style','margin-top:0;'); 
         }
+});
+$(window).resize(function (){
+    if ($(window).width() <= 768){
+        $(".dropdown-city-button").text("خرید کن");
+        
+    }else{
+        $(".dropdown-city-button").text("از کجا می خوای خرید کنی؟"); 
+    }
 });

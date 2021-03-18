@@ -81,8 +81,11 @@ Route::get('province/{province}', 'addressController@index')->name('province');
 
 //index
 Route::group(['namespace' => 'Category'],function () {
-    Route::get('productByCategory/{category}' , 'CategoryController@byProduct');
+    Route::get('productByCategory/{category}' , 'CategoryController@byProduct')->name('product.by.category');
     Route::get('productByCategory', function(){
 return view('Shoping');
     });
+});
+Route::group(['namespace' => 'ShopingCenter'],function () {
+    Route::get('shopingcenter/{seller}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
 });

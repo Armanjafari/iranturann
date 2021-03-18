@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCategoryIdIntoProducts extends Migration
+class AddFeildToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class AddCategoryIdIntoProducts extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id')->after('id');
-            $table->foreign('category_id')
-            ->references('id')
-            ->on('categories')
-            ->onDelete('cascade');
+        Schema::table('users', function (Blueprint $table) {
+            $table->unsignedBigInteger('center_id')->nullable();
+            $table->foreign('center_id')->references('id')->on('centers')->onDelete('cascade');
+
         });
     }
 
@@ -29,7 +27,7 @@ class AddCategoryIdIntoProducts extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

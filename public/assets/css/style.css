@@ -1511,4 +1511,10 @@ p {
 .download-app:hover {
   color: #33cccc;
 }
+.item-header{
+  box-shadow: 2px 4px 4px 0px #DBD6D6;
+}
+.list-Grouping{
+  
+}
 /*# sourceMappingURL=style.css.map */

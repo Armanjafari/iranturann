@@ -6,7 +6,7 @@ use App\Support\Cost\Contracts\CostInterface;
 
 class BasketCost implements CostInterface
 {
-    private $basket;
+    public $basket;
     public function __construct(Basket $basket)
     {
         $this->basket = $basket;

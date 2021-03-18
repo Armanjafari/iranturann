@@ -2,18 +2,25 @@
 namespace App\Support\Cost;
 
 use App\Support\Cost\Contracts\CostInterface;
+use Illuminate\Http\Request;
 
 class ShippingCost implements CostInterface
 {
-    const SHIPPING_COST = 20000;
+    private $SHIPPING_COST = 20000;
     private $cost;
     public function __construct(CostInterface $cost)
     {
         $this->cost = $cost;
+        // dd($cost->basket->add(1));
+    }
+    public function setCost(Request $request)
+    {
+        // TODO set this !
+        
     }
     public function getCost()
     {
-        return self::SHIPPING_COST;
+        return $this->SHIPPING_COST;
     }
     public function getTotalCosts()
     {

@@ -33,7 +33,7 @@ $factory->define(Product::class, function (Faker $faker) {
 		150000 , 450000 , 252000 , 2521000 , 250000 , 150000 , 850000 , 650000, 450000 , 950000 , 410000 , 320000
 	    ]),
 	    'stock'=> $faker->randomDigitNotNull,
-		'user_id' => 1,
+		'user_id' => $faker->randomElement([1,2]),
 		'category_id' => $faker->randomElement([1,2])
 
     ];

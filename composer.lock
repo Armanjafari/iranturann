@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b1f3fe9bdb4843ca8f73a3ffaecd07b",
+    "content-hash": "7ab72e4ad2b784e6c033a9dfaf6adf60",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -540,6 +540,50 @@
                 }
             ],
             "time": "2020-10-22T13:57:20+00:00"
+        },
+        {
+            "name": "ghaninia/shipping",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ghaninia/shipping.git",
+                "reference": "c3b30ac1a808f6879891145ef7459f921480cee0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ghaninia/shipping/zipball/c3b30ac1a808f6879891145ef7459f921480cee0",
+                "reference": "c3b30ac1a808f6879891145ef7459f921480cee0",
+                "shasum": ""
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GhaniniaIR\\Shipping\\ShippingServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GhaniniaIR\\Shipping\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Amin Ghaninia",
+                    "email": "info@ghaninia.ir"
+                }
+            ],
+            "description": "iranian shipping",
+            "support": {
+                "issues": "https://github.com/ghaninia/shipping/issues",
+                "source": "https://github.com/ghaninia/shipping/tree/v0.1.0"
+            },
+            "time": "2020-12-16T05:42:50+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
