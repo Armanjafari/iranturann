@@ -14,27 +14,33 @@ class Role_UserTableSeeder extends Seeder
     {
         DB::table('role_user')->insert([
             'role_id' => 3,
-            'user_id' => 1     
+            'user_id' => 1,
+            'percent' => 20
         ]);
         DB::table('role_user')->insert([
             'role_id' => 2,
-            'user_id' => 5     
+            'user_id' => 5,
+            'percent' => 80
         ]);
         DB::table('role_user')->insert([
             'role_id' => 2,
-            'user_id' => 4     
+            'user_id' => 4,
+            'percent' => 3    
         ]);
         DB::table('role_user')->insert([
             'role_id' => 3,
-            'user_id' => 3     
+            'user_id' => 3,
+            'percent' => 8    
         ]);
         DB::table('role_user')->insert([
             'role_id' => 2,
-            'user_id' => 2     
+            'user_id' => 2,
+            'percent' => 10    
         ]);
         DB::table('role_user')->insert([
             'role_id' => 1,
-            'user_id' => 1     
+            'user_id' => 1,
+            'percent' => 5     
         ]);
     
     }

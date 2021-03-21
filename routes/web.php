@@ -66,6 +66,8 @@ Route::group([ 'namespace' => 'Product'],function () {
     Route::get('basket/checkout', 'BasketController@checkoutForm')->name('basket.checkout.form');
     Route::post('basket/checkout', 'BasketController@checkout')->name('basket.checkout');
 
+    Route::get('selller/products/{user}', 'ProductBySellerController@index')->name('product.by.seller');
+
 });
 Route::group([ 'namespace' => 'Product\Payment'],function () {
 
@@ -87,5 +89,5 @@ return view('Shoping');
     });
 });
 Route::group(['namespace' => 'ShopingCenter'],function () {
-    Route::get('shopingcenter/{seller}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
+    Route::get('shopingcenter/{center}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
 });

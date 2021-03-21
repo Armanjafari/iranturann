@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use Couponable;
+    protected $hidden = ['coupons'];
     public function products()
         {
             return $this->hasMany(Product::class);

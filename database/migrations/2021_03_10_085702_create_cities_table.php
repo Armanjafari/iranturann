@@ -17,6 +17,7 @@ class CreateCitiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->bigInteger('province_id')->unsigned();
+            $table->integer('is_active')->default(0);
             $table->foreign('province_id')->references('id')->on('provinces')->onDelete('cascade');
         });
     }
