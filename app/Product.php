@@ -30,4 +30,8 @@ class Product extends Model
         }
         return $price;
     }
+    public function attributes()
+    {
+        return $this->hasManyThrough(Attribute::class , Value::class);
+    }
 }

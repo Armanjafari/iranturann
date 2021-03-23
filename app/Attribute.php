@@ -8,6 +8,6 @@ class Attribute extends Model
 {
     public function values()
     {
-        return $this->belongsToMany(Value::class);
+        return $this->belongsToMany(Value::class)->withPivot('product_id');
     }
 }

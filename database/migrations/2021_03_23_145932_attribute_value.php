@@ -15,10 +15,11 @@ class AttributeValue extends Migration
     {
         Schema::create('attribute_value', function (Blueprint $table) {
             $table->bigInteger('attribute_id')->unsigned();
-            $table->bigInteger('values_id')->unsigned();
+            $table->bigInteger('value_id')->unsigned();
+            $table->unsignedBigInteger('product_id');
             $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('cascade');
-            $table->foreign('values_id')->references('id')->on('values')->onDelete('cascade');
-            $table->primary(['attribute_id','values_id']);
+            $table->foreign('value_id')->references('id')->on('values')->onDelete('cascade');
+            $table->primary(['attribute_id','value_id','product_id']);
         });
     }
 

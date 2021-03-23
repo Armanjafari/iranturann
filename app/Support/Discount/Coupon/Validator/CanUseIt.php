@@ -9,7 +9,8 @@ class CanUseIt extends AbstractCouponValidator
 {
     public function validate(Coupon $coupon)
     {
-         dd(auth()->user()->coupons);
+        dump($coupon); 
+        dd(auth()->user()->coupons); 
         if(!auth()->user()->coupons->contains($coupon)){
             throw new IllegalCouponException();
         }
