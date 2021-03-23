@@ -68,6 +68,7 @@ Route::group([ 'namespace' => 'Product'],function () {
 
     Route::get('selller/products/{user}', 'ProductBySellerController@index')->name('product.by.seller');
 
+    Route::get('product/attribute/{attribute}', 'AttributeController@index')->name('get.attribute.values');
 });
 Route::group([ 'namespace' => 'Product\Payment'],function () {
 
