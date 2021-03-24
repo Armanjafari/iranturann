@@ -2,11 +2,14 @@
 
 namespace App;
 
+use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
 use App\Support\Discount\DiscountCalculator;
+use App\Support\Pivot\PivotProductAttribute;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use EagerLoadPivotTrait;
     // protected $hidden = ['category'];
     public function hasStock(int $quantity)
     {
@@ -32,6 +35,6 @@ class Product extends Model
     }
     public function attributes()
     {
-        return $this->hasManyThrough(Attribute::class , Value::class);
+        return $this->belongsToMany(Attribute::class)->using(PivotProductAttribute::class)->withPivot(['value_id']);
     }
 }
