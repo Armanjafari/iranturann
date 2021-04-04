@@ -1,5 +1,28 @@
 $(document).ready(function(){
+    $('#myRange').mousemove(function(){
+        $('#rangeValue').text($('#myRange').val());
+    });
+    $('.dot').click(function(){
+        $('.dot').css('border','3px solid red !important');
+    });
+    $('#owl-mobile10').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+             450:{
+             items:2
+           },
+            1200:{
+                items:4
+            }
+        }   
+    }) 
     $('#owl-mobile').owlCarousel({
+     loop:true,
      margin:10,
      nav:true,
      responsive:{
@@ -14,8 +37,24 @@ $(document).ready(function(){
          }
      }   
  })
+//  $('#owl-mobile9').owlCarousel({
+//     loop:true,
+//     margin:10,
+//     nav:true,
+//     responsive:{
+//         0:{
+//             items:1
+//         },
+//          450:{
+//          items:1
+//        },
+//         1200:{
+//             items:1
+//         }
+//     }   
+// })
  $('#owl-mobile5').owlCarousel({
-    
+    loop:true,
     margin:10,
     nav:true,
     center:true,
@@ -35,7 +74,7 @@ $(document).ready(function(){
     }   
 })
  $('#owl-mobile3').owlCarousel({
-    
+    loop:true,
     margin:10,
     nav:true,
     responsive:{
@@ -51,7 +90,7 @@ $(document).ready(function(){
     }   
 })
 $('#owl-mobile4').owlCarousel({
-    
+    loop:true,
     margin:10,
     nav:true,
     center:true,
@@ -68,7 +107,7 @@ $('#owl-mobile4').owlCarousel({
     }   
 })
  $('#owl-mobile-2').owlCarousel({
-    
+    loop:true,
     margin:10,
     nav:true,
     center:true,
@@ -103,7 +142,7 @@ $('.discount-code').click(function(){
 
 $(document).ready(function(){
     $('.row .owl-carousel').owlCarousel({
-     
+     loop:true,
      margin:10,
      nav:true,
      center:true,
@@ -218,7 +257,14 @@ $(document).ready(function(){
               menuLevel2.removeClass('flex');
               menuLevel3.removeClass('flex');
               temp = true;
-         
+              $(window).resize(function (){
+                if ($(window).width() <= 768){
+                    $(".dropdown-city-button").text("خرید کن");
+                    
+                }else{
+                    $(".dropdown-city-button").text("از کجا می خوای خرید کنی؟"); 
+                }
+            });
           }
           else {
               body.removeClass('active');
@@ -325,11 +371,32 @@ $(document).scroll(function () {
         $(".nav-box").attr('style','margin-top:0;'); 
         }
 });
-$(window).resize(function (){
-    if ($(window).width() <= 768){
-        $(".dropdown-city-button").text("خرید کن");
-        
-    }else{
-        $(".dropdown-city-button").text("از کجا می خوای خرید کنی؟"); 
-    }
-});
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+

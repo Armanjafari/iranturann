@@ -11,9 +11,9 @@ class Category extends Model
     protected $fillable = ['name', 'persian_name' , 'parnet_id'];
     protected $hidden = ['coupons'];
     public function products()
-        {
-            return $this->hasMany(Product::class);
-        }
+    {
+        return $this->hasMany(Product::class);
+    }
     public function child()
     {
         return $this->hasMany(Category::class , 'parent_id', 'id');

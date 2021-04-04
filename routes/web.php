@@ -65,7 +65,7 @@ Route::group([ 'namespace' => 'Product'],function () {
     Route::post('basket/update/{product}','BasketController@update')->name('basket.update');
     Route::get('basket/checkout', 'BasketController@checkoutForm')->name('basket.checkout.form');
     Route::post('basket/checkout', 'BasketController@checkout')->name('basket.checkout');
-
+    Route::get('product/{product}', 'ProductController@product')->name('product.single');
     Route::get('selller/products/{user}', 'ProductBySellerController@index')->name('product.by.seller');
 
     Route::get('product/attribute/{attribute}', 'AttributeController@index')->name('get.attribute.values');

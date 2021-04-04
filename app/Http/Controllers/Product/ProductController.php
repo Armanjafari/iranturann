@@ -24,4 +24,9 @@ class ProductController extends Controller
         $products = Product::all();
         return view('Product.products', compact('products'));
     }
+    public function product(Product $product)
+    {
+        $product->load('attributes.pivot.values');
+        return view('Product', compact('product'));
+    }
 }
