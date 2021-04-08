@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddQuantityIntoOrderProductTable extends Migration
+class CreateWarantiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddQuantityIntoOrderProductTable extends Migration
      */
     public function up()
     {
-        Schema::table('order_product', function (Blueprint $table) {
-            $table->integer('quantity');
+        Schema::create('waranties', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddQuantityIntoOrderProductTable extends Migration
      */
     public function down()
     {
-        Schema::table('order_product', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('waranties');
     }
 }

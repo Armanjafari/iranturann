@@ -13,7 +13,7 @@ class AddCategoryIdIntoProducts extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('pures', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id')->after('id');
             $table->foreign('category_id')
             ->references('id')
@@ -29,7 +29,7 @@ class AddCategoryIdIntoProducts extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('pures', function (Blueprint $table) {
             //
         });
     }

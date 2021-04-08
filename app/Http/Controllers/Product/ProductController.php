@@ -26,7 +26,7 @@ class ProductController extends Controller
     }
     public function product(Product $product)
     {
-        $product->load('attributes.pivot.values');
+        $product->load('attributes.pivot.values','pure','options');
         return view('Product', compact('product'));
     }
 }

@@ -19,22 +19,26 @@ class Product extends Model
     {
         return $this->decrement('stock' , $count);
     }
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-    public function getPriceAttribute($price)
-    {
-        $coupons = $this->category->validCoupons();
-        if($coupons->isNotEmpty())
-        {
-            $discountCalculator = resolve(DiscountCalculator::class); 
-            return $discountCalculator->discountedPrice($coupons->first(), $price );
-        }
-        return $price;
-    }
+    // public function getPriceAttribute($price)
+    // {
+    //     $coupons = $this->category->validCoupons();
+    //     if($coupons->isNotEmpty())
+    //     {
+    //         $discountCalculator = resolve(DiscountCalculator::class); 
+    //         return $discountCalculator->discountedPrice($coupons->first(), $price );
+    //     }
+    //     return $price;
+    // }
     public function attributes()
     {
         return $this->belongsToMany(Attribute::class)->using(PivotProductAttribute::class)->withPivot(['value_id']);
+    }
+    public function pure()
+    {
+        return $this->belongsTo(Pure::class);
+    }
+    public function options()
+    {
+        return $this->hasMany(OptionValue::class);
     }
 }

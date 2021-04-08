@@ -47,13 +47,14 @@
               </div>
               <div class="mt-3 box-brand">
                 <span>دسته بندی:</span>
-                <a href="{{ route('product.by.category', $product->category->id) }}" class="link-brand"> {{$product->category->name}} </a>
+                <a href="{{ route('product.by.category', $product->pure->category->id) }}" class="link-brand"> {{$product->pure->category->persian_name}} </a>
               </div>
               <div class="mt-3 color-product-box">
                   <form action="">
-                <input type="radio" name="" id="">
-                <a href="#">طوسی</a>
-                <span class="dot mr-5" style="background-color: #000;"></span>
+                <input type="radio" name="color" id="">
+                <a href="#"> {{ dd($product->options) }} </a>
+                <input type="radio" name="color" id="">
+
                 <a href="#">مشکی</a>
             </form>
               </div>
