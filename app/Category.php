@@ -12,7 +12,7 @@ class Category extends Model
     protected $hidden = ['coupons'];
     public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Pure::class);
     }
     public function child()
     {

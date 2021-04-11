@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Full;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Support\Basket\Basket;
@@ -24,9 +25,14 @@ class ProductController extends Controller
         $products = Product::all();
         return view('Product.products', compact('products'));
     }
-    public function product(Product $product)
+    public function product(Full $option)
     {
+        $option->load('product');
+        $option->product;
+        $product = $option->product;
         $product->load('attributes.pivot.values','pure','options');
-        return view('Product', compact('product'));
+        $diffrent_colors = $product->options->load('colors');
+        // dd($product->options->first()->colors);
+        return view('Product', compact('product', 'diffrent_colors' , 'option'));
     }
 }

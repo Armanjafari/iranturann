@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Product;
 
 use App\Exceptions\QuantityExceededException;
+use App\Full;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Support\Basket\Basket;
@@ -27,7 +28,7 @@ class BasketController extends Controller
         //dd($items);
         return view('Product.basket',compact('items'));
     }
-    public function add(Product $product)
+    public function add(Full $product)
     {
         try {
             $this->basket->add($product , 1);
@@ -41,7 +42,7 @@ class BasketController extends Controller
     {
         resolve(StorageInterface::class)->clear();
     }
-    public function update(Request $request , Product $product)
+    public function update(Request $request , Full $product)
     {
         $this->basket->update($product,$request->quantity);
         return back();

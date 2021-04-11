@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOptionValuesTable extends Migration
+class CreateMarketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateOptionValuesTable extends Migration
      */
     public function up()
     {
-        Schema::create('option_values', function (Blueprint $table) {
+        Schema::create('markets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('stack');
-            $table->integer('price');
+            $table->string('name');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateOptionValuesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('option_values');
+        Schema::dropIfExists('markets');
     }
 }

@@ -91,7 +91,6 @@ class Transaction
             'code' => bin2hex(Str::random(16)),
             'amount' => $this->basket->subTotal()
             ]);
-            
         $order->products()->attach($this->products());
         return $order;
     }

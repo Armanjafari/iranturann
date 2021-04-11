@@ -5,7 +5,7 @@ namespace App;
 use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class OptionValue extends Model
+class Full extends Model
 {
     protected $fillable = ['id' , 'stock' , ];
     public function colors()

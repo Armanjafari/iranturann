@@ -50,13 +50,13 @@
                 <a href="{{ route('product.by.category', $product->pure->category->id) }}" class="link-brand"> {{$product->pure->category->persian_name}} </a>
               </div>
               <div class="mt-3 color-product-box">
-                  <form action="">
-                <input type="radio" name="color" id="">
-                <a href="#"> {{ dd($product->options) }} </a>
-                <input type="radio" name="color" id="">
-
-                <a href="#">مشکی</a>
-            </form>
+                @foreach ($diffrent_colors as $color)
+                <form action="{{ route('product.single' , $color->id) }}" method="GET">
+                    <button type="submit"  class="btn btn-light">
+                    <p style="color:{{$color->colors->value}}">{{$color->colors->title}}</p>
+                    </button>
+                </form>
+                @endforeach
               </div>
               <div class="mt-5 text-right mr-5">
                   <ul class="Attributes">ویژگی ها
@@ -97,14 +97,14 @@
                             </div>
                             </div>
                             <div class="mt-5">
-                            <a href="#"  class="price"> {{ $product->price }} تومان</a>
+                            <a href="#"  class="price"> {{$option->price}} تومان</a>
                             </div>
                             <div class="mt-3 d-flex justify-content-center">
                                 <a href="#"  class="price-product">125000تومان</a>
                             </div>
                             <form action="">
                             <div class="d-flex justify-content-center mt-5">
-                                <a href="{{ route('basket.add', $product->id) }}" class="Add-to-cart">افزودن به سبد خرید</a>
+                                <a href="{{ route('basket.add', $option->id) }}" class="Add-to-cart">افزودن به سبد خرید</a>
                             </div>
                         </form>
                   </div>

@@ -2,6 +2,7 @@
 namespace App\Support\Basket;
 
 use App\Exceptions\QuantityExceededException;
+use App\Full;
 use App\Product;
 use App\Support\Storage\Contracts\StorageInterface;
 
@@ -12,7 +13,7 @@ class Basket
     {
         $this->storage = $storage;
     }
-    public function add(Product $product , int $quantity)
+    public function add(Full $product , int $quantity)
     {
         if ($this->has($product))
         {
@@ -20,7 +21,7 @@ class Basket
         }
         $this->update($product, $quantity);
     }
-    public function update(Product $product , int $quantity)
+    public function update(Full $product , int $quantity)
     {
         if (!$product->hasStock($quantity))
         {
@@ -34,11 +35,11 @@ class Basket
             'quantity' => $quantity
         ]);
     }
-    public function has(Product $product)
+    public function has(Full $product)
     {
         return $this->storage->exists($product->id);
     }
-    public function get(Product $product)
+    public function get(Full $product)
     {
         return $this->storage->get($product->id);
     }
@@ -48,7 +49,7 @@ class Basket
     }
     public function all()
     {
-        $products = Product::find(array_keys($this->storage->all()));
+        $products = Full::find(array_keys($this->storage->all()));
         foreach ($products as $product) {
             $product->quantity = $this->get($product)['quantity'];
         }
