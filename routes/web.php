@@ -92,3 +92,9 @@ return view('Shoping');
 Route::group(['namespace' => 'ShopingCenter'],function () {
     Route::get('shopingcenter/{center}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
 });
+
+Route::group(['namespace' => 'Admin'], function() {
+    Route::get('admin/settings', 'ProductSettingsController@showForm')->name('show.admin.settings.form');
+    Route::post('admin/category', 'ProductSettingsController@createCategory')->name('create.categroy');
+    Route::post('admin/option', 'ProductSettingsController@createOption')->name('create.option');    
+});
