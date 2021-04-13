@@ -13,14 +13,14 @@ class AttributeValue extends Migration
      */
     public function up()
     {
-        Schema::create('attribute_product', function (Blueprint $table) {
+        Schema::create('attribute_pure', function (Blueprint $table) {
             $table->bigInteger('attribute_id')->unsigned();
             $table->bigInteger('value_id')->unsigned();
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('pure_id');
             $table->foreign('attribute_id')->references('id')->on('attributes')->onDelete('cascade');
             $table->foreign('value_id')->references('id')->on('values')->onDelete('cascade');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->primary(['attribute_id','value_id','product_id']);
+            $table->foreign('pure_id')->references('id')->on('pures')->onDelete('cascade');
+            $table->primary(['attribute_id','value_id','pure_id']);
         });
     }
 

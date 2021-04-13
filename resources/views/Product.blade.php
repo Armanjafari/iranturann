@@ -205,26 +205,12 @@
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <table class="table  table-striped table-responsive text-right" cellspacing="0">
                                 <tbody>
+                                    @foreach ($product->attributes as $attribute)
                                     <tr>
-                                        <td><a href="#">جنس</a></td>
-                                        <td>نرم و لطیف</td>
+                                        <td><a href="#">{{ $attribute->name }}</a></td>
+                                        <td> {{ $attribute->pivot->values->value }} </td>
                                     </tr>
-                                    <tr>
-                                        <td><a href="#">جنس</a></td>
-                                        <td>نرم و لطیف</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">جنس</a></td>
-                                        <td>نرم و لطیف</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">جنس</a></td>
-                                        <td>نرم و لطیف</td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">جنس</a></td>
-                                        <td>نرم و لطیف</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
