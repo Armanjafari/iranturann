@@ -1,8 +1,7 @@
-<main>
 @if (session('success'))
-<div class = "row alert alert-success">
+<div class = "alert alert-success text-right mt-3 mb-3">
    <ul>
-      {{session('success') }}
+      {{ session('success') }}   
    </ul>
-</div>
-@endif</main>
+ </div>
+@endif

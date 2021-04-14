@@ -8,8 +8,6 @@
       <!-- Navbar -->
       <main>
     @include('Admin.layout.navbar')
-    @include('alerts.errors')
-    @include('alerts.success')
     @yield('content')
       </main>
 

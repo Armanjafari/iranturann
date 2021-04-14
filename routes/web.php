@@ -93,8 +93,20 @@ Route::group(['namespace' => 'ShopingCenter'],function () {
     Route::get('shopingcenter/{center}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
 });
 
-Route::group(['namespace' => 'Admin'], function() {
-    Route::get('admin/settings', 'ProductSettingsController@showForm')->name('show.admin.settings.form');
-    Route::post('admin/category', 'ProductSettingsController@createCategory')->name('create.categroy');
-    Route::post('admin/option', 'ProductSettingsController@createOption')->name('create.option');    
+Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
+    Route::get('settings', 'ProductSettingsController@showForm')->name('show.admin.settings.form');
+    Route::post('category', 'ProductSettingsController@createCategory')->name('create.categroy');
+
+    Route::post('option', 'ProductSettingsController@createOption')->name('create.option');
+
+    Route::post('brand', 'BrandController@createBrand')->name('create.brand');
+    Route::get('brand', 'BrandController@showForm')->name('show.brand.form');
+    Route::get('brand/{brand}', 'BrandController@showEditForm')->name('show.brand.edit.form');
+    Route::post('brand/{brand}', 'BrandController@edit')->name('edit.brand');
+
+    Route::get('waranty', 'WarantyController@showForm')->name('show.waranty.form');
+    Route::post('waranty', 'WarantyController@createWaranty')->name('create.waranty');
+    Route::get('waranty/{waranty}', 'WarantyController@showEditForm')->name('show.waranty.edit.form');
+    Route::post('waranty/{waranty}', 'WarantyController@edit')->name('edit.waranty');
+
 });

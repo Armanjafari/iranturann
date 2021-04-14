@@ -15,13 +15,26 @@
             <div class="sidebar" id="sidebar">
                 <ul class="navbar-nav text-right">
                     <li class="nav-item"><a href="#" class="nav-link"><span class="text">داشبورد</span></a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link"><span class="text">مدیریت محصول</span></a></li>
+                    
+                    <a href="#product-manegment" data-toggle="collapse" aria-expanded="false" class="nav-link"><span class="text" id="dropdown-toggle">مدیریت محصول<i class="fas fa-angle-down"></i></span></a>
+                    <ul class="collapse list-unstyled" id="product-manegment">
+                      <li class="nav-submenu">
+                        <a href="{{ route('show.brand.form') }}" class="nav-link" style="color: #787171;"
+                  ><span  class="text">مدیریت برند</span></a>
+                     </li>
+                      <li class="nav-submenu">
+                          <a class="nav-link" style="color: #787171;" href="{{ route('show.waranty.form') }}"><span class="text">مدیریت گارانتی</span></a>
+                       </li>
+                    </ul>
                     <li class="nav-item"><a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false" class="nav-link"><span class="text" id="dropdown-toggle">مدیریت فروشندگان <i class="fas fa-angle-down"></i></span></a>
                     <ul class="collapse list-unstyled" id="adminSubmenu">
                       <li class="nav-under-menu">
-                    <a href="" class="nav-link" style="color: #787171;"><span class="text">لیست فروشندگان</span></a>
+                        <a href="" class="nav-link" style="color: #787171;"><span  class="text">ثبت فروشندگان</span></a>
+                          </li>
+                      <li class="nav-under-menu">
+                    <a href="" class="nav-link" style="color: #787171;"><span  class="text">لیست فروشندگان</span></a>
                       </li>
-                   </li>
+                   </li> 
                       </ul>
                       <li class="nav-item"><a href="Status of orders.html" class="nav-link"><span class="text">مدیریت سفارشات</span></a></li>
                       <li class="nav-item"><a href="#Product-management" data-toggle="collapse" aria-expanded="false" class="nav-link"><span class="text" id="dropdown-toggle">مدیریت کاربران<i class="fas fa-angle-down"></i></span></a>

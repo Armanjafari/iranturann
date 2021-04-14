@@ -135,18 +135,26 @@
         
             <div class="card-body">
                  
-              <form action="" method="post">
+              <form action="{{ route('create.brand') }}" method="post" enctype="multipart/form-data">
+                  @csrf
                   <div class="row">
                   <div class="col-lg-6">
                   <div class="first-name">
                     <label class="label">برند</label>
-                    <input type="text" class="form-control p-3 form-control-one"
+                    <input type="text" name="persian_name" class="form-control p-3 form-control-one"
                       placeholder="نام محصول خود را وارد نمایید">
                   </div>
                   </div>
+                  <div class="col-lg-6">
+                    <div class="first-name">
+                      <label class="label">نام انگلیسی</label>
+                      <input type="text" name="name" class="form-control p-3 form-control-one"
+                        placeholder="نام محصول خود را وارد نمایید">
+                    </div>
+                    </div>
                   <div class="col-lg-3">
                     <label for="files" class="apload-img">آپلود عکس</label>
-                    <input id="files" style="visibility:hidden;" type="file">
+                    <input id="files" style="visibility:hidden;" name="image" type="file">
                   </div>
                   <div class="col-lg-12">
                       <div class="d-flex  align-items-center justify-content-center">
