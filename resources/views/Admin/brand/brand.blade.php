@@ -26,7 +26,7 @@
                         <div class="col-lg-3 mt-2">
                             <div class="first-name mr-4">
                                 <label for="">اسم انگلیسی برند</label>
-                            <input type="text"  name="name" value="{{old('persian_name')}}" class="form-control-one p-2">
+                            <input type="text" name="name" value="{{old('name')}}" class="form-control-one p-2">
                         </div>
                          </div>
                          <div class="col-lg-3 mt-2">

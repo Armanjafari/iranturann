@@ -24,7 +24,7 @@
   <script src="{{ asset('assets/admin/js/jquery-3.5.1.min.js') }}"></script>
   <!--end jquery file-->
   <!--start js file-->
-  <script src="{{ asset('assets/admin/js/my script.js') }}"></script>
+  <script src="{{ asset('assets/admin/js/myscript.js') }}"></script>
   <!--end js file-->
   
   </html>

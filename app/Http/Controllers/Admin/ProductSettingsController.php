@@ -29,14 +29,4 @@ class ProductSettingsController extends Controller
         ]);
         return back()->withSuccess('عملیات با موفیت انجام شد');
     }
-    public function createOption(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|unique:options,name'
-        ]);
-        $category = Option::create([
-            'name' => $request->input('name')
-        ]);
-        return back()->withSuccess('عملیات با موفیت انجام شد');
-    }
 }

@@ -95,10 +95,6 @@ Route::group(['namespace' => 'ShopingCenter'],function () {
 
 Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::get('settings', 'ProductSettingsController@showForm')->name('show.admin.settings.form');
-    Route::post('category', 'ProductSettingsController@createCategory')->name('create.categroy');
-
-    Route::post('option', 'ProductSettingsController@createOption')->name('create.option');
-
     Route::post('brand', 'BrandController@createBrand')->name('create.brand');
     Route::get('brand', 'BrandController@showForm')->name('show.brand.form');
     Route::get('brand/{brand}', 'BrandController@showEditForm')->name('show.brand.edit.form');
@@ -108,5 +104,17 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::post('waranty', 'WarantyController@createWaranty')->name('create.waranty');
     Route::get('waranty/{waranty}', 'WarantyController@showEditForm')->name('show.waranty.edit.form');
     Route::post('waranty/{waranty}', 'WarantyController@edit')->name('edit.waranty');
+
+    Route::get('type', 'TypeController@showForm')->name('show.type.form');
+    Route::post('type', 'TypeController@createOption')->name('create.option');
+    Route::get('type/{option}', 'TypeController@showEditForm')->name('show.option.edit.form');
+    Route::post('type/{option}', 'TypeController@edit')->name('edit.option');
+
+    Route::post('settype', 'SetTypeController@createSetType')->name('create.settype');
+    Route::get('settype/{value}', 'SetTypeController@showEditForm')->name('show.settype.edit.form');
+    Route::post('settype/{value}', 'SetTypeController@edit')->name('edit.settype');
+
+    Route::get('category', 'CategoryController@showForm')->name('show.form.category');
+    Route::post('category', 'CategoryController@createCategory')->name('create.categroy');
 
 });
