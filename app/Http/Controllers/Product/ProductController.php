@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class ProductController extends Controller
 {
     public function index()
+    
     {
         // $sessionstorage = resolve(SessionInterface::class);
         // $sessionstorage->set('product',10);
