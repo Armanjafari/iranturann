@@ -118,3 +118,6 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::post('category', 'CategoryController@createCategory')->name('create.categroy');
 
 });
+Route::get('mahdi', function(){
+    return view('layout.mahdi');
+        });

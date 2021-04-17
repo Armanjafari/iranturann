@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  @include('layout.header')
+@include('layout.header')
 </head>
 
 <body dir="rtl">
