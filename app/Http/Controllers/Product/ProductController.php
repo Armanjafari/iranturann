@@ -32,9 +32,9 @@ class ProductController extends Controller
         $option->product;
         $product = $option->product;
         $product->load('pure','options');
-        $product->pure->load('attributes.pivot.values');
+        $product->pure->load('attributes');
         $pure = $product->pure;
-        dd($pure);
+        dd($pure->attributes[1]->pivot->values);
         $diffrent_colors = $product->options->load('colors');
         // dd($product->options->first()->colors);
         return view('Product', compact('product', 'diffrent_colors' , 'option' , 'pure'));
