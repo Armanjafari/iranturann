@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67.333" height="67.333" viewBox="0 0 67.333 67.333">
+  <defs>
+    <filter id="Path_23" x="0" y="0" width="67.333" height="67.333" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#4e2727" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_194" data-name="Group 194" transform="translate(-443 -46)">
+    <g transform="matrix(1, 0, 0, 1, 443, 46)" filter="url(#Path_23)">
+      <path id="Path_23-2" data-name="Path 23" d="M9.785,0H33.548a9.785,9.785,0,0,1,9.785,9.785V33.548a9.785,9.785,0,0,1-9.785,9.785H9.785A9.785,9.785,0,0,1,0,33.548V9.785A9.785,9.785,0,0,1,9.785,0Z" transform="translate(10 8)" fill="#fc3"/>
+    </g>
+    <path id="Icon_awesome-shopping-cart" data-name="Icon awesome-shopping-cart" d="M23.3,13.921l2.085-9.61A1.1,1.1,0,0,0,24.35,2.957H7.023l-.4-2.07A1.072,1.072,0,0,0,5.582,0H1.059A1.085,1.085,0,0,0,0,1.109v.739A1.085,1.085,0,0,0,1.059,2.957H4.142l3.1,15.867A2.609,2.609,0,0,0,6,21.068a2.531,2.531,0,0,0,2.47,2.587,2.531,2.531,0,0,0,2.47-2.587A2.64,2.64,0,0,0,10.2,19.22h9.248a2.64,2.64,0,0,0-.742,1.848,2.473,2.473,0,1,0,4.941,0,2.6,2.6,0,0,0-1.393-2.329l.243-1.122a1.1,1.1,0,0,0-1.032-1.355H9.622l-.289-1.478H22.265A1.071,1.071,0,0,0,23.3,13.921Z" transform="translate(461.667 66.467)" fill="none" stroke="#272424" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

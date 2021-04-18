@@ -331,24 +331,6 @@
             </button>
         </div>
         <!--end mobile nav-->
-        <!--start header2-->
-    <nav class="navbar navbar-expand-lg  position-fixed nav-box"> 
-        <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control serch-box mt-lg-1">
-            <div class="dropdown dropdown-city mr-auto">
-                <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                  از کجا می خوایی خرید کنی؟
-                </button>
-                <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
-                    <form class="px-4 py-2">
-                        <input type="search" class="form-control search-city" id="searchCoin" placeholder="شهر مورد نظر" autofocus="autofocus">
-                    </form>
-                    <div id="menuItems"></div>
-                    <div id="empty" class="dropdown-header">شهر مورد نظر شما پیدا نشد</div>
-                </div>
-            </div>
-           
-    </nav>
         </header>
         <!-- 
 

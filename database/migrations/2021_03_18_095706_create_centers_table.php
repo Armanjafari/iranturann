@@ -16,6 +16,8 @@ class CreateCentersTable extends Migration
         Schema::create('centers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->text('address')->nullable();
+            $table->string('phone_number')->nullable();
             $table->bigInteger('city_id')->unsigned();
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->timestamps();

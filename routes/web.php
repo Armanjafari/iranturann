@@ -121,7 +121,12 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
 
     Route::get('product', 'ProductController@showForm')->name('show.form.product');
 
+    Route::get('shopingcenter', 'ShopingCenterController@showForm')->name('show.form.shop');
+    Route::post('shopingcenter', 'ShopingCenterController@createShop')->name('create.shop');
+    Route::get('shopingcenter/{shop}', 'ShopingCenterController@showEditForm')->name('show.shop.edit.form');
+    Route::post('shopingcenter/{shop}', 'ShopingCenterController@edit')->name('edit.shop');
+    
+
+
+
 });
-Route::get('mahdi', function(){
-    return view('layout.mahdi');
-        });

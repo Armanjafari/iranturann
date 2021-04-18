@@ -6,8 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Center extends Model
 {
+    protected $fillable = ['name', 'city_id', 'address' , 'phone_number'];
     public function users()
     {
-        return $this->hasMany(User::class);
+        // TODO fix this name
+        
+        return $this->hasMany(Market::class);
+    }
+    public function image()
+    {
+        return $this->morphOne(Image::class , 'imageable');
     }
 }

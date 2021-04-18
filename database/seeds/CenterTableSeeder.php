@@ -17,16 +17,17 @@ class CenterTableSeeder extends Seeder
             'city_id' => 1          
         ]);
         DB::table('centers')->insert([
-            'name' => 'ارکید',  
+            'name' => 'ارکید',
             'city_id' => 1                  
         ]);
         DB::table('centers')->insert([
             'name' => 'حلال',
             'city_id' => 1                    
         ]);
+
         DB::table('centers')->insert([
             'name' => 'بازار امام',
-            'city_id' => 1         
+            'city_id' => 1,
         ]);
     }
 }

@@ -35,6 +35,10 @@
                     <a class="nav-link" style="color: #787171;" href="{{ route('show.form.category') }}"><span
                         class="text"> مدیریت دسته بندی </span></a>
                   </li>
+                  <li class="nav-submenu">
+                    <a class="nav-link" style="color: #787171;" href="{{ route('show.form.shop') }}"><span
+                        class="text">مدیریت مراکز خرید </span></a>
+                  </li>
                 </ul>
                 <li class="nav-item"><a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false"
                     class="nav-link"><span class="text" id="dropdown-toggle">مدیریت فروشندگان <i
