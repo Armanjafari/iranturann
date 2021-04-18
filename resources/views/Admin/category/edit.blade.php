@@ -9,8 +9,9 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-4">
-                    <form action="{{ route('create.categroy') }}" method="POST">
+                    <form action="{{ route('edit.categroy' , $cat->id) }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="card">
                             <div class="card-header text-center  text-info">
                                 انتخاب سردسته
@@ -21,20 +22,20 @@
                                 @forelse ($categories as $category)
                                 <ul>
                                     <li>
-                                        <input type="radio" name="parent_id" value="{{$category->id}}" id="">
+                                        <input type="radio" {{ $cat->parent_id == $category->id ? 'checked' :  '' }} name="parent_id" value="{{$category->id}}" id="">
                                         <a href="{{ route('show.category.edit.form',$category->id) }}">
                                         <label for=""> {{$category->persian_name}} </label> </a>
 
                                         @forelse ($category->child as $child)
                                         <ul>
                                             <li>
-                                                <input type="radio" value="{{ $child->id }}" name="parent_id" id="">
+                                                <input type="radio" {{ $cat->parent_id == $child->id ? 'checked' :  '' }} value="{{ $child->id }}" name="parent_id" id="">
                                                 <a href="{{ route('show.category.edit.form',$child->id) }}">
                                                 <label for=""> {{$child->persian_name}} </label> </a>
                                                 @forelse ($child->child as $child)
                                                 <ul>
                                                     <li>
-                                                        <input type="radio" name="parent_id" value="{{ $child->id }}"
+                                                        <input type="radio" {{ $cat->parent_id == $child->id ? 'checked' :  '' }} name="parent_id" value="{{ $child->id }}"
                                                             id="">
                                                             <a href="{{ route('show.category.edit.form',$child->id) }}">
                                                         <label for=""> {{$child->persian_name}} </label>
@@ -72,13 +73,13 @@
                 <div class="col-lg-3 mt-3">
                     <div class="first-name mr-3">
                         <label for="">نام دسته</label>
-                        <input type="text" name="persian_name" value=" {{ old('persian_name') }} " class="form-control-one p-2">
+                        <input type="text" name="persian_name" value="{{ $cat->persian_name }}" class="form-control-one p-2">
                     </div>
                 </div>
                 <div class="col-lg-3 mt-3">
                     <div class="first-name mr-3">
                         <label for="">نام انگلیسی دسته </label>
-                        <input type="text" name="name" value=" {{ old('name') }} " class="form-control-one p-2">
+                        <input type="text" name="name" value="{{ $cat->name }}" class="form-control-one p-2">
                     </div>
                 </div>
                 <div class="col-lg-12 mt-2 mr-5">

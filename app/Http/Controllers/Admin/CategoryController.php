@@ -17,16 +17,36 @@ class CategoryController extends Controller
     }
     public function createCategory(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:categories',
-            'persian_name' => 'required|unique:categories',
-            'parent_id' => 'required'
-        ]);
+        $this->validator($request);
         Category::create([
             'name' => $request->input('name'),
             'persian_name' => $request->input('persian_name'),
-            'parent_id' => $request->input('parent_id'),
+            'parent_id' => $request->input('parent_id') ?? '0',
         ]);
         return redirect()->back()->withSuccess(' با موفقیت انجام شد ');
+    }
+    public function showEditForm(Category $cat, Request $request)
+    {
+        $categories = Category::whereParent_id(0)->get();
+        $categories->load('child');
+        return view('Admin.category.edit' , compact('categories' , 'cat'));
+    }
+    public function edit(Category $cat ,Request $request)
+    {
+        $this->validator($request);
+        $cat->update([
+            'name' => $request->input('name'),
+            'persian_name' => $request->input('persian_name'),
+            'parent_id' => $request->input('parent_id') ?? '0',
+        ]);
+        return redirect()->route('show.form.category')->withSuccess(' با موفقیت انجام شد ');
+    }
+    public function validator(Request $request)
+    {
+        return $request->validate([
+            'name' => 'required|unique:categories',
+            'persian_name' => 'required|unique:categories',
+            'parent_id' => 'integer' 
+        ]);
     }
 }

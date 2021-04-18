@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use EagerLoadPivotTrait;
     // protected $hidden = ['category'];
     public function hasStock(int $quantity)
     {
@@ -29,10 +28,7 @@ class Product extends Model
     //     }
     //     return $price;
     // }
-    public function attributes()
-    {
-        return $this->belongsToMany(Attribute::class)->using(PivotProductAttribute::class)->withPivot(['value_id']);
-    }
+
     public function pure()
     {
         return $this->belongsTo(Pure::class);
