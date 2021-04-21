@@ -22,11 +22,7 @@
     //dd(auth()->user()->hasRole('teacher'));
     // auth()->user()->refreshRoles();
 
-use App\Product;
-use App\Role;
-use App\services\Notifications\Notification;
-use App\User;
-
+    
 // Route::get('/', function () {
 //     dd(Product::find(1)->category->validCoupons());
 // });
@@ -126,7 +122,10 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::get('shopingcenter/{shop}', 'ShopingCenterController@showEditForm')->name('show.shop.edit.form');
     Route::post('shopingcenter/{shop}', 'ShopingCenterController@edit')->name('edit.shop');
     
+    Route::get('agent', 'AgentController@showForm')->name('show.agent.form');
+    Route::post('agent', 'AgentController@createAgent')->name('create.agent');
+    Route::get('agent/{agent}', 'AgentController@showEditForm')->name('show.agent.edit.form');
+    Route::post('agent/{agent}', 'AgentController@edit')->name('edit.agent');
 
-
-
+    Route::get('market','MarketController@showForm')->name('show.market.form');
 });

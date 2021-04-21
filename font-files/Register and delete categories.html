@@ -1,0 +1,195 @@
+<<!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>project admin-panel</title>
+        <!--start font awesome file-->
+        <link href="css/fontawesome-free-5.15.1-web/css/all.min.css" rel="stylesheet">
+        <!--end fontawesome file-->
+        <!--start bootstrap css file-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!--end bootstrap css file-->
+        <!--start style css-->
+        <link rel="stylesheet" href="css/style.css">
+        <!--end style css-->
+    </head>
+    <body dir="rtl">
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- start navbar menu -->
+                    <div class="col-lg-3">
+                        <div class="card p-3 h-100 box-menu">
+                            <div class="position-absolute admin">
+                                <span class="">اسماعیل زلفیان</span><br>
+                                <span class="ml-5">مدیر</span>
+                            </div>
+                            <div class="iranturan-logo">
+                                <img src="img/Asset 10iranturan.com.svg" alt="" class=" mr-3" width="100">
+                            </div>
+                            <hr style="border: 1px solid #33cccc;">
+                            <div class="wrapper d-flex mt-4">
+                                <div class="sidemenu">
+                                    <div class="sidebar" id="sidebar">
+                                        <ul class="navbar-nav text-right">
+                                            <li class="nav-item"><a href="#" class="nav-link"><span
+                                                        class="text">داشبورد</span></a></li>
+                                            <li class="nav-item"><a href="index.html" class="nav-link"><span
+                                                        class="text">مدیریت محصول</span></a></li>
+                                            <li class="nav-item"><a href="#adminSubmenu" data-toggle="collapse"
+                                                    aria-expanded="false" class="nav-link"><span class="text"
+                                                        id="dropdown-toggle">مدیریت فروشندگان <i
+                                                            class="fas fa-angle-down"></i></span></a>
+                                                <ul class="collapse list-unstyled" id="adminSubmenu">
+                                                    <li class="nav-under-menu">
+                                                        <a href="" class="nav-link" style="color: #787171;"><span
+                                                                class="text">لیست فروشندگان</span></a>
+                                                    </li>
+                                            </li>
+                                        </ul>
+                                        <li class="nav-item"><a href="Status of orders.html" class="nav-link"><span
+                                                    class="text">مدیریت سفارشات</span></a></li>
+                                        <li class="nav-item"><a href="#Product-management" data-toggle="collapse"
+                                                aria-expanded="false" class="nav-link"><span class="text"
+                                                    id="dropdown-toggle">مدیریت کاربران<i
+                                                        class="fas fa-angle-down"></i></span></a>
+                                            <ul class="collapse list-unstyled" id="Product-management">
+                                                <li class="nav-submenu">
+                                                    <a class="nav-link" style="color: #787171;"
+                                                        href="usermangment.html"><span class="text">مدیریت
+                                                            کاربران</span></a>
+                                                </li>
+                                                <li class="nav-submenu">
+                                                    <a class="nav-link" style="color: #787171;"
+                                                        href="userlist.html"><span class="text">لیست کاربران</span></a>
+                                                </li>
+                                            </ul>
+                                            <a href="#Representation-management" data-toggle="collapse"
+                                                aria-expanded="false" class="nav-link"><span class="text"
+                                                    id="dropdown-toggle">مدیریت نمایندگان<i
+                                                        class="fas fa-angle-down"></i></span></a>
+                                            <ul class="collapse list-unstyled" id="Representation-management">
+                                                <li class="nav-submenu">
+                                                    <a class="nav-link" style="color: #787171;" href="
+                                  Agentmanagment.html"><span class="text">فرم اولیه ثبت نماینده</span></a>
+                                                </li>
+                                                <li class="nav-submenu">
+                                                    <a class="nav-link" style="color: #787171;"
+                                                        href="Agentlist.html"><span class="text">لیست
+                                                            نمایندگان</span></a>
+                                                </li>
+                                            </ul>
+                                        <li class="nav-item"><a href="logestic managment.html" class="nav-link"><span
+                                                    class="text">مدیریت لوجستیک</span></a></li>
+                                        <li class="nav-item"><a href="Accounting.html" class="nav-link"><span
+                                                    class="text">حسابداری</span></a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link"><span class="text">مدیریت
+                                                    بازخورد</span></a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end navbar menu -->
+                    <!-- start register and delete categories -->
+                   <div class="col-lg-9">
+    
+                    <div class="card-header add-product-box text-center">
+                        <span class="add-product"> مدیریت دسته بندی</span>
+                    </div> 
+                         <div class="card mt-3 text-right">
+                             <div class="card-body">
+                                 <div class="row">
+                                 <div class="col-lg-4">
+                                     <form action="">
+                                         <div class="card">
+                                        <div class="card-header text-center  text-info">
+                                             انتخاب سردسته
+                                        </div>
+                                <div class="container mt-3">
+                                    <ul>
+                                        <li>
+                                          <input type="checkbox" name="tall" id="tall">
+                                          <label for="tall">کالای دیجیتال</label>
+                                          <ul>
+                                            <li>
+                                              <input type="checkbox" name="tall-1" id="tall-1">
+                                              <label for="tall-1">لپ تاپ</label>
+                                            </li>
+                                            <li>
+                                              <input type="checkbox" name="tall-2" id="tall-2">
+                                              <label for="tall-2">گوشی سامسونگ  </label>
+                                      
+                                              <ul>
+                                                <li>
+                                                  <input type="checkbox" name="tall-2-1" id="tall-2-1">
+                                                  <label for="tall-2-1">باتری</label>
+                                                </li>
+                                                <li>
+                                                  <input type="checkbox" name="tall-2-2" id="tall-2-2">
+                                                  <label for="tall-2-2">هدفون</label>
+                                                </li>
+                                              </ul>
+                                            </li>
+                                            <li>
+                                              <input type="checkbox" name="tall-3" id="tall-3">
+                                              <label for="tall-3">تلویزیون</label>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                        <li>
+                                          <input type="checkbox" name="short" id="short">
+                                          <label for="short">Short Things</label>
+                                      
+                                          <ul>
+                                            <li>
+                                              <input type="checkbox" name="short-1" id="short-1">
+                                              <label for="short-1">Smurfs</label>
+                                            </li>
+                                            <li>
+                                              <input type="checkbox" name="short-2" id="short-2">
+                                              <label for="short-2">Mushrooms</label>
+                                            </li>
+                                            <li>
+                                              <input type="checkbox" name="short-3" id="short-3">
+                                              <label for="short-3">One Sandwich</label>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                  </div>
+                                </div>
+                                </div>
+                                <div class="col-lg-3 mt-3">
+                                    <div class="first-name mr-3">
+                                        <label for="">نام دسته</label>
+                                        <input type="text" name="color" class="form-control-one p-2">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 mt-2 mr-5">
+                                    <input class="btn-Record text-light" type="submit" value="ثبت دسته">
+                                </form>
+                                </div>
+                             </div>
+                         </div>
+                         </div>
+                   </div>
+                   <!-- end register and delete categories -->
+                </div>
+            </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+         <script src="js/myscript.js"></script>
+    </html>

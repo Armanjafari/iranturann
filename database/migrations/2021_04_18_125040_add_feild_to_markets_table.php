@@ -16,6 +16,10 @@ class AddFeildToMarketsTable extends Migration
         Schema::table('markets', function (Blueprint $table) {
             $table->unsignedBigInteger('center_id')->nullable();
             $table->foreign('center_id')->references('id')->on('centers')->onDelete('cascade');
+
+            $table->unsignedBigInteger('agent_id');
+            $table->foreign('agent_id')->references('id')->on('agents')->onDelete('cascade');
+
         });
     }
 
