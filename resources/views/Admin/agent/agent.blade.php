@@ -140,9 +140,13 @@
                         <td> {{$agent->user->name}} </td>
                         <td>{{$agent->user->phone_number}}</td>
                         <td>{{$agent->user->email}}</td>
-                        <td> {{$agent->user->address}} </td>
-                        <td><img class="w-100 h-100" src="{{$agent->images[0]->address ?? ''}}" alt=""></td>
-                        <td><img class="w-100 h-100" src="{{$agent->images[1]->address ?? ''}}" alt=""></td>
+                        <td> {{$agent->user->address ?? 'آدرسی وجود ندارد'}} </td>
+                        @forelse ($agent->images as $image)
+                        <td><img class="w-100 h-100" src="{{$image->address ?? ''}}" alt=""></td>
+                        @empty
+                        <td> وجود ندارد </td>
+                        <td> وجود ندارد </td>
+                        @endforelse
                         <td><a href=" {{ route('show.agent.edit.form' , $agent->id) }} ">ویرایش</a></td>
                         <td><a href="#">حذف</a></td>
                     </tr>

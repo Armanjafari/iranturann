@@ -12,8 +12,8 @@ class AgentController extends Controller
 {
     public function showForm()
     {
-        $t = resolve(MeliPayamak::class);
-        $t->send();
+        // $t = resolve(MeliPayamak::class);
+        // $t->send();
         $agents = Agent::all();
         $cities = City::all();
         $cities->load('province');
@@ -65,13 +65,14 @@ class AgentController extends Controller
             'email' => $request->input('email'),
             'address' => $request->input('address')
         ]);
-        if (!empty($request->input('image')))
+        if ($request->has('image'))
         {
-        $agent->images[0]->delete();
-        $agent->images[1]->delete();
-        }
-        else{
+            foreach ($agent->images as $image) 
+            {
+                $image->delete();
+            }
             $this->addImage($request , $agent);
+
         }
         return redirect()->route('show.agent.form')->withSuccess(' با موفقیت انجام شد ');
     }

@@ -34,7 +34,6 @@ class ProductController extends Controller
         $product->load('pure','options');
         $product->pure->load('attributes');
         $pure = $product->pure;
-        dd($pure->attributes[1]->pivot->values);
         $diffrent_colors = $product->options->load('colors');
         // dd($product->options->first()->colors);
         return view('Product', compact('product', 'diffrent_colors' , 'option' , 'pure'));

@@ -39,6 +39,10 @@
                     <a class="nav-link" style="color: #787171;" href="{{ route('show.form.shop') }}"><span
                         class="text">مدیریت مراکز خرید </span></a>
                   </li>
+                  <li class="nav-submenu">
+                    <a class="nav-link" style="color: #787171;" href="{{ route('show.agent.form') }}"><span
+                        class="text">مدیریت نمایندگان </span></a>
+                  </li>
                 </ul>
                 <li class="nav-item"><a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false"
                     class="nav-link"><span class="text" id="dropdown-toggle">مدیریت فروشندگان <i
