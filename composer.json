@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^6.20",
         "laravel/tinker": "^2.5",
+        "melipayamak/laravel": "1.0.0",
         "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {

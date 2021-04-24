@@ -7,11 +7,13 @@ use App\City;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
-
+use App\Services\MeliPayamak\MeliPayamak;
 class AgentController extends Controller
 {
     public function showForm()
     {
+        $t = resolve(MeliPayamak::class);
+        $t->send();
         $agents = Agent::all();
         $cities = City::all();
         $cities->load('province');
