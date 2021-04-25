@@ -3,8 +3,13 @@
 
 <!--start main-->
 <main>
+<img src="{{asset('assets/img/px3.jpg')}}" alt=""
+                                class="w-100 mt-5 img-fluid" style="height:15em;">
     <div class="row">
-        <div class="card-header text-center mt-5 card-header-product w-100 pt-5 pb-5"><a class="new-product">
+        
+        </div>
+    <div class="col-lg-12 ml-auto mr-auto col-8">
+    <div class="card-header text-center mt-5 card-header-product w-100 pt-5 pb-5"><a class="new-product">
                 {{ $centerName }} </a></div>
         <div class="owl-carousel owl-theme mt-5" id="owl-mobile5">
             @forelse ($users as $item)
