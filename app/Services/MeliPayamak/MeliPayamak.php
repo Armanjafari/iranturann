@@ -28,7 +28,7 @@ class MeliPayamak
         $text = 'تست وب سرویس ملی پیامک';
         $response = $sms->send($to,$from,$text);
         $json = json_decode($response);
-        dd($json->Value); //RecId or Error Number 
+        dd($json->Value);
 
     }
 }
