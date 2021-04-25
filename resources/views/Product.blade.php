@@ -19,18 +19,14 @@
                 <div class="card border-0">
         <div class="container">
           <div class="mySlides">
-          <img src="{{$product->image}}" style="width: 100%;">
+          <img src="{{asset('assets/img/چاپ-عکس-روی-هودی-سویشرت-کلاه-دار.png')}}" style="width: 100%;">
           </div>
-          
-            
-        
           <!-- <a class="next" onclick="plusSlides(1)">❯</a>
           <a class="prev" onclick="plusSlides(-1)">❮</a> -->
           <div class="row">
             <div class="column">
               <img class="demo cursor" src="{{$product->image}}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-            </div>
-              
+            </div>   
           </div>
         </div>
         </div>
