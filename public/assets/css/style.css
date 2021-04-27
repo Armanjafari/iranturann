@@ -1534,6 +1534,7 @@ p {
 .item-header {
   -webkit-box-shadow: 2px 4px 4px 0px #DBD6D6;
           box-shadow: 2px 4px 4px 0px #DBD6D6;
+          padding: 1.2em !important;
 }
 
 .list-Grouping {
