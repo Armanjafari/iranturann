@@ -25,7 +25,27 @@
                         </div>
                 </div>
                 <div class="col-lg-3 mt-3">
-                        <div class="card list-Grouping text-right">
+
+                <div class="card box-marketer text-right mt-3">
+                               <div style="display: inline-block;" class="m-3">
+                                                <img src="assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg"    alt="" class="logo-marketer">
+                                                <a class="mr-3 title-marketer" href="#">بوتیک بیگ باکس</a>
+                                             <div class="text-center">
+                                                <a class=" name-marketer" href="#">اسماعیل زلفیان</a>
+                                                </div>
+                                                <hr>
+                                               <img src="assets/img/phone.svg"  class="phone-svg"  alt=""> 
+                                               <a href="#">09171819008</a>
+                                               <div class="mt-3">
+                                               <img src="assets/img/location.svg"  class="location-svg"  alt="">
+                                               <a href="#">لار شهر جدید بازار بزرگ لارستان پلاک 01</a>
+                                               </div>
+                                        </div>
+                                      
+                              
+                                </div>
+
+                        <div class="card list-Grouping text-right mt-3">
                                 <div class="card-header card-header-list">
                                         <div class="text-center"><a href="#Grouping" data-toggle="collapse" aria-expanded="false" class="nav-menu"><span class="text" id="dropdown-toggle">دسته بندی</span></a></div>
                                 </div>
@@ -53,6 +73,8 @@
                                 </ul>
                         </div>
                         
+
+
                         <div class="card list-Grouping text-right mt-3">
                                 <div class="card-header card-header-list">
                                         <div class="text-center"><a href="#brand" data-toggle="collapse" aria-expanded="false" class="nav-menu"><span class="text" id="dropdown-toggle">برند</span></a></div>
@@ -126,6 +148,9 @@
                                         </ul>
                                 </ul>
                         </div>
+                
+                        
+                                
                 </div>
                 
                        

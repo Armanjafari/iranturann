@@ -1830,5 +1830,29 @@ width: 25px;
     padding: 1em;
   }
 }
+.logo-marketer{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.box-marketer{
+  -webkit-box-shadow: 2px 4px 4px 0px #c3c3c2;
+          box-shadow: 2px 4px 4px 0px #c3c3c2;
+}
+.title-marketer{
+  font-weight: bold;
+  font-size: 1em;
+}
 
+.name-marketer{
+  font-weight: bold;
+  color: #33cccc;
+}
+.phone-svg{
+  width: 30px;
+}
+
+.location-svg{
+  width: 30px;
+}
 /*# sourceMappingURL=style.css.map */
