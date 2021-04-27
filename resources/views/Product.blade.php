@@ -13,7 +13,6 @@
              </div>
          </div>
         </div> -->
-      
            <div class="row">
             <div class="col-lg-4 pl-lg-0">  
                 <div class="card border-0">
