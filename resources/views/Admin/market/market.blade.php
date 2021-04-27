@@ -12,6 +12,7 @@
     <div class="card mt-3 ">
         <div class="card-body text-right">
             <form action="{{ route('create.market') }}" method="post">
+                @csrf
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="first-name">
@@ -30,8 +31,8 @@
                     </div>
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
-                            <label>نام انگلیسی فروشگاه </label>
-                            <input type="text" name="english_name" value="{{ old('english_name') }}"
+                            <label> اسلاگ </label>
+                            <input type="text" name="slug" value="{{ old('slug') }}"
                                 class="form-control p-3 form-control-one" placeholder="اسم فروشگاه خود را وارد کنید">
                         </div>
                     </div>
@@ -91,6 +92,13 @@
                             <label class="label">تلفن ثابت</label>
                             <input type="text" name="work_phone" value="{{ old('work_phone') }}"
                                 class="form-control p-3 form-control-one" placeholder=" تلفن ثابت خود را وارد کنید">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4-5">
+                        <div class="first-name">
+                            <label class="label"> کلمه عبور </label>
+                            <input type="text" name="password" value="{{ old('password') }}"
+                                class="form-control p-3 form-control-one" placeholder="کلمه عبور خود را وارد کنید">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5">
@@ -167,7 +175,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlSelect1" style="font-size: 1.1em;"> نوع فروشنده </label>
-                                            <select name="center_id" class="form-control "
+                                            <select name="type" class="form-control "
                                                 id="exampleFormControlSelect1">
                                             <option value="0"> فروشنده عادی </option>
                                             <option value="1"> فروشنده شبکه اجتماعی </option>

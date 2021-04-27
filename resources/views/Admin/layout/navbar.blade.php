@@ -14,7 +14,7 @@
           <div class="sidemenu">
             <div class="sidebar" id="sidebar">
               <ul class="navbar-nav text-right">
-                <li class="nav-item"><a href="#" class="nav-link"><span class="text">داشبورد</span></a></li>
+                <li class="nav-item"><a href="{{route('admin.dashboard')}}" class="nav-link"><span class="text">داشبورد</span></a></li>
 
                 <a href="#product-manegment" data-toggle="collapse" aria-expanded="false" class="nav-link"><span
                     class="text" id="dropdown-toggle">مدیریت محصول<i class="fas fa-angle-down"></i></span></a>
@@ -65,6 +65,7 @@
               <li class="nav-item"><a href="Accounting.html" class="nav-link"><span class="text">حسابداری</span></a>
               </li>
               <li class="nav-item"><a href="#" class="nav-link"><span class="text">مدیریت بازخورد</span></a></li>
+              <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link btn btn-dark"><span class="text"> خروج </span></a></li>
 
               </ul>
             </div>

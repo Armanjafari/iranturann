@@ -18,7 +18,6 @@ class LoginController extends Controller
     {
         return view('Admin.auth.login');
     }
-
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -35,12 +34,9 @@ class LoginController extends Controller
         if ($user->hasRole('admin'))
         {
             Auth::login($user);
+            return redirect()->route('admin.dashboard');
         }
-        return 404;
+        return abort(403);
 
-    }
-    public function username()
-    {
-        return 'phone_number';
     }
 }

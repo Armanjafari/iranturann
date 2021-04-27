@@ -127,9 +127,7 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin', 'middleware' => 'rol
     Route::get('agent/{agent}', 'AgentController@showEditForm')->name('show.agent.edit.form');
     Route::post('agent/{agent}', 'AgentController@edit')->name('edit.agent');
 
-    Route::get('/', function () {
-        return view('Admin.dashboard');
-    });
+    Route::get('/', 'TypeController@showDashboardForm')->name('admin.dashboard');
 
 
 

@@ -44,4 +44,8 @@ class TypeController extends Controller
         ]);
         return back()->withSuccess('عملیات با موفیت انجام شد');
     }
+    public function showDashboardForm()
+    {
+        return view('Admin.dashboard');
+    }
 }
