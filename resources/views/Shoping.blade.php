@@ -3,9 +3,27 @@
 
 <!--start main-->
 <main>
-<img src="{{asset('assets/img/px3.jpg')}}" alt=""
-                                class="w-100 mt-5 img-fluid" style="height:15em;">
-    <div class="row">
+
+
+
+ <div class="col-lg-12">
+     
+ </div>
+<div
+  class="mt-5"
+>
+<div  class="col-lg-12">
+    <div class="card position-absolute mt-5 text-center" style="left: 10px; z-index:1;">
+        <div class="row">
+  <a href="#">  <img src="{{asset('assets/img/svg element/insta.svg')}}" alt=""  class="shabak"></a>
+     <a href="#">  <img src="{{asset('assets/img/svg element/insta.svg')}}" alt=""  class="shabak"></a>   
+   <a href="#">     <img src="{{asset('assets/img/svg element/insta.svg')}}" alt=""  class="shabak"></a>
+      <a href="#">      <img src="{{asset('assets/img/svg element/wat.svg')}}" alt=""  class="shabak"></a>
+</div>     
+</div>
+</div>
+<img src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt="" width="100%" style="height: 20em; opacity:0.7; position:relative"></div>
+ <div class="row">
         
         </div>
     <div class="col-lg-12 ml-auto mr-auto col-8">

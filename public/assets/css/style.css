@@ -1804,4 +1804,16 @@ img {
   width: 5em;
   height: 5em;
 }
+
+/* .img-url{
+  background-image:  url("../img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+} */
+
+.shabak{
+margin-left: 1em;
+width: 40px;
+}
+
 /*# sourceMappingURL=style.css.map */
