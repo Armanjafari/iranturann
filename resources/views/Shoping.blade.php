@@ -13,7 +13,7 @@
   class="mt-5"
 >
 <div  class="col-lg-12">
-    <div class="card position-absolute mt-5 text-center" style="left: 10px; z-index:1;">
+    <div class="card position-absolute  text-center Social-Networks">
         <div class="row">
   <a href="#">  <img src="{{asset('assets/img/svg element/insta.svg')}}" alt=""  class="shabak"></a>
      <a href="#">  <img src="{{asset('assets/img/svg element/insta.svg')}}" alt=""  class="shabak"></a>   
@@ -24,10 +24,9 @@
 </div>
 <img src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt="" width="100%" style="height: 20em; opacity:0.7; position:relative"></div>
  <div class="row">
-        
         </div>
     <div class="col-lg-12 ml-auto mr-auto col-8">
-    <div class="card-header text-center mt-5 card-header-product w-100 pt-5 pb-5"><a class="new-product">
+    <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product">
                 {{ $centerName }} </a></div>
         <div class="owl-carousel owl-theme mt-5" id="owl-mobile5">
             @forelse ($users as $item)
