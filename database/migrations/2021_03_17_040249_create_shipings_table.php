@@ -19,7 +19,6 @@ class CreateShipingsTable extends Migration
             $table->string('work_phone')->nullable();
             $table->text('work_address')->nullable();
             $table->string('postal_code')->nullable();
-            
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->timestamps();

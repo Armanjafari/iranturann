@@ -127,5 +127,10 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::get('agent/{agent}', 'AgentController@showEditForm')->name('show.agent.edit.form');
     Route::post('agent/{agent}', 'AgentController@edit')->name('edit.agent');
 
+    Route::get('/', function () {
+        return view('Admin.dashboard');
+    });
+
     Route::get('market','MarketController@showForm')->name('show.market.form');
+    Route::post('market','MarketController@createMarket')->name('create.market');
 });

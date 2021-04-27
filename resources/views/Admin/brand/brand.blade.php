@@ -62,7 +62,7 @@
                                                 {{$brand->name}}
                                             </td>
                                             <td>
-                                                <img src="{{ $brand->image->address }}" style="width:50px;height:50px;" alt="logo">
+                                                <img src="{{ $brand->image->address ?? '' }}" style="width:50px;height:50px;" alt="logo">
                             
                                             </td>
                                             <td><a href="{{ route('show.brand.edit.form',$brand->id) }}" class="a1 btn btn-light">ویرایش</a></td>

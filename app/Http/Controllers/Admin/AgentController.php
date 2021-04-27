@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use App\Services\MeliPayamak\MeliPayamak;
+use Illuminate\Support\Facades\Hash;
+
 class AgentController extends Controller
 {
     public function showForm()
@@ -28,7 +30,7 @@ class AgentController extends Controller
             'phone_number' => $request->input('phone_number'),
             'email' => $request->input('email'),
             'address' => $request->input('address'),
-            'password' => bcrypt($request->input('password')),
+            'password' => Hash::make(($request->input('password'))),
 
         ]);
         $agent = $user->agent()->create([

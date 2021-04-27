@@ -1,3 +1,4 @@
+require('./bootstrap');
 $(document).ready(function(){
     $('#myRange').mousemove(function(){
         $('#rangeValue').text($('#myRange').val());

@@ -35,54 +35,31 @@
                     <a class="nav-link" style="color: #787171;" href="{{ route('show.form.category') }}"><span
                         class="text"> مدیریت دسته بندی </span></a>
                   </li>
-                  <li class="nav-submenu">
-                    <a class="nav-link" style="color: #787171;" href="{{ route('show.form.shop') }}"><span
-                        class="text">مدیریت مراکز خرید </span></a>
-                  </li>
-                  <li class="nav-submenu">
-                    <a class="nav-link" style="color: #787171;" href="{{ route('show.agent.form') }}"><span
-                        class="text">مدیریت نمایندگان </span></a>
-                  </li>
+
                 </ul>
                 <li class="nav-item"><a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false"
                     class="nav-link"><span class="text" id="dropdown-toggle">مدیریت فروشندگان <i
                         class="fas fa-angle-down"></i></span></a>
                   <ul class="collapse list-unstyled" id="adminSubmenu">
                     <li class="nav-under-menu">
-                      <a href="" class="nav-link" style="color: #787171;"><span class="text">ثبت فروشندگان</span></a>
-                    </li>
-                    <li class="nav-under-menu">
-                      <a href="" class="nav-link" style="color: #787171;"><span class="text">لیست فروشندگان</span></a>
+                      <a href="{{ route('show.market.form') }}" class="nav-link" style="color: #787171;"><span class="text">ثبت فروشندگان</span></a>
                     </li>
                 </li>
               </ul>
               <li class="nav-item"><a href="Status of orders.html" class="nav-link"><span class="text">مدیریت
                     سفارشات</span></a></li>
               <li class="nav-item"><a href="#Product-management" data-toggle="collapse" aria-expanded="false"
-                  class="nav-link"><span class="text" id="dropdown-toggle">مدیریت کاربران<i
+                  class="nav-link"><span class="text" id="dropdown-toggle">مدیریت مراکز خرید <i
                       class="fas fa-angle-down"></i></span></a>
                 <ul class="collapse list-unstyled" id="Product-management">
                   <li class="nav-submenu">
-                    <a class="nav-link" style="color: #787171;" href="usermangment.html"><span class="text">مدیریت
-                        کاربران</span></a>
-                  </li>
-                  <li class="nav-submenu">
-                    <a class="nav-link" style="color: #787171;" href="userlist.html"><span class="text">لیست
-                        کاربران</span></a>
+                    <a class="nav-link" style="color: #787171;" href="{{ route('show.form.shop') }}"><span
+                        class="text">مدیریت مراکز خرید </span></a>
                   </li>
                 </ul>
-                <a href="#Representation-management" data-toggle="collapse" aria-expanded="false" class="nav-link"><span
-                    class="text" id="dropdown-toggle">مدیریت نمایندگان<i class="fas fa-angle-down"></i></span></a>
-                <ul class="collapse list-unstyled" id="Representation-management">
-                  <li class="nav-submenu">
-                    <a class="nav-link" style="color: #787171;" href="
-                            Agentmanagment.html"><span class="text">فرم اولیه ثبت نماینده</span></a>
-                  </li>
-                  <li class="nav-submenu">
-                    <a class="nav-link" style="color: #787171;" href="Agentlist.html"><span class="text">لیست
-                        نمایندگان</span></a>
-                  </li>
-                </ul>
+                <li class="nav-item"><a href="{{ route('show.agent.form') }}" class="nav-link"><span class="text">
+                  مدیریت نمایندگان
+                </span></a></li>
               <li class="nav-item"><a href="logestic managment.html" class="nav-link"><span class="text">مدیریت
                     لوجستیک</span></a></li>
               <li class="nav-item"><a href="Accounting.html" class="nav-link"><span class="text">حسابداری</span></a>

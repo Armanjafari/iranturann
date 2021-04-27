@@ -15,9 +15,12 @@ class CreateMarketsTable extends Migration
     {
         Schema::create('markets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->integer('percent');
-
+            $table->string('market_name');
+            $table->string('slug');
+            $table->string('bank_number');
+            $table->string('shaba_number');
+            $table->string('instagram')->nullable();
+            $table->integer('type')->comment('0:market,1:messenger');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

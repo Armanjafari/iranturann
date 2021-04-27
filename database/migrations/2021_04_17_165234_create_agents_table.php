@@ -16,7 +16,8 @@ class CreateAgentsTable extends Migration
         Schema::create('agents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('percent');
-
+            $table->string('slug');
+            $table->string('instagram')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
