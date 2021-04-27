@@ -3,9 +3,7 @@
 
 <!--start main-->
 <main>
-
-
-
+    
  <div class="col-lg-12">
      
  </div>
