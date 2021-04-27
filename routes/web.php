@@ -134,3 +134,8 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::get('market','MarketController@showForm')->name('show.market.form');
     Route::post('market','MarketController@createMarket')->name('create.market');
 });
+
+
+Route::get('filter', function(){
+    return view('filter');
+        });
