@@ -89,7 +89,7 @@ Route::group(['namespace' => 'ShopingCenter'],function () {
     Route::get('shopingcenter/{center}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
 });
 
-Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
+Route::group(['namespace' => 'Admin' , 'prefix' => 'admin', 'middleware' => 'role:admin'], function() {
     Route::get('settings', 'ProductSettingsController@showForm')->name('show.admin.settings.form');
     Route::post('brand', 'BrandController@createBrand')->name('create.brand');
     Route::get('brand', 'BrandController@showForm')->name('show.brand.form');
@@ -131,10 +131,13 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
         return view('Admin.dashboard');
     });
 
+
+
     Route::get('market','MarketController@showForm')->name('show.market.form');
     Route::post('market','MarketController@createMarket')->name('create.market');
 });
-
+Route::get('admin/login/', 'Admin\Auth\LoginController@showForm')->name('show.admin.login.form');
+Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.login');
 
 Route::get('filter', function(){
     return view('filter');
