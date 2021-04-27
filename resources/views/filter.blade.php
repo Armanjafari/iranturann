@@ -53,6 +53,36 @@
                                 </ul>
                         </div>
                         
+                        <div class="card list-Grouping text-right">
+                                <div class="card-header card-header-list">
+                                        <div class="text-center"><a href="#Grouping" data-toggle="collapse" aria-expanded="false" class="nav-menu"><span class="text" id="dropdown-toggle">دسته بندی</span></a></div>
+                                </div>
+                                <ul class="p-0 mr-3 ml-3">
+                                        <ul class="collapse list-unstyled p-0 ml-1" id="Grouping">
+                                                <input type="search" name="" id="" class="form-control p-2 mt-3" placeholder="جست وجو نام دسته بندی">
+                                                <li class="nav-under-menu mt-3">
+                                                        <ul class="" id="product-item">
+                                                                <li class="mr-1"><input type="checkbox" name="" class="style-check-box"><label class="mb-0 mr-2">لباس مردانه</label>
+                                                                </li>
+                                                                <li class="mr-3"><input type="checkbox" name=""><label class="mb-0 mr-2">لباس مردانه</label>
+                                                                </li>
+                                                                <li class="mr-4-5"><input type="checkbox" name=""><label class="mb-0 mr-2">لباس مردانه</label>
+                                                                </li>
+                                                                <br>
+                                                                <li class="mr-1"><input type="checkbox" name=""><label class="mb-0 mr-2">هودی زمستانه
+                                                                                مردانه</label></li>
+                                                                <li class="mr-3"><input type="checkbox" name=""><label class="mb-0 mr-2">سویشرت زمستانه
+                                                                                مردانه</label></li>
+                                                                <li class="mr-4-5"><input type="checkbox" name=""><label class="mb-0 mr-2">هودی زمستانه
+                                                                                مردانه</label></li>
+                                                        </ul>
+                                                </li>
+                                        </ul>
+                                </ul>
+                        </div>
+                        
+
+
                         <div class="card list-Grouping text-right mt-3">
                                 <div class="card-header card-header-list">
                                         <div class="text-center"><a href="#brand" data-toggle="collapse" aria-expanded="false" class="nav-menu"><span class="text" id="dropdown-toggle">برند</span></a></div>
