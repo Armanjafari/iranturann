@@ -266,7 +266,7 @@
                                     for="1">☆</label>
                             </div>
                         </form>
-                        <caption><a> {{$item->name}} </a></caption>
+                        <caption><a> {{$item->market_name}} </a></caption>
                     </div>
                 </div>
             </div>
@@ -280,8 +280,7 @@
                 شبکه های اجتماعی <img style="width:40px;height:50px; border-radius:10px" src="img/whatsapp.ico"
                     alt=""></a></div>
         <div class="owl-carousel owl-theme mt-5">
-            @forelse ($seller as $item)
-            @if (!$item->roles->where('name','messenger')->isEmpty())
+            @forelse ($messenger_seller as $item)
             <div class="item">
                 <div class="card border-0 card-shopping">
                     <div class="card-body text-center p-2"><img
@@ -296,11 +295,10 @@
                                     for="1">☆</label>
                             </div>
                         </form>
-                        <caption><a> {{$item->name}} </a></caption>
+                        <caption><a> {{$item->market_name}} </a></caption>
                     </div>
                 </div>
             </div>
-            @endif
             @empty
             چیزی وجود نداره داداش
             @endforelse

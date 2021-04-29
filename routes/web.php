@@ -133,6 +133,8 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin', 'middleware' => 'rol
 
     Route::get('market','MarketController@showForm')->name('show.market.form');
     Route::post('market','MarketController@createMarket')->name('create.market');
+    Route::get('market/{market}', 'MarketController@showEditForm')->name('show.market.edit.form');
+    Route::post('market/{market}', 'MarketController@edit')->name('edit.market');
 });
 Route::get('admin/login/', 'Admin\Auth\LoginController@showForm')->name('show.admin.login.form');
 Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.login');

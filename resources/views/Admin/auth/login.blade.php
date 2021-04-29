@@ -22,6 +22,8 @@
   <body dir="rtl">
   <main>
 <div class="col-lg-9 m-auto col-sm-7 col-12">
+  @include('alerts.errors')
+  @include('alerts.success')
 <form action="{{ route('admin.login') }}" method="POST">
 @csrf
 <div class="card  border-color-promiry">

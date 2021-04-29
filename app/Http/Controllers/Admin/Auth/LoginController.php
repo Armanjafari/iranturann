@@ -33,8 +33,9 @@ class LoginController extends Controller
         $user = User::where('phone_number',$phone_number)->firstOrFail();
         if ($user->hasRole('admin'))
         {
-            Auth::login($user);
-            return redirect()->route('admin.dashboard');
+            if (Auth::attempt(['phone_number' => $request->input('phone_number'), 'password' => $request->input('password')]))
+                return redirect()->route('admin.dashboard');
+            return back()->withErrors(' نام کاربری یا کلمه عبور اشتباه است ');
         }
         return abort(403);
 

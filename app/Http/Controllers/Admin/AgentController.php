@@ -74,7 +74,6 @@ class AgentController extends Controller
                 $image->delete();
             }
             $this->addImage($request , $agent);
-
         }
         return redirect()->route('show.agent.form')->withSuccess(' با موفقیت انجام شد ');
     }

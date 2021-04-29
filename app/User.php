@@ -76,7 +76,7 @@ class User extends Authenticatable implements JWTSubject
     }
     public function shipings()
     {
-        return $this->hasMany(Shiping::class);
+        return $this->hasOne(Shiping::class);
     }
     public function market()
     {

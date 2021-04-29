@@ -12,12 +12,12 @@ class homecontroller extends Controller
     public function index()
     {
         // dd($user->hasRole('seller'));
-        $seller = User::all();
-        $markets = Market::all();
+        $markets = Market::where('type', 0)->get();
          //dd($users);
         $centers = Center::all();
+        $messenger_seller = Market::wheretype(1)->get();
         // dd($seller);
         $categories = Category::all();
-        return view('index',compact('seller' , 'centers' , 'categories' , 'markets'));
+        return view('index',compact('messenger_seller', 'centers' , 'categories' , 'markets'));
     }
 }

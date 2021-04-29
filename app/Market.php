@@ -6,5 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Market extends Model
 {
-    protected $fillable = ['market_name', 'slug' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'agent_id' , 'center_id'];
+    protected $fillable = ['market_name', 'slug' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'center_id' , 'agent_id'];
+
+    public function agent()
+    {
+        return $this->belongsTo(Agent::class);
+    }
+    public function center()
+    {
+        return $this->belongsTo(Center::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }
+

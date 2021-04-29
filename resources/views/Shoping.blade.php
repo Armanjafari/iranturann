@@ -46,7 +46,7 @@
                                     for="1">☆</label>
                             </div>
                         </form>
-                        <caption><a href="#"> {{$item->name}} </a></caption><br>
+                        <caption><a href="#"> {{$item->market_name}} </a></caption><br>
                         <div class="mt-2">
                             <span>طبقه اول ، پلاک01</span>
                         </div>
