@@ -17,6 +17,7 @@ class CreatePuresTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('persian_title');
+            $table->string('slug');
             $table->text('description');
             $table->integer('price');
             $table->unsignedBigInteger('option_id');
