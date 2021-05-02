@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Attribute;
 use App\Product;
+use App\Pure;
 
 class AttributeController extends Controller
 {
-    public function index(Product $attribute)
+    public function index(Pure $attribute)
     {
         // dd($attribute);
         // return $attribute->attributes;
@@ -21,7 +22,7 @@ class AttributeController extends Controller
         //     array_push($values , $key->pivot->values);
         // }
         
-        // dd($values);
+        // dd($values);  TODO fix relation between attributes and attribute values , M 2 M => One To Many
         return response()->json([
             'Product' => $attribute->load('attributes.pivot.values'),]
         );

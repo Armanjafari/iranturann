@@ -88,8 +88,8 @@ return view('Shoping');
 Route::group(['namespace' => 'ShopingCenter'],function () {
     Route::get('shopingcenter/{center}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
 });
-
-Route::group(['namespace' => 'Admin' , 'prefix' => 'admin', 'middleware' => 'role:admin'], function() {
+// , 'middleware' => 'role:admin'
+Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::get('settings', 'ProductSettingsController@showForm')->name('show.admin.settings.form');
     Route::post('brand', 'BrandController@createBrand')->name('create.brand');
     Route::get('brand', 'BrandController@showForm')->name('show.brand.form');

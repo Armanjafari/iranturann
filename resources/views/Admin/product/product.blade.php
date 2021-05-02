@@ -80,7 +80,7 @@
         </div>
         <div class="col-lg-6">
           <div class="first-name">
-            <label>قیمت اصلی</label>
+            <label>قیمت مرجع</label>
             <input type="text" class="form-control p-3 form-control-one" placeholder="قیمت اصلی محصول را وارد نمایید">
           </div>
         </div>
