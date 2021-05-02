@@ -17,15 +17,16 @@
 			</div>
 
 
-			<img src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt="" width="100%"
-				style="height: 20em; opacity:0.7; position:relative">
-		</div>
-		<div class="row">
+        <img src="https://www.uplooder.net/img/image/87/7bd54b1fa0867c2979143bf61e0d0395/Whal.jpg" alt="" width="100%"
+            style="height: 20em; opacity:0.7; position:relative">
+    </div>
+    <div class="row">
 
 		</div>
 		<div class="col-lg-12 ml-auto mr-auto col-8">
 			<div class="card-header text-center mt-5 card-header-product w-100 pt-5 pb-5"><a class="new-product">
 					WAHL </a></div>
+		</div>
 			<div class="row">
 				<div class="col-lg-3 mt-5">
 					<div class="card text-center">
@@ -125,7 +126,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		
 	</div>
 </main>
 @endsection
