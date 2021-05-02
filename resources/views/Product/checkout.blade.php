@@ -3,7 +3,6 @@
 <main>
 <div class="row mt-5">
 	<div class="col-md-8">
-
 		<div class="card">
 			<div class="card-header">
 				@lang('payment.user information')
