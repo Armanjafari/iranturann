@@ -20,7 +20,7 @@
         </div>
 
 
-        <img src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt="" width="100%"
+        <img src="https://www.uplooder.net/img/image/87/7bd54b1fa0867c2979143bf61e0d0395/Whal.jpg" alt="" width="100%"
             style="height: 20em; opacity:0.7; position:relative">
     </div>
     <div class="row">
@@ -112,4 +112,5 @@
 				</div>
 	</div>
 </div>
+	
 @endsection
