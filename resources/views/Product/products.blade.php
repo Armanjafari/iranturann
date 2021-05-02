@@ -17,17 +17,10 @@
 			</div>
 
 
-<<<<<<< HEAD
         <img src="https://www.uplooder.net/img/image/87/7bd54b1fa0867c2979143bf61e0d0395/Whal.jpg" alt="" width="100%"
             style="height: 20em; opacity:0.7; position:relative">
     </div>
     <div class="row">
-=======
-			<img src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt="" width="100%"
-				style="height: 20em; opacity:0.7; position:relative">
-		</div>
-		<div class="row">
->>>>>>> fb0a6301921ee9da1cd1337b35368cd96f52a1ac
 
 		</div>
 		<div class="col-lg-12 ml-auto mr-auto col-8">
