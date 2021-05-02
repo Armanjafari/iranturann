@@ -26,6 +26,7 @@
 		<div class="col-lg-12 ml-auto mr-auto col-8">
 			<div class="card-header text-center mt-5 card-header-product w-100 pt-5 pb-5"><a class="new-product">
 					WAHL </a></div>
+		</div>
 			<div class="row">
 				<div class="col-lg-3 mt-5">
 					<div class="card text-center">
@@ -125,7 +126,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		
 	</div>
 </main>
 @endsection
