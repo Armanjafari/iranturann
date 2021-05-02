@@ -16,11 +16,15 @@ class CreatePuresTable extends Migration
         Schema::create('pures', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('persian_title');
             $table->text('description');
+            $table->integer('price');
             $table->unsignedBigInteger('option_id');
             $table->foreign('option_id')->references('id')->on('options')->onDelete('cascade');
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -116,6 +116,7 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::put('category/{cat}', 'CategoryController@edit')->name('edit.categroy');
 
     Route::get('product', 'ProductController@showForm')->name('show.form.product');
+    Route::post('product', 'ProductController@createProduct')->name('create.product');
 
     Route::get('shopingcenter', 'ShopingCenterController@showForm')->name('show.form.shop');
     Route::post('shopingcenter', 'ShopingCenterController@createShop')->name('create.shop');
