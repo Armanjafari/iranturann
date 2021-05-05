@@ -146,3 +146,6 @@ Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.log
 Route::get('filter', function(){
     return view('filter');
         });
+        Route::get('etesal', function(){
+            return view('etesal');
+                });
