@@ -20,7 +20,7 @@ class CreatePuresTable extends Migration
             $table->string('slug');
             $table->text('description');
             $table->integer('price');
-            $table->unsignedBigInteger('option_id');
+            $table->unsignedBigInteger('option_id')->nullable();
             $table->foreign('option_id')->references('id')->on('options')->onDelete('cascade');
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');

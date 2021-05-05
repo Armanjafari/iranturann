@@ -14,13 +14,14 @@ class AddFeildToFullsTable extends Migration
     public function up()
     {
         Schema::table('fulls', function (Blueprint $table) {
-            $table->unsignedBigInteger('color_id');
+            $table->unsignedBigInteger('color_id')->nullable();
             $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->unsignedBigInteger('waranty_id');
             $table->foreign('waranty_id')->references('id')->on('waranties')->onDelete('cascade');
             $table->unique(['product_id' , 'color_id']);
+            $table->primary(['color_id' , 'waranty_id']); // TODO check this
 
         });
     }

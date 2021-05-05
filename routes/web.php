@@ -10,55 +10,54 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-    // $sms = resolve(Notification::class);
-    // $user = User::find(1);
-    // $sms->sendSms($user,2222);
-    // return auth()->user()->activeCode()->create([
-    //     'code' => 23,
-    //     'expired_at' => now()->addMinutes(1)
-    // ]);
-    //   return view('index');
-    //dd(auth()->user()->can('add user'));
-    //dd(auth()->user()->hasRole('teacher'));
-    // auth()->user()->refreshRoles();
+// $sms = resolve(Notification::class);
+// $user = User::find(1);
+// $sms->sendSms($user,2222);
+// return auth()->user()->activeCode()->create([
+//     'code' => 23,
+//     'expired_at' => now()->addMinutes(1)
+// ]);
+//   return view('index');
+//dd(auth()->user()->can('add user'));
+//dd(auth()->user()->hasRole('teacher'));
+// auth()->user()->refreshRoles();
 
-    
+
 // Route::get('/', function () {
 //     dd(Product::find(1)->category->validCoupons());
 // });
 Route::namespace('Auth')->group(function () {
-Route::get('logout/', 'LoginController@logout')->name('logout');
-Route::get('login/', 'LoginController@showLoginForm');
-Route::post('login/', 'LoginController@login')->name('login');
-Route::post('register/', 'RegisterController@register')->name('register');
-Route::get('register/', 'RegisterController@showRegistrationForm');
+    Route::get('logout/', 'LoginController@logout')->name('logout');
+    Route::get('login/', 'LoginController@showLoginForm');
+    Route::post('login/', 'LoginController@login')->name('login');
+    Route::post('register/', 'RegisterController@register')->name('register');
+    Route::get('register/', 'RegisterController@showRegistrationForm');
 });
 Route::namespace('Auth\AuthCode')->group(function () {
-    Route::get('loginwithcode/' , 'LoginWithCodeController@showLoginForm');
+    Route::get('loginwithcode/', 'LoginWithCodeController@showLoginForm');
     Route::post('loginwithcode/', 'LoginWithCodeController@login')->name('login_with_code');
     Route::get('verify', 'LoginWithCodeController@verifyForm')->name('verify_login_code');
     Route::post('verify', 'LoginWithCodeController@codeValidator')->name('validate_code');
 });
 Route::get('/', 'homecontroller@index')->name('index');
 // can:add post (for example)
-Route::group(['prefix' => 'admin' , 'middleware' => 'role:admin'],function () { 
+Route::group(['prefix' => 'admin', 'middleware' => 'role:admin'], function () {
     Route::get('users/', 'UserController@index')->name('users.index');
-    Route::get('users/{user}/edit','UserController@edit' )->name('users.edit');
-    Route::post('users/{user}/edit','UserController@update' )->name('users.update');
+    Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
+    Route::post('users/{user}/edit', 'UserController@update')->name('users.update');
 
     Route::get('roles', 'RoleController@index')->name('roles.index');
-    Route::post('roles','RoleController@store')->name('roles.store');
+    Route::post('roles', 'RoleController@store')->name('roles.store');
     Route::get('roles/{role}/edit', 'RoleController@edit')->name('roles.edit');
-    Route::post('roles/{role}/edit','RoleController@update' )->name('roles.update');
-    
+    Route::post('roles/{role}/edit', 'RoleController@update')->name('roles.update');
 });
 
-Route::group([ 'namespace' => 'Product'],function () {
+Route::group(['namespace' => 'Product'], function () {
     Route::get('products', 'ProductController@index')->name('product.index');
     Route::get('basket/add/{product}', 'BasketController@add')->name('basket.add');
-    Route::get('basket/clear/' , 'BasketController@clear');
-    Route::get('basket/','BasketController@index')->name('basket.index');
-    Route::post('basket/update/{product}','BasketController@update')->name('basket.update');
+    Route::get('basket/clear/', 'BasketController@clear');
+    Route::get('basket/', 'BasketController@index')->name('basket.index');
+    Route::post('basket/update/{product}', 'BasketController@update')->name('basket.update');
     Route::get('basket/checkout', 'BasketController@checkoutForm')->name('basket.checkout.form');
     Route::post('basket/checkout', 'BasketController@checkout')->name('basket.checkout');
     Route::get('product/{option}', 'ProductController@product')->name('product.single');
@@ -66,30 +65,29 @@ Route::group([ 'namespace' => 'Product'],function () {
 
     Route::get('product/attribute/{attribute}', 'AttributeController@index')->name('get.attribute.values');
 });
-Route::group([ 'namespace' => 'Product\Payment'],function () {
+Route::group(['namespace' => 'Product\Payment'], function () {
 
-Route::post('payment/{gateway}/callback', 'PaymentController@verify')->name('payment.verify');
+    Route::post('payment/{gateway}/callback', 'PaymentController@verify')->name('payment.verify');
 });
 
-Route::group(['namespace' => 'Coupons'],function () {
-    Route::post('coupons' , 'CouponsController@store')->name('coupons.store');
-    Route::get('coupons/remove' , 'CouponsController@remove')->name('coupons.remove');
-
+Route::group(['namespace' => 'Coupons'], function () {
+    Route::post('coupons', 'CouponsController@store')->name('coupons.store');
+    Route::get('coupons/remove', 'CouponsController@remove')->name('coupons.remove');
 });
 Route::get('province/{province}', 'addressController@index')->name('province');
 
 //index
-Route::group(['namespace' => 'Category'],function () {
-    Route::get('productByCategory/{category}' , 'CategoryController@byProduct')->name('product.by.category');
-    Route::get('productByCategory', function(){
-return view('Shoping');
+Route::group(['namespace' => 'Category'], function () {
+    Route::get('productByCategory/{category}', 'CategoryController@byProduct')->name('product.by.category');
+    Route::get('productByCategory', function () {
+        return view('Shoping');
     });
 });
-Route::group(['namespace' => 'ShopingCenter'],function () {
+Route::group(['namespace' => 'ShopingCenter'], function () {
     Route::get('shopingcenter/{center}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
 });
 // , 'middleware' => 'role:admin'
-Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('settings', 'ProductSettingsController@showForm')->name('show.admin.settings.form');
     Route::post('brand', 'BrandController@createBrand')->name('create.brand');
     Route::get('brand', 'BrandController@showForm')->name('show.brand.form');
@@ -122,7 +120,7 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
     Route::post('shopingcenter', 'ShopingCenterController@createShop')->name('create.shop');
     Route::get('shopingcenter/{shop}', 'ShopingCenterController@showEditForm')->name('show.shop.edit.form');
     Route::post('shopingcenter/{shop}', 'ShopingCenterController@edit')->name('edit.shop');
-    
+
     Route::get('agent', 'AgentController@showForm')->name('show.agent.form');
     Route::post('agent', 'AgentController@createAgent')->name('create.agent');
     Route::get('agent/{agent}', 'AgentController@showEditForm')->name('show.agent.edit.form');
@@ -132,20 +130,27 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'], function() {
 
 
 
-    Route::get('market','MarketController@showForm')->name('show.market.form');
-    Route::post('market','MarketController@createMarket')->name('create.market');
+    Route::get('market', 'MarketController@showForm')->name('show.market.form');
+    Route::post('market', 'MarketController@createMarket')->name('create.market');
     Route::get('market/{market}', 'MarketController@showEditForm')->name('show.market.edit.form');
     Route::post('market/{market}', 'MarketController@edit')->name('edit.market');
-    
-    Route::get('market/category/{market}','MarketController@categoryForm')->name('show.market.category.form');
-    Route::post('market/category/{market}','MarketController@editCategory')->name('edit.market.category');
+
+    Route::get('market/category/{market}', 'MarketController@categoryForm')->name('show.market.category.form');
+    Route::post('market/category/{market}', 'MarketController@editCategory')->name('edit.market.category');
 });
 Route::get('admin/login/', 'Admin\Auth\LoginController@showForm')->name('show.admin.login.form');
 Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.login');
 
-Route::get('filter', function(){
+Route::get('filter', function () {
     return view('filter');
-        });
-        Route::get('etesal', function(){
-            return view('etesal');
-                });
+});
+Route::get('etesal', function () {
+    return view('etesal');
+});
+Route::group(['namespace' => 'Market', 'prefix' => 'market'], function () {
+    Route::get('/', 'ProductController@index')->name('market.index');
+    Route::post('/', 'ProductController@add')->name('market.add.product');
+    Route::get('variety/', 'ProductController@vareityForm')->name('market.variety.form');
+    Route::post('variety/', 'ProductController@vareity')->name('market.variety.create');
+
+});
