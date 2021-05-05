@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Agent;
+use App\Category;
 use App\Center;
 use App\City;
 use App\Http\Controllers\Controller;
@@ -129,6 +130,20 @@ class MarketController extends Controller
             'postal_code' => $request->input('postal_code'),
             'city_id' => $request->input('city_id')
         ]);
-        return redirect()->route('show.market.form')->withSuccess(' با موفقیت انجام شد ');
+        return redirect()->route('show.market.form')->withSuccess(__('iranturan.success message'));
+    }
+    public function categoryForm(Market $market)
+    {
+        $categories = Category::all();
+        return view('Admin.market.category', compact('categories' , 'market'));
+    }
+    public function editCategory(Market $market , Request $request)
+    {
+        $request->validate([
+            'categories' => 'required',
+        ]);
+        $market->categories()->sync($request->input('categories'));       
+        return back()->withSuccess(__('iranturan.success message'));
+
     }
 }

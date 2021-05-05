@@ -18,4 +18,8 @@ class Category extends Model
     {
         return $this->hasMany(Category::class , 'parent_id', 'id');
     }
+    public function markets()
+    {
+        return $this->belongsToMany(Market::class);
+    }
 }

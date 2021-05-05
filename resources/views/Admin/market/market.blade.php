@@ -226,6 +226,7 @@
                             <th>مرکز فروش</th>
                             <th>ویرایش</th>
                             <th>حذف</th>
+                            <th> مدیریت دسترسی </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -241,6 +242,7 @@
                             <td> {{$market->center->name}} </td>
                             <td><a href="{{route('show.market.edit.form',$market->id)}}">ویرایش</a></td>
                             <td><a href="#">حذف</a></td>
+                            <td><a href="{{ route('show.market.category.form',$market->id) }}">دسترسی</a></td>
                         </tr>
                         @empty
                             
