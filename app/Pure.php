@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pure extends Model
 {
-    protected $fillable = ['title','persian_title','description','price','option_id','brand_id', 'category_id'];
+    protected $fillable = ['title','persian_title','description','price','option_id','brand_id', 'category_id' , 'slug'];
     use EagerLoadPivotTrait;
     public function category()
     {
