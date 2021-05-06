@@ -17,6 +17,7 @@
         "laravel/framework": "^6.20",
         "laravel/tinker": "^2.5",
         "melipayamak/laravel": "1.0.0",
+        "php-ffmpeg/php-ffmpeg": "^0.18.0",
         "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {

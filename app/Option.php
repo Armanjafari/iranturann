@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Option extends Model
 {
-    protected $fillable = ['id','name'];
+    protected $fillable = ['name'];
+    public function values()
+    {
+        return $this->hasMany(Color::class);
+    }
 }

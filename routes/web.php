@@ -151,6 +151,12 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market'], function () {
     Route::get('/', 'ProductController@index')->name('market.index');
     Route::post('/', 'ProductController@add')->name('market.add.product');
     Route::get('variety/', 'ProductController@vareityForm')->name('market.variety.form');
-    Route::post('variety/', 'ProductController@vareity')->name('market.variety.create');
+    Route::get('variety/add/', 'ProductController@vareityFinalForm')->name('market.variety.add.form');
+    Route::post('variety/add/', 'ProductController@vareityAdd')->name('market.variety.add');
 
+});
+
+Route::group(['namespace' => 'File',], function () {
+    Route::get('file/create', 'FileController@create')->name('file.create');
+    Route::post('file', 'FileController@new')->name('file.new');
 });

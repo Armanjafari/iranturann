@@ -18,4 +18,8 @@ class Pure extends Model
     {
         return $this->belongsToMany(Attribute::class)->using(PivotProductAttribute::class)->withPivot(['value_id']);
     }
+    public function option()
+    {
+        return $this->belongsTo(Option::class);
+    }
 }

@@ -21,7 +21,7 @@ class AddFeildToFullsTable extends Migration
             $table->unsignedBigInteger('waranty_id');
             $table->foreign('waranty_id')->references('id')->on('waranties')->onDelete('cascade');
             $table->unique(['product_id' , 'color_id']);
-            $table->primary(['color_id' , 'waranty_id']); // TODO check this
+            // TODO check this
 
         });
     }

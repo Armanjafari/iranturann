@@ -27,7 +27,7 @@ class BrandController extends Controller
         $brand->image()->create([
             'address' => $destination . $file->getClientOriginalName()
         ]);
-        return redirect()->back()->withSuccess('با موفقیت انجام شد');
+        return redirect()->back()->withSuccess(__('iranturan.success message'));
     }
     public function edit(Brand $brand ,Request $request)
     {
@@ -44,7 +44,7 @@ class BrandController extends Controller
         $brand->image()->create([
             'address' => $destination . $file->getClientOriginalName()
         ]);
-        return redirect()->back()->withSuccess(' با موفقیت انجام شد ');
+        return redirect()->back()->withSuccess(__('iranturan.success message'));
     }
     public function showEditForm(Brand $brand ,Request $request)
     {
