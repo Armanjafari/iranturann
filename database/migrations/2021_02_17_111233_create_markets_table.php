@@ -21,6 +21,7 @@ class CreateMarketsTable extends Migration
             $table->string('shaba_number');
             $table->string('instagram')->nullable();
             $table->integer('type')->comment('0:market,1:messenger');
+            $table->boolean('is_active')->default(1);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

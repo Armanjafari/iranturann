@@ -69,4 +69,10 @@ class ProductController extends Controller
         ]);
         return back()->withSuccess(__('iranturan.success message'));
     }
+    public function varietyIndex()
+    {
+        $user = Auth::user();
+        // TODO start from here $user->load 
+        return view('Market.index_variety');
+    }
 }

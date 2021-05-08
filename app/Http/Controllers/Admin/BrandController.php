@@ -56,8 +56,8 @@ class BrandController extends Controller
     {
         return $request->validate([
             'image' => 'required|image|max:2048',
-            'name' => 'required|string|min:2|max:60|unique:brands',
-            'persian_name' => 'required|min:4|unique:brands',
+            'name' => 'required|string|min:2|max:60',
+            'persian_name' => 'required|min:2',
         ]);
     }
 }

@@ -5,12 +5,13 @@
   <div class="card-header add-product-box text-center">
     <span class="add-product"> لیست گارانتی </span>
   </div>
+  <form action="{{ route('edit.waranty' , $waranty->id) }}" method="post">
+    @csrf
   <div class="col-lg-12 mt-3">
 
     <div class="card p-3">
       <div class="row">
-        <form action="{{ route('edit.waranty' , $waranty->id) }}" method="post">
-          @csrf
+       
           <div class="col-lg-3 mt-2">
             <div class="first-name">
               <label for="">نام گارانتی</label>
@@ -29,7 +30,8 @@
         <tr>
           <th>شماره</th>
           <th>نام گارانتی</th>
-          <th>عملیات</th>
+          <th>ویرایش</th>
+          <th>حذف</th>
         </tr>
       </thead>
       <tbody>
@@ -40,7 +42,12 @@
             {{ $waranty->name }}
           </td>
           <td><a href="{{ route('show.waranty.edit.form' , $waranty->id) }}" class="a1">ویرایش</a></td>
+          <td>
+            <a href="{{ route('delete.waranty' , $waranty->id) }}" class="a1">حذف
+            </a>
+          </td>
         </tr>
+
         @empty
         گارانتی وجود ندارد
         @endforelse

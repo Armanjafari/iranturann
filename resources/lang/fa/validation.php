@@ -177,5 +177,6 @@ return [
         'terms'                 => 'شرایط',
         'province'              => 'استان',
         'phone_number'                  => 'شماره تلفن',
+        'center'              => 'مرکز خرید',
     ],
 ];

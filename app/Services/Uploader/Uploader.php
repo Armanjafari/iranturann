@@ -1,6 +1,7 @@
 <?php
 namespace App\Services\Uploader;
 
+use App\Exceptions\FileHasExistsException;
 use App\File;
 use Illuminate\Http\Request;
 
@@ -19,9 +20,11 @@ class Uploader
     }
     public function upload()
     {
+        if ($this->isFileExists()) throw new FileHasExistsException('file has already uploaded');
         $this->putFileIntoStorage();
         // dd($this->ffmpeg->durationOf($this->storageManager->getAbsolutePathOf($this->file->getClientOriginalName(), $this->getType(),$this->isPrivate())));
 
+        return $this->saveFileIntoDatabase();
     }
     private function saveFileIntoDatabase()
     {
@@ -31,6 +34,14 @@ class Uploader
             'type' => $this->getType(),
             'is_private' => $this->isPrivate(),
         ]);
+        $file->time = $this->getTime($file);
+        $file->save();
+    }
+    private function getTime(File $file)
+    {
+        if (!$file->isMedia()) return null;
+
+        return $this->ffmpeg->durationOf($file->absolutePath());
     }
     private function putFileIntoStorage()
     {
@@ -51,6 +62,11 @@ class Uploader
             'application/zip' => 'archive',
             'application/x-zip-compressed'  => 'archive',
         ][$this->file->getClientMimeType()];
+    }
+    private function isFileExists()
+    {
+        return $this->storageManager->isFileExists($this->file->getClientOriginalName(), $this->getType(),$this->isPrivate());
+
     }
 }
 ?>

@@ -32,6 +32,20 @@
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5">
+                        <div class="first-name">
+                            <label>اسلاگ</label>
+                            <input type="text" name='slug' value="{{ old('slug') }}"
+                                class="form-control p-3 form-control-one" placeholder="ایمیل خودرا وارد کنید">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4-5">
+                        <div class="first-name">
+                            <label>اینستاگرام</label>
+                            <input type="text" name='instagram' value="{{ old('instagram') }}"
+                                class="form-control p-3 form-control-one" placeholder="ایمیل خودرا وارد کنید">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4-5">
                         <div class="card form-control-one">
                             <div class="card-body">
                                 <div class="row">
@@ -71,14 +85,14 @@
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
                             <label>آدرس محل کار</label>
-                            <input type="text" name='address2' value="{{ old('address2') }}"
+                            <input type="text" name='work_address' value="{{ old('work_address') }}"
                                 class="form-control p-3 form-control-one" placeholder="آدرس محل کار خود را وارد نمایید">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
                             <label>تلفن ثابت</label>
-                            <input type="text" name="phone_number2" value="{{ old('phone_number2') }}"
+                            <input type="text" name="work_phone" value="{{ old('work_phone') }}"
                                 class="form-control p-3 form-control-one" placeholder="تلفن ثابت خود را وارد کنید">
                         </div>
                     </div>
@@ -148,7 +162,7 @@
                         <td> وجود ندارد </td>
                         @endforelse
                         <td><a href=" {{ route('show.agent.edit.form' , $agent->id) }} ">ویرایش</a></td>
-                        <td><a href="#">حذف</a></td>
+                        <td><a href="{{ route('delete.agent',$agent->id) }}">حذف</a></td>
                     </tr>
                     @empty
 

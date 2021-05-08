@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Market;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -45,29 +46,37 @@ class MarketController extends Controller
 
 
         ]);
-        $user = User::create([
-            'name' => $request->input('name'),
-            'phone_number' => $request->input('phone_number'),
-            'password' => Hash::make($request->input('password')),
-        ]);
-        $user->shipings()->create([
-            'address' => $request->input('address'),
-            'work_address' => $request->input('work_address'),
-            'work_phone' => $request->input('work_phone'),
-            'postal_code' => $request->input('postal_code'),
-            'city_id' => $request->input('city_id')
-        ]); // TODO fix images
-        $user->market()->create([
-            'market_name' => $request->input('market_name'),
-            'slug' => Str::slug($request->input('slug'), '-'),
-            'bank_number' => $request->input('bank_number'),
-            'shaba_number' => $request->input('shaba_number'),
-            'agent_id' => $request->input('agent_id'),
-            'center_id' => $request->input('center_id'),
-            'instagram' => $request->input('instagram'),
-            'type' => $request->input('type'),
-        ]);
-        return back()->withSuccess(' با موفیت انجام شد\ ');
+        DB::beginTransaction();
+
+        try {
+            $user = User::create([
+                'name' => $request->input('name'),
+                'phone_number' => $request->input('phone_number'),
+                'password' => Hash::make($request->input('password')),
+            ]);
+            $user->shipings()->create([
+                'address' => $request->input('address'),
+                'work_address' => $request->input('work_address'),
+                'work_phone' => $request->input('work_phone'),
+                'postal_code' => $request->input('postal_code'),
+                'city_id' => $request->input('city_id')
+            ]); // TODO fix images
+            $user->market()->create([
+                'market_name' => $request->input('market_name'),
+                'slug' => Str::slug($request->input('slug'), '-'),
+                'bank_number' => $request->input('bank_number'),
+                'shaba_number' => $request->input('shaba_number'),
+                'agent_id' => $request->input('agent_id'),
+                'center_id' => $request->input('center_id'),
+                'instagram' => $request->input('instagram'),
+                'type' => $request->input('type'),
+            ]);
+            DB::commit();
+            return back()->withSuccess(__('iranturan.success message'));
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withSuccess($e);
+        }
     }
     public function showEditForm(Market $market)
     {
@@ -106,44 +115,61 @@ class MarketController extends Controller
                 'phone_number' => $request->input('phone_number'),
                 'password' => Hash::make($request->input('password')),
             ]);
+        } else {
+            DB::beginTransaction();
+
+            try {
+                $market->user()->update([
+                    'name' => $request->input('name'),
+                    'phone_number' => $request->input('phone_number'),
+                ]);
+                $market->update([
+                    'market_name' => $request->input('market_name'),
+                    'slug' => Str::slug($request->input('slug'), '-'),
+                    'bank_number' => $request->input('bank_number'),
+                    'shaba_number' => $request->input('shaba_number'),
+                    'agent_id' => $request->input('agent_id'),
+                    'center_id' => $request->input('center_id'),
+                    'instagram' => $request->input('instagram'),
+                    'type' => $request->input('type'),
+                ]);
+                $market->user->shipings()->update([
+                    'address' => $request->input('address'),
+                    'work_address' => $request->input('work_address'),
+                    'work_phone' => $request->input('work_phone'),
+                    'postal_code' => $request->input('postal_code'),
+                    'city_id' => $request->input('city_id')
+                ]);
+                DB::commit();
+                return back()->withSuccess(__('iranturan.success message'));
+            } catch (\Exception $e) {
+                DB::rollBack();
+                return back()->withSuccess($e);
+            }
         }
-        else {
-            $market->user()->update([
-                'name' => $request->input('name'),
-                'phone_number' => $request->input('phone_number'),
-            ]);
-        }
-        $market->update([
-            'market_name' => $request->input('market_name'),
-            'slug' => Str::slug($request->input('slug'), '-'),
-            'bank_number' => $request->input('bank_number'),
-            'shaba_number' => $request->input('shaba_number'),
-            'agent_id' => $request->input('agent_id'),
-            'center_id' => $request->input('center_id'),
-            'instagram' => $request->input('instagram'),
-            'type' => $request->input('type'),
-        ]);
-        $market->user->shipings()->update([
-            'address' => $request->input('address'),
-            'work_address' => $request->input('work_address'),
-            'work_phone' => $request->input('work_phone'),
-            'postal_code' => $request->input('postal_code'),
-            'city_id' => $request->input('city_id')
-        ]);
-        return redirect()->route('show.market.form')->withSuccess(__('iranturan.success message'));
     }
+
+
     public function categoryForm(Market $market)
     {
         $categories = Category::all();
-        return view('Admin.market.category', compact('categories' , 'market'));
+        return view('Admin.market.category', compact('categories', 'market'));
     }
-    public function editCategory(Market $market , Request $request)
+    public function editCategory(Market $market, Request $request)
     {
         $request->validate([
             'categories' => 'required',
         ]);
-        $market->categories()->sync($request->input('categories'));       
+        $market->categories()->sync($request->input('categories'));
         return back()->withSuccess(__('iranturan.success message'));
-
+    }
+    public function delete(Market $market)
+    {
+        try {
+            $market->delete();
+            return back()->withSuccess(__('iranturan.success'));
+        } catch (\Exception $e) {
+            return back()->withError(__('iranturan.error delete market'));
+        }
     }
 }

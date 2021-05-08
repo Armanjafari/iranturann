@@ -42,4 +42,14 @@ class WarantyController extends Controller
             'name' => 'required|string|min:4|max:60|unique:waranties',
         ]);
     }
+    public function delete(Waranty $waranty)
+    {
+        try {
+            $waranty->delete();
+            return back()->withSuccess(__('iranturan.success'));
+        } catch (\Exception $e) {
+            dd($e);
+            return back()->withError(__('iranturan.error delete market'));
+        }
+    }
 }

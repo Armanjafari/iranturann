@@ -16,6 +16,8 @@ class CreateCentersTable extends Migration
         Schema::create('centers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('slug');
+            $table->string('instagram')->nullable();
             $table->text('address')->nullable();
             $table->string('phone_number')->nullable();
             $table->bigInteger('city_id')->unsigned();

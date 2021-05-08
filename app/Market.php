@@ -2,11 +2,12 @@
 
 namespace App;
 
+use App\Exceptions\FileHasExistsException;
 use Illuminate\Database\Eloquent\Model;
 
 class Market extends Model
 {
-    protected $fillable = ['market_name', 'slug' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'center_id' , 'agent_id'];
+    protected $fillable = ['market_name', 'slug', 'is_active' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'center_id' , 'agent_id'];
 
     public function agent()
     {
@@ -27,6 +28,17 @@ class Market extends Model
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+    public function delete()
+    {
+        $this->load('products','user');
+        if (!$this->products()->first()) 
+        {
+            $this->user->delete();
+            return parent::delete();
+        } else {
+            throw new FileHasExistsException('a relation exists');
+        }
     }
 
 }

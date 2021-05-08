@@ -19,9 +19,14 @@
                             @include('alerts.errors')
                             <div class="container mt-3">
                                 <select name="categories[]" class="form-control" multiple>
+
                                     @forelse ($categories as $category)
-                                    {{-- // TODO {{ $marketCategory->id == $category->id ? "checked" : "" }} --}}
                                     <option value="{{ $category->id }}">{{ $category->persian_name}}</option>
+                                      {{-- @forelse ($market->categories as $marketCategory)
+                                        // TODO fix this {{ $market->categories->[]->id == $category->id ? "checked" : "" }} 
+                                      @empty
+                                          
+                                      @endforelse --}}
                                     @empty
 
                                     @endforelse

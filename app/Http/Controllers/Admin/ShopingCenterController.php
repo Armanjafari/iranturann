@@ -25,6 +25,8 @@ class ShopingCenterController extends Controller
             'name' => $request->input('name'),
             'address' => $request->input('address'),
             'city_id' => $request->input('city'),
+            'slug' => $request->input('slug'),
+            'instagram' => $request->input('instagram'),
             'phone_number' => $request->input('phone_number'),       
         ]);
         $file = $request->file('image');
@@ -42,7 +44,8 @@ class ShopingCenterController extends Controller
             'address' => 'required',
             'city' => 'required',
             'phone_number' => 'required',
-            'image' => 'required'  
+            'image' => 'required',
+            'slug' => 'required',
         ]);
     }
     public function showEditForm(Center $shop)
@@ -60,6 +63,8 @@ class ShopingCenterController extends Controller
         $shop->update([
             'name' => $request->input('name'),
             'address' => $request->input('address'),
+            'slug' => $request->input('slug'),
+            'instagram' => $request->input('instagram'),
             'city_id' => $request->input('city'),
             'phone_number' => $request->input('phone_number'),
             ]);
@@ -71,5 +76,14 @@ class ShopingCenterController extends Controller
             'address' => $destination . $file->getClientOriginalName()
         ]);
         return redirect()->route('show.form.shop')->withSuccess(' با موفقیت انجام شد ');
+    }
+    public function delete(Center $shop)
+    {
+        try{
+            $shop->delete();
+            return back()->withSuccess(' با موفقیت حذف شد ');
+        }catch (\Exception $e){
+            return back()->withError(__('iranturan.error delete center'));
+        }
     }
 }

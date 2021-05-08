@@ -98,6 +98,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('waranty', 'WarantyController@createWaranty')->name('create.waranty');
     Route::get('waranty/{waranty}', 'WarantyController@showEditForm')->name('show.waranty.edit.form');
     Route::post('waranty/{waranty}', 'WarantyController@edit')->name('edit.waranty');
+    Route::get('waranty/delete/{waranty}', 'WarantyController@delete')->name('delete.waranty');
 
     Route::get('type', 'TypeController@showForm')->name('show.type.form');
     Route::post('type', 'TypeController@createOption')->name('create.option');
@@ -120,11 +121,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('shopingcenter', 'ShopingCenterController@createShop')->name('create.shop');
     Route::get('shopingcenter/{shop}', 'ShopingCenterController@showEditForm')->name('show.shop.edit.form');
     Route::post('shopingcenter/{shop}', 'ShopingCenterController@edit')->name('edit.shop');
+    Route::get('shopingcenter/delete/{shop}', 'ShopingCenterController@delete')->name('delete.shop');
 
     Route::get('agent', 'AgentController@showForm')->name('show.agent.form');
     Route::post('agent', 'AgentController@createAgent')->name('create.agent');
     Route::get('agent/{agent}', 'AgentController@showEditForm')->name('show.agent.edit.form');
     Route::post('agent/{agent}', 'AgentController@edit')->name('edit.agent');
+    Route::get('agent/delete/{agent}', 'AgentController@delete')->name('delete.agent');
 
     Route::get('/', 'TypeController@showDashboardForm')->name('admin.dashboard');
 
@@ -134,6 +137,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('market', 'MarketController@createMarket')->name('create.market');
     Route::get('market/{market}', 'MarketController@showEditForm')->name('show.market.edit.form');
     Route::post('market/{market}', 'MarketController@edit')->name('edit.market');
+    Route::get('market/delete/{market}', 'MarketController@delete')->name('delete.market');
 
     Route::get('market/category/{market}', 'MarketController@categoryForm')->name('show.market.category.form');
     Route::post('market/category/{market}', 'MarketController@editCategory')->name('edit.market.category');
@@ -153,10 +157,16 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market'], function () {
     Route::get('variety/', 'ProductController@vareityForm')->name('market.variety.form');
     Route::get('variety/add/', 'ProductController@vareityFinalForm')->name('market.variety.add.form');
     Route::post('variety/add/', 'ProductController@vareityAdd')->name('market.variety.add');
+    Route::get('variety/index', 'ProductController@varietyIndex')->name('market.variety.index');
+
 
 });
 
 Route::group(['namespace' => 'File',], function () {
     Route::get('file/create', 'FileController@create')->name('file.create');
     Route::post('file', 'FileController@new')->name('file.new');
+    Route::get('files', 'FileController@index')->name('files');
+    Route::get('file/{file}', 'FileController@show')->name('file.show');
+    Route::get('file/delete/{file}', 'FileController@delete')->name('file.delete');
+
 });

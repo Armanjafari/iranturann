@@ -8,7 +8,9 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use App\Services\MeliPayamak\MeliPayamak;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AgentController extends Controller
 {
@@ -24,23 +26,35 @@ class AgentController extends Controller
     }
     public function createAgent(Request $request)
     {
-        // TODO validation 
+        // TODO validation
+        $this->validateForm($request);
+        DB::beginTransaction();
+        try {
         $user = User::create([
             'name' => $request->input('name'),
             'phone_number' => $request->input('phone_number'),
             'email' => $request->input('email'),
-            'address' => $request->input('address'),
             'password' => Hash::make(($request->input('password'))),
 
         ]);
-        $agent = $user->agent()->create([
-            'work_address' => $request->input('address2'),
-            'work_phone' => $request->input('phone_number2'),
+        $user->shipings()->create([
+            'address' => $request->input('address'),
+            'work_address' => $request->input('work_address'),
+            'work_phone' => $request->input('work_phone'),
             'postal_code' => $request->input('postal_code'),
             'city_id' => $request->input('city_id')
         ]);
+        $agent = $user->agent()->create([
+            'slug' => Str::slug($request->input('slug'),'-'),
+            'instagram' => $request->input('instagram'),
+        ]);
         $this->addImage($request , $agent);
-        return redirect()->back()->withSuccess(' با موفقیت انجام شد ');
+        DB::commit();
+        return redirect()->back()->withSuccess(__('iranturan.success message'));
+        }catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->withSuccess($e);
+        }
     }
     public function showEditForm(Agent $agent)
     {
@@ -53,19 +67,24 @@ class AgentController extends Controller
     }
     public function edit(Agent $agent,Request $request)
     {
+        DB::beginTransaction();
+        try {
         $agent->load('user','images');
         $agent->update([
-            'work_address' => $request->input('address2'),
-            'work_phone' => $request->input('phone_number2'),
-            'postal_code' => $request->input('postal_code'),
-            'city_id' => $request->input('city_id')
-
+            'instagram' => $request->input('instagram'),
+            'slug' => $request->input('slug'),
         ]);
         $agent->user()->update([
             'name' => $request->input('name'),
             'phone_number' => $request->input('phone_number'),
             'email' => $request->input('email'),
-            'address' => $request->input('address')
+        ]);
+        $agent->user->shipings()->create([
+            'address' => $request->input('address'),
+            'work_address' => $request->input('work_address'),
+            'work_phone' => $request->input('work_phone'),
+            'postal_code' => $request->input('postal_code'),
+            'city_id' => $request->input('city_id')
         ]);
         if ($request->has('image'))
         {
@@ -75,7 +94,12 @@ class AgentController extends Controller
             }
             $this->addImage($request , $agent);
         }
-        return redirect()->route('show.agent.form')->withSuccess(' با موفقیت انجام شد ');
+        DB::commit();
+        return redirect()->route('show.agent.form')->withSuccess(__('iranturan.success message'));
+        } catch (\Exception $e){
+            DB::rollback();
+            return back()->withError($e);
+        }
     }
      // TODO delete function for all images in all controllers 
     public function addImage(Request $request , Agent $agent)
@@ -89,6 +113,31 @@ class AgentController extends Controller
             'address' => $destination . $file->getClientOriginalName()
         ]);$agent->images()->create([
             'address' => $destination . $file2->getClientOriginalName()
+        ]);
+    }
+    public function delete(Agent $agent)
+    {
+        try{
+            $agent->delete();
+            return back()->withSuccess(__('iranturan.success delete agent'));
+        }catch (\Exception $e){
+            return back()->withError(__('iranturan.error delete agent'));
+        }
+    }
+    private function validateForm(Request $request)
+    {
+        return $request->validate([
+            'name' => 'required',
+            'phone_number' =>  'required',
+            'email' =>  'required',
+            'password' =>  'required',
+            'address' => 'required',
+            'work_address' => 'required',
+            'work_phone' => 'required',
+            'postal_code' => 'required',
+            'city_id' =>'required',
+            'slug' => 'required',
+            'instagram' => 'required',
         ]);
     }
 }

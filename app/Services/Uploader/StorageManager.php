@@ -18,10 +18,27 @@ class StorageManager
     }
     public function getAbsolutePathOf(string $name , string $type ,bool $isPrivate)
     {
-        return $this->disk($isPrivate)->path($type . DIRECTORY_SEPARATOR . $name);
+        return $this->disk($isPrivate)->path($this->directoryPrefix($type,$name));
+    }
+    public function getFile(string $name, string $type , bool $isPrivate)
+    {
+        return $this->disk($isPrivate)->download($this->directoryPrefix($type , $name));
     }
     private function disk(bool $isPrivate)
     {
         return $isPrivate ? Storage::disk('private') : Storage::disk('public'); 
+    }
+    public function isFileExists(string $name , string $type , bool $isPrivate)
+    {
+        return $this->disk($isPrivate)->exists($this->directoryPrefix($type,$name));
+    }
+    // this function in clean code calls extraction function (mr.sami)
+    private function directoryPrefix($type,$name)
+    {
+        return $type . DIRECTORY_SEPARATOR . $name;
+    }
+    public function deleteFile(string $name , string $type, bool $isPrivate)
+    {
+        return $this->disk($isPrivate)->delete($this->directoryPrefix($type,$name));
     }
 }

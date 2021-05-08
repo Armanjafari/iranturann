@@ -8,17 +8,18 @@
   <div class="col-lg-12 mt-3">
     <div class="card p-3">
       <div class="row">
-        <form action="{{ route('create.waranty') }}" method="post"> 
-          @csrf     
-          <div class="col-lg-3 mt-2">
+    
+          <div class="col-lg-6 mt-2">
             <div class="first-name">
-              <label for="">نام گارانتی
+              <form action="{{ route('create.waranty') }}" method="post"> 
+                @csrf 
+              <label class="" for="">نام گارانتی
               </label>
               <input type="text" name="name" class="form-control-one p-2">
             </div>
           </div>
           <div class="col-lg-3">
-              <input class="btn-Record text-light" value="{{old('name')}}" type="submit" value="ثبت">
+              <input class="btn-Record text-light" type="submit" value="ثبت">
           </div>
         </div>
       </div>
@@ -29,7 +30,8 @@
           <tr>
             <th>شماره</th>
             <th>نام گارانتی</th>
-            <th>عملیات</th>
+            <th>ویرایش</th>
+            <th>حذف</th>
           </tr>
         </thead>
         <tbody>
@@ -42,6 +44,10 @@
               </td>
               <td>
                 <a href="{{ route('show.waranty.edit.form' , $waranty->id) }}" class="a1">ویرایش
+                </a>
+              </td>
+              <td>
+                <a href="{{ route('delete.waranty' , $waranty->id) }}" class="a1">حذف
                 </a>
               </td>
             </tr>

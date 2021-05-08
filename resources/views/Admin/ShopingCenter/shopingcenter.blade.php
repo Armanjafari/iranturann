@@ -26,6 +26,13 @@
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5">
+                        <div class="first-name">
+                            <label class="label">اسلاگ</label>
+                            <input type="text" name="slug" class="form-control p-3 form-control-one"
+                                placeholder="آدرس خود را وارد کنید">
+                        </div>
+                    </div>
+                    {{-- <div class="col-lg-6 mt-4-5">
                         <div class="card form-control-one">
                             <div class="card-body">
                                 <div class="row">
@@ -43,7 +50,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-6 mt-4-5">
                         <div class="card form-control-one">
                             <div class="card-body">
@@ -74,10 +81,17 @@
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5 ">
+                        <div class="first-name">
+                            <label> ایدی اینستاگرام </label>
+                            <input type="text" name="instagram" class="form-control p-3 form-control-one"
+                                placeholder="ایدی اینستاگرام را وارد نمایید">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4-5">
                         <label for="files" class="apload-img">آپلود عکس </label>
                         <input id="files" name="image" style="visibility:hidden;" type="file">
                     </div>
-                    <div class="text-center mt-3 mb-4">
+                    <div class="text-center mt-4-5">
                         <input type="submit" class="btn-Record" value="ثبت">
                     </div>
                 </div>
@@ -92,24 +106,28 @@
                             <th>آدرس</th>
                             <th>لینک عکس</th>
                             <th>عملیات</th>
+                            <th>حذف</th>
                         </tr>
                     </thead>
                     <tbody>
                         <!-- start row table 2 -->
                         @forelse ($centers as $center)
                         <tr>
-                            <td>{{ $center->phone_number }}</td>
+                            <td>{{ $center->phone_number ?? ' وجود ندارد '}}</td>
                             <td>
                                 {{$center->name}}
                             </td>
                             <td>
-                                {{ $center->address}}
+                                {{ $center->address ?? ' وجود ندارد '}}
                             </td>
                             <td>
                                 <img style="width: 100px;height: 100px;" src="{{$center->image->address ?? ''}}">
                             </td>
                             <td>
                                 <a href="{{ route('show.shop.edit.form',$center->id) }}">ویرایش</a>
+                            </td>
+                            <td>
+                                <a href="{{ route('delete.shop' , $center->id) }}"> حذف </a>
                             </td>
                         </tr>
                         @empty

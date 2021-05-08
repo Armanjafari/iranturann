@@ -14,18 +14,25 @@
                     <div class="col-lg-6">
                         <div class="first-name">
                             <label class="label">نام فروشگاه</label>
-                            <input type="text" name="name" value="{{ $shop->name }}"  class="form-control p-3 form-control-one"
-                                placeholder="نام فروشگاه خود را ثبت کنید">
+                            <input type="text" name="name" value="{{ $shop->name }}"
+                                class="form-control p-3 form-control-one" placeholder="نام فروشگاه خود را ثبت کنید">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="first-name">
                             <label class="label">آدرس</label>
-                            <input type="text" name="address" value="{{ $shop->address }}" class="form-control p-3 form-control-one"
-                                placeholder="آدرس خود را وارد کنید">
+                            <input type="text" name="address" value="{{ $shop->address }}"
+                                class="form-control p-3 form-control-one" placeholder="آدرس خود را وارد کنید">
                         </div>
                     </div>
-                    <div class="col-lg-6 mt-4-5">
+                    <div class="col-lg-6">
+                        <div class="first-name">
+                            <label class="label">اسلاگ</label>
+                            <input type="text" name="slug" value="{{ $shop->slug }}"
+                                class="form-control p-3 form-control-one" placeholder="آدرس خود را وارد کنید">
+                        </div>
+                    </div>
+                    {{-- <div class="col-lg-6 mt-4-5">
                         <div class="card form-control-one">
                             <div class="card-body">
                                 <div class="row">
@@ -43,7 +50,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-6 mt-4-5">
                         <div class="card form-control-one">
                             <div class="card-body">
@@ -54,7 +61,8 @@
                                                 شهر</label>
                                             <select class="form-control" name="city" id="exampleFormControlSelect1">
                                                 @forelse ($cities as $city)
-                                                <option {{$shop->city_id == $city->id ? 'selected' : ''}} value="{{$city->id}}"> {{$city->name}} -
+                                                <option {{$shop->city_id == $city->id ? 'selected' : ''}}
+                                                    value="{{$city->id}}"> {{$city->name}} -
                                                     {{$city->province->name}} </option>
                                                 @empty
 
@@ -69,8 +77,16 @@
                     <div class="col-lg-6 mt-4-5 ">
                         <div class="first-name">
                             <label> شماره مدیریت مرکز خرید </label>
-                            <input type="text" name="phone_number" value="{{ $shop->phone_number }}"  class="form-control p-3 form-control-one"
+                            <input type="text" name="phone_number" value="{{ $shop->phone_number }}"
+                                class="form-control p-3 form-control-one"
                                 placeholder="شماره مدیریت مرکز خرید را وارد نمایید">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4-5 ">
+                        <div class="first-name">
+                            <label> ایدی اینستاگرام </label>
+                            <input type="text" name="instagram" class="form-control p-3 form-control-one"
+                                placeholder="ایدی اینستاگرام را وارد نمایید">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5 ">
@@ -92,6 +108,7 @@
                             <th>آدرس</th>
                             <th>لینک عکس</th>
                             <th>عملیات</th>
+                            <th>حذف</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -111,6 +128,9 @@
                             <td>
                                 <a href="{{ route('show.shop.edit.form',$center->id) }}">ویرایش</a>
                             </td>
+                            <td>
+                                <a href="{{ route('delete.shop' , $center->id) }}"> حذف </a>
+                            </td>
                         </tr>
                         @empty
 
@@ -119,4 +139,4 @@
 
                     </tbody>
                 </table>
-@endsection
+                @endsection

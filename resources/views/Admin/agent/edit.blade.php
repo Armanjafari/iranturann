@@ -24,10 +24,24 @@
                                 placeholder="نام و نام خانوادگی خود را وارد کنید">
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
                             <label>ایمیل</label>
                             <input type="text" name='email' value="{{ $agent->user->email }}"
+                                class="form-control p-3 form-control-one" placeholder="ایمیل خودرا وارد کنید">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4-5">
+                        <div class="first-name">
+                            <label>اسلاگ</label>
+                            <input type="text" name='slug' value="{{ $agent->slug }}"
+                                class="form-control p-3 form-control-one" placeholder="ایمیل خودرا وارد کنید">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="first-name">
+                            <label>اینستاگرام</label>
+                            <input type="text" name='instagram' value="{{ $agent->instagram }}"
                                 class="form-control p-3 form-control-one" placeholder="ایمیل خودرا وارد کنید">
                         </div>
                     </div>
@@ -57,28 +71,28 @@
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
                             <label>آدرس</label>
-                            <input type="text" name='address' value="{{ $agent->user->address }}"
+                            <input type="text" name='address' value="{{ $agent->user->shipings->address }}"
                                 class="form-control p-3 form-control-one" placeholder="آدرس خودرا وارد کنید">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
                             <label>کدپستی</label>
-                            <input type="text" name='postal_code' value="{{ $agent->postal_code }}"
+                            <input type="text" name='postal_code' value="{{ $agent->user->shipings->postal_code }}"
                                 class="form-control p-3 form-control-one" placeholder="کدپستی خودرا وارد کنید">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
                             <label>آدرس محل کار</label>
-                            <input type="text" name='address2' value="{{ $agent->work_address }}"
+                            <input type="text" name='address2' value="{{ $agent->user->shipings->work_address }}"
                                 class="form-control p-3 form-control-one" placeholder="آدرس محل کار خود را وارد نمایید">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
                             <label>تلفن ثابت</label>
-                            <input type="text" name="phone_number2" value="{{ $agent->work_phone }}"
+                            <input type="text" name="phone_number2" value="{{ $agent->user->shipings->work_phone }}"
                                 class="form-control p-3 form-control-one" placeholder="تلفن ثابت خود را وارد کنید">
                         </div>
                     </div>
@@ -137,7 +151,7 @@
                         <td><img class="w-100 h-100" src="{{$agent->images[0]->address ?? ''}}" alt=""></td>
                         <td><img class="w-100 h-100" src="{{$agent->images[1]->address ?? ''}}" alt=""></td>
                         <td><a href=" {{ route('show.agent.edit.form' , $agent->id) }} ">ویرایش</a></td>
-                        <td><a href="#">حذف</a></td>
+                        <td><a href="{{ route('delete.agent',$agent->id) }}">حذف</a></td>
                     </tr>
                     @empty
 
