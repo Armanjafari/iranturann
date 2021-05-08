@@ -9,7 +9,11 @@ class FFMpegService
     public function __construct()
     {
         $this->ffprobe = FFProbe::create([
-            'ffprobe.binaries' => ''
+            'ffprobe.binaries' => config('services.ffmpeg.ffprobe_path')
         ]);
+    }
+    public function durationOf(string $path)
+    {
+        return (int) $this->ffprobe->format($path)->get('duration');
     }
 }

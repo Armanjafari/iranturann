@@ -33,5 +33,8 @@ return [
         'username' => env('MELI_USERNAME'),
         'password' => env('MELI_PASSWORD'),
     ],
+    'ffmpeg' => [
+        'ffprobe_path' => env('FFPROBE_PATH'),
+    ],
 
 ];
