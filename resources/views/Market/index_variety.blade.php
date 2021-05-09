@@ -5,6 +5,7 @@
         <tr>
             <th>شکل محصول</th>
             <th>نام محصول</th>
+            <th>کد محصول</th>
             <th>قیمت</th>
             <th>قیمت مرجع</th>
             <th>موجودی</th>
@@ -14,68 +15,32 @@
         </tr>
     </thead>
     <tbody>
+        @forelse ($products as $product)
+        @forelse ($product->fulls as $full)
         <tr>
             <td><img src="assets/img/6a6650c08fe4b430782cebfa62539ab56ab2b741_1601964067.png" alt="" class="fluid-img">
             </td>
-            <td>هودی مردانه ادی داس طرح زمستانه</td>
-            <td><a>350,000تومان</a></td>
-            <td><a>320,000تومان</a></td>
-            <td><a>2</a></td>
+            <td>{{$product->pure->persian_title}}</td>
+            <td>{{$product->pure->id}}</td>
+            <td><a>{{$full->price}}</a></td>
+            <td><a>{{$product->pure->price}}</a></td>
+            <td><a>{{$full->stock}}</a></td>
             <td>
+                @if ($full->colors->option->name == 'رنگ')
                 <div>
-                    <a>قرمز</a>
+                    <a>{{$full->colors->title}}</a>
                     <p
-                        style="background-color: red; width: 20px; height: 20px; margin: auto; display: inline-block; margin-right: 0.4em;">
+                        style="background-color: {{$full->colors->value}}; width: 20px; height: 20px; margin: auto; display: inline-block; margin-right: 0.4em;">
                     </p>
                 </div>
-            </td>
-
-            <td><a class="edit"><i class="fas fa-edit"></i></a>
-                <a class="trash mr-3"><i class="fa fa-trash" aria-hidden="true"></i></a>
-            </td>
-            <td>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="assets/img/5852ac425c16e3ae3cbdc1b20596f723c54ec355_1604466916.png" alt="" class="fluid-img">
-            </td>
-            <td>هودی مردانه ادی داس طرح زمستانه</td>
-            <td><a>240,000تومان</a></td>
-            <td><a>220,000تومان</a></td>
-            <td><a>3</a></td>
-            <td>
+                @else
                 <div>
-                    <a>سایز 50</a>
-                </div>
-            </td>
-
-            <td><a class="edit"><i class="fas fa-edit"></i></a>
-                <a class="trash mr-3"><i class="fa fa-trash" aria-hidden="true"></i></a>
-            </td>
-            <td>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="assets/img/117606354.png" alt="" class="fluid-img"></td>
-            <td>هودی مردانه ادی داس طرح زمستانه</td>
-            <td><a>310,000تومان</a></td>
-            <td><a>290,000تومان</a></td>
-            <td><a>5</a></td>
-            <td>
-                <div>
-                    <a>زرد</a>
-                    <p
-                        style="background-color: yellow; width: 20px; height: 20px; margin: auto;display: inline-block; margin-right: 0.4em;">
+                    <a>{{$full->colors->title}}</a>
+                    <p>
+                       {{$full->colors->value}}
                     </p>
                 </div>
+                @endif
             </td>
 
             <td><a class="edit"><i class="fas fa-edit"></i></a>
@@ -88,6 +53,12 @@
                 </label>
             </td>
         </tr>
+        @empty
+            
+        @endforelse
+        @empty
+
+        @endforelse
     </tbody>
 </table>
 @endsection

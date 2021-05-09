@@ -25,7 +25,7 @@ Route::group(['prefix' => 'v1' ], function () {
         Route::post('me', 'AuthController@me');
         Route::post('register', 'AuthController@register');
         Route::post('reset', 'AuthController@reset');
-
+    
     });
     Route::group([ 'namespace' => 'ApiControllers'],function () {
         Route::get('basket/add/{product}', 'ProductController@add')->name('basket.add');
@@ -39,4 +39,6 @@ Route::group(['prefix' => 'v1' ], function () {
         Route::post('loginwithcode/', 'LoginWithCodeController@login')->name('login_with_code');
         Route::post('verify', 'LoginWithCodeController@codeValidator')->name('validate_code');    
     });
+    Route::get('province/', 'addressController@index')->name('province');
+
 });

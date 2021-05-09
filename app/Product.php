@@ -38,4 +38,8 @@ class Product extends Model
     {
         return $this->hasMany(Full::class);
     }
+    public function fulls()
+    {
+        return $this->hasMany(Full::class);
+    }
 }

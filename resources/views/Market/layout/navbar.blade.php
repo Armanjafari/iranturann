@@ -15,19 +15,19 @@
                         <li class="menu-list-2">
                             <a href="#" class="list-item">
                                 <img src="assets/img/arrow-level2.png" alt="mobile">
-                                <a href="index.html">افزودن محصول</a>
+                                <a href="{{route('market.index')}}">افزودن محصول</a>
                             </a>
                         </li>
                         <li class="menu-list-2">
                             <a href="#" class="list-item">
                                 <img src="assets/img/arrow-level2.png" alt="mobile">
-                                <a href="index2.html">لیست محصولات</a>
+                                <a href="{{route('market.variety.form')}}">لیست محصولات</a>
                             </a>
                         </li>
                 </li>
-                <li class="menu-list-2"><a href="#" class="list-item">
+                <li class="menu-list-2"><a href="{{route('market.variety.index')}}" class="list-item">
                         <img src="assets/img/arrow-level2.png" alt="tablet book reader">
-                        <span>دوربین</span>
+                        <span>مدیریت تنوع</span>
                     </a></li>
             </ul>
             </li>

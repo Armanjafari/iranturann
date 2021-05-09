@@ -5,6 +5,8 @@
   <div class="card-header add-product-box text-center">
     <span class="add-product"> لیست گارانتی </span>
   </div>
+  @include('alerts.errors')
+  @include('alerts.success')
   <form action="{{ route('edit.waranty' , $waranty->id) }}" method="post">
     @csrf
   <div class="col-lg-12 mt-3">

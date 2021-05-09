@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class addressController extends Controller
 {
-    public function index(Request $request , $province)
+    public function index(Request $request)
     {
-        $city = City::where('name' , $province)->first();
+        $city = City::where('province_id' , $request->input('province'))->get();
+        $province = Province::all();
         return response()->json([
-            'id' => $city->id,
-            'name' => $city->province->name . '-' . $city->name,
-                ]);
+            'cities' => $city,
+            'provinces' =>   $province  ]);
     }
 }

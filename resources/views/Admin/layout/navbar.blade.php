@@ -35,6 +35,10 @@
                     <a class="nav-link" style="color: #787171;" href="{{ route('show.form.category') }}"><span
                         class="text"> مدیریت دسته بندی </span></a>
                   </li>
+                  <li class="nav-submenu">
+                    <a href="{{ route('show.form.product') }}" class="nav-link" style="color: #787171;"><span
+                        class="text"> مدیرت محصول </span></a>
+                  </li>
 
                 </ul>
                 <li class="nav-item"><a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false"

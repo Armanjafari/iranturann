@@ -20,6 +20,9 @@ class ProductController extends Controller
     {
         //  dd(Auth::user()->market->products()->wherePure_id(2)->first());
         $user = Auth::user();
+        if (!$user->market->is_active){
+            return abort(403); // TODO make a middleware
+        }
         // $user->market->categories;
         $categories = $user->market->categories->load('products');
         return view('Market.index', compact('categories'));
@@ -72,7 +75,7 @@ class ProductController extends Controller
     public function varietyIndex()
     {
         $user = Auth::user();
-        // TODO start from here $user->load 
-        return view('Market.index_variety');
+        $products = $user->market->products->load('fulls');
+        return view('Market.index_variety' , compact('products') );
     }
 }

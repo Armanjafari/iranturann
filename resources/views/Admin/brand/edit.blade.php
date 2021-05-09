@@ -44,6 +44,7 @@
           <th>نام انگلیسی برند</th>
           <th>عکس برند</th>
           <th>عملیات</th>
+          <th> حذف </th>
         </tr>
       </thead>
       <tbody>
@@ -61,6 +62,7 @@
 
           </td>
           <td><a href="{{ route('show.brand.edit.form' , $brand->id) }}" class="a1 btn btn-light">ویرایش</a></td>
+          <td><a href="{{ route('delete.brand',$brand->id) }}"> حذف </a></td>
         </tr>
         @endforeach
       </tbody>

@@ -74,7 +74,8 @@ Route::group(['namespace' => 'Coupons'], function () {
     Route::post('coupons', 'CouponsController@store')->name('coupons.store');
     Route::get('coupons/remove', 'CouponsController@remove')->name('coupons.remove');
 });
-Route::get('province/{province}', 'addressController@index')->name('province');
+// Route::middleware(['cors'])->group(function () {
+// });
 
 //index
 Route::group(['namespace' => 'Category'], function () {
@@ -89,6 +90,7 @@ Route::group(['namespace' => 'ShopingCenter'], function () {
 // , 'middleware' => 'role:admin'
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('settings', 'ProductSettingsController@showForm')->name('show.admin.settings.form');
+    Route::get('brand/delete/{brand}', 'BrandController@delete')->name('delete.brand');
     Route::post('brand', 'BrandController@createBrand')->name('create.brand');
     Route::get('brand', 'BrandController@showForm')->name('show.brand.form');
     Route::get('brand/{brand}', 'BrandController@showEditForm')->name('show.brand.edit.form');

@@ -5,6 +5,8 @@
     <span class="add-product"> لیست گارانتی
     </span>
   </div>
+  @include('alerts.errors')
+  @include('alerts.success')
   <div class="col-lg-12 mt-3">
     <div class="card p-3">
       <div class="row">

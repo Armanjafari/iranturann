@@ -16,6 +16,9 @@ class WarantyController extends Controller
     public function createWaranty(Request $request)
     {
         $request->validate([
+            'name' => 'required',
+        ]);
+        $request->validate([
             'name' => 'required|min:1|max:200',
         ]);
         Waranty::create([
