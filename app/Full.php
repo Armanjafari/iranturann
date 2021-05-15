@@ -27,4 +27,8 @@ class Full extends Model
     {
         return $this->decrement('stock' , $count);
     }
+    public function waranty()
+    {
+        return $this->belongsTo(Waranty::class);
+    }
 }

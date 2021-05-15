@@ -22,4 +22,8 @@ class Pure extends Model
     {
         return $this->belongsTo(Option::class);
     }
+    public function images()
+    {
+        return $this->morphMany(Image::class , 'imageable');
+    }
 }

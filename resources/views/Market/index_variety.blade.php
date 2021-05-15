@@ -18,7 +18,7 @@
         @forelse ($products as $product)
         @forelse ($product->fulls as $full)
         <tr>
-            <td><img src="assets/img/6a6650c08fe4b430782cebfa62539ab56ab2b741_1601964067.png" alt="" class="fluid-img">
+            <td><img src="{{ $product->pure->images->first()->address ?? '#' }}" style="width:200px;height:200px;" alt="" class="fluid-img">
             </td>
             <td>{{$product->pure->persian_title}}</td>
             <td>{{$product->pure->id}}</td>

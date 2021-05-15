@@ -76,6 +76,21 @@ class ProductController extends Controller
     {
         $user = Auth::user();
         $products = $user->market->products->load('fulls');
+        // dd($products->last()->pure->images->first());
         return view('Market.index_variety' , compact('products') );
+    }
+    public function editFinalVarietyForm(Full $full , Request $request)
+    {
+        //saveOrFail this method can be usefull
+        $waranties = Waranty::all();
+        $full->load('product.pure.option.values');
+        $product = $full->product;
+        $options = $product->pure->option->values;
+        $product = $product->id;
+        $full->load('product'); // start from view file 15 may
+        return view('Market.variety_final_edit', compact('full' ,'waranties','product','options'));
+    }
+    public function editFinalVariety(Full $full , Request $request)
+    {
     }
 }

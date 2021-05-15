@@ -42,7 +42,7 @@ class ProductController extends Controller
             'option_id' => $request->input('option_id'),
             'description' => $request->input('description')
         ]);
-        if ($request->has('image')) {
+        if ($request->has('images')) {
             $this->image($request, $pure);
         }
         return redirect()->back()->withSuccess('با موفقیت انجام شد');
@@ -53,8 +53,8 @@ class ProductController extends Controller
         foreach ($request->file('images') as $image) {
             $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
             $image->move(public_path($destination), $image->getClientOriginalName() . $i);
-            $pure->image()->create([
-                'address' => $destination . $image->getClientOriginalName()
+            $pure->images()->create([
+                'address' => $destination . $image->getClientOriginalName() . $i
             ]);
             $i++;
         }
