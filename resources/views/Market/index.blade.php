@@ -11,8 +11,11 @@
     <br> <br>
     <div class="card serch-moving">
         <div class="card-body serch-moving">
+            <form action="{{ route('market.search') }}" method="get">
             <div class="container-2">
-                <input type="text" placeholder="serch...">
+                    <input type="submit" style="visibility: hidden" value="">
+                <input name="query" type="text" placeholder="serch...">
+            </form>
                 <div class="serch"></div>
             </div>
         </div>

@@ -1,8 +1,8 @@
 @extends('Market.layout.master')
 @section('content')
-<form action="{{ route('market.variety.add') }}" method="post">
+<form action="{{ route('market.variety.edit' , $full->id) }}" method="post">
     @csrf
-    <select name="product" style="visibility: hidden;" class="form-control" >
+    <select name="product" style="visibility: hidden;" class="form-control">
         <option value="{{$product}}"></option>
     </select>
     <div class="col-lg-12 mt-3">
@@ -10,8 +10,9 @@
             <div class="row">
                 <div class="col-lg-3 mt-5">
                     <select name="waranty" class="form-control" id="">
-                        @forelse ($waranties as $waranty) 
-                        <option value="{{$waranty->id}} {{$full->waranty->id == $waranty->id ? 'selected' : ''}} ">{{$waranty->name}}</option>
+                        @forelse ($waranties as $waranty)
+                        <option value="{{$waranty->id}} {{$full->waranty->id == $waranty->id ? 'selected' : ''}} ">
+                            {{$waranty->name}}</option>
                         @empty
 
                         @endforelse
@@ -26,7 +27,8 @@
                                         <label for="exampleFormControlSelect1">رنگ محصول خود را انتخاب کنید</label>
                                         <select name="option" class="form-control" id="exampleFormControlSelect1">
                                             @forelse ($options as $option)
-                                            <option {{$full->colors->id == $option->id ? 'selected' : ''}} value="{{$option->id}}"> {{$option->title}} </option>
+                                            <option {{$full->colors->id == $option->id ? 'selected' : ''}}
+                                                value="{{$option->id}}"> {{$option->title}} </option>
                                             @empty
 
                                             @endforelse
@@ -35,10 +37,12 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 align-items-end d-flex mb-3">
-                                <input type="text" name="price" class="form-control" placeholder="قیمت">
+                                <input type="text" name="price" value="{{$full->price}}" class="form-control"
+                                    placeholder="قیمت">
                             </div>
                             <div class="col-lg-3 align-items-end d-flex mb-3">
-                                <input type="text" name="stock" class="form-control" placeholder="موجودی">
+                                <input type="text" name="stock" value="{{$full->stock}}" class="form-control"
+                                    placeholder="موجودی">
                             </div>
                             <div class="col-lg-3 d-flex justify-content-center align-items-center mt-3">
                                 <input type="radio" id="active">

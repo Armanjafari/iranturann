@@ -162,6 +162,7 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market'], function () {
     Route::get('variety/index', 'ProductController@varietyIndex')->name('market.variety.index');
     Route::get('variety/edit/{full}', 'ProductController@editFinalVarietyForm')->name('market.variety.edit.form');
     Route::post('variety/edit/{full}', 'ProductController@editFinalVariety')->name('market.variety.edit');
+    Route::get('search','ProductController@search')->name('market.search');
 
 });
 

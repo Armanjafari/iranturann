@@ -93,4 +93,16 @@ class ProductController extends Controller
     public function editFinalVariety(Full $full , Request $request)
     {
     }
+    public function search(Request $request)
+    {
+        // dd($request->all());
+        $query = $request->input('query');
+        $result = Pure::where('persian_title' ,'LIKE','%' . $query . '%')
+        ->orWhere('persian_title' ,'LIKE','%' .$query)
+        ->orWhere('persian_title' ,'LIKE',$query.'%' )
+        ->orWhere('title' ,'LIKE','%' . $query . '%')
+        ->orWhere('title' ,'LIKE',$query . '%')
+        ->orWhere('title' ,'LIKE','%' . $query);
+        return $result;
+    }
 }
