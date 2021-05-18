@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\CorsMiddleware;
+use App\Http\Middleware\IsMarketMiddleWare;
 use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -68,6 +69,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'role' => RoleMiddleware::class,
         'cors' => CorsMiddleware::class,
+        'is.market' => IsMarketMiddleWare::class,
     ];
 
     /**

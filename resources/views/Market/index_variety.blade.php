@@ -43,7 +43,7 @@
                 @endif
             </td>
 
-            <td><a class="edit"><i class="fas fa-edit"></i></a>
+            <td><a href="{{ route('market.variety.edit.form',$full->id) }}" class="edit"><i class="fas fa-edit"></i></a>
                 <a class="trash mr-3"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>
             <td>

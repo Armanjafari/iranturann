@@ -15,6 +15,7 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        
     }
     public function index()
     {
@@ -81,6 +82,12 @@ class ProductController extends Controller
     }
     public function editFinalVarietyForm(Full $full , Request $request)
     {
+        // dd((int)Auth::user()->market->id);
+        // dd($full->product->market_id); TODO do this in middleware
+        if(!$full->product->market_id == Auth::user()->market->id)
+        {
+        return abort(404);
+        }
         //saveOrFail this method can be usefull
         $waranties = Waranty::all();
         $full->load('product.pure.option.values');
@@ -91,18 +98,30 @@ class ProductController extends Controller
         return view('Market.variety_final_edit', compact('full' ,'waranties','product','options'));
     }
     public function editFinalVariety(Full $full , Request $request)
-    {
+    { // TODO check security bugs
+        // dd($request->all());
+        $full->update([
+            'stock' => $request->input('stock'),
+            'waranty_id' => $request->input('waranty'),
+            'color_id' => $request->input('option'),
+            'price' => $request->input('price'),
+        ]);
+        return back()->withSuccess(__('iranturan.success message'));
     }
     public function search(Request $request)
     {
         // dd($request->all());
         $query = $request->input('query');
+        if(!$query)
+        return response()->json(['error' => 'ورودی وارد نشده ']);
         $result = Pure::where('persian_title' ,'LIKE','%' . $query . '%')
         ->orWhere('persian_title' ,'LIKE','%' .$query)
         ->orWhere('persian_title' ,'LIKE',$query.'%' )
         ->orWhere('title' ,'LIKE','%' . $query . '%')
         ->orWhere('title' ,'LIKE',$query . '%')
-        ->orWhere('title' ,'LIKE','%' . $query);
+        ->orWhere('title' ,'LIKE','%' . $query)->get();
+        // if ($result)
+        // return response()->json(['error' => ' محصولی پیدا نشد ']);
         return $result;
     }
 }

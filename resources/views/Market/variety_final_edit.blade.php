@@ -11,7 +11,7 @@
                 <div class="col-lg-3 mt-5">
                     <select name="waranty" class="form-control" id="">
                         @forelse ($waranties as $waranty)
-                        <option value="{{$waranty->id}} {{$full->waranty->id == $waranty->id ? 'selected' : ''}} ">
+                        <option value="{{$waranty->id}}" {{$full->waranty->id == $waranty->id ? 'selected' : ''}}>
                             {{$waranty->name}}</option>
                         @empty
 

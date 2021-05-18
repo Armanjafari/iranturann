@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\ActiveCode;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CodeValidator;
 use App\Http\Requests\RegisterValidator;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -11,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class RegisterController extends Controller
@@ -76,5 +79,17 @@ class RegisterController extends Controller
             'phone_number' => $data['phone_number'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function codeValidator(CodeValidator $request)
+    {
+        $user = User::where('phone_number',$request->input('phone_number'))->first();
+        $status = ActiveCode::ValidateCode($request->input('code'),$user);
+        //dd($status);
+        if($status)
+        {
+            Auth::login($user);
+            return view('index');           
+        }
+        return redirect()->back()->withErrors('errors', 'کد منقظی شده است');   
     }
 }

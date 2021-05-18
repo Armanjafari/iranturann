@@ -20,7 +20,7 @@ class Category extends Model
     }
     public function markets()
     {
-        return $this->belongsToMany(Market::class);
+        return $this->belongsToMany(Market::class)->withPivot('market');
     }
     // public function marketProduct()
     // {

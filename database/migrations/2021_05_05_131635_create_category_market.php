@@ -14,6 +14,7 @@ class CreateCategoryMarket extends Migration
     public function up()
     {
         Schema::create('category_market', function (Blueprint $table) {
+            $table->integer('percent')->nullable();
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('market_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

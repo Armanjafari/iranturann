@@ -153,7 +153,7 @@ Route::get('filter', function () {
 Route::get('etesal', function () {
     return view('etesal');
 });
-Route::group(['namespace' => 'Market', 'prefix' => 'market'], function () {
+Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'is.market'], function () {
     Route::get('/', 'ProductController@index')->name('market.index');
     Route::post('/', 'ProductController@add')->name('market.add.product');
     Route::get('variety/', 'ProductController@vareityForm')->name('market.variety.form');

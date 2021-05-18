@@ -48,6 +48,7 @@
                 @foreach ($diffrent_colors as $color)
                 <form action="{{ route('product.single' , $color->id) }}" method="GET">
                     <button type="submit"  class="btn btn-light">
+                        <p>{{$color->id}}</p>
                     <p style="color:{{$color->colors->value}}">{{$color->colors->title}}</p>
                     </button>
                 </form>
