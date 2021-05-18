@@ -17,15 +17,14 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 mt-5">
+
+    <div class="row">
         @forelse (Auth::user()->market->products as $product)
-        <form action="{{ route('market.variety.add.form') }}" method="GET">
-            @csrf
-            <div class="row">
+        <div class="col-lg-3 mt-5">
+            <form action="{{ route('market.variety.add.form') }}" method="GET">
+                @csrf
                 <div class="card text-center">
-                    <img class="card-img-top"
-                        src="https://dkstatics-public.digikala.com/digikala-products/325689.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80"
-                        alt="هپل">
+                    <img class="card-img-top" src="{{ $product->pure->images->first()->address ?? '#' }}" alt="test" width="100">
                     <div class="card-body">
                         <select name="product" style="visibility:hidden;">
                             <option value="{{$product->id}}"></option>
@@ -36,13 +35,14 @@
 
                     </div>
                 </div>
-        </form>
+            </form>
+        </div>
+
         @empty
 
         @endforelse
 
 
     </div>
-</div>
 </div>
 @endsection

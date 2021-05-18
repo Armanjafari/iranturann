@@ -28,7 +28,7 @@
                 @csrf
                 <div class="card text-center">
                     <img class="card-img-top"
-                        src="https://dkstatics-public.digikala.com/digikala-products/325689.jpg?x-oss-process=image/resize,m_lfit,h_600,w_600/quality,q_80"
+                        src="{{ $product->images->first()->address ?? '#' }}"
                         alt="هپل">
                     <div class="card-body">
                         <select name="product" style="visibility:hidden;">
@@ -47,11 +47,9 @@
             </form>
         </div>
         @empty
-        محصولی وجود ندارد
         @endforelse
 
         @empty
-        محصولی وجود ندارد
         @endforelse
     </div>
 

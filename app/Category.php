@@ -2,12 +2,13 @@
 
 namespace App;
 
+use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
 use App\Support\Discount\Coupon\Traits\Couponable;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use Couponable;
+    use Couponable ;
     protected $fillable = ['name', 'persian_name' , 'parent_id'];
     protected $hidden = ['coupons'];
     public function products()

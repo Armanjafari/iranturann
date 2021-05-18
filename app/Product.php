@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use EagerLoadPivotTrait;
     protected $fillable = ['pure_id' , 'market_id'];
     // protected $hidden = ['category'];
     public function hasStock(int $quantity)
