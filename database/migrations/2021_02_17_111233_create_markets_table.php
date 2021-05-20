@@ -19,6 +19,10 @@ class CreateMarketsTable extends Migration
             $table->string('slug');
             $table->string('bank_number');
             $table->string('shaba_number');
+
+            $table->boolean('is_super_active')->default(true);
+            $table->boolean('is_active')->default(true);
+
             $table->string('instagram')->nullable();
             $table->integer('type')->comment('0:market,1:messenger');
             $table->unsignedBigInteger('user_id');

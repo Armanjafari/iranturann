@@ -16,6 +16,7 @@ class CreateFullsTable extends Migration
         Schema::create('fulls', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('stock');
+            $table->boolean('is_active')->default(true);
             $table->integer('price');
             $table->timestamps();
         });

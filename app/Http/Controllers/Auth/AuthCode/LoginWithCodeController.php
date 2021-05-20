@@ -60,7 +60,7 @@ class LoginWithCodeController extends Controller
         if( $status)
         {
             Auth::login($user);
-            return view('index');           
+            return view('index');
         }
         return redirect()->back()->withErrors('errors', 'کد منقظی شده است');   
     }

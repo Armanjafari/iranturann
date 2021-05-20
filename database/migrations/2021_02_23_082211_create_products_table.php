@@ -17,6 +17,9 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('market_id');
             $table->unsignedBigInteger('pure_id');
+            
+            $table->boolean('is_active')->default(true);
+
             $table->foreign('market_id')->references('id')->on('markets')->onDelete('cascade');
             $table->foreign('pure_id')->references('id')->on('pures')->onDelete('cascade');
             

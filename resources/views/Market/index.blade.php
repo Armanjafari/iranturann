@@ -12,46 +12,42 @@
     <div class="card serch-moving">
         <div class="card-body serch-moving">
             <form action="{{ route('market.search') }}" method="get">
-            <div class="container-2">
-                    <input type="submit" style="visibility: hidden" value="">
-                <input name="query" type="text" placeholder="serch...">
+                <div class="container-2">
+                    <input name="query" type="text" placeholder="serch...">
             </form>
-                <div class="serch"></div>
-            </div>
+            <div class="serch"></div>
         </div>
     </div>
-    <div class="row">
-        @forelse ($categories as $category)
-        @forelse ($category->products as $product)
-        <div class="col-lg-3 mt-5">
-            <form action="{{ route('market.add.product') }}" method="post">
-                @csrf
-                <div class="card text-center">
-                    <img class="card-img-top"
-                        src="{{ $product->images->first()->address ?? '#' }}"
-                        alt="هپل">
-                    <div class="card-body">
-                        <select name="product" style="visibility:hidden;">
-                            <option value="{{$product->id}}"></option>
-                        </select>
-                        <h5 class="card-title"> {{$product->persian_title}} </h5>
-                        <p class="card-text">{{ ' شناسه     محصول : ' . $product->id }}</p>
-                        @if (!Auth::user()->market->products()->wherePure_id($product->id)->first())
-                        <input type="submit" value="افزودن" class="btn btn-primary pl-5 pr-5 pt-2 pb-2">
-                        @else
-                        <input disabled type="submit" value="شما فروشنده هستید"
-                            class="btn btn-primary pl-5 pr-5 pt-2 pb-2">
-                        @endif
-                    </div>
+</div>
+<div class="row">
+    @forelse ($categories as $category)
+    @forelse ($category->products as $product)
+    <div class="col-lg-3 mt-5">
+        <form action="{{ route('market.add.product') }}" method="post">
+            @csrf
+            <div class="card text-center">
+                <img class="card-img-top" src="{{ $product->images->first()->address ?? '#' }}" alt="هپل">
+                <div class="card-body">
+                    <select name="product" style="visibility:hidden;">
+                        <option value="{{$product->id}}"></option>
+                    </select>
+                    <h5 class="card-title"> {{$product->persian_title}} </h5>
+                    <p class="card-text">{{ ' شناسه     محصول : ' . $product->id }}</p>
+                    @if (!Auth::user()->market->products()->wherePure_id($product->id)->first())
+                    <input type="submit" value="افزودن" class="btn btn-primary pl-5 pr-5 pt-2 pb-2">
+                    @else
+                    <input disabled type="submit" value="شما فروشنده هستید" class="btn btn-primary pl-5 pr-5 pt-2 pb-2">
+                    @endif
                 </div>
-            </form>
-        </div>
-        @empty
-        @endforelse
-
-        @empty
-        @endforelse
+            </div>
+        </form>
     </div>
+    @empty
 
+    @endforelse
+
+    @empty
+
+    @endforelse
 </div>
 @endsection

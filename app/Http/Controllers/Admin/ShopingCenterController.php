@@ -81,7 +81,7 @@ class ShopingCenterController extends Controller
     {
         try{
             $shop->delete();
-            return back()->withSuccess(' با موفقیت حذف شد ');
+            return back()->withSuccess(__('iranturan.success message'));
         }catch (\Exception $e){
             return back()->withError(__('iranturan.error delete center'));
         }

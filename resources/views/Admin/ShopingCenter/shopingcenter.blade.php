@@ -121,7 +121,7 @@
                                 {{ $center->address ?? ' وجود ندارد '}}
                             </td>
                             <td>
-                                <img style="width: 100px;height: 100px;" src="{{$center->image->address ?? ''}}">
+                                <img width="100" src="{{$center->image->address ?? ''}}">
                             </td>
                             <td>
                                 <a href="{{ route('show.shop.edit.form',$center->id) }}">ویرایش</a>

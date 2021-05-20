@@ -4,7 +4,7 @@
         <div class="container">
             <ul class="menu-level-1">
                 <!-- Menu Level 1 -->
-                <img src="assets/img/001.svg" alt="" class="img-thumbnail">
+                <img src="{{asset('assets/img/001.svg')}}" alt="" class="img-thumbnail">
                 <li class="menu-list-1">
                     <a href="#" class="list-item">
                         <img src="assets/img/download (1).png" alt="">
@@ -54,7 +54,7 @@
     <!--start mobile nav-->
     <div class="mobile-nav">
         <a href="#" class="toggle-btn" id="toggle"><span></span></a>
-        <img src="assets/img/001.svg" alt="" class="img-thumbnail ml-auto mr-auto">
+        <img src="{{asset('assets/img/001.svg')}}" alt="" class="img-thumbnail ml-auto mr-auto">
         <i class="far fa-user mt-1"></i>
         <button type="button" class="btn-logo ml-auto btn-logo1 p-3">
             <span class="text-center">ورود/ثبت نام</span>

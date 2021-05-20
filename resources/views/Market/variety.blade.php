@@ -11,10 +11,11 @@
     <br> <br>
     <div class="card serch-moving">
         <div class="card-body serch-moving">
-            <div class="container-2">
-                <input type="text" placeholder="serch...">
-                <div class="serch"></div>
-            </div>
+            <form action="{{ route('market.search') }}" method="get">
+                <div class="container-2">
+                    <input name="query" type="text" placeholder="serch...">
+                </div>
+            </form>
         </div>
     </div>
 
@@ -24,7 +25,8 @@
             <form action="{{ route('market.variety.add.form') }}" method="GET">
                 @csrf
                 <div class="card text-center">
-                    <img class="card-img-top" src="{{ $product->pure->images->first()->address ?? '#' }}" alt="test" width="100">
+                    <img class="card-img-top" src="{{ $product->pure->images->first()->address ?? '#' }}" alt="test"
+                        width="100">
                     <div class="card-body">
                         <select name="product" style="visibility:hidden;">
                             <option value="{{$product->id}}"></option>

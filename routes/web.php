@@ -141,9 +141,21 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('market/{market}', 'MarketController@edit')->name('edit.market');
     Route::get('market/delete/{market}', 'MarketController@delete')->name('delete.market');
 
+    Route::get('users' , 'UserController@showForm')->name('show.user.form.admin');
+    Route::post('users' , 'UserController@createUser')->name('user.create.admin');
+    Route::get('user/{user}' , 'UserController@editForm')->name('show.user.edit.form.admin');
+    Route::post('user/{user}' , 'UserController@edit')->name('user.edit.admin');
+
+
     Route::get('market/category/{market}', 'MarketController@categoryForm')->name('show.market.category.form');
     Route::post('market/category/{market}', 'MarketController@editCategory')->name('edit.market.category');
+
+});    
+
+Route::group(['namespace' => 'Admin\Market', 'prefix' => 'admin'], function () {
+    Route::get('market/index/', 'ProductController@index')->name('admin.market.index.form');
 });
+
 Route::get('admin/login/', 'Admin\Auth\LoginController@showForm')->name('show.admin.login.form');
 Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.login');
 

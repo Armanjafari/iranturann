@@ -21,8 +21,8 @@ class ProductController extends Controller
     {
         //  dd(Auth::user()->market->products()->wherePure_id(2)->first());
         $user = Auth::user();
-        if (!$user->market->is_active){
-            return abort(403); // TODO make a middleware
+        if (!($user->market->is_active)){
+            return abort(403); // TODO make a middleware and make it in is_super_admin
         }
         // $user->market->categories;
         $categories = $user->market->categories->load('products');
@@ -84,7 +84,7 @@ class ProductController extends Controller
     {
         // dd((int)Auth::user()->market->id);
         // dd($full->product->market_id); TODO do this in middleware
-        if(!$full->product->market_id == Auth::user()->market->id)
+        if(!($full->product->market_id == Auth::user()->market->id))
         {
         return abort(404);
         }
@@ -100,6 +100,10 @@ class ProductController extends Controller
     public function editFinalVariety(Full $full , Request $request)
     { // TODO check security bugs
         // dd($request->all());
+        if(!($full->product->market_id == Auth::user()->market->id))
+        {
+        return abort(404);
+        }
         $full->update([
             'stock' => $request->input('stock'),
             'waranty_id' => $request->input('waranty'),
