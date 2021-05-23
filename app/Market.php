@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Market extends Model
 {
-    protected $fillable = ['market_name', 'slug', 'is_active' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'center_id' , 'agent_id'];
+    protected $fillable = ['market_name', 'slug', 'is_active','is_super_active' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'center_id' , 'agent_id'];
 
     public function agent()
     {

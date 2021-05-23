@@ -151,10 +151,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('market/category/{market}', 'MarketController@editCategory')->name('edit.market.category');
 
 });    
-
-Route::group(['namespace' => 'Admin\Market', 'prefix' => 'admin'], function () {
-    Route::get('market/index/', 'ProductController@index')->name('admin.market.index.form');
-});
+Route::get('admin/settings/market', 'Admin\Market\MarketManagementController@showForm');
+Route::get('admin/settings/market/{market}', 'Admin\Market\MarketManagementController@productsForm')->name('admin.market.settings');
+Route::post('admin/settings/market/{market}/status', 'Admin\Market\MarketManagementController@marketStatus')->name('admin.market.status');
 
 Route::get('admin/login/', 'Admin\Auth\LoginController@showForm')->name('show.admin.login.form');
 Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.login');

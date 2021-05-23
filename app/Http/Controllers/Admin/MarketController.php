@@ -6,6 +6,7 @@ use App\Agent;
 use App\Category;
 use App\Center;
 use App\City;
+use App\Exceptions\RollBackException;
 use App\Http\Controllers\Controller;
 use App\Market;
 use App\User;
@@ -36,7 +37,7 @@ class MarketController extends Controller
             'postal_code' => 'required',
             'work_address' => 'required',
             'work_phone' => 'required',
-            'phone_number' => 'required',
+            'phone_number' => 'required|unique:users,phone_number',
             'bank_number' => 'required',
             'shaba_number' => 'required',
             'agent_id' => 'required',
@@ -47,8 +48,7 @@ class MarketController extends Controller
 
         ]);
         DB::beginTransaction();
-
-        try {
+        try { // TODO fix this error
             $user = User::create([
                 'name' => $request->input('name'),
                 'phone_number' => $request->input('phone_number'),
@@ -75,7 +75,7 @@ class MarketController extends Controller
             return back()->withSuccess(__('iranturan.success message'));
         } catch (\Exception $e) {
             DB::rollBack();
-            return back()->withSuccess($e);
+            throw new RollBackException('something went wrong contact Arman Jafari');
         }
     }
     public function showEditForm(Market $market)
@@ -144,7 +144,7 @@ class MarketController extends Controller
                 return back()->withSuccess(__('iranturan.success message'));
             } catch (\Exception $e) {
                 DB::rollBack();
-                return back()->withSuccess($e);
+                throw new RollBackException('something went wrong contact Arman Jafari');
             }
         }
     }
