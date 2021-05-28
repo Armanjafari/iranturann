@@ -3,7 +3,6 @@ namespace App\Support\Basket;
 
 use App\Exceptions\QuantityExceededException;
 use App\Full;
-use App\Product;
 use App\Support\Storage\Contracts\StorageInterface;
 
 class Basket

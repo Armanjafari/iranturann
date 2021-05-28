@@ -24,7 +24,7 @@ class BrandController extends Controller
         $file = $request->file('image');
         $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
         $file->move(public_path($destination), $file->getClientOriginalName());
-        $brand->image   ()->create([
+        $brand->image()->create([
             'address' => $destination . $file->getClientOriginalName()
         ]);
         return redirect()->back()->withSuccess(__('iranturan.success message'));

@@ -17,6 +17,9 @@ class CreateFullOrderTable extends Migration
             $table->bigInteger('order_id')->unsigned();
             $table->bigInteger('full_id')->unsigned();
             $table->integer('quantity');
+            $table->unsignedBigInteger('market_id');
+            
+            $table->foreign('market_id')->references('id')->on('markets')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreign('full_id')->references('id')->on('fulls')->onDelete('cascade');
         });

@@ -91,6 +91,7 @@ class Transaction
             'code' => bin2hex(Str::random(16)),
             'amount' => $this->basket->subTotal()
             ]);
+            // dd($this->products());
         $order->products()->attach($this->products());
         return $order;
     }
@@ -106,7 +107,12 @@ class Transaction
     private function products()
     {
         foreach ($this->basket->all() as $product) {
-            $products[$product->id] = ['quantity' => $product->quantity];
+            $product->load('product');
+            // dd($product->product->market_id);
+            $products[$product->id] = [
+                'quantity' => $product->quantity,
+                'market_id' => $product->product->market_id,
+            ];
         }
         return $products;
     }

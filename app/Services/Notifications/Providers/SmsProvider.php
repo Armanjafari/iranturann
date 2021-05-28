@@ -2,10 +2,8 @@
 
 namespace App\Services\Notifications\Providers;
 
-use App\ActiveCode;
 use App\Services\Notifications\Providers\Contracts\Provider;
 use App\User;
-use Carbon\Carbon;
 use \GuzzleHttp\Client;
 class SmsProvider implements Provider{
 
@@ -21,7 +19,6 @@ class SmsProvider implements Provider{
         $this->user->activeCode()->create([
             'code' => $this->code,
             'expired_at' => now()->addMinutes(2)]);
-        //APIKEY 1MBWwEqHPAHXbO_3P0AGfnhsWRLOuJslxiCq8K32lN0=
         $client = new Client(['headers' => ['Authorization' =>'AccessKey 1MBWwEqHPAHXbO_3P0AGfnhsWRLOuJslxiCq8K32lN0='],
         'json' => [
             'pattern_code' => 'avolm8i3rb',
