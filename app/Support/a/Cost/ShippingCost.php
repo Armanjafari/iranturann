@@ -15,6 +15,7 @@ class ShippingCost implements CostInterface
     public function __construct(CostInterface $cost)
     {
         $this->cost = $cost;
+        dd($this->cost);
     }
 
 
@@ -35,6 +36,7 @@ class ShippingCost implements CostInterface
 
     public function getSummary()
     {
+        dd('inja');
         return array_merge($this->cost->getSummary(), [$this->persianDescription() => $this->getCost()]);
     }
 }

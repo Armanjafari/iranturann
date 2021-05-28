@@ -20,7 +20,9 @@ class ShippingCost implements CostInterface
     }
     public function getCost()
     {
+        // dd($this->cost->basket->all()); // TODO start here 29 may
         return $this->SHIPPING_COST;
+
     }
     public function getTotalCosts()
     {

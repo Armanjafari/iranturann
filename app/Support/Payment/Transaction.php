@@ -1,7 +1,6 @@
 <?php
 namespace App\Support\Payment;
 
-use App\Events\OrderRegistered;
 use App\Order;
 use App\Payment;
 use App\Support\Basket\Basket;
