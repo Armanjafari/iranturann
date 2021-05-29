@@ -23,7 +23,7 @@ class ShippingCost implements CostInterface
     {
         // dd($this->cost->basket->all()); // TODO start here 29 may
         // dd(Shipping::pishtaz(5,1,6000)->getPrice());
-        return Shipping::pishtaz(22,5,580)->getPrice() / 10;
+        return Shipping::pishtaz(22,5,5000)->getPrice() / 10;
 
     }
     public function getTotalCosts()
