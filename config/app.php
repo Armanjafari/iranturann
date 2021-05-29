@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         PermissionServiceProvider::class,
+        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
 
     ],
 
@@ -230,6 +231,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Shipping' =>GhaniniaIR\Shipping\Shipping::class,
+        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
 
     ],
 

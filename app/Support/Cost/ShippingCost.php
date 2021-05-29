@@ -2,6 +2,7 @@
 namespace App\Support\Cost;
 
 use App\Support\Cost\Contracts\CostInterface;
+use GhaniniaIR\Shipping\Shipping;
 use Illuminate\Http\Request;
 
 class ShippingCost implements CostInterface
@@ -21,7 +22,8 @@ class ShippingCost implements CostInterface
     public function getCost()
     {
         // dd($this->cost->basket->all()); // TODO start here 29 may
-        return $this->SHIPPING_COST;
+        // dd(Shipping::pishtaz(5,1,6000)->getPrice());
+        return Shipping::pishtaz(22,5,580)->getPrice() / 10;
 
     }
     public function getTotalCosts()

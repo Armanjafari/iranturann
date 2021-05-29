@@ -65,7 +65,7 @@ class Transaction
     }
     public function verify()
     {
-        # TODO basket is not dynamic !
+        // TODO basket is not dynamic !
         $result = $this->gatewayFactory()->verify($this->request);
         if ($result['status'] == GatewayInterface::TRANSACTION_FAILED) return false;
         $this->confirmPayment($result);

@@ -64,13 +64,16 @@
                 <li class="nav-item"><a href="{{ route('show.agent.form') }}" class="nav-link"><span class="text">
                   مدیریت نمایندگان
                 </span></a></li>
+                <li class="nav-item"><a href="{{ route('show.user.form.admin') }}" class="nav-link"><span class="text">
+                  مدیریت کاربران
+                </span></a></li>
               <li class="nav-item"><a href="logestic managment.html" class="nav-link"><span class="text">مدیریت
                     لوجستیک</span></a></li>
               <li class="nav-item"><a href="Accounting.html" class="nav-link"><span class="text">حسابداری</span></a>
               </li>
               <li class="nav-item"><a href="#" class="nav-link"><span class="text">مدیریت بازخورد</span></a></li>
               <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link btn btn-dark"><span class="text"> خروج </span></a></li>
-
+              
               </ul>
             </div>
           </div>

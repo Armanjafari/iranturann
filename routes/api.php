@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ApiControllers\ProductController;
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
