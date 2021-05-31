@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Center;
 use App\Market;
+use App\Product;
 use App\User;
 
 class homecontroller extends Controller
@@ -18,6 +19,8 @@ class homecontroller extends Controller
         $messenger_seller = Market::wheretype(1)->get();
         // dd($seller);
         $categories = Category::all();
-        return view('index',compact('messenger_seller', 'centers' , 'categories' , 'markets'));
+        $product1 = Product::find(1);
+        $product2 = Product::find(2);
+        return view('index',compact('messenger_seller', 'centers' , 'categories' , 'markets', 'product1','product2'));
     }
 }

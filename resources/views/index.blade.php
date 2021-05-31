@@ -42,58 +42,14 @@
                         <div class="card-body text-center card-bg-box">
                             <a href="#" class="float-right How-to-send">پس کرایه</a>
                             <figure class="mb-0">
-                                <img src="assets/img/01-removebg-preview.png" alt="">
+                                <img src=" {{ $product1->pure->images->first()->address }} " alt="">
                             </figure>
                             <caption>
-                                <a href="#">هودی ادی داس طرح زمستانه</a>
+                                <a href="#"> {{ $product1->pure->persian_title }} </a>
                             </caption>
-                            <p class="font-weight-bold mt-1 mb-0">125000تومان</p>
+                            <p class="font-weight-bold mt-1 mb-0"> {{ $product1->pure->price . ' تومان ' }} </p>
                             <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="#"
-                                    class="adding-product">افزودن</a></button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="Circle-discount text-center text-light">
-                            <div class="mt-2">
-                                <a href="#" class="text-light discount-percent">25%
-                                </a>
-                                <p>تخفیف</p>
-                            </div>
-                        </div>
-                        <div class="card-body text-center card-bg-box">
-                            <a href="#" class="float-right How-to-send">پس کرایه</a>
-                            <figure class="mb-0">
-                                <img src="assets/img/01-removebg-preview.png" alt="">
-                            </figure>
-                            <caption>
-                                <a href="#">هودی ادی داس طرح زمستانه</a>
-                            </caption>
-                            <p class="font-weight-bold mt-1 mb-0">125000تومان</p>
-                            <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="#"
-                                    class="adding-product">افزودن</a></button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="Circle-discount text-center text-light">
-                            <div class="mt-2">
-                                <a href="#" class="text-light discount-percent">25%
-                                </a>
-                                <p>تخفیف</p>
-                            </div>
-                        </div>
-                        <div class="card-body text-center card-bg-box">
-                            <a href="#" class="float-right How-to-send">پس کرایه</a>
-                            <figure class="mb-0">
-                                <img src="assets/img/01-removebg-preview.png" alt="">
-                            </figure>
-                            <caption>
-                                <a href="#">هودی ادی داس طرح زمستانه</a>
-                            </caption>
-                            <p class="font-weight-bold mt-1 mb-0">125000تومان</p>
-                            <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="#"
+                            <button type="button" class="btn-add-red mt-3"><a href="{{ route('product.single', $product1->fulls->first()->id) }}"
                                     class="adding-product">افزودن</a></button>
                         </div>
                     </div>
@@ -117,58 +73,14 @@
                         <div class="card-body text-center card-bg-box">
                             <a href="#" class="float-right How-to-send">پس کرایه</a>
                             <figure class="mb-0">
-                                <img src="assets/img/01-removebg-preview.png" alt="">
+                                <img src=" {{ $product2->pure->images->first()->address }} " alt="">
                             </figure>
                             <caption>
-                                <a href="#">هودی ادی داس طرح زمستانه</a>
+                                <a href="#"> {{ $product2->pure->persian_title }} </a>
                             </caption>
-                            <p class="font-weight-bold mt-1 mb-0">125000تومان</p>
+                            <p class="font-weight-bold mt-1 mb-0"> {{ $product2->pure->price . ' تومان ' }} </p>
                             <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="#"
-                                    class="adding-product">افزودن</a></button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="Circle-discount text-center text-light">
-                            <div class="mt-2">
-                                <a href="#" class="text-light discount-percent">15%
-                                </a>
-                                <p>تخفیف</p>
-                            </div>
-                        </div>
-                        <div class="card-body text-center card-bg-box">
-                            <a href="#" class="float-right How-to-send">پس کرایه</a>
-                            <figure class="mb-0">
-                                <img src="assets/img/01-removebg-preview.png" alt="">
-                            </figure>
-                            <caption>
-                                <a href="#">هودی ادی داس طرح زمستانه</a>
-                            </caption>
-                            <p class="font-weight-bold mt-1 mb-0">125000تومان</p>
-                            <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="#"
-                                    class="adding-product">افزودن</a></button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="Circle-discount text-center text-light">
-                            <div class="mt-2">
-                                <a href="#" class="text-light discount-percent">15%
-                                </a>
-                                <p>تخفیف</p>
-                            </div>
-                        </div>
-                        <div class="card-body text-center card-bg-box">
-                            <a href="#" class="float-right How-to-send">پس کرایه</a>
-                            <figure class="mb-0">
-                                <img src="assets/img/01-removebg-preview.png" alt="">
-                            </figure>
-                            <caption>
-                                <a href="#">هودی ادی داس طرح زمستانه</a>
-                            </caption>
-                            <p class="font-weight-bold mt-1 mb-0">125000تومان</p>
-                            <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="#"
+                            <button type="button" class="btn-add-red mt-3"><a href="{{ route('product.single', $product2->fulls->first()->id) }}"
                                     class="adding-product">افزودن</a></button>
                         </div>
                     </div>

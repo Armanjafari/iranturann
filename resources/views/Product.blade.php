@@ -18,7 +18,7 @@
             <div class="card border-0">
                 <div class="container">
                     <div class="mySlides">
-                        <img src="{{asset('assets/img/چاپ-عکس-روی-هودی-سویشرت-کلاه-دار.png')}}" style="width: 100%;">
+                        <img src="{{ $product->pure->images->first()->address }}" style="width: 100%;">
                     </div>
                     <!-- <a class="next" onclick="plusSlides(1)">❯</a>
           <a class="prev" onclick="plusSlides(-1)">❮</a> -->
@@ -39,7 +39,7 @@
                     </figcaption>
                     <div class="mt-3 box-brand">
                         <span>برند:</span>
-                        <a href="#" class="link-brand">ادیداس</a>
+                        <a href="#" class="link-brand">سامسونگ</a>
                     </div>
                     <div class="mt-3 box-brand">
                         <span>دسته بندی:</span>
@@ -50,7 +50,6 @@
                         @foreach ($diffrent_colors as $color)
                         <form action="{{ route('product.single' , $color->id) }}" method="GET">
                             <button type="submit" class="btn btn-light">
-                                <p>{{$color->id}}</p>
                                 <p style="color:{{$color->colors->value}}">{{$color->colors->title}}</p>
                             </button>
                         </form>
@@ -117,102 +116,27 @@
         <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product">محصولات مربوط</a>
         </div>
         <div class="owl-carousel owl-theme mt-5" id="owl-mobile10">
+            @forelse ($related as $relate)
             <div class="item">
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                         <figure class="mb-0">
-                            <img src="assets/img/Untitled.png" alt="">
+                            <img src="{{ $relate->pure->images->first()->address }}" alt="">
                         </figure>
                         <caption>
-                            <a href="#">هودی ادی داس طرح زمستانه</a>
+                            <a href="#">{{ $relate->pure->persian_title }}</a>
                         </caption><br>
                         <p class="font-weight-bold mt-1 mb-0">
-                            <a href="#">تومان125000</a></p>
-                        <button type="button" class="btn-add-red mt-3"><a href="#"
-                                class="adding-product">افزودن</a></button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card card-product-warning">
-                    <div class="card-body text-center">
-                        <figure class="mb-0">
-                            <img src="assets/img/Untitled.png" alt="">
-                        </figure>
-                        <caption>
-                            <a href="#">هودی ادی داس طرح زمستانه</a>
-                        </caption><br>
-                        <p class="font-weight-bold -mt1 mb-0">
-                            <a href="#">تومان125000</a></p>
-                        <button type="button" class="btn-add-red mt-3"><a href="#"
-                                class="adding-product">افزودن</a></button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card card-product-warning">
-                    <div class="card-body text-center">
-                        <figure class="mb-0">
-                            <img src="assets/img/Untitled.png" alt="">
-                        </figure>
-                        <caption>
-                            <a href="#">هودی ادی داس طرح زمستانه</a>
-                        </caption><br>
-                        <p class="font-weight-bold mt-1 mb-0">
-                            <a href="#">تومان125000</a></p>
-                        <button type="button" class="btn-add-red mt-3"><a href="#"
-                                class="adding-product">افزودن</a></button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card card-product-warning">
-                    <div class="card-body text-center">
-                        <figure class="mb-0">
-                            <img src="assets/img/Untitled.png" alt="">
-                        </figure>
-                        <caption>
-                            <a href="#">هودی ادی داس طرح زمستانه</a>
-                        </caption><br>
-                        <p class="font-weight-bold mt-1 mb-0">
-                            <a href="#">تومان125000</a></p>
-                        <button type="button" class="btn-add-red mt-3"><a href="#"
-                                class="adding-product">افزودن</a></button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card card-product-warning">
-                    <div class="card-body text-center">
-                        <figure class="mb-0">
-                            <img src="assets/img/Untitled.png" alt="">
-                        </figure>
-                        <caption>
-                            <a href="#">هودی ادی داس طرح زمستانه</a>
-                        </caption><br>
-                        <p class="font-weight-bold mt-1 mb-0"><a href="#">تومان125000</a></p>
-                        <button type="button" class="btn-add-red mt-3"><a href="#"
-                                class="adding-product">افزودن</a></button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card card-product-warning">
-                    <div class="card-body text-center">
-                        <figure class="mb-0">
-                            <img src="assets/img/Untitled.png" alt="">
-                        </figure>
-                        <caption>
-                            <a href="#">هودی ادی داس طرح زمستانه</a>
-                        </caption><br>
-                        <p class="font-weight-bold mt-1 mb-0">
-                            125000تومان</p>
-                        <button type="button" class="btn-add-red mt-3"><a href="#"
-                                class="adding-product">افزودن</a></button>
+                            {{ $relate->fulls->first()->price . ' تومان ' }}</p>
+                        <button type="button" class="btn-add-red mt-3"><a href="{{ route('product.single', $relate->fulls->first()->id) }}"
+                                class="adding-product">صفحه محصول</a></button>
                     </div>
                 </div>
             </div>
         </div>
+            @empty
+                
+            @endforelse
         <div class="col-lg-12 mt-5">
             <div class="container">
                 <div class="col-md-12">

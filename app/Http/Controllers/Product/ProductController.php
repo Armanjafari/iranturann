@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Product;
 use App\Full;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Pure;
 use App\Support\Basket\Basket;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -24,6 +25,7 @@ class ProductController extends Controller
         // dd($sessionstorage->count());
         //dump(resolve(Basket::class)->itemCount());
         $products = Product::all();
+        $products->load('pure' , 'fulls');
         return view('Product.products', compact('products'));
     }
     public function product(Full $option)
@@ -35,7 +37,8 @@ class ProductController extends Controller
         $product->pure->load('attributes');
         $pure = $product->pure;
         $diffrent_colors = $product->options->load('colors');
+        $related = Product::all()->load('pure','fulls');
         // dd($product->options->first()->colors);
-        return view('Product', compact('product', 'diffrent_colors' , 'option' , 'pure'));
+        return view('Product', compact('product', 'diffrent_colors' , 'option' , 'pure' , 'related'));
     }
 }
