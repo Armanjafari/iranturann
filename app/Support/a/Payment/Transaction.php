@@ -50,7 +50,7 @@ class Transaction
 
 
             DB::commit();
-        } catch (\Exception $e) {
+        } catch (\Exception $e) {z
             DB::rollBack();
             return null;
         }

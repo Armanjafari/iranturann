@@ -18,7 +18,7 @@
             <div class="card border-0">
                 <div class="container">
                     <div class="mySlides">
-                        <img src="{{ $product->pure->images->first()->address }}" style="width: 100%;">
+                        <img src="{{ $product->pure->images->first()->address ?? "#" }}" style="width: 100%;">
                     </div>
                     <!-- <a class="next" onclick="plusSlides(1)">❯</a>
           <a class="prev" onclick="plusSlides(-1)">❮</a> -->
@@ -121,14 +121,14 @@
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                         <figure class="mb-0">
-                            <img src="{{ $relate->pure->images->first()->address }}" alt="">
+                            <img src="{{ $relate->pure->images->first()->address ?? "#"}}" alt="">
                         </figure>
                         <caption>
                             <a href="#">{{ $relate->pure->persian_title }}</a>
                         </caption><br>
                         <p class="font-weight-bold mt-1 mb-0">
-                            {{ $relate->fulls->first()->price . ' تومان ' }}</p>
-                        <button type="button" class="btn-add-red mt-3"><a href="{{ route('product.single', $relate->fulls->first()->id) }}"
+                            s</p>
+                        <button type="button" class="btn-add-red mt-3"><a href="#"
                                 class="adding-product">صفحه محصول</a></button>
                     </div>
                 </div>

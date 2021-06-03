@@ -21,8 +21,8 @@ class ProductController extends Controller
     {
         //  dd(Auth::user()->market->products()->wherePure_id(2)->first());
         $user = Auth::user();
-        if (!($user->market->is_active)){
-            return abort(403); // TODO make a middleware and make it in is_super_admin
+        if (!($user->market->is_super_active)){
+            return abort(403);
         }
         // $user->market->categories;
         $categories = $user->market->categories->load('products');

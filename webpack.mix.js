@@ -11,4 +11,4 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/myscript.js', 'public/assets/js/');
+mix.js('resources/js/myscript.js', 'public_html/assets/js/');

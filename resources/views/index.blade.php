@@ -42,14 +42,14 @@
                         <div class="card-body text-center card-bg-box">
                             <a href="#" class="float-right How-to-send">پس کرایه</a>
                             <figure class="mb-0">
-                                <img src=" {{ $product1->pure->images->first()->address }} " alt="">
+                                <img src="#" alt="">
                             </figure>
                             <caption>
-                                <a href="#"> {{ $product1->pure->persian_title }} </a>
+                                <a href="#"> گوشی </a>
                             </caption>
                             <p class="font-weight-bold mt-1 mb-0"> {{ $product1->pure->price . ' تومان ' }} </p>
                             <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="{{ route('product.single', $product1->fulls->first()->id) }}"
+                            <button type="button" class="btn-add-red mt-3"><a href="#"
                                     class="adding-product">افزودن</a></button>
                         </div>
                     </div>
@@ -73,14 +73,14 @@
                         <div class="card-body text-center card-bg-box">
                             <a href="#" class="float-right How-to-send">پس کرایه</a>
                             <figure class="mb-0">
-                                <img src=" {{ $product2->pure->images->first()->address }} " alt="">
+                                <img src="#" alt="">
                             </figure>
                             <caption>
-                                <a href="#"> {{ $product2->pure->persian_title }} </a>
+                                <a href="#"> تست </a>
                             </caption>
-                            <p class="font-weight-bold mt-1 mb-0"> {{ $product2->pure->price . ' تومان ' }} </p>
+                            <p class="font-weight-bold mt-1 mb-0"> 125,000 </p>
                             <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="{{ route('product.single', $product2->fulls->first()->id) }}"
+                            <button type="button" class="btn-add-red mt-3"><a href="#"
                                     class="adding-product">افزودن</a></button>
                         </div>
                     </div>
