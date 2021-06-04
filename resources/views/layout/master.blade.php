@@ -2,6 +2,7 @@
 <html>
 <head>
 @include('layout.header')
+<meta name="google-site-verification" content="G5Jn8M-O5gunSKHFNh0z9EJIzDeWB3MH4ent21mF-xI" />
 </head>
 
 <body dir="rtl">
