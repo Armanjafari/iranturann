@@ -111,6 +111,7 @@ class Transaction
             $products[$product->id] = [
                 'quantity' => $product->quantity,
                 'market_id' => $product->product->market_id,
+                'price' => $product->price,
             ];
         }
         return $products;

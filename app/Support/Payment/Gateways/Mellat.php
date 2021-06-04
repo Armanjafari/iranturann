@@ -36,7 +36,7 @@ class Mellat implements GatewayInterface
                 'amount' => $amount,
                 'localDate' => date("Ymd"),
                 'localTime' => date("His"),
-                'additionalData' => '',
+                'additionalData' => auth()->user()->phone_number,
                 'callBackUrl' => $this->callback,
                 'payerId' => '0'
             ];
