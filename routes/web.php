@@ -185,3 +185,9 @@ Route::group(['namespace' => 'File',], function () {
     Route::get('file/delete/{file}', 'FileController@delete')->name('file.delete');
 
 });
+
+use Spatie\Sitemap\SitemapGenerator;
+Route::get('sitemappp', function () {
+    $a = SitemapGenerator::create('https://iranturan.com/')
+    ->writeToFile(public_path('sitemap.xml'));
+});
