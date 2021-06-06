@@ -86,6 +86,7 @@
       --red-color:#e74c3c;
       --Primary-Color:#ffcc33;
       --Gray-color:#d8d5d5;
+      --font-size-18:18px;
     }
 
 .add-product-box{
@@ -100,9 +101,7 @@ box-shadow: 0px 4px 4px 0px #cbd5df;
   font-weight: bold;
   color:#6A6D6D !important;
 }
-.information-box{
- 
-}
+
 .first-name label{
   position: absolute;
   background-color: #fff;
@@ -110,9 +109,7 @@ box-shadow: 0px 4px 4px 0px #cbd5df;
  margin-right: 1em;
  padding-right: 1em;
  padding-left: 1em;
-
  font-size: 1.1em !important;
-
 }
 .form-control-one{
   border: 2px solid var(--Secendry-Color);
@@ -352,4 +349,58 @@ input:checked + .slider:before {
 .first-name2{
   background-color: #fff;
    box-shadow:1px 1px 3px 1px rgb(192, 192, 192);
+}
+.content1{
+  background-color: #fff;
+  border-right: 0px solid var(--Secendry-Color);
+  border-top: 1px solid var(--Secendry-Color);
+  border-left: 1px solid var(--Secendry-Color);
+  border-bottom: 1px solid var(--Secendry-Color);
+}
+.content2{
+  background-color: #fff;
+border-right: 1px solid var(--Secendry-Color);
+border-bottom: 1px solid var(--Secendry-Color);
+}
+.user-name{
+  font-size: 1em;
+  color: #A29D9D;
+}
+.font-size-18{
+  font-size: var(--font-size-18);
+}
+.table-bordered-1{
+  border: 2px solid var(--Secendry-Color) !important;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+.table-bordered-2{
+  border-left: 2px solid var(--Secendry-Color) !important;
+  font-size: 0.9em;
+}
+.border-left-1{
+  border-left: 1px solid var(--Secendry-Color) !important;
+}
+.border-right-1{
+border-right: 1px solid var(--Secendry-Color) !important;
+}
+.font-size-16{
+  font-size: 16px;
+}
+.content3{
+  background-color: #fff;
+  border: 2px solid var(--Secendry-Color);
+}
+.btn-code{
+  color: #000;
+}
+.btn-code:hover{
+  color: #000;
+}
+.form-select{
+  display: inline-block;
+  border-radius: 1em;
+  padding: 0.5em;
+  border: 2px solid #33cccc;
+  outline: none !important;
 }

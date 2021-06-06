@@ -31,4 +31,8 @@ class Full extends Model
     {
         return $this->belongsTo(Waranty::class);
     }
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class)->withPivot('quantity','market_id','price');
+    }
 }
