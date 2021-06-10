@@ -19783,15 +19783,15 @@ buildDropDown(names); // $(window).resize(function (){
 //     })
 // });
 
-$(document).scroll(function () {
-  // $('.menu-level-1 > .menu-list-1 > .list-item').addClass("active");//
-  // navigation.attr('style', '    box-shadow: 0 .250rem 1rem rgba(0, 0, 0, .095);');//
-  if ($(document).scrollTop() > 50) {
-    $(".nav-box").attr('style', 'margin-top:-6.1em;');
-  } else {
-    $(".nav-box").attr('style', 'margin-top:0;');
-  }
-});
+// $(document).scroll(function () {
+//   // $('.menu-level-1 > .menu-list-1 > .list-item').addClass("active");//
+//   // navigation.attr('style', '    box-shadow: 0 .250rem 1rem rgba(0, 0, 0, .095);');//
+//   if ($(document).scrollTop() > 50) {
+//     $(".nav-box").attr('style', 'margin-top:-6.1em;');
+//   } else {
+//     $(".nav-box").attr('style', 'margin-top:0;');
+//   }
+// });
 var slideIndex = 1;
 showSlides(slideIndex);
 
