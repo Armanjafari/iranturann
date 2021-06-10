@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2.5|^8.0",
         "ajcastro/eager-load-pivot-relations": "^0.2.2",
+        "econea/nusoap": "^0.9.11",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "ghaninia/shipping": "^0.1.0",

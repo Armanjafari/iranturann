@@ -50,8 +50,9 @@ class Transaction
 
 
             DB::commit();
-        } catch (\Exception $e) {z
+        } catch (\Exception $e) {
             DB::rollBack();
+            dd('inja');
             return null;
         }
 

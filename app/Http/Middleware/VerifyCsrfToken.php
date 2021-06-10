@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
         //'payment/Saman/callback',
         // 'api/v1/*',
         'payment/saman/callback',
+        'payment/mellat/callback',
         'payment/pasargad/callback'
     ];
 }
