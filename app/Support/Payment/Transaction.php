@@ -32,6 +32,7 @@ class Transaction
             $payment = $this->makePayment($order);
             DB::commit();
         } catch (\Exception $e) {
+            dd('inja');
             DB::rollBack();
             return null;
         }
