@@ -19453,7 +19453,26 @@ $(document).ready(function () {
         items: 2
       }
     }
-  }); //  $('#owl-mobile9').owlCarousel({
+  }); 
+  
+  $('#owl-mobile12').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      450: {
+        items: 2
+      },
+      1200: {
+        items: 4
+      }
+    }
+  });
+  
+  //  $('#owl-mobile9').owlCarousel({
   //     loop:true,
   //     margin:10,
   //     nav:true,

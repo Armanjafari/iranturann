@@ -232,6 +232,7 @@
     -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
             box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     z-index: 5;
+    position: fixed;
   }
   
   .navigation.active {
@@ -650,6 +651,7 @@
     }
     .mobile-nav {
       background-color: #33cccc;
+      position: fixed;
     }
     .mobile-nav > .img-thumbnail {
       width: 130px;
@@ -660,7 +662,22 @@
   }
   
   .btn-logo {
-    background-color: #ffcc33;
+    /* background-color: #ffcc33; */
+     background-color: #ffcc33; 
+    border-radius: 0.7em;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+    padding: 1em;
+    height: inherit;
+    margin-top: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin-left: 1em !important;
+  }
+  .btn-logo2 {
+    background-color:#70b1fb;
+    /* background-color: #ffbd2d; */
     border-radius: 0.7em;
     border: none;
     outline: none !important;
@@ -741,9 +758,7 @@
     }
   }
   
-  .col-lg-3 > .Discount {
-    border-color: #817e7e !important;
-  }
+  
   
   .owl-prev,
   .owl-next {
@@ -1391,9 +1406,9 @@
   }
   
   .serch-box {
-    width: 40% !important;
+    width: 50% !important;
     background-color: #FFCC33;
-    border-radius: 1em;
+    border-radius: 0.8em;
     border-color: #ffcc33;
     outline: none !important;
     background-repeat: no-repeat;
@@ -1843,7 +1858,19 @@
     box-shadow:0px 1px 6px 0.1rem #33cccc;
     border: none !important;
   }
-  
+  .form-control2 {
+    color: #495057;
+    background-color:#FFCC33;
+    outline: none !important;
+    border: none !important;
+  }
+  .form-control2:focus{
+    color: #495057;
+    background-color: #fff;
+    outline: none !important;
+    box-shadow:0px 1px 6px 0.1rem #33cccc;
+    border: none !important;
+  }
   @media screen and (min-width: 300px) and (max-width: 800px){
    .op{
      display: none;
@@ -1926,4 +1953,24 @@
   .btn-Record2:hover{
     color: #fff;
   }
+  .col-lg-12w{
+    margin-top: 7rem;
+  }
+  .discount{
+    font-size: 1.2em;
+    border-bottom: 3px dashed #10747B;
+  }
+  .product-card{
+    max-width: 100%;
+    display: flex;
+    box-shadow: 2px 2px 5px 2px #DED6D6;
+    box-sizing: border-box;
+    border-radius: 1.2em;
+  }
+  .badge-1{
+    border-radius: 0px 10px 10px 0px;
+    padding: 1em;
+  }
+
+  
   /*# sourceMappingURL=style.css.map */

@@ -3,11 +3,11 @@
 <!--start header2-->
 <header>
     <nav class="navbar navbar-expand-lg  position-fixed nav-box">
-        <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control serch-box mt-lg-1">
+        <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control2 serch-box mt-lg-1">
         <div class="dropdown dropdown-city mr-auto">
             <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                از کجا می خوایی خرید کنی؟
+               لار
             </button>
             <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
                 <form class="px-4 py-2">
@@ -25,70 +25,24 @@
 
 <main>
     <div class="row">
-        <div class="col-lg-6 mt-5">
-            <div class="card mt-5">
-                <div class="card-header text-center header-discount">
-                    <a href="#">تخفیف بالای 20 درصد</a>
-                </div>
-                <div class="owl-carousel owl-theme" id="owl-mobile">
-                    <div class="card">
-                        <div class="Circle-discount text-center text-light">
-                            <div class="mt-2">
-                                <a href="#" class="text-light discount-percent">25%
-                                </a>
-                                <p>تخفیف</p>
-                            </div>
-                        </div>
-                        <div class="card-body text-center card-bg-box">
-                            <a href="#" class="float-right How-to-send">پس کرایه</a>
-                            <figure class="mb-0">
-                                <img src="#" alt="">
-                            </figure>
-                            <caption>
-                                <a href="#"> گوشی </a>
-                            </caption>
-                            <p class="font-weight-bold mt-1 mb-0"> {{ $product1->pure->price . ' تومان ' }} </p>
-                            <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="#"
-                                    class="adding-product">افزودن</a></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="col-lg-12 col-lg-12w">
+           <div class="text-right">
+           <span class="discount">تخفیف بالای 20درصد</span>
+           </div> 
+           
+           <div class="owl-carousel owl-theme mt-5" id=owl-mobile12>
+                     <div class="product-card m-3">
+                     <a href="#">
+                     <span class="badge badge-danger badge-1">dtgdf</span>
+               
+            <img src="{{ asset('assets/img/01-removebg-preview.png') }}" alt="">
+                    </a>
+                 </div>
+              
         </div>
-        <div class="col-lg-6 mt-5">
-            <div class="card mt-5">
-                <div class="card-header text-center header-discount">
-                    <a href="#">تخفیف زیر 20 درصد</a>
-                </div>
-                <div class="owl-carousel owl-theme" id="owl-mobile3">
-                    <div class="card">
-                        <div class="Circle-discount text-center text-light">
-                            <div class="mt-2">
-                                <a href="#" class="text-light discount-percent">15%
-                                </a>
-                                <p>تخفیف</p>
-                            </div>
-                        </div>
-                        <div class="card-body text-center card-bg-box">
-                            <a href="#" class="float-right How-to-send">پس کرایه</a>
-                            <figure class="mb-0">
-                                <img src="#" alt="">
-                            </figure>
-                            <caption>
-                                <a href="#"> تست </a>
-                            </caption>
-                            <p class="font-weight-bold mt-1 mb-0"> 125,000 </p>
-                            <p class="line-dro mt-1 mb-0">125000</p>
-                            <button type="button" class="btn-add-red mt-3"><a href="#"
-                                    class="adding-product">افزودن</a></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-lg-3 col-xl-3 mt-5 kala">
+          
+    </div>
+    <div class="col-lg-3 col-xl-3 mt-5 kala">
             <div class="card">
                 <div class="card-body text-right mr-4">
                     <span class="mr-5">تضمین کیفیت کالا</span><br>
@@ -214,7 +168,6 @@
             @empty
             چیزی وجود نداره داداش
             @endforelse
-
         </div>
     </div>
 </main>
