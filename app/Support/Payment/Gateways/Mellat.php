@@ -1,6 +1,7 @@
 <?php
 namespace App\Support\Payment\Gateways;
 
+use App\Order;
 use App\Support\Payment\Gateways\GatewayInterface;
 use DateTime;
 use Illuminate\Http\Request;
@@ -14,32 +15,32 @@ class Mellat implements GatewayInterface
     protected $serverUrl = 'https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl';
     public function __construct()
     {
-        $this->merchantID = '123456789';
+        $this->merchantID = mt_rand(10000,99999);
         $this->callback = route('payment.verify' , $this->getName());
     }
     public function pay($order , int $amount)
     {
         $this->redirectToBank($order , $amount);
     }
-    // $parameters = [
-    //     'terminalId' => '5453042',
-    //     'userName' => 'iranturan123',
-    //     'userPassword' => '20862902',
-    //     'orderId' => $order->id,
-    //     'amount' => $amount,
-    //     'localDate' => date("Ymd"),
-    //     'localTime' => date("His"),
-    //     'additionalData' => auth()->user()->phone_number,
-    //     'callBackUrl' => $this->callback,
-    //     'payerId' => '0'
-    // ];
+        // $parameters = [
+        //     'terminalId' => '5453042',
+        //     'userName' => 'iranturan123',
+        //     'userPassword' => '20862902',
+        //     'orderId' => $order->id,
+        //     'amount' => $amount,
+        //     'localDate' => date("Ymd"),
+        //     'localTime' => date("His"),
+        //     'additionalData' => auth()->user()->phone_number,
+        //     'callBackUrl' => $this->callback,
+        //     'payerId' => '0'
+        // ];
     private function redirectToBank($order , $amount)
     {
         $terminalId		= "5453042";					// Terminal ID
         $userName		= "iranturan123";					// Username
         $userPassword	= "65916041";					// Password
         $orderId		= $order->id;						// Order ID
-        $amount 		= $amount;						// Price / Rial
+        $amount 		= $amount * 10;						// Price / Rial
         $localDate		= date('Ymd');					// Date
         $localTime		= date('Gis');					// Time
         $additionalData	= auth()->user()->phone_number;
@@ -52,7 +53,7 @@ class Mellat implements GatewayInterface
             'userName' 			=> $userName,
             'userPassword' 		=> $userPassword,
             'orderId' 			=> $orderId,
-            'amount' 			=> $amount,
+            'amount' 			=> $amount * 10,
             'localDate' 		=> $localDate,
             'localTime' 		=> $localTime,
             'additionalData' 	=> $additionalData,
@@ -131,7 +132,7 @@ class Mellat implements GatewayInterface
                 if($result == '0') {
                     //-- تمام مراحل پرداخت به درستی انجام شد.
                     //-- آماده کردن خروجی
-                    echo 'The transaction was successful';
+                    return $this->transactionSuccess($order , $request->input('ResNum'));
                 } else {
                     //-- در درخواست واریز وجه مشکل به وجود آمد. درخواست بازگشت وجه داده شود.
                     $client->call('bpReversalRequest', $parameters, $namespace);			
@@ -144,11 +145,30 @@ class Mellat implements GatewayInterface
             }
         } else {
             //-- پرداخت با خطا همراه بوده
-            echo 'Error : '. $_POST['ResCode'];
+            echo 'Error : '. $request->input('ResCode');
         }
     }
     public function getName():string
     {
         return "mellat";
+    }
+    private function transactionSuccess($order , $refNum)
+    {
+        return [
+            'status' => self::TRANSACTION_SUCCESS,
+            'order' => $order,
+            'refNum' => $refNum,
+            'gateway'=> $this->getName()
+        ];
+    }
+    private  function getOrder($resNum)
+    {
+        return Order::where('code' , $resNum)->firstOrFail();
+    }
+    private function transactionFailed()
+    {
+        return [
+            'status' => self::TRANSACTION_FAILED
+        ];
     }
 }
