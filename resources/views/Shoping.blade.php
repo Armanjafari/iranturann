@@ -1,11 +1,8 @@
 @extends('layout.master')
 @section('content')
-
 <!--start main-->
 <main>
-
     <div class="col-lg-12">
-
     </div>
     <div class="mt-5">
         <div class="col-lg-12">
@@ -31,22 +28,16 @@
                 {{ $centerName }} </a></div>
         <div class="owl-carousel owl-theme mt-5" id="owl-mobile5">
             @forelse ($users as $item)
-            <div class="item">
+            <div class="item item1">
                     <div class="card card-shopping2">
                         <div class="card-body text-center">
                             <div class="col-lg-8 ml-auto mr-auto col-8"><img
                                     src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt=""
                                     class="rounded-circle"></div>
-                            <form action="">
-                                <div class="rating"><input type="radio" name="rating" value="5" id="5"><label
-                                        for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label
-                                        for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label
-                                        for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
-                                        for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label
-                                        for="1">☆</label>
-                                </div>
+                            <form action="" class="mt-3 ml-4">
+                            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
                             </form>
-                            <caption><a href="{{route('product.index')}}"> {{$item->market_name}} </a></caption><br>
+                           <div class="mt-2"> <caption><a href="{{route('product.index')}}"> {{$item->market_name}} </a></caption> </div>
                             <div class="mt-2">
                                 <span>طبقه اول ، پلاک01</span>
                             </div>

@@ -305,10 +305,10 @@
                             <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-5 mt-2">
                     <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class=""></a>
                         @guest
-                        <button type="button" class="btn-logo">
-                                <i class="far fa-user"></i>
-                                <a class="text-center" href="{{ route('login') }}">ورود به حساب کاربری</a>
-                            </button>
+                     
+                                
+                                <a class="text-center btn-logo" href="{{ route('login') }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود</a>
+                                <a class="text-center btn-logo2" href="{{ route('login') }}"> <i class="far fa-user pl-1"></i>ثبت نام</a>            
                         @endguest
                         @auth                    
                         <button type="button" class="btn-logo">
@@ -323,12 +323,16 @@
         <!--start mobile nav-->
         <div class="mobile-nav">
             <a href="#" class="toggle-btn" id="toggle"><span></span></a>
+            <a href="">
             <img src="{{ asset('assets/img/001.svg') }}" alt="" class="img-thumbnail ml-auto mr-3">
+            </a>
+            <a href="">
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-4">
+            </a>
             <i class="far fa-user mt-1"></i>
-            <button type="button" class="btn-logo ml-auto btn-logo1 p-3">
-                <span class="text-center">ورود/ثبت نام</span>
-            </button>
+           
+                <a class="text-center btn-logo ml-auto btn-logo1 p-3" href="">ورود/ثبت نام</a>
+            
         </div>
         <!--end mobile nav-->
         </header>
@@ -339,7 +343,7 @@
                 <button type="button" class="btn-logo">
                         <i class="far fa-user"></i>
                         <a class="text-center" href="{{ route('login') }}">ورود به حساب کاربری</a>
-                    </button>
+                    </button> 
                 @endguest
                 @auth                    
                 <button type="button" class="btn-logo">
