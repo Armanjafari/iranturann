@@ -69,6 +69,7 @@ class Transaction
         // TODO basket is not dynamic !
         $result = $this->gatewayFactory()->verify($this->request);
         if ($result['status'] != 0) return false;
+        dd('inja ghabl confirm');
         $this->confirmPayment($result);
         dd('inja confirm');
         $this->normalizeQuantity($result['order']);
