@@ -91,7 +91,6 @@ class Mellat implements GatewayInterface
             {
                 $res 		= explode (',',$result);
                 $ResCode 	= $res[0];
-                dd($res);
                 if ($ResCode == "0")
                 {
                     //-- انتقال به درگاه پرداخت
