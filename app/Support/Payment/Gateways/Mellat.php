@@ -111,6 +111,7 @@ class Mellat implements GatewayInterface
     }
     public function verify(Request $request)
     {
+        dd($request->all());
         if ($request->input('ResCode') == '0') {
             //--پرداخت در بانک باموفقیت بوده
             $client = new nusoap_client('https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl');
