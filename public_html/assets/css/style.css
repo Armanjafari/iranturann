@@ -690,8 +690,14 @@
     margin-left: 1em !important;
   }
   
-  @media screen and (min-width: 300px) and (max-width: 450px) {
+  @media screen and (min-width: 300px) and (max-width:450px) {
     .btn-logo {
+      display: none;
+    }
+    .menu-level-1>.btn-logo2{
+      display: none;
+    }
+    .menu-level-1>.svg-shopp{
       display: none;
     }
     .mobile-nav > .mt-1 {
@@ -2063,9 +2069,9 @@ line-height: 70px;
 .item1{
  height: 400px; 
 }
+
 /* .btn i{
-  border-radius: 100%;
-  
+  border-radius: 100%;  
 } */
 /* @keyframes ripple{
       0% {box-shadow: 0 0 0 0 rgba(240, 240, 240, .1), 0 0 0 20px rgba(240, 240, 240, .1), 0 0 0 40px rgba(240, 240, 240, .1), 0 0 0 60px rgba(240, 240, 240, .1);}
