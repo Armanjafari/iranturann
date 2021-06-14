@@ -111,7 +111,7 @@ class Mellat implements GatewayInterface
     }
     public function verify(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         if ($request->input('ResCode') == '0') {
             //--پرداخت در بانک باموفقیت بوده
             $client = new nusoap_client('https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl');
@@ -142,7 +142,7 @@ class Mellat implements GatewayInterface
                 if($result == '0') {
                     //-- تمام مراحل پرداخت به درستی انجام شد.
                     //-- آماده کردن خروجی
-                    return $this->transactionSuccess($order , $request->input('ResNum') ,$result);
+                    return $this->transactionSuccess($order , $request->input('RefId') ,$result);
                 } else {
                     //-- در درخواست واریز وجه مشکل به وجود آمد. درخواست بازگشت وجه داده شود.
                     $client->call('bpReversalRequest', $parameters, $namespace);
