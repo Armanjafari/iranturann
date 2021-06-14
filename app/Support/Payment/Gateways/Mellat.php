@@ -52,7 +52,7 @@ class Mellat implements GatewayInterface
             'userName' 			=> $userName,
             'userPassword' 		=> $userPassword,
             'orderId' 			=> $orderId,
-            'amount' 			=> $amount * 10,
+            'amount' 			=> $amount,
             'localDate' 		=> $localDate,
             'localTime' 		=> $localTime,
             'additionalData' 	=> $additionalData,
