@@ -68,7 +68,7 @@ class Transaction
     {
         // TODO basket is not dynamic !
         $result = $this->gatewayFactory()->verify($this->request);
-        if ($result['status'] == GatewayInterface::TRANSACTION_FAILED) return false;
+        if ($result['status'] != '0') return false;
         $this->confirmPayment($result);
         $this->normalizeQuantity($result['order']);
         $this->basket->clear();

@@ -111,7 +111,7 @@ class Mellat implements GatewayInterface
     }
     public function verify(Request $request)
     {
-        if ($_POST['ResCode'] == '0') {
+        if ($request->input('ResCode') == '0') {
             //--پرداخت در بانک باموفقیت بوده
             $client = new nusoap_client('https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl');
             $namespace='http://interfaces.core.sw.bps.com/';
@@ -133,6 +133,7 @@ class Mellat implements GatewayInterface
                 'saleReferenceId' => $verifySaleReferenceId);
             // Call the SOAP method
             $result = $client->call('bpVerifyRequest', $parameters, $namespace);
+            $order = $this->getOrder($request->input('ResNum'));
             if($result == '0') {
                 //-- وریفای به درستی انجام شد٬ درخواست واریز وجه
                 // Call the SOAP method
@@ -153,6 +154,10 @@ class Mellat implements GatewayInterface
             }
         } else {
             //-- پرداخت با خطا همراه بوده
+            if($request->input('ResCode') == '17')
+            {
+                return 17;
+            }
             echo 'Error : '. $request->input('ResCode');
         }
     }
@@ -179,4 +184,5 @@ class Mellat implements GatewayInterface
             'status' => self::TRANSACTION_FAILED
         ];
     }
+    
 }
