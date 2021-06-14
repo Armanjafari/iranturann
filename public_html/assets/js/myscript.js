@@ -19454,11 +19454,28 @@ $(document).ready(function () {
       }
     }
   }); 
-  
-  $('#owl-mobile12').owlCarousel({
+  $('#owl-mobile13').owlCarousel({
     loop: true,
-    margin: 10,
+    margin: 30,
     nav: true,
+    center:true,
+    responsive: {
+      0: {
+        items: 2
+      },
+      450: {
+        items: 2
+      },
+      1200: {
+        items: 6
+      }
+    }
+  });
+  $('#owl-mobile14').owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    center:true,
     responsive: {
       0: {
         items: 1
@@ -19471,7 +19488,75 @@ $(document).ready(function () {
       }
     }
   });
-  
+  $('#owl-mobile16').owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    center:true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      450: {
+        items: 1
+      },
+      1200: {
+        items: 4
+      }
+    }
+  });
+  $('#owl-mobile15').owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    center:true,
+    responsive: {
+      0: {
+        items: 2
+      },
+      450: {
+        items: 2
+      },
+      1200: {
+        items: 6
+      }
+    }
+  });
+  $('#owl-mobile17').owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    center:true,
+    responsive: {
+      0: {
+        items: 2
+      },
+      450: {
+        items: 2
+      },
+      1200: {
+        items: 6
+      }
+    }
+  });
+  $('#owl-mobile12').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    center:true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      450: {
+        items: 2
+      },
+      1200: {
+        items: 4
+      }
+    }
+  });
+ 
   //  $('#owl-mobile9').owlCarousel({
   //     loop:true,
   //     margin:10,

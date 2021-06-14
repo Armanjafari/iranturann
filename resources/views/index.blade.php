@@ -22,7 +22,6 @@
     </nav>
 </header>
 <!-- end navbar !-->
-
 <main>
     <div class="row">
     <div class="col-lg-12 col-lg-12w">
@@ -32,17 +31,99 @@
            
            <div class="owl-carousel owl-theme mt-5" id=owl-mobile12>
                      <div class="product-card m-3">
-                     <a href="#">
-                     <span class="badge badge-danger badge-1">dtgdf</span>
-               
-            <img src="{{ asset('assets/img/01-removebg-preview.png') }}" alt="">
-                    </a>
+                     <a href="https://google.com">
+                
+                     <span class="badge badge-danger badge-1">25%</span>
+                      <span class="float-right Ready-to-send">آماده ارسال</span>
+                      
+            <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" class="pl-4 pr-4">
+                  <caption>
+                  <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
+                  </caption>
+    <div class="text-center ml-3 mt-2"><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span> </div>
+           <div class="text-center mt-2 pb-3"><span class="price-line">130,000تومان</span>
+           <span class="font-weight-bold">125,000تومان</span>
+        </div>          
+</a>
                  </div>
-              
-        </div>
-          
+        </div>  
     </div>
-    <div class="col-lg-3 col-xl-3 mt-5 kala">
+    
+        <a href="https://google.com" class="w-100">
+        <div class="shopping-centrew mt-5 p-3">
+            <img src="assets/img/svg element/مراکز خرید.svg" alt="">
+         مراکز خرید
+        </div>
+        </a>
+        <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile13>
+        <div class="item">
+           <div><a href=""> <img src="assets/img/IMG_6457-scaled.jpg" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+           <div class="text-center  mt-2">
+           <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+           </div>
+          <div class="mt-2"> <a class="shopping-centre-caption" href="">بازار بزرگ لارستان</a>
+          </div>
+          <div class="mt-2">
+              <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
+          </div>
+        </div>     
+</div>
+<a href="https://google.com" class="w-100">
+        <div class="shopping-centrew mt-5 p-3">
+            <img src="assets/img/svg element/فروشنده.svg" alt="">
+         فروشندگان
+        </div>
+        </a> 
+        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile14">
+          <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
+          <div class="item"><a href="" class="Seller">پوشاک</a></div>
+          <div class="item"><a href="" class="Seller">دیجیتال</a></div>
+          <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
+          <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
+        </div>
+        <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile15>
+        <div class="item">
+           <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+           <div class="text-center  mt-2">
+           <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+           </div>
+          <div class="mt-2"> <a class="shopping-centre-caption" href="">فروشگاه رفاه</a>
+          </div>
+          <div class="mt-2">
+              <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
+          </div>
+        </div>     
+</div>
+<a href="https://google.com" class="w-100">
+        <div class="shopping-centrew mt-5 p-3">
+            <span class="Social-Networks pt-1 pb-1 pr-3 pl-3 ml-3"><img src="assets/img/svg element/واتساپ.svg" alt="">
+            <img src="assets/img/svg element/اینستاگرام.svg" alt="">
+            <img src="assets/img/svg element/تلگرام.svg" alt="">
+        </span>
+        فروشندگان شبکه اجتماعی
+        </div>
+        </a> 
+        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile16">
+          <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
+          <div class="item"><a href="" class="Seller">پوشاک</a></div>
+          <div class="item"><a href="" class="Seller">دیجیتال</a></div>
+          <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
+          <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
+        </div>
+        <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile17>
+        <div class="item">
+           <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+           <div class="text-center  mt-2">
+           <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+           </div>
+          <div class="mt-2"> <a class="shopping-centre-caption" href="">فروشگاه رفاه</a>
+          </div>
+          <div class="mt-2">
+              <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
+          </div>
+        </div>     
+</div>
+        <div class="col-lg-3 col-xl-3 mt-5 kala">
             <div class="card">
                 <div class="card-body text-right mr-4">
                     <span class="mr-5">تضمین کیفیت کالا</span><br>
@@ -81,93 +162,6 @@
                     <span class="position-absolute mt-4">ضمانت کیفیت کالا توسط ما</span>
                 </div>
             </div>
-        </div>
-        <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product">مراکز خرید</a></div>
-        <div class="owl-carousel owl-theme mt-5" id="owl-mobile4">
-            @forelse ($centers as $item)
-            <div class="item">
-
-                <img src="img/negin.png" class="w-100 mt-3 shopping-centre" style="height: 100px">
-
-                <form action="">
-                    <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                        <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio"
-                            name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating"
-                            value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1"
-                            id="1"><label for="1">☆</label>
-                    </div>
-                </form>
-                <div class="text-center">
-                    <caption><a href="{{ route('sellers.by.centers', $item->id) }}" class="shopping-centre-text">
-                            {{$item->name}} </a></caption>
-                </div>
-            </div>
-            @empty
-            چیزی وجود نداره داداش
-            @endforelse
-
-        </div>
-        <div class="owl-carousel owl-theme mt-5">
-            @forelse ($categories as $item)
-            <div class="item"><a href="{{ route('product.by.category', $item->id) }}" class="primary-colora">
-                    {{$item->persian_name}} </a></div>
-            @empty
-            چیزی وجود نداره داداش
-            @endforelse
-        </div>
-
-        <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product">فروشندگان</a></div>
-        <div class="owl-carousel owl-theme mt-5">
-            @forelse ($markets as $item)
-            <div class="item">
-                <div class="card border-0 card-shopping">
-                    <div class="card-body text-center p-2"><img src="assets/img/10.png" class="slide-show-odd mb"
-                            alt="">
-                        <form action="">
-                            <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label
-                                    for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label
-                                    for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label
-                                    for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
-                                    for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label
-                                    for="1">☆</label>
-                            </div>
-                        </form>
-                        <caption><a> {{$item->market_name}} </a></caption>
-                    </div>
-                </div>
-            </div>
-            @empty
-            چیزی وجود نداره داداش
-            @endforelse
-        </div>
-        <div class="card-header text-center mt-5 card-header-product w-100"><img style="width:40px;height:50px;"
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt=""><a
-                class="new-product"><img src="">فروشندگان
-                شبکه های اجتماعی <img style="width:40px;height:50px; border-radius:10px" src="img/whatsapp.ico"
-                    alt=""></a></div>
-        <div class="owl-carousel owl-theme mt-5">
-            @forelse ($messenger_seller as $item)
-            <div class="item">
-                <div class="card border-0 card-shopping">
-                    <div class="card-body text-center p-2"><img
-                            src="https://files.virgool.io/upload/users/16247/posts/ns9tgw7shczj/ffx3ya8dpemr.jpeg"
-                            class="slide-show-odd mb" alt="">
-                        <form action="">
-                            <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label
-                                    for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label
-                                    for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label
-                                    for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
-                                    for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label
-                                    for="1">☆</label>
-                            </div>
-                        </form>
-                        <caption><a> {{$item->market_name}} </a></caption>
-                    </div>
-                </div>
-            </div>
-            @empty
-            چیزی وجود نداره داداش
-            @endforelse
         </div>
     </div>
 </main>
