@@ -101,7 +101,8 @@ class Transaction
         return Payment::create([
             'order_id' => $order->id,
             'method' => $this->request->method,
-            'amount' => $this->cost->getTotalCosts()
+            'amount' => $this->cost->getTotalCosts(),
+            'status' => 100
             ]);
     }
     private function products()

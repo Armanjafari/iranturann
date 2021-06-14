@@ -47,6 +47,7 @@ class Mellat implements GatewayInterface
         $callBackUrl	= $this->callback;	// Callback URL
         $payerId		= 0;
          
+        //-- تبدیل اطلاعات به آرایه برای ارسال به بانک
         $parameters = array(
             'terminalId' 		=> $terminalId,
             'userName' 			=> $userName,
@@ -62,20 +63,10 @@ class Mellat implements GatewayInterface
         $client = new nusoap_client('https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl');
         $namespace='http://interfaces.core.sw.bps.com/';
         $result 	= $client->call('bpPayRequest', $parameters, $namespace);
-        // echo "<form id='mellatpayment' action='https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl' method='post'>
-        //     <input type='hidden' name='terminalId' value='{$terminalId}'/>
-        //     <input type='hidden' name='userName' value='{$userName}'/>
-        //     <input type='hidden' name='userPassword' value='{$userPassword}'/>
-        //     <input type='hidden' name='orderId' value='{$order->id}'>
-        //     <input type='hidden' name='amount' value='{$amount}' />
-        //     <input type='hidden' name='localDate' value='{$localDate}'>
-        //     <input type='hidden' name='localTime' value='{$localTime}'>
-        //     <input type='hidden' name='additionalData' value='{$additionalData}'>
-        //     <input type='hidden' name='callBackUrl' value='{$callBackUrl}'/>
-        //     <input type='hidden' name='payerId' value='{$payerId}'/>
-        //     </form><script>document.forms['mellatpayment'].submit()</script>";
+        //-- بررسی وجود خطا
         if ($client->fault)
         {
+            //-- نمایش خطا
             echo "There was a problem connecting to Bank";
             exit;
         } 
@@ -84,6 +75,7 @@ class Mellat implements GatewayInterface
             $err = $client->getError();
             if ($err)
             {
+                //-- نمایش خطا
                 echo "Error : ". $err;
                 exit;
             } 
