@@ -62,7 +62,6 @@ class Mellat implements GatewayInterface
         $client = new nusoap_client('https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl');
         $namespace='http://interfaces.core.sw.bps.com/';
         $result 	= $client->call('bpPayRequest', $parameters, $namespace);
-        dd($result);
         // echo "<form id='mellatpayment' action='https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl' method='post'>
         //     <input type='hidden' name='terminalId' value='{$terminalId}'/>
         //     <input type='hidden' name='userName' value='{$userName}'/>
@@ -75,6 +74,41 @@ class Mellat implements GatewayInterface
         //     <input type='hidden' name='callBackUrl' value='{$callBackUrl}'/>
         //     <input type='hidden' name='payerId' value='{$payerId}'/>
         //     </form><script>document.forms['mellatpayment'].submit()</script>";
+        if ($client->fault)
+        {
+            echo "There was a problem connecting to Bank";
+            exit;
+        } 
+        else
+        {
+            $err = $client->getError();
+            if ($err)
+            {
+                echo "Error : ". $err;
+                exit;
+            } 
+            else
+            {
+                $res 		= explode (',',$result);
+                $ResCode 	= $res[0];
+                dd($res);
+                if ($ResCode == "0")
+                {
+                    //-- انتقال به درگاه پرداخت
+                    echo '<form name="myform" action="https://bpm.shaparak.ir/pgwchannel/startpay.mellat" method="POST">
+                            <input type="hidden" id="RefId" name="RefId" value="'. $res[1] .'">
+                        </form>
+                        <script type="text/javascript">window.onload = formSubmit; function formSubmit() { document.forms[0].submit(); }</script>';
+                    exit;
+                }
+                else
+                {
+                    //-- نمایش خطا
+                    echo "Error : ". $result;
+                    exit;
+                }
+            }
+        }
     }
     public function verify(Request $request)
     {
