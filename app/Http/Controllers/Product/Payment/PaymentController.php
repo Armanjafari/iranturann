@@ -22,12 +22,11 @@ class PaymentController extends Controller
     }
     private function sendErrorResponse()
     {
-        dd('inja error');
         return redirect()->route('product.index')->with('error' , ' مشکلی در هنگام ثبت سفارش به وجود امده است ');
     }
     private function sendSuccessResponse()
     {
-        dd('inja error');
+        dd('inja success');
         return redirect()->route('product.index')->with('success' , ' سفارش با موفقیت ثبت شد ');
     }
 }
