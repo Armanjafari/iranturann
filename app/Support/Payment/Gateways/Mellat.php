@@ -141,34 +141,36 @@ class Mellat implements GatewayInterface
                 if($result == '0') {
                     //-- تمام مراحل پرداخت به درستی انجام شد.
                     //-- آماده کردن خروجی
-                    return $this->transactionSuccess($order , $request->input('ResNum'));
+                    return $this->transactionSuccess($order , $request->input('ResNum') ,$result);
                 } else {
                     //-- در درخواست واریز وجه مشکل به وجود آمد. درخواست بازگشت وجه داده شود.
-                    $client->call('bpReversalRequest', $parameters, $namespace);			
-                    echo 'Error : '. $result;
+                    $client->call('bpReversalRequest', $parameters, $namespace);
+                    return $this->transactionFailed($result);		
                 }
             } else {
                 //-- وریفای به مشکل خورد٬ نمایش پیغام خطا و بازگشت زدن مبلغ
                 $client->call('bpReversalRequest', $parameters, $namespace);
+                return $this->transactionFailed($result);		
                 echo 'Error : '. $result;
             }
         } else {
             //-- پرداخت با خطا همراه بوده
             if($request->input('ResCode') == '17')
             {
-                return 17;
+                // return 17;
+                return $this->transactionFailed($request->input('ResCode'));		
             }
-            echo 'Error : '. $request->input('ResCode');
+            return $this->transactionFailed($request->input('ResCode'));		
         }
     }
     public function getName():string
     {
         return "mellat";
     }
-    private function transactionSuccess($order , $refNum)
+    private function transactionSuccess($order , $refNum,$status)
     {
         return [
-            'status' => self::TRANSACTION_SUCCESS,
+            'status' => (int)$status,
             'order' => $order,
             'refNum' => $refNum,
             'gateway'=> $this->getName()
@@ -178,10 +180,10 @@ class Mellat implements GatewayInterface
     {
         return Order::where('code' , $resNum)->firstOrFail();
     }
-    private function transactionFailed()
+    private function transactionFailed($status)
     {
         return [
-            'status' => self::TRANSACTION_FAILED
+            'status' => (int)$status
         ];
     }
     
