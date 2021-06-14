@@ -134,7 +134,7 @@ class Mellat implements GatewayInterface
                 'saleReferenceId' => $verifySaleReferenceId);
             // Call the SOAP method
             $result = $client->call('bpVerifyRequest', $parameters, $namespace);
-            $order = $this->getOrder($request->input('ResNum'));
+            $order = $this->getOrder($request->input('RefId'));
             if($result == '0') {
                 //-- وریفای به درستی انجام شد٬ درخواست واریز وجه
                 // Call the SOAP method

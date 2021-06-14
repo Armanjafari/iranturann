@@ -70,6 +70,7 @@ class Transaction
         $result = $this->gatewayFactory()->verify($this->request);
         if ($result['status'] != 0) return false;
         $this->confirmPayment($result);
+        dd('inja confirm');
         $this->normalizeQuantity($result['order']);
         $this->basket->clear();
         return true;

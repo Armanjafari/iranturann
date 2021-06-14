@@ -18,13 +18,16 @@ class PaymentController extends Controller
         return $this->transaction->verify()
         ? $this->sendSuccessResponse()
         : $this->sendErrorResponse();
+        dd('inja verify paymentController');
     }
     private function sendErrorResponse()
     {
+        dd('inja error');
         return redirect()->route('product.index')->with('error' , ' مشکلی در هنگام ثبت سفارش به وجود امده است ');
     }
     private function sendSuccessResponse()
     {
+        dd('inja error');
         return redirect()->route('product.index')->with('success' , ' سفارش با موفقیت ثبت شد ');
     }
 }
