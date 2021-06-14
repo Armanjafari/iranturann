@@ -34,7 +34,7 @@
                      <a href="https://google.com">
                 
                      <span class="badge badge-danger badge-1">25%</span>
-                      <span class="float-right Ready-to-send">آماده ارسال</span>
+                      <span class="float-right Ready-to-send"> آماده ارسال</span>
                       
             <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" class="pl-4 pr-4">
                   <caption>
