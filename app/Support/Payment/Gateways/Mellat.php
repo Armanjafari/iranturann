@@ -39,7 +39,7 @@ class Mellat implements GatewayInterface
         $terminalId		= "5453042";					// Terminal ID
         $userName		= "iranturan123";					// Username
         $userPassword	= "65916041";					// Password
-        $orderId		= $order->id;						// Order ID
+        $orderId		= $order->code;						// Order ID
         $amount 		= $amount * 10;						// Price / Rial
         $localDate		= date('Ymd');					// Date
         $localTime		= date('Gis');					// Time

@@ -19,8 +19,6 @@ class homecontroller extends Controller
         $messenger_seller = Market::wheretype(1)->get();
         // dd($seller);
         $categories = Category::all();
-        $product1 = Product::find(1);
-        $product2 = Product::find(2);
-        return view('index',compact('messenger_seller', 'centers' , 'categories' , 'markets', 'product1','product2'));
+        return view('index',compact('messenger_seller', 'centers' , 'categories' , 'markets'));
     }
 }
