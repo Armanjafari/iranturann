@@ -676,7 +676,7 @@
     margin-left: 1em !important;
   }
   .btn-logo2 {
-    background-color:#70b1fb;
+    background-color:#FFCC33;
     /* background-color: #ffbd2d; */
     border-radius: 0.7em;
     border: none;
@@ -2063,13 +2063,26 @@ line-height: 70px;
 }
 .card-shopping2{
   background-color: #fff;
-  border: 1px solid #E5E5E1 !important;
-  box-shadow: 2px 3px 5px 2px #e2dfdf;
+ border: none !important;
+  box-shadow: 2px 4px 5px 2px #e2dfdf;
 }
 .item1{
  height: 400px; 
 }
-
+.bootik{
+  position: relative;
+  height: 30em;
+}
+.nav-link1{
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px 2px #ccc;
+}
+.instagram1{
+  width: 20px;
+  height: 20px;
+}
 /* .btn i{
   border-radius: 100%;  
 } */

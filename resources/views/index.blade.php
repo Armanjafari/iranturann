@@ -32,11 +32,9 @@
            <div class="owl-carousel owl-theme mt-5" id=owl-mobile12>
                      <div class="product-card m-3">
                      <a href="https://google.com">
-                
                      <span class="badge badge-danger badge-1">25%</span>
-                      <span class="float-right Ready-to-send"> آماده ارسال</span>
-                      
-            <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" class="pl-4 pr-4">
+                      <span class="float-right Ready-to-send"> آماده ارسال<img src="assets/img/svg element/آماده ارسال جدید.svg" alt="" style="width:15px; display:inline-block" class="ml-1"></span>                      
+            <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" style=""  alt="" class="pl-4 pr-4">
                   <caption>
                   <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
                   </caption>
@@ -90,7 +88,7 @@
           <div class="mt-2"> <a class="shopping-centre-caption" href="">فروشگاه رفاه</a>
           </div>
           <div class="mt-2">
-              <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
+              <a href="" class="link-application"> لینک دانلود اپلیکیشن</a><img src="assets/img/svg element/دانلود.svg" alt="" style="width:15px; display:inline-block" class="ml-1">
           </div>
         </div>     
 </div>
@@ -119,7 +117,7 @@
           <div class="mt-2"> <a class="shopping-centre-caption" href="">فروشگاه رفاه</a>
           </div>
           <div class="mt-2">
-              <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
+              <a href="" class="link-application"> لینک دانلود اپلیکیشن</a><img src="assets/img/svg element/دانلود.svg" alt="" style="width:15px; display:inline-block" class="ml-1">
           </div>
         </div>     
 </div>

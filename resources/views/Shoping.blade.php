@@ -4,53 +4,84 @@
 <main>
     <div class="col-lg-12">
     </div>
-    <div class="mt-5">
+    <div class="mt-3">
         <div class="col-lg-12">
-            <div class="card position-absolute mt-5 text-center" style="left: 10px; z-index:1;">
-                <div class="row">
-                    <a href="#"> <img src="{{asset('assets/img/svg element/insta.svg')}}" alt="" class="shabak"></a>
-                    <a href="#"> <img src="{{asset('assets/img/svg element/insta.svg')}}" alt="" class="shabak"></a>
-                    <a href="#"> <img src="{{asset('assets/img/svg element/insta.svg')}}" alt="" class="shabak"></a>
-                    <a href="#"> <img src="{{asset('assets/img/svg element/wat.svg')}}" alt="" class="shabak"></a>
-                </div>
-            </div>
-        </div>
-
-
+        <div class="text-right">
+           <span class="discount">فروشگاه های مرکزخرید بازار بزرگ لارستان</span>
+           <div class="float-left bg-light p-3">
+           <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}" class="instagram1" alt=""></span>
+           <span>bazar bozorg@</span>
+           <span class="mr-2"><img src="{{asset('assets/img/icons8-whatsapp.svg')}}" class="instagram1" alt=""></span>
+           <span>bazar bozorg@</span>
+           <span class="mr-2"><img src="{{asset('assets/img/svg element/تلگرام2.svg')}}" alt="" class="instagram1"></span>
+           <span>bazar bozorg@</span>
+           </div>
+                      </div> 
         <img src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt="" width="100%"
-            style="height: 20em; opacity:0.7; position:relative">
+            class="mt-1 bootik">
+        </div>
+     
     </div>
-    <div class="row">
-
-    </div>
+    
     <div class="col-lg-12 ml-auto mr-auto col-8">
-        <div class="card-header text-center mt-5 card-header-product w-100 pt-5 pb-5"><a class="new-product">
-                {{ $centerName }} </a></div>
         <div class="owl-carousel owl-theme mt-5" id="owl-mobile5">
             @forelse ($users as $item)
             <div class="item item1">
                     <div class="card card-shopping2">
                         <div class="card-body text-center">
-                            <div class="col-lg-8 ml-auto mr-auto col-8"><img
-                                    src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt=""
-                                    class="rounded-circle"></div>
-                            <form action="" class="mt-3 ml-4">
+                            <div class="col-lg-8 ml-auto mr-auto col-8">
+                            <a href=""> <img src="{{asset('assets/img/IMG_6457-scaled.jpg')}}" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a>
+                                </div>
+                            <div action="" class="mt-3 ml-4">
                             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
-                            </form>
+                          </div>
                            <div class="mt-2"> <caption><a href="{{route('product.index')}}"> {{$item->market_name}} </a></caption> </div>
                             <div class="mt-2">
                                 <span>طبقه اول ، پلاک01</span>
                             </div>
-                            <div class="mt-1">
-                                <a href="#" class="download-app">لینک دانلود اپلیکیشن  wahl </a>
-                            </div>
+                            <div class="mt-2">
+              <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
+              <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class="ml-1">
+          </div>
                         </div>
                     </div>
             </div>
             @empty
             فروشنده ای برای این مرکز وجود ندارد
             @endforelse
+            
         </div>
+        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile14">
+          <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
+          <div class="item"><a href="" class="Seller">پوشاک</a></div>
+          <div class="item"><a href="" class="Seller">دیجیتال</a></div>
+          <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
+          <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
+        </div>
+    <div class="col-lg-12">
+    <div class="row">
+    <div class="col-lg-4">
+    <div class="product-card m-3">
+                     <a href="https://google.com">
+                     <span class="badge badge-danger badge-1">25%</span>
+                      <span class="float-right Ready-to-send"> آماده ارسال<img src="assets/img/svg element/آماده ارسال جدید.svg" alt="" style="width:15px; display:inline-block" class="ml-1"></span>                      
+            <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" width="100%"  class="">
+                  <caption>
+                  <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
+                  </caption>
+    <div class="text-center ml-3 mt-2"><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span> </div>
+           <div class="text-center mt-2 pb-3"><span class="price-line">130,000تومان</span>
+           <span class="font-weight-bold">125,000تومان</span>
+        </div>          
+</a>
+                 </div>
     </div>
+
+    </div>
+    <!-- <div class="col-lg-4">
+    <div class="text-center">
+<a href="" class="nav-link nav-link1">1</a>
+ </div>
+ </div> -->
 </main>
 @endsection

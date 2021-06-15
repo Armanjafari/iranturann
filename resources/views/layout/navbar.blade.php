@@ -303,7 +303,7 @@
                             <span>خانه، آشپزخانه و ابزار</span>
                             <img class="item-icon" src="assets/img/download.png" alt=""></a></li>
                             <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-5 mt-2">
-                    <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class=""></a>
+                            <span class="badge badge-danger position-absolute text-light mt-0 mr-0">1</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
                         @guest
                      
                                 
