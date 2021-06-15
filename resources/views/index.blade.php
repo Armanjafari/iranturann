@@ -57,7 +57,7 @@
 
         @forelse ($centers as $center)
             <div class="item">
-               <div><a href=""> <img src="{{$center->image->address}}" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+               <div><a href=""> <img src="{{$center->image->address}}" style="width:200px; height:200px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
                <div class="text-center  mt-2">
                <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
                </div>
