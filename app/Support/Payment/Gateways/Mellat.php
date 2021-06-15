@@ -39,7 +39,7 @@ class Mellat implements GatewayInterface
         $terminalId		= "5453042";					// Terminal ID
         $userName		= "iranturan123";					// Username
         $userPassword	= "65916041";					// Password
-        $orderId		= $order->id;						// Order ID
+        $orderId		= $order->code;						// Order ID
         $amount 		= $amount * 10;						// Price / Rial
         $localDate		= date('Ymd');					// Date
         $localTime		= date('Gis');					// Time
@@ -111,6 +111,7 @@ class Mellat implements GatewayInterface
     }
     public function verify(Request $request)
     {
+        // dd($request->all());
         if ($request->input('ResCode') == '0') {
             //--پرداخت در بانک باموفقیت بوده
             $client = new nusoap_client('https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl');
@@ -133,7 +134,7 @@ class Mellat implements GatewayInterface
                 'saleReferenceId' => $verifySaleReferenceId);
             // Call the SOAP method
             $result = $client->call('bpVerifyRequest', $parameters, $namespace);
-            $order = $this->getOrder($request->input('ResNum'));
+            $order = $this->getOrder($request->input('RefId'));
             if($result == '0') {
                 //-- وریفای به درستی انجام شد٬ درخواست واریز وجه
                 // Call the SOAP method
@@ -141,34 +142,36 @@ class Mellat implements GatewayInterface
                 if($result == '0') {
                     //-- تمام مراحل پرداخت به درستی انجام شد.
                     //-- آماده کردن خروجی
-                    return $this->transactionSuccess($order , $request->input('ResNum'));
+                    return $this->transactionSuccess($order , $request->input('RefId') ,$result);
                 } else {
                     //-- در درخواست واریز وجه مشکل به وجود آمد. درخواست بازگشت وجه داده شود.
-                    $client->call('bpReversalRequest', $parameters, $namespace);			
-                    echo 'Error : '. $result;
+                    $client->call('bpReversalRequest', $parameters, $namespace);
+                    return $this->transactionFailed($result);		
                 }
             } else {
                 //-- وریفای به مشکل خورد٬ نمایش پیغام خطا و بازگشت زدن مبلغ
                 $client->call('bpReversalRequest', $parameters, $namespace);
+                return $this->transactionFailed($result);		
                 echo 'Error : '. $result;
             }
         } else {
             //-- پرداخت با خطا همراه بوده
             if($request->input('ResCode') == '17')
             {
-                return 17;
+                // return 17;
+                return $this->transactionFailed($request->input('ResCode'));		
             }
-            echo 'Error : '. $request->input('ResCode');
+            return $this->transactionFailed($request->input('ResCode'));		
         }
     }
     public function getName():string
     {
         return "mellat";
     }
-    private function transactionSuccess($order , $refNum)
+    private function transactionSuccess($order , $refNum,$status)
     {
         return [
-            'status' => self::TRANSACTION_SUCCESS,
+            'status' => (int)$status,
             'order' => $order,
             'refNum' => $refNum,
             'gateway'=> $this->getName()
@@ -178,10 +181,10 @@ class Mellat implements GatewayInterface
     {
         return Order::where('code' , $resNum)->firstOrFail();
     }
-    private function transactionFailed()
+    private function transactionFailed($status)
     {
         return [
-            'status' => self::TRANSACTION_FAILED
+            'status' => (int)$status
         ];
     }
     

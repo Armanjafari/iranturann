@@ -32,8 +32,8 @@ class Transaction
             $payment = $this->makePayment($order);
             DB::commit();
         } catch (\Exception $e) {
-            dd('inja');
             DB::rollBack();
+            dd($e->getMessage());
             return null;
         }
         if ($payment->isOnline())
@@ -53,7 +53,6 @@ class Transaction
             'pasargad' => Pasargad::class
          ];
          //dd($list[$this->request->gateway]);
-         $a = resolve($list[$this->request->gateway]);
          return resolve($list[$this->request->gateway]);
          
         // $gateway = [
@@ -68,8 +67,10 @@ class Transaction
     {
         // TODO basket is not dynamic !
         $result = $this->gatewayFactory()->verify($this->request);
-        if ($result != '0') return false;
+        if ($result['status'] != 0) return false;
+        dd('inja ghabl confirm');
         $this->confirmPayment($result);
+        dd('inja confirm');
         $this->normalizeQuantity($result['order']);
         $this->basket->clear();
         return true;
@@ -88,7 +89,7 @@ class Transaction
     {
         $order = Order::create([
             'user_id' => auth()->user()->id,
-            'code' => bin2hex(Str::random(16)),
+            'code' => bindec(Str::random(16)),
             'amount' => $this->basket->subTotal()
             ]);
             // dd($this->products());

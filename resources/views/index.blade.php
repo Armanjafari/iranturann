@@ -54,18 +54,24 @@
         </div>
         </a>
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile13>
-        <div class="item">
-           <div><a href=""> <img src="assets/img/IMG_6457-scaled.jpg" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
-           <div class="text-center  mt-2">
-           <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
-           </div>
-          <div class="mt-2"> <a class="shopping-centre-caption" href="">بازار بزرگ لارستان</a>
-          </div>
-          <div class="mt-2">
-              <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
-          </div>
-        </div>     
-</div>
+
+        @forelse ($centers as $center)
+            <div class="item">
+               <div><a href=""> <img src="{{$center->image->address}}" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+               <div class="text-center  mt-2">
+               <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+               </div>
+              <div class="mt-2"> <a class="shopping-centre-caption" href=""> {{$center->name}} </a>
+              </div>
+              <div class="mt-2">
+                  <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
+              </div>
+            </div>     
+        @empty
+            <p> مرکز خریدی وجود ندارد </p>
+        @endforelse
+    </div>
+
 <a href="https://google.com" class="w-100">
         <div class="shopping-centrew mt-5 p-3">
             <img src="assets/img/svg element/فروشنده.svg" alt="">
@@ -80,17 +86,21 @@
           <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
         </div>
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile15>
+        @forelse ($markets as  $market)
         <div class="item">
-           <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
-           <div class="text-center  mt-2">
-           <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+            <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+            <div class="text-center  mt-2">
+            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+            </div>
+           <div class="mt-2"> <a class="shopping-centre-caption" href=""> {{$market->market_name}} </a>
            </div>
-          <div class="mt-2"> <a class="shopping-centre-caption" href="">فروشگاه رفاه</a>
-          </div>
-          <div class="mt-2">
-              <a href="" class="link-application"> لینک دانلود اپلیکیشن</a><img src="assets/img/svg element/دانلود.svg" alt="" style="width:15px; display:inline-block" class="ml-1">
-          </div>
-        </div>     
+           <div class="mt-2">
+               <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
+           </div>
+         </div>     
+        @empty
+            
+        @endforelse
 </div>
 <a href="https://google.com" class="w-100">
         <div class="shopping-centrew mt-5 p-3">
@@ -109,17 +119,21 @@
           <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
         </div>
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile17>
+        @forelse ($messenger_seller as $messneger)
         <div class="item">
-           <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
-           <div class="text-center  mt-2">
-           <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+            <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+            <div class="text-center  mt-2">
+            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+            </div>
+           <div class="mt-2"> <a class="shopping-centre-caption" href="">{{$messenger->persian_name}}</a>
            </div>
-          <div class="mt-2"> <a class="shopping-centre-caption" href="">فروشگاه رفاه</a>
-          </div>
-          <div class="mt-2">
-              <a href="" class="link-application"> لینک دانلود اپلیکیشن</a><img src="assets/img/svg element/دانلود.svg" alt="" style="width:15px; display:inline-block" class="ml-1">
-          </div>
-        </div>     
+           <div class="mt-2">
+               <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
+           </div>
+         </div>     
+        @empty
+            <p> فروشنده ای وجود ندارد </p>
+        @endforelse
 </div>
         <div class="col-lg-3 col-xl-3 mt-5 kala">
             <div class="card">
