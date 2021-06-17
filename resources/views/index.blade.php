@@ -2,7 +2,7 @@
 @section('content')
 <!--start header2-->
 <header>
-    <nav class="navbar navbar-expand-lg  position-fixed nav-box">
+    <nav class="navbar navbar-expand-lg   nav-box">
         <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control2 serch-box mt-lg-1">
         <div class="dropdown dropdown-city mr-auto">
             <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins"
@@ -38,7 +38,7 @@
                   <caption>
                   <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
                   </caption>
-    <div class="text-center ml-3 mt-2"><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span> </div>
+    <div class="text-center ml-3 mt-2"><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span> </div>
            <div class="text-center mt-2 pb-3"><span class="price-line">130,000تومان</span>
            <span class="font-weight-bold">125,000تومان</span>
         </div>          
@@ -59,7 +59,7 @@
             <div class="item">
                <div><a href=""> <img src="{{$center->image->address}}" style="width:200px; height:200px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
                <div class="text-center  mt-2">
-               <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+               <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
                </div>
               <div class="mt-2"> <a class="shopping-centre-caption" href=""> {{$center->name}} </a>
               </div>
@@ -90,7 +90,7 @@
         <div class="item">
             <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
             <div class="text-center  mt-2">
-            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
             </div>
            <div class="mt-2"> <a class="shopping-centre-caption" href=""> {{$market->market_name}} </a>
            </div>
@@ -123,7 +123,7 @@
         <div class="item">
             <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
             <div class="text-center  mt-2">
-            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
             </div>
            <div class="mt-2"> <a class="shopping-centre-caption" href="">{{$messenger->persian_name}}</a>
            </div>

@@ -10,20 +10,20 @@
            <span class="discount">فروشگاه های مرکزخرید بازار بزرگ لارستان</span>
            <div class="float-left bg-light p-3">
            <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}" class="instagram1" alt=""></span>
-           <span>bazar bozorg@</span>
+           <a href="https://google.com">bazar bozorg@</a>
            <span class="mr-2"><img src="{{asset('assets/img/icons8-whatsapp.svg')}}" class="instagram1" alt=""></span>
            <span>bazar bozorg@</span>
            <span class="mr-2"><img src="{{asset('assets/img/svg element/تلگرام2.svg')}}" alt="" class="instagram1"></span>
            <span>bazar bozorg@</span>
            </div>
                       </div> 
-        <img src="{{asset('assets/img/راهنمای-کامل-راه-اندازی-بوتیک-لباس3.jpg')}}" alt="" width="100%"
+        <img src="{{asset('assets/img/بازار بزرگ لارستان.png')}}" alt="" width="100%"
             class="mt-1 bootik">
         </div>
      
     </div>
     
-    <div class="col-lg-12 ml-auto mr-auto col-8">
+    <div class="col-lg-12 ml-auto mr-auto col-12">
         <div class="owl-carousel owl-theme mt-5" id="owl-mobile5">
             @forelse ($users as $item)
             <div class="item item1">
@@ -33,7 +33,7 @@
                             <a href=""> <img src="{{asset('assets/img/IMG_6457-scaled.jpg')}}" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a>
                                 </div>
                             <div action="" class="mt-3 ml-4">
-                            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+                            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
                           </div>
                            <div class="mt-2"> <caption><a href="{{route('product.index')}}"> {{$item->market_name}} </a></caption> </div>
                             <div class="mt-2">
@@ -58,7 +58,6 @@
           <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
           <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
         </div>
-    <div class="col-lg-12">
     <div class="row">
     <div class="col-lg-4">
     <div class="product-card m-3">
@@ -74,9 +73,66 @@
            <span class="font-weight-bold">125,000تومان</span>
         </div>          
 </a>
-                 </div>
     </div>
-
+    </div>
+    <div class="col-lg-4">
+    <div class="product-card m-3">
+                     <a href="https://google.com">
+                     <span class="badge badge-danger badge-1">25%</span>
+                      <span class="float-right Ready-to-send"> آماده ارسال<img src="assets/img/svg element/آماده ارسال جدید.svg" alt="" style="width:15px; display:inline-block" class="ml-1"></span>                      
+            <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" width="100%"  class="">
+                  <caption>
+                  <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
+                  </caption>
+    <div class="text-center ml-3 mt-2"><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span> </div>
+           <div class="text-center mt-2 pb-3"><span class="price-line">130,000تومان</span>
+           <span class="font-weight-bold">125,000تومان</span>
+        </div>          
+</a>
+    </div>
+    </div>
+    <div class="col-lg-4">
+    <div class="product-card m-3">
+                     <a href="https://google.com">
+                     <span class="badge badge-danger badge-1">25%</span>
+                      <span class="float-right Ready-to-send"> آماده ارسال<img src="assets/img/svg element/آماده ارسال جدید.svg" alt="" style="width:15px; display:inline-block" class="ml-1"></span>                      
+            <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" width="100%"  class="">
+                  <caption>
+                  <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
+                  </caption>
+    <div class="text-center ml-3 mt-2"><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked mr-2"></span> </div>
+           <div class="text-center mt-2 pb-3"><span class="price-line">130,000تومان</span>
+           <span class="font-weight-bold">125,000تومان</span>
+        </div>          
+</a>
+    </div>
+    </div>
+   
+    <nav aria-label="Page navigation example" class="mr-auto ml-auto mt-5">
+        <div class="row">
+       <a href="">
+    <div class="pagaition1 d-flex justify-content-center align-items-center">
+          1
+        </div>
+        </a>
+        <a href="">
+    <div class="pagaition1 d-flex justify-content-center align-items-center">
+          2
+        </div>
+        </a>
+        <a href="">
+    <div class="pagaition1 d-flex justify-content-center align-items-center">
+         3
+        </div>
+        </a>
+        <a href="">
+    <div class="pagaition1 d-flex justify-content-center align-items-center">
+         <img src="{{ asset('assets/img/فلش صفحه بعدی.svg') }}" alt="">
+        </div>
+        </a>
+        </div>
+</nav>
+    
     </div>
     <!-- <div class="col-lg-4">
     <div class="text-center">
