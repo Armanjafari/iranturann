@@ -2,15 +2,65 @@
 @section('content')
 <main>
 <div class="row mt-5">
+<div class="col-lg-8 mt-5 text-right">
+<div>
+<span class="discount">اطلاعات ارسال</span>
+</div>
+<div class="mt-3">
+<span>آدرس تحویل سفارش:</span>
+</div>
+<div>
+<span> {{Auth::user()->address ?? 'فارس،لارستان'}}</span><br>
+<span>{{Auth::user()->name}}</span>
+</div>
+<div>
+
+</div>
+<div class="mt-5">
+<a href="" class="link-application">ویرایش آدرس</a>
+</div>
+<hr>
+<span>نوع پرداخت خود را انتخاب کنید</span><br><br>
+<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+<a class=" active Seller3" id="nav-home-tab" data-toggle="tab" href="#nav-home2"
+                                role="tab" aria-controls="nav-home" aria-selected="true">پزداخت آنلاین</a>
+								<a class="Seller3 active mr-3" id="nav-profile-tab" data-toggle="tab" href="#nav-profile2"
+                                role="tab" aria-controls="nav-profile2" aria-selected="false">کارت به کارت</a>
+								<a class="Seller3 active mr-3" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+                                role="tab" aria-controls="nav-contact" aria-selected="false">پرداخت حضوری</a>
+							</div>
+<div class="tab-content mt-3" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home2" role="tabpanel"
+                            aria-labelledby="nav-home-tab">
+
+<div class="contactChoice1">
+<span>انتخاب درگاه</span><br>
+<input type="radio" id="contactChoice1"
+     name="contact" value="email">
+    <label for="contactChoice1"><img src="{{ asset('assets/img/bank-melat-removebg-preview.png') }}" alt=""></label>
+</div>
+<div class="kart-to-kart text-center">
+<p>شماره کارت: 6104337378510976</p>
+<p>بانک ملت اسماعیل زلفیان</p>
+</div>
+<div class="lar1 text-center">
+فقط شهر لار
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="row mt-5">
 	<div class="col-md-8">
 		<div class="card">
 			<div class="card-header">
-				@lang('payment.user information')
+		اطلااعات
 			</div>
 			<div class="card-body">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">   گیرنده : {{Auth::user()->name}}  </li>
-					<li class="list-group-item"> آدرس : {{Auth::user()->address}}</li>
+					<li class="list-group-item"> آدرس : {{Auth::user()->address ?? 'فارس،لارستان'}}</li>
 					<li class="list-group-item"> شماره موبایل : {{Auth::user()->phone_number}}</li>
 				</ul>
 			</div>

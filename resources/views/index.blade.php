@@ -4,6 +4,24 @@
 <header>
     <nav class="navbar navbar-expand-lg   nav-box">
         <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control2 serch-box mt-lg-1">
+        <div class="c-search__results text-right">
+            <img src="assets/img/svg element/ice-cream (1).svg" alt="" class="icon-seller">
+            <!-- <a href="" class="Seller mr-3 mt-3 mt-lg-0">فروشنده موبایل</a>
+            <a href="" class="Seller mr-3 mt-3 mt-lg-0">فروشنده موبایل</a>
+            <a href="" class="Seller mr-3 mt-3 mt-lg-0">فروشنده موبایل</a> -->
+            <div class="owl-carousel owl-theme mt-3" id="owl-mobile-6">
+                 <div class="item"> <a href="" class="Seller">فروشنده موبایل</a></div>
+                </div>
+                <a href="#" class>
+                  
+               </a>
+                <div class="owl-carousel owl-theme mt-3" id="owl-mobile-7">
+                    <div class="content-5 d-flex p-3">
+                        <img src="assets/img/گوشی-موبایل-آیفون-12-removebg-preview.png" alt="" width="100">
+                         <a href="" class="">سلام</a>    
+                   </div>  
+                </div>
+       </div>
         <div class="dropdown dropdown-city mr-auto">
             <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

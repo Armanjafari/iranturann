@@ -108,7 +108,7 @@
     </div>
     </div>
    
-    <nav aria-label="Page navigation example" class="mr-auto ml-auto mt-5">
+    <nav  aria-label="Page navigation example" class="mr-auto ml-auto mt-5">
         <div class="row">
        <a href="">
     <div class="pagaition1 d-flex justify-content-center align-items-center">

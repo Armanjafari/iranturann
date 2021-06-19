@@ -19627,6 +19627,21 @@ $(document).ready(function () {
       }
     }
   });
+$("#nav-home-tab").click(function(){
+  $(".kart-to-kart").css('display','none')
+  $(".contactChoice1").css('display','block')
+  $(".lar1").css('display','none')
+})
+$("#nav-profile-tab").click(function(){
+  $(".contactChoice1").css('display','none')
+  $(".kart-to-kart").css('display','block')
+  $(".lar1").css('display','none')
+})
+$("#nav-contact-tab").click(function(){
+  $(".lar1").css('display','block')
+  $(".contactChoice1").css('display','none')
+  $(".kart-to-kart").css('display','none')
+})
   $('#owl-mobile-2').owlCarousel({
     loop: true,
     margin: 10,
