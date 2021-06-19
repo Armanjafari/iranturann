@@ -57,13 +57,13 @@
 
         @forelse ($centers as $center)
             <div class="item">
-               <div><a href=""> <img src="{{$center->image->address}}" style="width:200px; height:200px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
-               <div class="text-center  mt-2">
+               <div><a href=""> <img src="{{$center->image->address}}" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+               <div class="text-center  mt-2 mr-3">
                <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
                </div>
-              <div class="mt-2"> <a class="shopping-centre-caption" href=""> {{$center->name}} </a>
+              <div class="mt-2 mr-3"> <a class="shopping-centre-caption" href=""> {{$center->name}} </a>
               </div>
-              <div class="mt-2">
+              <div class="mt-2 mr-3">
                   <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
               </div>
             </div>     
@@ -88,13 +88,13 @@
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile15>
         @forelse ($markets as  $market)
         <div class="item">
-            <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
-            <div class="text-center  mt-2">
+            <div><a href=""> <img src="assets/img/10.png" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+            <div class="text-center mr-3  mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
-           <div class="mt-2"> <a class="shopping-centre-caption" href=""> {{$market->market_name}} </a>
+           <div class="mt-2 mr-3"> <a class="shopping-centre-caption" href=""> {{$market->market_name}} </a>
            </div>
-           <div class="mt-2">
+           <div class="mt-2 mr-3">
                <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
            </div>
          </div>     
