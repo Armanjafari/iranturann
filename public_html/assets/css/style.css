@@ -2056,7 +2056,6 @@ line-height: 70px;
 }
 .img-shopp{
   box-shadow: 2px 3px 5px 1px #ccc;
-  animation: ripple 1s linear infinite;
 }
 .Social-Networks{
   background-color: #EEEEEE;
@@ -2343,5 +2342,28 @@ display: none;
   background-color: #FFCC33;
   transition: all ease 0.5s;
 }
+.link-product{
+  font-size: 20px;
+  font-weight: bold;
+  color: #0D0F0F;
+}
+.link-in{
+  color: #707070;
+  font-size: 14px;
+}
+.color-boreder{
+  width: 30px;
+  height: 30px;
+}
+.download-icon{
+  width: 20px;
+  height: 20px;
+}
+.marketer1{
+  font-size: 14px;
+}
+/* .color-boreder:focus{
+  border:3px solid #33cccc;
+} */
 /* 6104337378510976   زلفیان  */
 /*# sourceMappingURL=style.css.map */

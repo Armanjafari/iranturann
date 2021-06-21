@@ -27,6 +27,7 @@
 <!--start js file-->
 <script src="{{ asset('assets/js/myscript.js') }}"></script>
 <!--end js file-->
+<script src="{{ asset('assets/js/myscript2.js') }}"></script>
 <!--start owl carousel js-->
 <script src="{{ asset('assets/plogin/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
 <!--end owl carousel js-->

@@ -6,9 +6,9 @@
     <div class="mt-3">
         <div class="col-lg-12">
         <div class="text-right">
+                <img src="{{asset('assets/img/IMG_6402-scaled.png')}}" alt="" class="rounded-circle" style="width: 116px;height:116px;">
            <span class="discount">بوتیک بیگ باکس</span>
            <a href="" class="link-application discount mr-3"><img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class="ml-2">لینک دانلود اپلیکیشن</a>
-              
            <div class="float-left bg-light p-3">
            <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}" class="instagram1" alt=""></span>
            <span class="bazar2">whatsapp@</span>

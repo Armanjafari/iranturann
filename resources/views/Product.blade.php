@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-<main><br><br><br><br>
+<main><br>
     <!-- <div class="row">
          <div class="col-lg-8 mt-3">
              <div class="card">
@@ -16,46 +16,82 @@
     <div class="row">
         <div class="col-lg-4 pl-lg-0">
             <div class="card border-0">
-                <div class="container">
-                    <div class="mySlides">
-                        <img src="{{ $product->pure->images->first()->address ?? "#" }}" style="width: 100%;">
-                    </div>
-                    <!-- <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="mySlides">
+          <img src="{{asset('assets/img/01.png')}}" style="width: 100%;">
+          </div>
+          <div class="mySlides">           
+             <img src="{{asset('assets/img/02.png')}}" style="width: 100%;">
+          </div>
+          <div class="mySlides">
+            <img src="{{asset('assets/img/5852ac425c16e3ae3cbdc1b20596f723c54ec355_1604466916.png')}}" style="width:100%">
+          </div> 
+          <div class="mySlides">
+            <img src="{{asset('assets/img/6a6650c08fe4b430782cebfa62539ab56ab2b741_1601964067.png')}}" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="assets/img/01-removebg-preview.png" style="width:100%">
+          </div>
+            
+        
+          <!-- <a class="next" onclick="plusSlides(1)">❯</a>
           <a class="prev" onclick="plusSlides(-1)">❮</a> -->
-                    <div class="row">
-                        <div class="column">
-                            <img class="demo cursor" src="{{$product->image}}" style="width:100%"
-                                onclick="currentSlide(1)" alt="The Woods">
-                        </div>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="{{asset('assets/img/01.png')}}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="{{asset('assets/img/02.png')}}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="{{asset('assets/img/5852ac425c16e3ae3cbdc1b20596f723c54ec355_1604466916.png')}}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="{{asset('assets/img/6a6650c08fe4b430782cebfa62539ab56ab2b741_1601964067.png')}}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="assets/img/01-removebg-preview.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+            </div>    
+          </div>
             </div>
         </div>
         <div class="col-lg-4 pr-lg-0">
-            <div class="card text-center border-0 h-100">
+            <div class="card text-right border-0 h-100">
                 <div class="card-body">
                     <figcaption>
                         <a href="#" class="caption-product"> {{ $product->title }} </a>
                     </figcaption>
-                    <div class="mt-3 box-brand">
+                   
+                    
+                   
+                
+                    <div class="mt-3 box-brand mr-3">
+                        <span></span>
                         <span>برند:</span>
                         <a href="#" class="link-brand">سامسونگ</a>
-                    </div>
-                    <div class="mt-3 box-brand">
-                        <span>دسته بندی:</span>
+                        <span class="mr-3">دسته بندی:</span>
                         <a href="{{ route('product.by.category', $product->pure->category->id) }}" class="link-brand">
                             {{$product->pure->category->persian_name}} </a>
                     </div>
-                    <div class="mt-3 color-product-box">
-                        @foreach ($diffrent_colors as $color)
+                    <div class="mt-3 box-brand mr-3">
+                         <span class="link-product"> هودی ادی داس طرح زمستانه</span>
+                         <p class="link-in mt-2 text-right">Men's winter hoodie</p>
+                    </div>
+                    <div class="mt-3 color-product-box mr-3">
+                     <span>رنگ:</span>
+                     <span>آبی</span><br>
+                        <!-- @foreach ($diffrent_colors as $color)
                         <form action="{{ route('product.single' , $color->id) }}" method="GET">
+                        
                             <button type="submit" class="btn btn-light">
                                 <p style="color:{{$color->colors->value}}">{{$color->colors->title}}</p>
                             </button>
                         </form>
-                        @endforeach
+                        @endforeach -->
+                        <p class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:#ccc"></p>
+                        <p class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:blue"></p>
+                        <p class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:red"></p>
                     </div>
-                    <div class="mt-5 text-right mr-5">
+                    <div class="mt-5 text-right">
                         <ul class="Attributes">ویژگی ها
                             <li class="mt-2">
                                 <span class="dot2" style="background-color: #FFCC33;"></span>
@@ -72,7 +108,7 @@
                                 <span>قیمت مناسب</span>
                             </li>
                         </ul>
-                        <form action="" class="mt-3">
+                        <!-- <form action="" class="mt-3">
                             <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label
                                     for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label
                                     for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label
@@ -80,7 +116,8 @@
                                     for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label
                                     for="1">☆</label>
                             </div>
-                        </form>
+                        </form> -->
+                       <span class="bvn">مشاهده بیشتر</span>
                     </div>
                 </div>
             </div>
@@ -88,17 +125,20 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-body text-center">
-                    <div class="d-inline-block mt-5">
-                        <a class="Available">موجود درانبار</a>
-                    </div>
-                    <div
+                    <img src="{{asset('assets/img/svg element/فروشنده.svg')}}" alt="">
+                <span class="marketer1 mr-2">فروشنده: ایران توران</span>
+                <a href="" class="marketer1 mr-5">فروشنده های دیگر: 3</a>
+                <div class="text-right mr-3">
+                <img src="{{asset('assets/img/svg element/موجود در انبار.svg')}}" alt="">
+                </div>
+                    <!-- <div
                         class="Circle-discount  text-light position-relative d-inline-flex justify-content-center align-items-center mr-5 mt-5 p-5">
                         <div class="text-center mt-2">
                             <a href="#" class="text-light discount-percent">25%
                             </a>
                             <p>تخفیف</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="mt-5">
                         <a href="#" class="price"> {{$option->price}} تومان</a>
                     </div>

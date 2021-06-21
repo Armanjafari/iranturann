@@ -4,24 +4,24 @@
 <header>
     <nav class="navbar navbar-expand-lg   nav-box">
         <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control2 serch-box mt-lg-1">
-        <div class="c-search__results text-right">
-            <img src="assets/img/svg element/ice-cream (1).svg" alt="" class="icon-seller">
+        <!-- <div class="c-search__results text-right">
+            <img src="assets/img/svg element/ice-cream (1).svg" alt="" class="icon-seller"> -->
             <!-- <a href="" class="Seller mr-3 mt-3 mt-lg-0">فروشنده موبایل</a>
             <a href="" class="Seller mr-3 mt-3 mt-lg-0">فروشنده موبایل</a>
             <a href="" class="Seller mr-3 mt-3 mt-lg-0">فروشنده موبایل</a> -->
-            <div class="owl-carousel owl-theme mt-3" id="owl-mobile-6">
-                 <div class="item"> <a href="" class="Seller">فروشنده موبایل</a></div>
-                </div>
-                <a href="#" class>
+            <!-- <div class="owl-carousel owl-theme mt-3" id="owl-mobile-6">
+                 <div class="item"> <a href="" class="Seller">فروشنده موبایل</a></div> -->
+                <!-- </div>
+                <a href="#" class> -->
                   
-               </a>
-                <div class="owl-carousel owl-theme mt-3" id="owl-mobile-7">
+               <!-- </a> -->
+                <!-- <div class="owl-carousel owl-theme mt-3" id="owl-mobile-7">
                     <div class="content-5 d-flex p-3">
                         <img src="assets/img/گوشی-موبایل-آیفون-12-removebg-preview.png" alt="" width="100">
                          <a href="" class="">سلام</a>    
                    </div>  
                 </div>
-       </div>
+       </div> -->
         <div class="dropdown dropdown-city mr-auto">
             <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,7 +46,6 @@
            <div class="text-right">
            <span class="discount">تخفیف بالای 20درصد</span>
            </div> 
-           
            <div class="owl-carousel owl-theme mt-5" id=owl-mobile12>
                      <div class="product-card m-3">
                      <a href="https://google.com">
@@ -75,14 +74,14 @@
 
         @forelse ($centers as $center)
             <div class="item">
-               <div><a href=""> <img src="{{$center->image->address}}" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
-               <div class="text-center  mt-2 mr-3">
+               <div><a href=""> <img src="{{asset('assets/img/10.png')}}" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+               <div class="text-center  mt-2 mr-lg-5">
                <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
                </div>
-              <div class="mt-2 mr-3"> <a class="shopping-centre-caption" href=""> {{$center->name}} </a>
+              <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href=""> {{$center->name}} </a>
               </div>
-              <div class="mt-2 mr-3">
-                  <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
+              <div class="mt-2 mr-lg-5">
+              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class=""> </a>
               </div>
             </div>     
         @empty
@@ -107,13 +106,13 @@
         @forelse ($markets as  $market)
         <div class="item">
             <div><a href=""> <img src="assets/img/10.png" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
-            <div class="text-center mr-3  mt-2">
+            <div class="text-center mr-lg-5 mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
-           <div class="mt-2 mr-3"> <a class="shopping-centre-caption" href=""> {{$market->market_name}} </a>
+           <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href=""> {{$market->market_name}} </a>
            </div>
-           <div class="mt-2 mr-3">
-               <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
+           <div class="mt-2 mr-lg-5">
+             <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
            </div>
          </div>     
         @empty
@@ -139,7 +138,7 @@
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile17>
         @forelse ($messenger_seller as $messneger)
         <div class="item">
-            <div><a href=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+            <div class=""><a href="" class=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
             <div class="text-center  mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
             </div>
