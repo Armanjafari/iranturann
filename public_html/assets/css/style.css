@@ -1749,7 +1749,25 @@
   .Add-to-cart:hover {
     color: #fff;
   }
-  
+
+  .Add-to-cart1 {
+    background-color: #ffcc33;
+    color: #fff;
+    padding: 1em 4em;
+    border-radius: 1.2em;
+    -webkit-box-shadow: 1px 1px 10px 3px #DED6D6;
+            box-shadow: 1px 1px 10px 3px #DED6D6;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all ease 0.5s;
+  }
+  .Add-to-cart1:hover{
+    color: #ffcc33;
+    background-color: #ffffff;
+    -webkit-box-shadow: 1px 1px 10px 3px #ffcc33;
+    box-shadow: 1px 1px 10px 3px #ffcc33;
+    transition: all ease 0.5s;
+  }
   @media screen and (min-width: 300px) and (max-width: 380px) {
     .Add-to-cart {
       padding: 1em 2em;
@@ -2361,6 +2379,27 @@ display: none;
 }
 .marketer1{
   font-size: 14px;
+}
+.content-Specifications{
+border: 1px solid #979494;
+border-right: none;
+border-bottom: none;
+border-top: none;
+}
+.active{
+  border: 3px solid #33cccc;
+}
+.content-Specifications> span{
+  font-size: 16px;
+  margin-top: 1em;  
+}
+.mybor{
+ border: 2px solid #ffcc33;
+outline: none !important;
+margin-top: 1em;
+}
+.mybor:focus{
+  border: 2px solid #33cccc;
 }
 /* .color-boreder:focus{
   border:3px solid #33cccc;

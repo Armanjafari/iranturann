@@ -29,7 +29,7 @@
             <img src="{{asset('assets/img/6a6650c08fe4b430782cebfa62539ab56ab2b741_1601964067.png')}}" style="width:100%">
           </div>
           <div class="mySlides">
-            <img src="assets/img/01-removebg-preview.png" style="width:100%">
+            <img src="{{asset('assets/img/03.png')}}" style="width:100%">
           </div>
             
         
@@ -49,7 +49,7 @@
               <img class="demo cursor" src="{{asset('assets/img/6a6650c08fe4b430782cebfa62539ab56ab2b741_1601964067.png')}}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
             </div>
             <div class="column">
-              <img class="demo cursor" src="assets/img/01-removebg-preview.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+              <img class="demo cursor" src="{{asset('assets/img/03.png')}}" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
             </div>    
           </div>
             </div>
@@ -87,9 +87,9 @@
                             </button>
                         </form>
                         @endforeach -->
-                        <p class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:#ccc"></p>
-                        <p class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:blue"></p>
-                        <p class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:red"></p>
+                        <a  class="rounded-circle d-inline-block mr-2 mt-2 color-boreder active" href="#" style="background-color:#ccc"></a>
+                        <a class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:blue" href="#"></a>
+                        <a class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:red" href="#"></a>
                     </div>
                     <div class="mt-5 text-right">
                         <ul class="Attributes">ویژگی ها
@@ -128,8 +128,13 @@
                     <img src="{{asset('assets/img/svg element/فروشنده.svg')}}" alt="">
                 <span class="marketer1 mr-2">فروشنده: ایران توران</span>
                 <a href="" class="marketer1 mr-5">فروشنده های دیگر: 3</a>
-                <div class="text-right mr-3">
+                <div class="text-right mr-4 mt-3">
+                <img src="{{asset('assets/img/svg element/گارانتی.svg')}}" alt="">
+                <span class="marketer1 mr-2">گارانتی اصالت و سلامت فیزیکی کالا</span>
+                </div>
+                <div class="text-right mr-4 mt-2">
                 <img src="{{asset('assets/img/svg element/موجود در انبار.svg')}}" alt="">
+                <span class="marketer1 mr-2">موجود در انبار</span>
                 </div>
                     <!-- <div
                         class="Circle-discount  text-light position-relative d-inline-flex justify-content-center align-items-center mr-5 mt-5 p-5">
@@ -139,12 +144,19 @@
                             <p>تخفیف</p>
                         </div>
                     </div> -->
-                    <div class="mt-5">
-                        <a href="#" class="price"> {{$option->price}} تومان</a>
+                    <div class="mt-5 d-flex justify-content-center">
+                       
+                        <a href="#" class="price-product">125,000تومان</a>
+                     
+                        <div class="mr-5">
+                        <span class="badge badge-danger badge-1 text-left">25%</span>
+                        </div>
                     </div>
-                    <div class="mt-3 d-flex justify-content-center">
-                        <a href="#" class="price-product">125000تومان</a>
+                    
+                    <div class="mt-3">
+                        <a href="#" class="price"> {{number_format($option->price)}} تومان</a>
                     </div>
+                   
                     <form action="">
                         <div class="d-flex justify-content-center mt-5">
                             <a href="{{ route('basket.add', $option->id) }}" class="Add-to-cart">افزودن به سبد خرید</a>
@@ -183,7 +195,7 @@
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                                role="tab" aria-controls="nav-home" aria-selected="true">جزئیات</a>
+                                role="tab" aria-controls="nav-home" aria-selected="true">مشخصات</a>
                             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
                                 role="tab" aria-controls="nav-profile" aria-selected="false">توضیحات</a>
                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
@@ -193,16 +205,33 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                             aria-labelledby="nav-home-tab">
-                            <table class="table  table-striped table-responsive text-right" cellspacing="0">
-                                <tbody>
+                            <div class="row">
+                            <div class="col-lg-3">
+                           <div class="content-Specifications  text-center">
+                               <span>قد هودی:</span><br><br>
+                             <span>کلاه:</span><br><br>
+                             <span>کیفیت :</span><br><br>
+                           </div>
+
+                            </div>
+                            <div class="col-lg-9 text-right">
+                                
+                            <span>80سانتی متر</span><br><br>
+                            <span>دارد</span><br><br>
+                            <span>درجه یک</span><br><br>
+                            
+</div>
+</div>
+                            <!-- <table class="table  table-striped table-responsive text-right" cellspacing="0"> -->
+                                <!-- <tbody>
                                     @foreach ($pure->attributes as $attribute)
                                     <tr>
                                         <td><a href="#">{{ $attribute->name }}</a></td>
                                         <td> {{ $attribute->pivot->values->value }} </td>
                                     </tr>
                                     @endforeach
-                                </tbody>
-                            </table>
+                                </tbody> -->
+                            <!-- </table> -->
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="card p-5">
@@ -225,26 +254,33 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-4">
-                                                <div class="text-right Scoring-system d-table">
-                                                    <span style="white-space: pre;"> امتیاز دهی به </span>
-                                                    <a href="#">هودی مردانه آدیداس طرح زمستانه</a>
-                                                </div>
-                                                <form action="">
-                                                    <div class="mt-3">
-                                                        <div class="rating"> <input type="radio" name="rating" value="5"
-                                                                id="6"><label for="6">☆</label> <input type="radio"
-                                                                name="rating" value="4" id="6"><label for="6">☆</label>
-                                                            <input type="radio" name="rating" value="3" id="7"><label
-                                                                for="7">☆</label> <input type="radio" name="rating"
-                                                                value="2" id="8"><label for="8">☆</label> <input
-                                                                type="radio" name="rating" value="1" id="9"><label
-                                                                for="9">☆</label>
-                                                        </div>
+                                               
+                                                 
+                                                    <div style=" direction:ltr;" class="float-right">
+                                                  
+                                                 <div class="text-right mr-3">
+                                                 <span>‏4.3 از 5</span>
+                                                 </div>
+                                                 <div class="mt-3">
+                                                 <span class="mr-3"> از مجموع</span>
+                                                    <span>1700 امتیاز</span>
+                                                     <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
+                                                     </div>
+                                                    <hr>
                                                     </div>
-                                                </form>
-
-
+                                            
+                                                <div class="mt-5">
+                                                <a href="#" class="Add-to-cart1 float-right">افزودن دیدگاه</a>
+                                                <div class="ml-5">
+                                                <textarea name="" id=""  class="mybor"  cols="30" rows="10"></textarea>
+                                             
                                             </div>
+                                            </div>
+                                                
+                                             
+                                             
+                                            </div>
+                                           
                                             <div class="col-lg-8">
                                                 <div class="text-right Scoring-system text-center mt-sm-0 mt-3">
                                                     <span>نظرات کاربران</span>

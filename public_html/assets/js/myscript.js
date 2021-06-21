@@ -15,6 +15,10 @@ $(document).ready(function(){
     $(".contactChoice1").css('display','none')
     $(".kart-to-kart").css('display','none')
   });
+  $(".mybor").hide();
+  $(".Add-to-cart1").click(function(){
+      $(".mybor").show()
+  })
   // update hide show start
   $(".first_namey").hide()
   $(".sign-up").click(function(){
