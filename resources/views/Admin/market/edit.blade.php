@@ -201,7 +201,7 @@
                     <div class="col-lg-6 mt-5">
                         <div class="first-name">
                             <label for="files">آپلود مدارک رسمی</label>
-                            <input name="image" value="{{ $market->name }}" id="files" class="apload-img" type="file">
+                            <input name="document" value="{{ $market->name }}" id="files" class="apload-img" type="file">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-5">

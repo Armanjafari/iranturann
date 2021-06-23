@@ -161,6 +161,9 @@ Route::get('admin/orders' , 'Admin\OrderController@index')->name('admin.order.in
 Route::get('admin/login/', 'Admin\Auth\LoginController@showForm')->name('show.admin.login.form');
 Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.login');
 
+Route::get('market/{seller}', 'Market\MarketController@index')->name('show.market');
+
+
 Route::get('filter', function () {
     return view('filter');
 });

@@ -71,6 +71,7 @@ class MarketController extends Controller
                 'instagram' => $request->input('instagram'),
                 'type' => $request->input('type'),
             ]);
+            $this->createImage($user , $request);
             DB::commit();
             return back()->withSuccess(__('iranturan.success message'));
         } catch (\Exception $e) {
@@ -171,5 +172,30 @@ class MarketController extends Controller
         } catch (\Exception $e) {
             return back()->withError(__('iranturan.error delete market'));
         }
+    }
+    public function createImage(User $user , Request $request)
+    {
+        // TODO refactor this
+        $file = $request->file('logo');
+        $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
+        $file->move(public_path($destination), $file->getClientOriginalName());
+        $user->market->images()->create([
+            'address' => $destination . $file->getClientOriginalName(),
+            'type' => 'logo',
+        ]);
+        $file = $request->file('market_picture');
+        $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
+        $file->move(public_path($destination), $file->getClientOriginalName());
+        $user->market->images()->create([
+            'address' => $destination . $file->getClientOriginalName(),
+            'type' => 'market_picture',
+        ]);
+        $file = $request->file('document');
+        $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
+        $file->move(public_path($destination), $file->getClientOriginalName());
+        $user->market->images()->create([
+            'address' => $destination . $file->getClientOriginalName(),
+            'type' => 'document',
+        ]);
     }
 }

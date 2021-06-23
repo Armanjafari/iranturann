@@ -74,7 +74,7 @@
 
         @forelse ($centers as $center)
             <div class="item">
-               <div><a href=""> <img src="{{asset('assets/img/10.png')}}" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+               <div><a href="{{ route('sellers.by.centers',$center->id) }}"> <img src="{{$center->image->address}}" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
                <div class="text-center  mt-2 mr-lg-5">
                <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
                </div>
@@ -142,7 +142,7 @@
             <div class="text-center  mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
             </div>
-           <div class="mt-2"> <a class="shopping-centre-caption" href="">{{$messenger->persian_name}}</a>
+           <div class="mt-2"> <a class="shopping-centre-caption" href="">{{$messneger->market_name}}</a>
            </div>
            <div class="mt-2">
                <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>

@@ -40,6 +40,10 @@ class Market extends Model
             throw new FileHasExistsException('a relation exists');
         }
     }
+    public function images()
+    {
+        return $this->morphMany(Image::class , 'imageable');
+    }
 
 }
 

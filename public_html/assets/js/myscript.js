@@ -183,7 +183,7 @@ $('#owl-mobile4').owlCarousel({
       }
   }   
 })
-$('#owl-mobile-2').owlCarousel({
+$('#owl-mobile5').owlCarousel({
   loop:true,
   margin:10,
   nav:true,

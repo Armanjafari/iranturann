@@ -11,7 +11,7 @@
     <!-- Start Register Form Saller -->
     <div class="card mt-3 ">
         <div class="card-body text-right">
-            <form action="{{ route('create.market') }}" method="post">
+            <form action="{{ route('create.market') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6">
@@ -195,7 +195,7 @@
                     <div class="col-lg-6 mt-5">
                         <div class="first-name">
                             <label for="files">آپلود مدارک رسمی</label>
-                            <input name="image" value="{{ old('image') }}" id="files" class="apload-img" type="file">
+                            <input name="document" value="{{ old('document') }}" id="files" class="apload-img" type="file">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-5">

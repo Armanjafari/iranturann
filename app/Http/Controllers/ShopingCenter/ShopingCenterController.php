@@ -14,9 +14,9 @@ class ShopingCenterController extends Controller
         // $seller->centers;
         // $seller->load('users')
         $centerName = $center->name;
-        $users = $center->users;
+        $users = $center->users->load('images');
         //dd($users);
-        return view('Shoping' , compact('users' , 'centerName'));
+        return view('Shoping' , compact('users' , 'centerName' ,'center'));
         // $role->users()->
     }
 }
