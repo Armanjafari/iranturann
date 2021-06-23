@@ -191,7 +191,7 @@
             @endforelse
         <div class="col-lg-12 mt-5">
             <div class="container">
-                <div class="col-md-12">
+                <div class="col-md-12 pr-0 pl-0">
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
@@ -200,13 +200,15 @@
                                 role="tab" aria-controls="nav-profile" aria-selected="false">توضیحات</a>
                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
                                 role="tab" aria-controls="nav-contact" aria-selected="false">نظرات</a>
+                                <a class="nav-item nav-link" id="nav-questions-tab" data-toggle="tab" href="#nav-questions"
+                                role="tab" aria-controls="nav-questions" aria-selected="false">سوالات</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                             aria-labelledby="nav-home-tab">
                             <div class="row">
-                            <div class="col-lg-3">
+                            <div class="col-lg-3 col-5">
                            <div class="content-Specifications  text-center">
                                <span>قد هودی:</span><br><br>
                              <span>کلاه:</span><br><br>
@@ -214,7 +216,7 @@
                            </div>
 
                             </div>
-                            <div class="col-lg-9 text-right">
+                            <div class="col-lg-9 col-7 text-right">
                                 
                             <span>80سانتی متر</span><br><br>
                             <span>دارد</span><br><br>
@@ -249,7 +251,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 pr-0 pl-0">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
@@ -270,28 +272,56 @@
                                                     </div>
                                             
                                                 <div class="mt-5">
-                                                <a href="#" class="Add-to-cart1 float-right">افزودن دیدگاه</a>
+                                                <a  class="Add-to-cart1 float-right" data-toggle="modal" data-target="#exampleModal">افزودن دیدگاه</a>
                                                 <div class="ml-5">
-                                                <textarea name="" id=""  class="mybor"  cols="30" rows="10"></textarea>
-                                             
+                                                <!-- <textarea name="" id=""  class="mybor" id="mybor" cols="30" rows="10"></textarea> -->
+                                           <!-- Modal -->
+                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                            </button>
+                                         <h5 class="modal-title ml-auto" id="exampleModalLabel">دیدگاه خود را بیان کنید.</h5>
+                                              </div>
+                                              <div class="modal-body text-center">
+                                              <textarea name="" id=""  class="mybor" id="mybor" cols="30" rows="10"></textarea>
+                                                </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">خروج</button>
+                                           <a class="btn btn-primary mr-3" href="">افزودن دیدگاه</a>
+                                               </div>
+    </div>
+  </div>
+</div>
                                             </div>
+                                            </div>   
                                             </div>
-                                                
-                                             
-                                             
-                                            </div>
-                                           
                                             <div class="col-lg-8">
                                                 <div class="text-right Scoring-system text-center mt-sm-0 mt-3">
                                                     <span>نظرات کاربران</span>
                                                 </div>
                                                 <div class="card mt-3 p-3 card-coment">
-                                                    <p class="text-right">از نظر کیفیت خوب بود اما قیمتش نسبتا بالا بود
+                                                <span class="text-right mt-2">‏26 خرداد 1400</span>
+                                                    <p class="text-right mt-2">از نظر کیفیت خوب بود اما قیمتش نسبتا بالا بود
                                                     </p>
-                                                    <p class="text-right">از نظر کیفیت و ساخت ضعیف بود من ناراضیم</p>
-                                                    <p class="text-right">از نظر کیفیت خوب بوداما امکاناتش کم بود</p>
-                                                    <p class="text-right">از نظر کیفیت خوب بود اما قیمتش نسبتا بالا بود
+                                                    <div class="text-center">
+                                                    <a  href="">تایید دیدگاه</a>
+                                                    <span class="mr-3">3</span>
+                                                    <img src="{{asset('assets/img/لایک.svg')}}" alt="" class="dis-like mr-2">
+                                                    <img src="{{asset('assets/img/دیس لایک.svg')}}" alt="" class="dis-like mr-2 mt-2">
+                                                    </div>
+                                                    <span class="text-right mt-2">‏26 خرداد 1400</span>
+                                                    <p class="text-right mt-2">از نظر کیفیت و ساخت ضعیف بود من ناراضیم
                                                     </p>
+                                                    <div class="text-center">
+                                                    <a  href="">تایید دیدگاه</a>
+                                                    <span class="mr-3">3</span>
+                                                    <img src="{{asset('assets/img/لایک.svg')}}" alt="" class="dis-like mr-2">
+                                                    <img src="{{asset('assets/img/دیس لایک.svg')}}" alt="" class="dis-like mr-2 mt-2">
+                                                    </div>
+                                               
                                                 </div>
                                             </div>
                                         </div>
@@ -299,8 +329,118 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade show" id="nav-questions" role="tabpanel"
+                            aria-labelledby="nav-questions-tab">
+                            <div class="col-lg-12 pr-0 pl-0">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                               
+                                                 
+                                                    <div style=" direction:ltr;" class="float-right">
+                                                  
+                                                 <div class="text-right mr-3">
+                                                 <span>‏4.3 از 5</span>
+                                                 </div>
+                                                 <div class="mt-3">
+                                                 <span class="mr-3"> از مجموع</span>
+                                                    <span>1700 امتیاز</span>
+                                                     <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
+                                                     </div>
+                                                    <hr>
+                                                    </div>
+                                            
+                                                <div class="mt-5">
+                                                <a  class="Add-to-cart1 float-right" data-toggle="modal" data-target="#exampleModal1">ثبت پرسش</a>
+                                                <div class="ml-5">
+                                                <!-- <textarea name="" id=""  class="mybor" id="mybor" cols="30" rows="10"></textarea> -->
+                                           <!-- Modal -->
+                                     <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                            </button>
+                                         <h5 class="modal-title ml-auto" id="exampleModalLabel">سوال خود را در مورد این کالا بیان کنید</h5>
+                                              </div>
+                                              <div class="modal-body text-center">
+                                              <textarea name="" id=""  class="mybor" id="mybor" cols="30" rows="10"></textarea>
+                                                </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">خروج</button>
+                                           <a class="btn btn-primary mr-3" href="">ثبت پرسش</a>
+                                               </div>
+    </div>
+  </div>
+</div>
+                                            </div>
+                                            </div>   
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="d-flex justify-content-start">
+                                                <span class="Ordering1">مرتب سازی بر اساس:</span>
+                                                <a href="" class="newest">جدید ترین ها</a>
+                                                <a href="" class="newest">مفید ترین ها</a>
+                                                </div>
+                                                <div class="card mt-3 p-3 card-coment">
+                                                    <div class="text-right">
+                                                        <img src="{{asset('assets/img/سوال.svg')}}" alt="">
+                                                    <p class=" mt-3 d-inline-block">آیا محصول با کد A23را می توان به صورت عمده خرید کرد؟
+                                                    </p>
+                                                    </div>
+                                                    <div class="text-right question3">
+                                                    <span>پاسخ:</span>
+                                                    <span>بله در صورت هماهنگی با فروشنده امکان پذیر است</span>
+                                                    </div>
+                                                    <div class="text-center mt-3">
+                                                    <a  href="">مفید بودن پاسخ</a>
+                                                    <span class="mr-3">3</span>
+                                                    <img src="{{asset('assets/img/لایک.svg')}}" alt="" class="dis-like mr-2">
+                                                    <img src="{{asset('assets/img/دیس لایک.svg')}}" alt="" class="dis-like mr-2 mt-2">
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <img src="{{asset('assets/img/سوال.svg')}}" alt="">
+                                                    <p class=" mt-3 d-inline-block">آیا محصول با کد A23را می توان به صورت عمده خرید کرد؟
+                                                    </p>
+                                                    </div>
+                                                    <div class="text-right question3">
+                                                    <span>پاسخ:</span>
+                                                    <span>بله در صورت هماهنگی با فروشنده امکان پذیر است</span>
+                                                    </div>
+                                                    <div class="text-center mt-3">
+                                                    <a  href="">مفید بودن پاسخ</a>
+                                                    <span class="mr-3">3</span>
+                                                    <img src="{{asset('assets/img/لایک.svg')}}" alt="" class="dis-like mr-2">
+                                                    <img src="{{asset('assets/img/دیس لایک.svg')}}" alt="" class="dis-like mr-2 mt-2">
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <img src="{{asset('assets/img/سوال.svg')}}" alt="">
+                                                    <p class=" mt-3 d-inline-block">آیا محصول با کد A23را می توان به صورت عمده خرید کرد؟
+                                                    </p>
+                                                    </div>
+                                                    <div class="text-right question3">
+                                                    <span>پاسخ:</span>
+                                                    <span>بله در صورت هماهنگی با فروشنده امکان پذیر است</span>
+                                                    </div>
+                                                    <div class="text-center mt-3">
+                                                    <a  href="">مفید بودن پاسخ</a>
+                                                    <span class="mr-3">3</span>
+                                                    <img src="{{asset('assets/img/لایک.svg')}}" alt="" class="dis-like mr-2">
+                                                    <img src="{{asset('assets/img/دیس لایک.svg')}}" alt="" class="dis-like mr-2 mt-2">
+                                                    </div>
+                                                  
+                                               
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
+                
             </div>
         </div>
 
