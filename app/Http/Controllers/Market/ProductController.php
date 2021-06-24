@@ -41,7 +41,6 @@ class ProductController extends Controller
     }
     public function vareityForm()
     {
-        dd('here');
         return view('Market.variety');
     }
     public function vareityFinalForm(Request $request)

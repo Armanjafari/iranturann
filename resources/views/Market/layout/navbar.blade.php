@@ -21,7 +21,7 @@
                         <li class="menu-list-2">
                             <a href="#" class="list-item">
                                 <img src="assets/img/arrow-level2.png" alt="mobile">
-                                <a href="{{route('market.variety.form')}}">لیست محصولات</a>
+                                <a href="{{route('market.add.product.form')}}">لیست محصولات</a>
                             </a>
                         </li>
                 </li>

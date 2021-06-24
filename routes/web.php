@@ -80,12 +80,12 @@ Route::group(['namespace' => 'Coupons'], function () {
 
 //index
 // TODO fix closure eror 24 jun
-// Route::group(['namespace' => 'Category'], function () {
-//     Route::get('productByCategory/{category}', 'CategoryController@byProduct')->name('product.by.category');
-//     Route::get('productByCategory', function () {
-//         return view('Shoping');
-//     });
-// });
+Route::group(['namespace' => 'Category'], function () {
+    Route::get('productByCategory/{category}', 'CategoryController@byProduct')->name('product.by.category');
+    Route::get('productByCategory', function () {
+        return view('Shoping');
+    });
+});
 Route::group(['namespace' => 'ShopingCenter'], function () {
     Route::get('shopingcenter/{center}', 'ShopingCenterController@sellers')->name('sellers.by.centers');
 });
@@ -165,16 +165,16 @@ Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.log
 Route::get('market/{seller}', 'Market\MarketController@index')->name('show.market');
 
 // TODO closuer error
-Route::get('filter', function () {
-    return view('filter');
-});
-Route::get('etesal', function () {
-    return view('etesal');
-}); 
+// Route::get('filter', function () {
+//     return view('filter');
+// });
+// Route::get('etesal', function () {
+//     return view('etesal');
+// }); 
 
 Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'is.market'], function () {
     Route::get('/', 'ProductController@index')->name('market.index');
-    Route::get('variety/', 'ProductController@vareityForm')->name('market.variety.form'); // TODO search this error
+    // Route::get('variety', 'ProductController@vareityForm')->name('aaaaaa'); // TODO search this error
     Route::post('/', 'ProductController@add')->name('market.add.product');
     Route::get('variety/add/', 'ProductController@vareityFinalForm')->name('market.variety.add.form');
     Route::post('variety/add/', 'ProductController@vareityAdd')->name('market.variety.add');
@@ -185,6 +185,8 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'i
 
 });
 
+Route::get('addtest', 'Market\ProductController@vareityForm')->name('market.add.product.form');
+
 Route::group(['namespace' => 'File',], function () {
     Route::get('file/create', 'FileController@create')->name('file.create');
     Route::post('file', 'FileController@new')->name('file.new');
@@ -194,8 +196,8 @@ Route::group(['namespace' => 'File',], function () {
 
 });
 
-use Spatie\Sitemap\SitemapGenerator;
-Route::get('sitemappp', function () {
-    $a = SitemapGenerator::create('https://iranturan.com/')
-    ->writeToFile(public_path('sitemap.xml'));
-});
+// use Spatie\Sitemap\SitemapGenerator;
+// Route::get('sitemappp', function () {
+//     $a = SitemapGenerator::create('https://iranturan.com/')
+//     ->writeToFile(public_path('sitemap.xml'));
+// });
