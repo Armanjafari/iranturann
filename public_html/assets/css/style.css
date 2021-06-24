@@ -2396,9 +2396,9 @@ border-right: none;
 border-bottom: none;
 border-top: none;
 }
-.active{
+/* .active{
   border: 3px solid #33cccc;
-}
+} */
 .content-Specifications> span{
   font-size: 16px;
   margin-top: 1em;  
