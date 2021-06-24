@@ -26,7 +26,7 @@ class Mellat implements GatewayInterface
         //     'terminalId' => '5453042',
         //     'userName' => 'iranturan123',
         //     'userPassword' => '20862902',
-        //     'orderId' => $order->id,
+        //     'orderId' => $order->code,
         //     'amount' => $amount,
         //     'localDate' => date("Ymd"),
         //     'localTime' => date("His"),
@@ -134,7 +134,7 @@ class Mellat implements GatewayInterface
                 'saleReferenceId' => $verifySaleReferenceId);
             // Call the SOAP method
             $result = $client->call('bpVerifyRequest', $parameters, $namespace);
-            $order = $this->getOrder($request->input('RefId'));
+            $order = $this->getOrder($request->input('SaleOrderId'));
             if($result == '0') {
                 //-- وریفای به درستی انجام شد٬ درخواست واریز وجه
                 // Call the SOAP method
