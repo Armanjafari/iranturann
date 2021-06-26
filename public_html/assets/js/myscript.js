@@ -99,7 +99,7 @@ $(document).ready(function(){
   }) 
   $('#owl-mobile15').owlCarousel({
    loop:true,
-   margin:10,
+   margin:30,
    nav:true,
    center:true,
    responsive:{
@@ -116,7 +116,7 @@ $(document).ready(function(){
 })
 $('#owl-mobile17').owlCarousel({
     loop:true,
-    margin:10,
+    margin:30,
     nav:true,
     center:true,
     responsive:{
