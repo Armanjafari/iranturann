@@ -170,13 +170,13 @@
                                                 <div class="product-card m-3">
                                                         <a href="https://google.com">
                                                                 <span class="badge badge-danger badge-1">25%</span>
-                                                                <span class="float-right Ready-to-send"> آماده ارسال<img
+                                                                <span class="float-right Ready-to-send mr-5"> آماده ارسال<img
                                                                                 src="assets/img/svg element/آماده ارسال جدید.svg"
                                                                                 alt=""
                                                                                 style="width:15px; display:inline-block"
                                                                                 class="ml-1"></span>
                                                                 <img src="{{ asset('assets/img/01-2removebg-preview.png') }}"
-                                                                        alt="" width="100%" class="">
+                                                                        alt=""  class="img-product-size">
                                                                 <caption>
                                                                         <p class="mt-3 caption-product mb-0">هودی ادی
                                                                                 داس طرح زمستانه</p>
