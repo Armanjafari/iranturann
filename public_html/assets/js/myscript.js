@@ -114,6 +114,23 @@ $(document).ready(function(){
        }
    }   
 })
+$('#owl-mobile17').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    center:true,
+    responsive:{
+        0:{
+            items:2
+        },
+         450:{
+         items:2
+       },
+        1200:{
+            items:5
+        }
+    }   
+ })
 //  $('#owl-mobile9').owlCarousel({
 //     loop:true,
 //     margin:10,
@@ -440,15 +457,15 @@ buildDropDown(names)
 //       }
 //     })
 // });
-$(document).scroll(function () {
-  // $('.menu-level-1 > .menu-list-1 > .list-item').addClass("active");//
-  // navigation.attr('style', '    box-shadow: 0 .250rem 1rem rgba(0, 0, 0, .095);');//
-  if ($(document).scrollTop() > 50){
-      $(".nav-box").attr('style','margin-top:-6.1em;');
-   }else{
-      $(".nav-box").attr('style','margin-top:0;'); 
-      }
-});
+// $(document).scroll(function () {
+//   // $('.menu-level-1 > .menu-list-1 > .list-item').addClass("active");//
+//   // navigation.attr('style', '    box-shadow: 0 .250rem 1rem rgba(0, 0, 0, .095);');//
+//   if ($(document).scrollTop() > 50){
+//       $(".nav-box").attr('style','margin-top:-6.1em;');
+//    }else{
+//       $(".nav-box").attr('style','margin-top:0;'); 
+//       }
+// });
 // var slideIndex = 1;
 // showSlides(slideIndex);
 

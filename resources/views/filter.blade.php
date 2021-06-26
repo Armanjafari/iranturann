@@ -25,9 +25,11 @@
     <div class="col-lg-12">
             <div class="row">
                     <div class="col-lg-3 mt-3">
+                    <a  href="#categry" data-toggle="collapse" aria-expanded="false">
                             <div class="text-center category1">
-                          <a  href="#categry" data-toggle="collapse" aria-expanded="false" >دسته بندی</a>
+                         دسته بندی
                           </div>
+                          </a>
                           <div class="box-categry text-center mt-2">
                                  <ul  class="collapse pr-0 m-3" id="categry">
                                          <li><input type="search" name="" id="" placeholder="جست وجو نام دسته بندی " class="p-2 form-control2 serch-box2"></li>

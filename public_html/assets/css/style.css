@@ -1995,6 +1995,7 @@
   .col-lg-12w{
     margin-top: 7rem;
   }
+  
   .discount{
     font-size: 1.2em;
     border-bottom: 3px dashed #10747B;
@@ -2428,6 +2429,22 @@ box-shadow: 2px 2px 5px 2px #ccc;
 }
 .question3{
  color: #8E8E8E; 
+}
+.size-img{
+  width: 175px !important;
+  height: 175px !important;
+}
+@media screen and (min-width: 300px) and (max-width: 450px){
+  .col-lg-12w{
+    margin-top: -5rem !important;
+  }
+}
+
+@media screen and (min-width:700px) {
+  .img-product-size{
+    width: 271px !important;
+    height: 271px !important;
+  }
 }
 /* .color-boreder:focus{
   border:3px solid #33cccc;

@@ -25,7 +25,6 @@
             </div>
             <img src="{{ $center->image->address }}" alt="" width="100%" class="mt-1 bootik">
         </div>
-
     </div>
 
     <div class="col-lg-12 ml-auto mr-auto col-12">
@@ -37,7 +36,7 @@
                         <div class="col-lg-8 ml-auto mr-auto col-8">
                             <a href="{{route('show.market', $item->id)}}"> <img
                                     src="{{$item->images()->whereType('logo')->first()->address}}" alt=""
-                                    class="rounded-circle img-shopp" data-holder-rendered="true"></a>
+                                    class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a>
                         </div>
                         <div action="" class="mt-3 ml-4">
                             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span
@@ -132,7 +131,6 @@
                     </a>
                 </div>
             </div>
-
             <nav aria-label="Page navigation example" class="mr-auto ml-auto mt-5">
                 <div class="row">
                     <a href="">
