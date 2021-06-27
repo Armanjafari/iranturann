@@ -32,9 +32,11 @@
         <div class="col-lg-12">
                 <div class="row">
                         <div class="col-lg-3 mt-3">
+                        <a href="#categry" data-toggle="collapse" aria-expanded="false">
                                 <div class="text-center category1">
-                                        <a href="#categry" data-toggle="collapse" aria-expanded="false">دسته بندی</a>
+                                      دسته بندی
                                 </div>
+                                </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="categry">
                                                 <li><input type="search" name="" id=""
@@ -54,9 +56,11 @@
                                                 </li>
                                         </ul>
                                 </div>
+                                <a href="#brand" data-toggle="collapse" aria-expanded="false">
                                 <div class="text-center category1">
-                                        <a href="#brand" data-toggle="collapse" aria-expanded="false">برند</a>
+                                        برند
                                 </div>
+                                </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="brand">
                                                 <li><input type="search" name="" id="" placeholder="جست وجو در برند "
@@ -75,9 +79,11 @@
                                                 </li>
                                         </ul>
                                 </div>
+                                <a href="#color" data-toggle="collapse" aria-expanded="false">
                                 <div class="text-center category1">
-                                        <a href="#color" data-toggle="collapse" aria-expanded="false">رنگ</a>
+                                        رنگ
                                 </div>
+                                </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="color">
 
@@ -99,10 +105,12 @@
                                                 </li>
                                         </ul>
                                 </div>
+                                <a href="#Price-range" data-toggle="collapse" aria-expanded="false">
                                 <div class="text-center category1">
-                                        <a href="#Price-range" data-toggle="collapse" aria-expanded="false">محدوده
-                                                قیمت</a>
+                                       محدوده
+                                                قیمت
                                 </div>
+                                </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="Price-range">
 
@@ -122,9 +130,11 @@
                                                 </li>
                                         </ul>
                                 </div>
+                                <a href="#size" data-toggle="collapse" aria-expanded="false">
                                 <div class="text-center category1">
-                                        <a href="#size" data-toggle="collapse" aria-expanded="false">سایز ها</a>
+                                       سایز ها
                                 </div>
+                                </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="size">
                                                 <li><input type="search" name="" id="" placeholder="جست وجو در سایز"
@@ -160,13 +170,13 @@
                                                 <div class="product-card m-3">
                                                         <a href="https://google.com">
                                                                 <span class="badge badge-danger badge-1">25%</span>
-                                                                <span class="float-right Ready-to-send"> آماده ارسال<img
+                                                                <span class="float-right Ready-to-send mr-3"> آماده ارسال<img
                                                                                 src="assets/img/svg element/آماده ارسال جدید.svg"
                                                                                 alt=""
                                                                                 style="width:15px; display:inline-block"
                                                                                 class="ml-1"></span>
                                                                 <img src="{{ asset('assets/img/01-2removebg-preview.png') }}"
-                                                                        alt="" width="100%" class="">
+                                                                        alt=""  class="img-product-size1">
                                                                 <caption>
                                                                         <p class="mt-3 caption-product mb-0">هودی ادی
                                                                                 داس طرح زمستانه</p>

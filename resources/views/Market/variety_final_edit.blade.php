@@ -9,10 +9,13 @@
         <div class="card border-dark-d mb-3">
             <div class="row">
                 <div class="col-lg-3 mt-5">
-                    <select name="waranty" class="form-control" id="">
+                    <select name="waranty" class="form-control form-select" id="">
                         @forelse ($waranties as $waranty)
+                        
                         <option value="{{$waranty->id}}" {{$full->waranty->id == $waranty->id ? 'selected' : ''}}>
-                            {{$waranty->name}}</option>
+                            {{$waranty->name}}
+                           
+                            </option>
                         @empty
 
                         @endforelse

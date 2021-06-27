@@ -46,12 +46,12 @@
            <div class="text-right">
            <span class="discount">تخفیف بالای 20درصد</span>
            </div> 
-           <div class="owl-carousel owl-theme mt-5" id=owl-mobile12>
+           <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>
                      <div class="product-card m-3">
                      <a href="https://google.com">
                      <span class="badge badge-danger badge-1">25%</span>
                       <span class="float-right Ready-to-send"> آماده ارسال<img src="assets/img/svg element/آماده ارسال جدید.svg" alt="" style="width:15px; display:inline-block" class="ml-1"></span>                      
-            <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" style=""  alt="" class="pl-4 pr-4">
+            <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" style=""  alt="" class="img-product-size">
                   <caption>
                   <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
                   </caption>
@@ -74,7 +74,7 @@
 
         @forelse ($centers as $center)
             <div class="item">
-               <div><a href="{{ route('sellers.by.centers',$center->id) }}"> <img src="{{$center->image->address}}" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+               <div><a href="{{ route('sellers.by.centers',$center->id) }}"> <img src="{{$center->image->address}}" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
                <div class="text-center  mt-2 mr-lg-5">
                <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
                </div>
@@ -105,15 +105,15 @@
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile15>
         @forelse ($markets as  $market)
         <div class="item">
-            <div><a href="{{route('show.market', $market->id)}}"> <img src="{{$market->images()->whereType('logo')->first()->address}}" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+            <div><a href="{{route('show.market', $market->id)}}"> <img src="{{$market->images()->whereType('logo')->first()->address}}" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
             <div class="text-center mr-lg-5 mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
            <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{route('show.market', $market->id)}}"> {{$market->market_name}} </a>
            </div>
            <div class="mt-2 mr-lg-5">
-             <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
-           </div>
+              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class=""> </a>
+              </div>
          </div>     
         @empty
             
@@ -138,15 +138,15 @@
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile17>
         @forelse ($messenger_seller as $messneger)
         <div class="item">
-            <div class=""><a href="" class=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
-            <div class="text-center  mt-2">
-            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star unchecked"></span>
+            <div class=""><a href="" class=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
+            <div class="text-center mr-lg-5 mt-2">
+            <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
-           <div class="mt-2"> <a class="shopping-centre-caption" href="">{{$messneger->market_name}}</a>
+           <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="">{{$messneger->market_name}}</a>
            </div>
-           <div class="mt-2">
-               <a href="" class="link-application"> لینک دانلود اپلیکیشن</a>
-           </div>
+           <div class="mt-2 mr-lg-5">
+              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class=""> </a>
+              </div>
          </div>     
         @empty
             <p> فروشنده ای وجود ندارد </p>

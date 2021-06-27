@@ -24,8 +24,8 @@
                 </div>
             </div>
             <img src="{{ $center->image->address }}" alt="" width="100%" class="mt-1 bootik">
+     
         </div>
-
     </div>
 
     <div class="col-lg-12 ml-auto mr-auto col-12">
@@ -37,7 +37,7 @@
                         <div class="col-lg-8 ml-auto mr-auto col-8">
                             <a href="{{route('show.market', $item->id)}}"> <img
                                     src="{{$item->images()->whereType('logo')->first()->address}}" alt=""
-                                    class="rounded-circle img-shopp" data-holder-rendered="true"></a>
+                                    class="rounded-circle img-shopp size-img img-fluid" data-holder-rendered="true"></a>
                         </div>
                         <div action="" class="mt-3 ml-4">
                             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span
@@ -72,14 +72,14 @@
             <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="product-card m-3">
                     <a href="https://google.com">
                         <span class="badge badge-danger badge-1">25%</span>
-                        <span class="float-right Ready-to-send"> آماده ارسال<img
-                                src="assets/img/svg element/آماده ارسال جدید.svg" alt=""
+                        <span class="float-right Ready-to-send mr-2"> آماده ارسال<img
+                                src="{{asset('assets/img/svg element/آماده ارسال جدید.svg')}}" alt=""
                                 style="width:15px; display:inline-block" class="ml-1"></span>
-                        <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" width="100%" class="">
+                        <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt=""  class="img-product-size">
                         <caption>
                             <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
                         </caption>
@@ -92,14 +92,14 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="product-card m-3">
                     <a href="https://google.com">
                         <span class="badge badge-danger badge-1">25%</span>
-                        <span class="float-right Ready-to-send"> آماده ارسال<img
-                                src="assets/img/svg element/آماده ارسال جدید.svg" alt=""
+                        <span class="float-right Ready-to-send mr-2"> آماده ارسال<img
+                                src="{{asset('assets/img/svg element/آماده ارسال جدید.svg')}}" alt=""
                                 style="width:15px; display:inline-block" class="ml-1"></span>
-                        <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" width="100%" class="">
+                        <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt=""  class="img-product-size">
                         <caption>
                             <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
                         </caption>
@@ -112,14 +112,14 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="product-card m-3">
                     <a href="https://google.com">
                         <span class="badge badge-danger badge-1">25%</span>
-                        <span class="float-right Ready-to-send"> آماده ارسال<img
-                                src="assets/img/svg element/آماده ارسال جدید.svg" alt=""
+                        <span class="float-right Ready-to-send mr-2"> آماده ارسال<img
+                                src="{{asset('assets/img/svg element/آماده ارسال جدید.svg')}}" alt=""
                                 style="width:15px; display:inline-block" class="ml-1"></span>
-                        <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt="" width="100%" class="">
+                        <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt=""  class="img-product-size">
                         <caption>
                             <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
                         </caption>
@@ -132,8 +132,28 @@
                     </a>
                 </div>
             </div>
-
-            <nav aria-label="Page navigation example" class="mr-auto ml-auto mt-5">
+            <div class="col-lg-3">
+                <div class="product-card m-3">
+                    <a href="https://google.com">
+                        <span class="badge badge-danger badge-1">25%</span>
+                        <span class="float-right Ready-to-send mr-2"> آماده ارسال<img
+                                src="{{asset('assets/img/svg element/آماده ارسال جدید.svg')}}" alt=""
+                                style="width:15px; display:inline-block" class="ml-1"></span>
+                        <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" alt=""  class="img-product-size">
+                        <caption>
+                            <p class="mt-3 caption-product mb-0">هودی ادی داس طرح زمستانه</p>
+                        </caption>
+                        <div class="text-center ml-3 mt-2"><span class="fa fa-star checked"></span> <span
+                                class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span
+                                class="fa fa-star checked"></span><span class="fa fa-star unchecked mr-2"></span> </div>
+                        <div class="text-center mt-2 pb-3"><span class="price-line">130,000تومان</span>
+                            <span class="font-weight-bold">125,000تومان</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 mr-auto ml-auto mr-5">
+            <nav aria-label="Page navigation example" class=" mt-5">
                 <div class="row">
                     <a href="">
                         <div class="pagaition1 d-flex justify-content-center align-items-center">
@@ -157,7 +177,7 @@
                     </a>
                 </div>
             </nav>
-
+            </div>
         </div>
         <!-- <div class="col-lg-4">
     <div class="text-center">

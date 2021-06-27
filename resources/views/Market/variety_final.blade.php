@@ -8,7 +8,19 @@
     <div class="col-lg-12 mt-3">
         <div class="card border-dark-d mb-3">
             <div class="row">
-                <div class="col-lg-3 mt-5">
+            <!-- <div class="col-lg-3 text-right">
+                            
+                                 <label for="exampleFormControlSelect2" class=""> آدرس محل فروشگاه</label>
+                                 <select class="w-100 p-2" name="waranty" id="exampleFormCotrolSelenct2" style="border: 3px solid #ffcc33;">
+                                   <option value="lar">لار</option>
+                                   <option value="evaz">اوز</option>
+                                   <option value="gerash">گراش</option>
+                                   <option value="ghor">خور</option>
+                                   <option value="latifi">لطیفی</option>
+                                 </select>
+                             </div> -->
+                <!-- <div class="col-lg-3 mt-5">
+                  <label for="">گارانتی محصول</label>
                     <select name="waranty" class="form-control" id="">
                         @forelse ($waranties as $waranty)
                         <option value="{{$waranty->id}}">{{$waranty->name}}</option>
@@ -16,35 +28,50 @@
 
                         @endforelse
                     </select>
-                </div>
-                <div class="col-lg-9 mt-3">
+                </div> -->
+                <div class="col-lg-12 mt-3">
                     <div class="card form-control-one p-3">
                         <div class="row">
+                        <div class="col-lg-3 text-right">
+                            
+                            <label for="exampleFormControlSelect2" class=""> گارانتی محصول</label>
+                            <select class="w-100 p-2" name="waranty" id="exampleFormCotrolSelenct2" style="border: 3px solid #ffcc33;">
+                            @forelse ($waranties as $waranty)
+                        <option value="{{$waranty->id}}">{{$waranty->name}}</option>
+                        @empty
+
+                        @endforelse
+                            </select>
+                        </div>
+               
                             <div class="col-lg-3 text-right">
-                                <div class="form-group">
-                                    <div class="select">
-                                        <label for="exampleFormControlSelect1">رنگ محصول خود را انتخاب کنید</label>
-                                        <select name="option" class="form-control" id="exampleFormControlSelect1">
-                                            @forelse ($options as $option)
+                            
+                            <label for="exampleFormControlSelect3" class=""> رنگ محصول</label>
+                            <select class="w-100 p-2" name="waranty" id="exampleFormCotrolSelenct3" style="border: 3px solid #ffcc33;">
+                            @forelse ($options as $option)
                                             <option value="{{$option->id}}"> {{$option->title}} </option>
                                             @empty
 
                                             @endforelse
-                                        </select>
-                                    </div>
-                                </div>
+                            </select>
+                        </div>
+                            <div class="col-lg-3 text-right">
+                                <label for="">قیمت</label>
+                                <input type="text" name="price" placeholder="قیمت خود را وارد نمایید"  class="w-100 p-2" style="border: 3px solid #ffcc33;">
                             </div>
-                            <div class="col-lg-3 align-items-end d-flex mb-3">
-                                <input type="text" name="price" class="form-control" placeholder="قیمت">
-                            </div>
-                            <div class="col-lg-3 align-items-end d-flex mb-3">
-                                <input type="text" name="stock" class="form-control" placeholder="موجودی">
-                            </div>
+                            <div class="col-lg-3 text-right">
+                            <label for="">موجودی</label>
+                                <input type="text" name="stock"  placeholder="موجودی خود را وارد نمایید"    class="w-100 p-2" style="border: 3px solid #ffcc33;">
+                            </div>  
                             <div class="col-lg-3 d-flex justify-content-center align-items-center mt-3">
-                                <input type="radio" id="active">
+                                <!-- <input type="radio" id="active">
                                 <label for="active" class="mt-2 mr-2" name="gender">فعال</label>
                                 <input type="radio" id="no-active" class="mr-3">
-                                <label for="no-active" class="mt-2 mr-2" name="gender">غیرفعال</label>
+                                <label for="no-active" class="mt-2 mr-2" name="gender">غیرفعال</label> -->
+                                  <input type="radio" id="html" name="fav_language">
+  <label for="html" class="mr-2 mt-2">فعال</label><br>
+  <input type="radio" id="css" name="fav_language" class="mr-2">
+  <label for="css" class="mr-2 mt-2">غیر فعال</label><br>
                             </div>
                         </div>
                     </div>
