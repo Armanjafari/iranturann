@@ -62,7 +62,6 @@ Route::group(['namespace' => 'Product'], function () {
     Route::post('basket/checkout', 'BasketController@checkout')->name('basket.checkout');
     Route::get('product/{option}', 'ProductController@product')->name('product.single');
     Route::get('selller/products/{user}', 'ProductBySellerController@index')->name('product.by.seller');
-
     Route::get('product/attribute/{attribute}', 'AttributeController@index')->name('get.attribute.values');
 });
 Route::group(['namespace' => 'Product\Payment'], function () {
