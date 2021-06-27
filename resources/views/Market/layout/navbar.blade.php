@@ -12,22 +12,22 @@
                         <img class="item-icon" src="assets/img/download.png" alt=""></a>
                     <ul class="menu-level-2">
                         <!-- Menu Level 2 -->
-                        <li class="menu-list-2">
+                        <li class="menu-list-2 p-2">
                             <a href="#" class="list-item">
                                 <img src="assets/img/arrow-level2.png" alt="mobile">
-                                <a href="{{route('market.index')}}">افزودن محصول</a>
+                                <a href="{{route('market.index')}}" class="font-weight-bold a-link">افزودن محصول</a>
                             </a>
                         </li>
-                        <li class="menu-list-2">
+                        <li class="menu-list-2 p-2">
                             <a href="#" class="list-item">
                                 <img src="assets/img/arrow-level2.png" alt="mobile">
-                                <a href="{{route('market.add.product.form')}}">لیست محصولات</a>
+                                <a href="{{route('market.add.product.form')}}" class="mr-3 font-weight-bold a-link">لیست محصولات</a>
                             </a>
                         </li>
                 </li>
-                <li class="menu-list-2"><a href="{{route('market.variety.index')}}" class="list-item">
+                <li class="menu-list-2 p-2"><a  class="list-item">
                         <img src="assets/img/arrow-level2.png" alt="tablet book reader">
-                        <span>مدیریت تنوع</span>
+                        <a class="font-weight-bold mr-3 a-link" href="{{route('market.variety.index')}}">مدیریت تنوع</a>
                     </a></li>
             </ul>
             </li>
