@@ -166,20 +166,22 @@
                                                 </div>
                                         </div>
                                         @forelse ($products as $product)
+                                        @forelse ($product->fulls as $full)
                                         <div class="col-lg-4">
                                                 <div class="product-card m-3">
-                                                        <a href="https://google.com">
-                                                                <span class="badge badge-danger badge-1">25%</span>
+                                                        <a href="{{route('product.single', $full->id)}}">
+                                                                <span class="badge badge-danger badge-1"> تخفیف ویژه </span>
                                                                 <span class="float-right Ready-to-send mr-3"> آماده ارسال<img
                                                                                 src="assets/img/svg element/آماده ارسال جدید.svg"
                                                                                 alt=""
                                                                                 style="width:15px; display:inline-block"
                                                                                 class="ml-1"></span>
-                                                                <img src="{{ asset('assets/img/01-2removebg-preview.png') }}"
+                                                                <img src="{{$product->pure->images->first()->address}}"
                                                                         alt=""  class="img-product-size1">
                                                                 <caption>
-                                                                        <p class="mt-3 caption-product mb-0">هودی ادی
-                                                                                داس طرح زمستانه</p>
+                                                                        <p class="mt-3 caption-product mb-0">
+                                                                        {{$product->pure->persian_title}}
+                                                                        </p>
                                                                 </caption>
                                                                 <div class="text-center ml-3 mt-2"><span
                                                                                 class="fa fa-star checked"></span> <span
@@ -188,13 +190,17 @@
                                                                                 class="fa fa-star checked"></span><span
                                                                                 class="fa fa-star"></span> </div>
                                                                 <div class="text-center mt-2 pb-3"><span
-                                                                                class="price-line">130,000تومان</span>
+                                                                                class="price-line"> {{$product->pure->price}} </span>  <br>
                                                                         <span
-                                                                                class="font-weight-bold">125,000تومان</span>
+                                                                                class="font-weight-bold">{{  (string)number_format($full->price) .' تومان '   }}   </span>
                                                                 </div>
                                                         </a>
                                                 </div>
                                         </div>
+                                        @empty
+                                                
+                                        @endforelse
+                                        
                                         @empty
 
                                         @endforelse

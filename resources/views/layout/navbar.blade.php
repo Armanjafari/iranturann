@@ -303,12 +303,12 @@
                             <span>خانه، آشپزخانه و ابزار</span>
                             <img class="item-icon" src="assets/img/download.png" alt=""></a></li>
                             <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-5 mt-2">
-                            <span class="badge badge-danger position-absolute text-light mt-0 mr-0">1</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
+                            <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
                         @guest
                      
                                 
                                 <a class="text-center btn-logo" href="{{ route('login') }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود</a>
-                                <a class="text-center btn-logo2" href="{{ route('login') }}"> <i class="far fa-user pl-1"></i>ثبت نام</a>            
+                                <a class="text-center btn-logo2" href="{{ route('register') }}"> <i class="far fa-user pl-1"></i>ثبت نام</a>            
                         @endguest
                         @auth                    
                         <button type="button" class="btn-logo">
@@ -326,9 +326,11 @@
             <a href="">
             <img src="{{ asset('assets/img/001.svg') }}" alt="" class="img-thumbnail ml-auto mr-3">
             </a>
-            <a href="">
+            <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-5 mt-2">
+                <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
+            {{-- <a href="">
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-4">
-            </a>
+            </a> --}}
             <i class="far fa-user mt-1"></i>
            
                 <a class="text-center btn-logo ml-auto btn-logo1 p-3" href="">ورود/ثبت نام</a>
@@ -338,7 +340,7 @@
         </header>
         <!-- 
 
-        {{ $basket->itemCount() }}</a>
+        </a>
                 @guest
                 <button type="button" class="btn-logo">
                         <i class="far fa-user"></i>

@@ -47,7 +47,7 @@
                             <div class="col-lg-3 text-right">
                             
                             <label for="exampleFormControlSelect3" class=""> رنگ محصول</label>
-                            <select class="w-100 p-2" name="waranty" id="exampleFormCotrolSelenct3" style="border: 3px solid #ffcc33;">
+                            <select class="w-100 p-2" name="option" id="exampleFormCotrolSelenct3" style="border: 3px solid #ffcc33;">
                             @forelse ($options as $option)
                                             <option value="{{$option->id}}"> {{$option->title}} </option>
                                             @empty

@@ -136,13 +136,13 @@
           <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
         </div>
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile17>
-        @forelse ($messenger_seller as $messneger)
+        @forelse ($messenger_seller as $messenger)
         <div class="item">
-            <div class=""><a href="" class=""> <img src="assets/img/10.png" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
+            <div class=""><a href="{{route('show.market', $messenger->id)}}" class=""> <img src="{{$messenger->images()->whereType('logo')->first()->address}}" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
             <div class="text-center mr-lg-5 mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
-           <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="">{{$messneger->market_name}}</a>
+           <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{route('show.market', $messenger->id)}}">{{$messenger->market_name}}</a>
            </div>
            <div class="mt-2 mr-lg-5">
               <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class=""> </a>
