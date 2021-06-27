@@ -181,10 +181,9 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'i
     Route::get('variety/index', 'ProductController@varietyIndex')->name('market.variety.index');
     Route::get('variety/edit/{full}', 'ProductController@editFinalVarietyForm')->name('market.variety.edit.form');
     Route::post('variety/edit/{full}', 'ProductController@editFinalVariety')->name('market.variety.edit');
-    Route::get('search','ProductController@search')->name('market.search');
 
 });
-
+Route::get('search/Product','Market\ProductController@search')->name('market.search');
 Route::get('addtest', 'Market\ProductController@vareityForm')->name('market.add.product.form');
 
 Route::group(['namespace' => 'File',], function () {

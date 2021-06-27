@@ -78,7 +78,7 @@
                <div class="text-center  mt-2 mr-lg-5">
                <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
                </div>
-              <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href=""> {{$center->name}} </a>
+              <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{ route('sellers.by.centers',$center->id) }}"> {{$center->name}} </a>
               </div>
               <div class="mt-2 mr-lg-5">
               <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class=""> </a>
@@ -105,11 +105,11 @@
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile15>
         @forelse ($markets as  $market)
         <div class="item">
-            <div><a href=""> <img src="assets/img/10.png" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
+            <div><a href="{{route('show.market', $market->id)}}"> <img src="{{$market->images()->whereType('logo')->first()->address}}" style="width:175px; height:175px;" alt="" class="rounded-circle img-shopp" data-holder-rendered="true"></a></div>
             <div class="text-center mr-lg-5 mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
-           <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href=""> {{$market->market_name}} </a>
+           <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{route('show.market', $market->id)}}"> {{$market->market_name}} </a>
            </div>
            <div class="mt-2 mr-lg-5">
              <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
