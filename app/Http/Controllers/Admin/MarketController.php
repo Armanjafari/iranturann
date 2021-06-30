@@ -41,7 +41,6 @@ class MarketController extends Controller
             'bank_number' => 'required',
             'shaba_number' => 'required',
             'agent_id' => 'required',
-            'center_id' => 'required',
             'slug' => 'required',
             'password' => 'required'
 
@@ -71,7 +70,7 @@ class MarketController extends Controller
                 'instagram' => $request->input('instagram'),
                 'type' => $request->input('type'),
             ]);
-            $this->createImage($user , $request);
+            $this->createImage($user, $request);
             DB::commit();
             return back()->withSuccess(__('iranturan.success message'));
         } catch (\Exception $e) {
@@ -103,50 +102,52 @@ class MarketController extends Controller
             'bank_number' => 'required',
             'shaba_number' => 'required',
             'agent_id' => 'required',
-            'center_id' => 'required',
             'slug' => 'required',
             'logo' => 'required'
 
 
         ]); // fix password
-        if ($request->has('password')) {
-            dd('inja');
-            $market->user()->update([
-                'name' => $request->input('name'),
-                'phone_number' => $request->input('phone_number'),
-                'password' => Hash::make($request->input('password')),
-            ]);
-        } else {
-            DB::beginTransaction();
+        DB::beginTransaction();
+        try {
 
-            try {
+            if ($request->has('password')) {
+                $market->user()->update([
+                    'name' => $request->input('name'),
+                    'phone_number' => $request->input('phone_number'),
+                    'password' => Hash::make($request->input('password')),
+                ]);
+            } else {
                 $market->user()->update([
                     'name' => $request->input('name'),
                     'phone_number' => $request->input('phone_number'),
                 ]);
-                $market->update([
-                    'market_name' => $request->input('market_name'),
-                    'slug' => Str::slug($request->input('slug'), '-'),
-                    'bank_number' => $request->input('bank_number'),
-                    'shaba_number' => $request->input('shaba_number'),
-                    'agent_id' => $request->input('agent_id'),
-                    'center_id' => $request->input('center_id'),
-                    'instagram' => $request->input('instagram'),
-                    'type' => $request->input('type'),
-                ]);
-                $market->user->shipings()->update([
-                    'address' => $request->input('address'),
-                    'work_address' => $request->input('work_address'),
-                    'work_phone' => $request->input('work_phone'),
-                    'postal_code' => $request->input('postal_code'),
-                    'city_id' => $request->input('city_id')
-                ]);
-                DB::commit();
-                return back()->withSuccess(__('iranturan.success message'));
-            } catch (\Exception $e) {
-                DB::rollBack();
-                throw new RollBackException('something went wrong contact Arman Jafari');
             }
+
+
+            $market->update([
+                'market_name' => $request->input('market_name'),
+                'slug' => Str::slug($request->input('slug'), '-'),
+                'bank_number' => $request->input('bank_number'),
+                'shaba_number' => $request->input('shaba_number'),
+                'agent_id' => $request->input('agent_id'),
+                'center_id' => $request->input('center_id'),
+                'instagram' => $request->input('instagram'),
+                'type' => $request->input('type'),
+            ]);
+            $market->user->shipings()->update([
+                'address' => $request->input('address'),
+                'work_address' => $request->input('work_address'),
+                'work_phone' => $request->input('work_phone'),
+                'postal_code' => $request->input('postal_code'),
+                'city_id' => $request->input('city_id')
+            ]);
+            $this->imageDelete($market);
+            $this->createImage($market->user , $request);
+            DB::commit();
+            return back()->withSuccess(__('iranturan.success message'));
+        } catch (\Exception $e) {
+            DB::rollBack();
+            throw new RollBackException('something went wrong contact Arman Jafari');
         }
     }
 
@@ -173,8 +174,13 @@ class MarketController extends Controller
             return back()->withError(__('iranturan.error delete market'));
         }
     }
-    public function createImage(User $user , Request $request)
+    public function createImage(User $user, Request $request)
     {
+        $request->validate([
+            'logo' => 'required',
+            'market_picture' => 'required',
+            'document' => 'required',
+        ]);
         // TODO refactor this
         $file = $request->file('logo');
         $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
@@ -197,5 +203,11 @@ class MarketController extends Controller
             'address' => $destination . $file->getClientOriginalName(),
             'type' => 'document',
         ]);
+    }
+    public function imageDelete(Market $market)
+    {
+        foreach ($market->images as $image) {
+            $image->delete();
+        }
     }
 }

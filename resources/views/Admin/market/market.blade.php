@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
-                            <label> اسلاگ </label>
+                            <label> هشتگ </label>
                             <input type="text" name="slug" value="{{ old('slug') }}"
                                 class="form-control p-3 form-control-one" placeholder="اسم فروشگاه خود را وارد کنید">
                         </div>
@@ -156,6 +156,7 @@
                                                 فروش</label>
                                             <select name="center_id" class="form-control "
                                                 id="exampleFormControlSelect2">
+                                                <option value="">هیچکدام</option>
                                                 @forelse ($centers as $center)
                                                 <option value="{{$center->id}}"> {{$center->name}} </option>
                                                 @empty
@@ -177,8 +178,9 @@
                                             <label for="exampleFormControlSelect3" style="font-size: 1.1em;"> نوع فروشنده </label>
                                             <select name="type" class="form-control "
                                                 id="exampleFormControlSelect3">
-                                            <option value="0"> فروشنده عادی </option>
+                                            <option value="0"> فروشنده مرکز خرید </option>
                                             <option value="1"> فروشنده شبکه اجتماعی </option>
+                                            <option value="3"> فروشنده سطح شهر </option>
                                             </select>
                                         </div>
                                     </div>
@@ -239,7 +241,7 @@
                             <td> {{$market->user->shipings->city->name .' - '. $market->user->shipings->city->province->name}} </td>
                             @endif
                             <td> {{$market->agent->user->name}} </td>
-                            <td> {{$market->center->name}} </td>
+                            <td> {{$market->center->name ?? ''}} </td>
                             <td><a href="{{route('show.market.edit.form',$market->id)}}">ویرایش</a></td>
                             <td><a href="{{ route('delete.market',$market->id) }}">حذف</a></td>
                             <td><a href="{{ route('show.market.category.form',$market->id) }}">دسترسی</a></td>

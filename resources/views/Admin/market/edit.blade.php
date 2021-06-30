@@ -139,6 +139,7 @@
                                             <select name="agent_id" class="form-control "
                                                 id="exampleFormControlSelect1">
                                                 {{-- // TODO fix agent name --}}
+                                                <option value="">هیچکدام</option>
                                                 @forelse ($agents as $agent)
                                                 <option value="{{$agent->id}}" {{$market->agent_id == $agent->id ? 'selected' : ''}}> {{$agent->user->name}} </option>
 
@@ -185,6 +186,8 @@
                                                 id="exampleFormControlSelect1">
                                             <option value="0" {{$market->type == 0 ? 'selected' : ''}}> فروشنده عادی </option>
                                             <option value="1" {{$market->type == 1 ? 'selected' : ''}}> فروشنده شبکه اجتماعی </option>
+                                            <option value="3" {{$market->type == 3 ? 'selected' : ''}}> فروشنده سطح شهر </option>
+
                                             </select>
                                         </div>
                                     </div>
@@ -245,7 +248,7 @@
                                 <td> {{$market->user->shipings->city->name .' - '. $market->user->shipings->city->province->name}} </td>
                             @endif
                             <td> {{$market->agent->user->name}} </td>
-                            <td> {{$market->center->name}} </td>
+                            <td> {{$market->center->name ?? ''}} </td>
                             <td><a href="{{route('show.market.edit.form',$market->id)}}">ویرایش</a></td>
                             <td><a href="{{ route('delete.market',$market->id) }}">حذف</a></td>
                             <td><a href="{{ route('show.market.category.form',$market->id) }}">دسترسی</a></td>
