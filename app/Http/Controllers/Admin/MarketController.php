@@ -139,8 +139,10 @@ class MarketController extends Controller
                 'postal_code' => $request->input('postal_code'),
                 'city_id' => $request->input('city_id')
             ]);
+            if ($request->has('logo')){
             $this->imageDelete($market);
             $this->createImage($market->user , $request);
+            }
             DB::commit();
             return back()->withSuccess(__('iranturan.success message'));
         } catch (\Exception $e) {
