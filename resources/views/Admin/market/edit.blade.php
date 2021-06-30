@@ -139,7 +139,6 @@
                                             <select name="agent_id" class="form-control "
                                                 id="exampleFormControlSelect1">
                                                 {{-- // TODO fix agent name --}}
-                                                <option value="">هیچکدام</option>
                                                 @forelse ($agents as $agent)
                                                 <option value="{{$agent->id}}" {{$market->agent_id == $agent->id ? 'selected' : ''}}> {{$agent->user->name}} </option>
 
@@ -163,6 +162,7 @@
                                                 فروش</label>
                                             <select name="center_id" class="form-control "
                                                 id="exampleFormControlSelect1">
+                                                <option value="">هیچکدام</option>
                                                 @forelse ($centers as $center)
                                                 <option {{$market->center_id == $center->id ? 'selected' : ''}} value="{{$center->id}}"> {{$center->name}} </option>
                                                 @empty
