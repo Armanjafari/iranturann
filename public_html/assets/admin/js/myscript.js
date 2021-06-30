@@ -119,14 +119,15 @@ $(function () {
         $preview.attr("src", "");
     });
 });
-$(document).ready(function(){
-    $('#exampleFormControlSelect3').change(function(){
-        if($(this).val() === '0'){ // or this.value == 'volvo'
-            $('.markaz').css('display','block');
-        }else{
-            if($(this).val()=== '1'){
-        $('.markaz').css('display','none');
-            }
-        }
-      });
-});
+// $(document).ready(function(){
+//     $('#exampleFormControlSelect3').change(function(){
+//         if($(this).val() === '0'){ // or this.value == 'volvo'
+//             $('.markaz').css('display','block');
+//         }else{
+//             if($(this).val()=== '1'){
+//         $('.markaz').css('display','none');
+        
+//             }
+//         }
+//       });
+// });

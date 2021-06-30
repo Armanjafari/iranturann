@@ -43,7 +43,7 @@
 								</form>
 							</td>
 							<td><button type="submit" class="btn btn-success mr-3"> بروز رسانی </button></td>
-							<td></td>
+							<td><a href=""><i class="fas fa-trash"></i></a></td>
 						</tr>
 						@endforeach
 						

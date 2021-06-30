@@ -156,7 +156,9 @@
                                                 فروش</label>
                                             <select name="center_id" class="form-control "
                                                 id="exampleFormControlSelect2">
+                                                <option value="">هیچ کدام</option>
                                                 @forelse ($centers as $center)
+                   
                                                 <option value="{{$center->id}}"> {{$center->name}} </option>
                                                 @empty
 
