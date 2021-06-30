@@ -119,3 +119,14 @@ $(function () {
         $preview.attr("src", "");
     });
 });
+$(document).ready(function(){
+    $('#exampleFormControlSelect3').change(function(){
+        if($(this).val() === '0'){ // or this.value == 'volvo'
+            $('.markaz').show();
+        }else{
+            if($(this).val()=== '1'){
+        $('.markaz').hide();
+            }
+        }
+      });
+});

@@ -146,16 +146,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 mt-4-5">
+                    <div class="col-lg-6 mt-4-5 markaz">
                         <div class="card form-control-one">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="exampleFormControlSelect1" style="font-size: 1.1em;">مرکز
+                                            <label for="exampleFormControlSelect2" style="font-size: 1.1em;">مرکز
                                                 فروش</label>
                                             <select name="center_id" class="form-control "
-                                                id="exampleFormControlSelect1">
+                                                id="exampleFormControlSelect2">
                                                 @forelse ($centers as $center)
                                                 <option value="{{$center->id}}"> {{$center->name}} </option>
                                                 @empty
@@ -174,9 +174,9 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="exampleFormControlSelect1" style="font-size: 1.1em;"> نوع فروشنده </label>
+                                            <label for="exampleFormControlSelect3" style="font-size: 1.1em;"> نوع فروشنده </label>
                                             <select name="type" class="form-control "
-                                                id="exampleFormControlSelect1">
+                                                id="exampleFormControlSelect3">
                                             <option value="0"> فروشنده عادی </option>
                                             <option value="1"> فروشنده شبکه اجتماعی </option>
                                             </select>

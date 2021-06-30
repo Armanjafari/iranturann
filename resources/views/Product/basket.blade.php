@@ -12,34 +12,38 @@
 
 
 	<div class="row">
-		<div class="col-md-7 card bg-light mr-3">
+		<div class="col-lg-7 card bg-light mr-3">
 			<div class="card-body well">
-				<table class="table ">
+				<table class="table text-center table-striped table-bordered">
 					<thead>
 						<tr>
 							<th>نام</th>
 							<th> قیمت محصول </th>
 							<th>تعداد</th>
+							<th>ویرایش</th>
+							<th>حذف</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach ($items as $item)
 							<tr>
-							<td> {{$item->title}} </td>
+							<td> {{$item->product->pure->title}} </td>
 							<td>{{ number_format($item->price) }} تومان</td>
 							<td>
-                                <form action="{{ route('basket.update', $item->id) }}" method="POST" class="form-inline">
+                                <form action="{{ route('basket.update', $item->id) }}" method="POST" class="">
 									@csrf
 									
-									<select name="quantity" id="quantity" class="form-control input-sm mr-sm-2">
+									<select name="quantity" id="quantity" class="form-quantity">
 										@for ($i = 0; $i <= $item->stock; $i++)
 										 <!-- TODO fix this !-->
 									<option  {{$item->quantity == $i ? 'selected' : ''}} value="{{$i}}">{{$i}}</option>
 										@endfor
 									</select>
-									<button type="submit" class="btn btn-light btn-sm"> بروز رسانی </button>
+									
 								</form>
 							</td>
+							<td><button type="submit" class="btn btn-success mr-3"> بروز رسانی </button></td>
+							<td></td>
 						</tr>
 						@endforeach
 						
