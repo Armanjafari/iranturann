@@ -138,7 +138,7 @@
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile17>
         @forelse ($messenger_seller as $messenger)
         <div class="item">
-            <div class=""><a href="{{route('show.market', $messenger->id)}}" class=""> <img src="{{$messenger->images()->whereType('logo')->first()->address}}" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
+            <div class=""><a href="{{route('show.market', $messenger->id)}}" class=""> <img src="{{$messenger->images()->whereType('logo')->first()->address ?? '#'}}" alt="a" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
             <div class="text-center mr-lg-5 mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
