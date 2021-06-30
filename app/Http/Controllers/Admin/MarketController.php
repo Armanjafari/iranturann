@@ -103,8 +103,6 @@ class MarketController extends Controller
             'shaba_number' => 'required',
             'agent_id' => 'required',
             'slug' => 'required',
-            'logo' => 'required'
-
 
         ]); // fix password
         DB::beginTransaction();
