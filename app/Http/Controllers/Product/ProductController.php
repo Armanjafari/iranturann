@@ -28,17 +28,17 @@ class ProductController extends Controller
         $products->load('pure' , 'fulls');
         return view('Product.products', compact('products'));
     }
-    public function product(Full $option)
+    public function product(Pure $option)
     {
-        $option->load('product');
-        $option->product;
-        $product = $option->product;
-        $product->load('pure','options');
-        $product->pure->load('attributes');
-        $pure = $product->pure;
-        $diffrent_colors = $product->options->load('colors');
+        $option->load('products.fulls.colors');
+        // dd($option);
+        // $products = $option->products;
+        // $products->load('pure','options');
+        // $products->pure->load('attributes');
+        // $pure = $products->pure;
+        // $diffrent_colors = $products->options->load('colors');
         $related = Product::all()->load('pure','fulls');
-        // dd($product->options->first()->colors);
-        return view('Product', compact('product', 'diffrent_colors' , 'option' , 'pure' , 'related'));
+        // dd($product->options->first()->colors); 'product', 'diffrent_colors' , 'option' , 'pure' , 'related'
+        return view('Product', compact('option','related'));
     }
 }

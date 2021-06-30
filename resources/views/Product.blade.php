@@ -58,7 +58,7 @@
             <div class="card text-right border-0 h-100">
                 <div class="card-body">
                     <figcaption>
-                        <a href="#" class="caption-product"> {{ $product->title }} </a>
+                        <a href="#" class="caption-product"> {{ $option->title }} </a>
                     </figcaption>
                    
                     
@@ -69,24 +69,32 @@
                         <span>برند:</span>
                         <a href="#" class="link-brand">سامسونگ</a>
                         <span class="mr-3">دسته بندی:</span>
-                        <a href="{{ route('product.by.category', $product->pure->category->id) }}" class="link-brand">
-                            {{$product->pure->category->persian_name}} </a>
+                        <a href="{{ route('product.by.category', $option->category->id) }}" class="link-brand">
+                            {{$option->category->persian_name}} </a>
                     </div>
                     <div class="mt-3 box-brand mr-3">
                          <span class="link-product"> هودی ادی داس طرح زمستانه</span>
                          <p class="link-in mt-2 text-right">Men's winter hoodie</p>
                     </div>
+                    @forelse ($option->products as $product)
+                    @forelse ($product->fulls as $full)
+                    <form action="{{ route('product.single' , $full->id) }}" method="GET">
+                        
+                        <button type="submit" class="btn btn-light">
+                            <p style="color:{{$full->colors->value}}">{{$full->colors->title}}</p>
+                        </button>
+                    </form>
+                    @empty
+                        
+                    @endforelse
+                        
+                        @empty
+
+                        @endforelse 
                     <div class="mt-3 color-product-box mr-3">
                      <span>رنگ:</span>
                      <span>آبی</span><br>
-                        <!-- @foreach ($diffrent_colors as $color)
-                        <form action="{{ route('product.single' , $color->id) }}" method="GET">
-                        
-                            <button type="submit" class="btn btn-light">
-                                <p style="color:{{$color->colors->value}}">{{$color->colors->title}}</p>
-                            </button>
-                        </form>
-                        @endforeach -->
+                         
                         <a  class="rounded-circle d-inline-block mr-2 mt-2 color-boreder active" href="#" style="background-color:#ccc"></a>
                         <a class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:blue" href="#"></a>
                         <a class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:red" href="#"></a>
@@ -226,12 +234,14 @@
 </div>
                             <!-- <table class="table  table-striped table-responsive text-right" cellspacing="0"> -->
                                 <!-- <tbody>
-                                    @foreach ($pure->attributes as $attribute)
+                                    @forelse ($option->attributes as $attribute)
                                     <tr>
                                         <td><a href="#">{{ $attribute->name }}</a></td>
                                         <td> {{ $attribute->pivot->values->value }} </td>
                                     </tr>
-                                    @endforeach
+                                    @empty
+
+                                    @endforelse
                                 </tbody> -->
                             <!-- </table> -->
                         </div>

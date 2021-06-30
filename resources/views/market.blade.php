@@ -166,10 +166,9 @@
                                                 </div>
                                         </div>
                                         @forelse ($products as $product)
-                                        @forelse ($product->fulls as $full)
                                         <div class="col-lg-4">
                                                 <div class="product-card m-3">
-                                                        <a href="{{route('product.single', $full->id)}}">
+                                                        <a href="#">
                                                                 <span class="badge badge-danger badge-1"> تخفیف ویژه </span>
                                                                 <span class="float-right Ready-to-send mr-3"> آماده ارسال<img
                                                                                 src="assets/img/svg element/آماده ارسال جدید.svg"
@@ -190,16 +189,13 @@
                                                                                 class="fa fa-star checked"></span><span
                                                                                 class="fa fa-star"></span> </div>
                                                                 <div class="text-center mt-2 pb-3"><span
-                                                                                class="price-line"> {{$product->pure->price}} </span>  <br>
+                                                                                class="price-line"> 2000000 </span>  <br>
                                                                         <span
-                                                                                class="font-weight-bold">{{  (string)number_format($full->price) .' تومان '   }}   </span>
+                                                                                class="font-weight-bold">بهترین قیمت</span>
                                                                 </div>
                                                         </a>
                                                 </div>
                                         </div>
-                                        @empty
-                                                
-                                        @endforelse
                                         
                                         @empty
 
