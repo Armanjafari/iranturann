@@ -11,7 +11,7 @@
     <!-- Start Register Form Saller -->
     <div class="card mt-3 ">
         <div class="card-body text-right">
-            <form action="{{ route('edit.market' , $market->id) }}" method="post">
+            <form action="{{ route('edit.market' , $market->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6">
@@ -162,6 +162,7 @@
                                                 فروش</label>
                                             <select name="center_id" class="form-control "
                                                 id="exampleFormControlSelect1">
+                                                <option value="">هیچکدام</option>
                                                 @forelse ($centers as $center)
                                                 <option {{$market->center_id == $center->id ? 'selected' : ''}} value="{{$center->id}}"> {{$center->name}} </option>
                                                 @empty
@@ -185,6 +186,8 @@
                                                 id="exampleFormControlSelect1">
                                             <option value="0" {{$market->type == 0 ? 'selected' : ''}}> فروشنده عادی </option>
                                             <option value="1" {{$market->type == 1 ? 'selected' : ''}}> فروشنده شبکه اجتماعی </option>
+                                            <option value="3" {{$market->type == 3 ? 'selected' : ''}}> فروشنده سطح شهر </option>
+
                                             </select>
                                         </div>
                                     </div>
@@ -195,20 +198,20 @@
                     <div class="col-lg-6 mt-4-5">
                         <div class="first-name">
                             <label for="files">آپلود لوگو</label>
-                            <input name="logo" value="{{ $market->name }}" id="files" class="apload-img" type="file">
+                            <input name="logo" value="" id="files" class="apload-img" type="file">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-5">
                         <div class="first-name">
                             <label for="files">آپلود مدارک رسمی</label>
-                            <input name="document" value="{{ $market->name }}" id="files" class="apload-img" type="file">
+                            <input name="document" value="" id="files" class="apload-img" type="file">
                         </div>
                     </div>
                     <div class="col-lg-6 mt-5">
                         <div class="first-name">
                             <label for="files">آپلود عکس مغازه </label>
 
-                            <input name="market_picture" value="{{ $market->name }}" id="files"
+                            <input name="market_picture" value="" id="files"
                                 class="apload-img" type="file">
                         </div>
                     </div>
@@ -245,7 +248,7 @@
                                 <td> {{$market->user->shipings->city->name .' - '. $market->user->shipings->city->province->name}} </td>
                             @endif
                             <td> {{$market->agent->user->name}} </td>
-                            <td> {{$market->center->name}} </td>
+                            <td> {{$market->center->name ?? ''}} </td>
                             <td><a href="{{route('show.market.edit.form',$market->id)}}">ویرایش</a></td>
                             <td><a href="{{ route('delete.market',$market->id) }}">حذف</a></td>
                             <td><a href="{{ route('show.market.category.form',$market->id) }}">دسترسی</a></td>

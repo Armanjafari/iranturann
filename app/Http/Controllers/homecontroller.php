@@ -13,7 +13,7 @@ class homecontroller extends Controller
     public function index()
     {
         // dd($user->hasRole('seller'));
-        $markets = Market::where('type', 0)->get();
+        $markets = Market::where('type', 3)->get();
          //dd($users);
         $centers = Center::all();
         $messenger_seller = Market::wheretype(1)->get();

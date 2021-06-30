@@ -81,7 +81,7 @@
                     <form action="{{ route('product.single' , $full->id) }}" method="GET">
                         
                         <button type="submit" class="btn btn-light">
-                            <p style="color:{{$full->colors->value}}">{{$full->colors->title}}</p>
+                            <p style="color:{{$full->colors->value}}" data-id="{{$option->title}}">{{$full->colors->title}}</p>
                         </button>
                     </form>
                     @empty
@@ -193,10 +193,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
             @empty
                 
             @endforelse
+        </div>
         <div class="col-lg-12 mt-5">
             <div class="container">
                 <div class="col-md-12 pr-0 pl-0">
