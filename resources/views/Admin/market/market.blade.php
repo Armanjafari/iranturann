@@ -158,6 +158,7 @@
                                                 id="exampleFormControlSelect2">
                                                 <option value="">هیچکدام</option>
                                                 @forelse ($centers as $center)
+                   
                                                 <option value="{{$center->id}}"> {{$center->name}} </option>
                                                 @empty
 
