@@ -34,7 +34,7 @@
               @endforeach
            @for ($i = 1; $i<$product->pure->images()->count() ; $i++)
            <div class="column">
-            <img class="demo cursor" src="{{$image->address}}" onclick="CurrentSlide($i)" style="width:100%" alt="">
+            <img class="demo cursor" src="{{$product->pure->images->first()->address}}" onclick="CurrentSlide($i)" style="width:100%" alt="">
           </div>
            @endfor
           </div>
@@ -129,7 +129,7 @@
                     </div> -->
                     <div class="mt-5 d-flex justify-content-center">
                        
-                        <a href="#" class="price-product">{{$product->pure->price}} تومان</a>
+                        <a href="#" class="price-product">{{number_format($product->pure->price)}} تومان</a>
                      
                         <div class="mr-5">
                         <span class="badge badge-danger badge-1 text-left"> تخفیف ویژه </span>
@@ -191,25 +191,8 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                             aria-labelledby="nav-home-tab">
-                            <div class="row">
-                            <div class="col-lg-3 col-5">
-                           <div class="content-Specifications  text-center">
-                               <span>قد هودی:</span><br><br>
-                             <span>کلاه:</span><br><br>
-                             <span>کیفیت :</span><br><br>
-                           </div>
-
-                            </div>
-                            <div class="col-lg-9 col-7 text-right">
-                                
-                            <span>80سانتی متر</span><br><br>
-                            <span>دارد</span><br><br>
-                            <span>درجه یک</span><br><br>
-                            
-</div>
-</div>
-                            <!-- <table class="table  table-striped table-responsive text-right" cellspacing="0"> -->
-                                <!-- <tbody>
+                             <table class="table  table-striped table-responsive text-right" cellspacing="0"> 
+                                 <tbody>
                                     @forelse ($product->pure->attributes as $attribute)
                                     <tr>
                                         <td><a href="#">{{ $attribute->name }}</a></td>
@@ -218,21 +201,13 @@
                                     @empty
 
                                     @endforelse
-                                </tbody> -->
-                            <!-- </table> -->
+                                </tbody>
+                             </table> 
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="card p-5">
                                 <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
-                                    گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و
-                                    برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
-                                    می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-                                    متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
-                                    الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید
-                                    داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان
-                                    مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
-                                    طراحی اساسا مورد استفاده قرار گیرد.
+                                    {{$product->pure->description}}
                                 </p>
                             </div>
                         </div>

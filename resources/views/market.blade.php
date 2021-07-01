@@ -168,7 +168,7 @@
                                         @forelse ($products as $product)
                                         <div class="col-lg-4">
                                                 <div class="product-card m-3">
-                                                        @if ($product->fulls)
+                                                        @if ($product->fulls->count())
                                                         <a href="{{ route('product.single' , $product->fulls->first()->id ?? '') }}">
                                                         @else
                                                         <a href="#">
@@ -193,9 +193,14 @@
                                                                                 class="fa fa-star checked"></span><span
                                                                                 class="fa fa-star"></span> </div>
                                                                 <div class="text-center mt-2 pb-3"><span
-                                                                                class="price-line"> 2000000 </span>  <br> 
-                                                                        <span
-                                                                                class="font-weight-bold">{{$product->fulls()->orderBy('price','asc')->get('price')->first()->price ?? ' ناموجود '}}</span>
+                                                                                class="price-line"> {{number_format($product->pure->price)}} </span>  <br> 
+                                                                       @if ($product->fulls->count())
+                                                                       <span
+                                                                       class="font-weight-bold"> تومان {{  number_format($product->fulls()->orderBy('price','asc')->get('price')->first()->price) ?? 'ناموجود' }}  </span>   
+                                                                       @else
+                                                                       <span
+                                                                       class="font-weight-bold">  ناموجود </span>   
+                                                                       @endif
                                                                 </div>
                                                         </a>
                                                 </div>
