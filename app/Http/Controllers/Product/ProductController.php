@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Product;
 
 use App\Full;
 use App\Http\Controllers\Controller;
+use App\Market;
 use App\Product;
 use App\Pure;
 use App\Support\Basket\Basket;
@@ -28,10 +29,12 @@ class ProductController extends Controller
         $products->load('pure' , 'fulls');
         return view('Product.products', compact('products'));
     }
-    public function product(Pure $option)
+    public function product(Full $option)
     {
-        $option->load('products.fulls.colors');
+        $option->load('product.pure');
         // dd($option);
+        $product = $option->product;
+        $market = Market::find($product->market_id);
         // $products = $option->products;
         // $products->load('pure','options');
         // $products->pure->load('attributes');
@@ -39,6 +42,6 @@ class ProductController extends Controller
         // $diffrent_colors = $products->options->load('colors');
         $related = Product::all()->load('pure','fulls');
         // dd($product->options->first()->colors); 'product', 'diffrent_colors' , 'option' , 'pure' , 'related'
-        return view('Product', compact('option','related'));
+        return view('Product', compact('option','related' , 'product' , 'market'));
     }
 }

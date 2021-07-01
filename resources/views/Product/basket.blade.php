@@ -40,10 +40,18 @@
 										@endfor
 									</select>
 									
-								</form>
 							</td>
 							<td><button type="submit" class="btn btn-success mr-3"> بروز رسانی </button></td>
-							<td></td>
+						</form>
+						<form action="{{ route('basket.update', $item->id) }}" method="POST" id="trash-from">
+							@csrf
+							<td>
+							<select name="quantity" id="" style="display:none;">
+							 <option  value="0"></option> </select>
+								 <a href="#" onclick="event.preventDefault();document.getElementById('trash-from').submit()" class="fas fa-trash"></a>
+							{{-- <input type="submit" class="fas fa-trash" value="submit"> --}}
+						</td>
+						</form>
 						</tr>
 						@endforeach
 						

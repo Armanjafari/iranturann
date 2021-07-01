@@ -168,7 +168,11 @@
                                         @forelse ($products as $product)
                                         <div class="col-lg-4">
                                                 <div class="product-card m-3">
+                                                        @if ($product->fulls)
+                                                        <a href="{{ route('product.single' , $product->fulls->first()->id ?? '') }}">
+                                                        @else
                                                         <a href="#">
+                                                        @endif
                                                                 <span class="badge badge-danger badge-1"> تخفیف ویژه </span>
                                                                 <span class="float-right Ready-to-send mr-3"> آماده ارسال<img
                                                                                 src="assets/img/svg element/آماده ارسال جدید.svg"
@@ -189,13 +193,13 @@
                                                                                 class="fa fa-star checked"></span><span
                                                                                 class="fa fa-star"></span> </div>
                                                                 <div class="text-center mt-2 pb-3"><span
-                                                                                class="price-line"> 2000000 </span>  <br>
+                                                                                class="price-line"> 2000000 </span>  <br> 
                                                                         <span
-                                                                                class="font-weight-bold">بهترین قیمت</span>
+                                                                                class="font-weight-bold">{{$product->fulls()->orderBy('price','asc')->get('price')->first()->price ?? ' ناموجود '}}</span>
                                                                 </div>
                                                         </a>
                                                 </div>
-                                        </div>
+                                        </div>  
                                         
                                         @empty
 

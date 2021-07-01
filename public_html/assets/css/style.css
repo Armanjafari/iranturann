@@ -2383,6 +2383,7 @@ display: none;
 .color-boreder{
   width: 30px;
   height: 30px;
+  border: 0.2em solid #ffffff;
 }
 .download-icon{
   width: 20px;
@@ -2451,8 +2452,8 @@ box-shadow: 2px 2px 5px 2px #ccc;
   }
 }
 .img-product-size1{
-  width: 250px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
 }
 .form-group>label{
   position: absolute;
@@ -2534,6 +2535,9 @@ border: 2px solid #33cccc;
   }
   .form-quantity{
     border: 2px solid #33cccc;
+  }
+  .active-color{
+    border: 0.2em solid #60f3f3;
   }
 /* .color-boreder:focus{
   border:3px solid #33cccc;

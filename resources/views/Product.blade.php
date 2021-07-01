@@ -16,41 +16,27 @@
     <div class="row">
         <div class="col-lg-4 pl-lg-0">
             <div class="card border-0">
+            @forelse ($product->pure->images as $image)
             <div class="mySlides">
-          <img src="{{asset('assets/img/01.png')}}" style="width: 100%;">
-          </div>
-          <div class="mySlides">           
-             <img src="{{asset('assets/img/02.png')}}" style="width: 100%;">
-          </div>
-          <div class="mySlides">
-            <img src="{{asset('assets/img/5852ac425c16e3ae3cbdc1b20596f723c54ec355_1604466916.png')}}" style="width:100%">
-          </div> 
-          <div class="mySlides">
-            <img src="{{asset('assets/img/6a6650c08fe4b430782cebfa62539ab56ab2b741_1601964067.png')}}" style="width:100%">
-          </div>
-          <div class="mySlides">
-            <img src="{{asset('assets/img/03.png')}}" style="width:100%">
-          </div>
+                <img src="{{ $image->address }}" style="width:100%;">
+                </div>
+            @empty
+                
+            @endforelse
+            
             
         
           <!-- <a class="next" onclick="plusSlides(1)">❯</a>
           <a class="prev" onclick="plusSlides(-1)">❮</a> -->
           <div class="row">
-            <div class="column">
-              <img class="demo cursor" src="{{asset('assets/img/01.png')}}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-            </div>
-            <div class="column">
-              <img class="demo cursor" src="{{asset('assets/img/02.png')}}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-            </div>
-            <div class="column">
-              <img class="demo cursor" src="{{asset('assets/img/5852ac425c16e3ae3cbdc1b20596f723c54ec355_1604466916.png')}}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-            </div>
-            <div class="column">
-              <img class="demo cursor" src="{{asset('assets/img/6a6650c08fe4b430782cebfa62539ab56ab2b741_1601964067.png')}}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-            </div>
-            <div class="column">
-              <img class="demo cursor" src="{{asset('assets/img/03.png')}}" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-            </div>    
+              @foreach ($product->pure->images as $image )
+                  
+              @endforeach
+           @for ($i = 1; $i<$product->pure->images()->count() ; $i++)
+           <div class="column">
+            <img class="demo cursor" src="{{$image->address}}" onclick="CurrentSlide($i)" style="width:100%" alt="">
+          </div>
+           @endfor
           </div>
             </div>
         </div>
@@ -69,36 +55,25 @@
                         <span>برند:</span>
                         <a href="#" class="link-brand">سامسونگ</a>
                         <span class="mr-3">دسته بندی:</span>
-                        <a href="{{ route('product.by.category', $option->category->id) }}" class="link-brand">
-                            {{$option->category->persian_name}} </a>
+                        <a href="{{ route('product.by.category', $option->product->pure->category->id) }}" class="link-brand">
+                            {{$option->product->pure->category->persian_name}} </a>
                     </div>
                     <div class="mt-3 box-brand mr-3">
                          <span class="link-product"> هودی ادی داس طرح زمستانه</span>
                          <p class="link-in mt-2 text-right">Men's winter hoodie</p>
                     </div>
-                    @forelse ($option->products as $product)
+                    <div class="mt-3 color-product-box mr-3">
+                        <p class="text-right"> رنگ : {{ $option->colors->title }}</p>
                     @forelse ($product->fulls as $full)
-                    <form action="{{ route('product.single' , $full->id) }}" method="GET">
-                        
-                        <button type="submit" class="btn btn-light">
-                            <p style="color:{{$full->colors->value}}" data-id="{{$option->title}}">{{$full->colors->title}}</p>
-                        </button>
+                    <form style="display: inline" action="{{ route('product.single' , $full->id) }}" method="GET">                        
+                            <a class="rounded-circle d-inline-block mr-2 mt-2 color-boreder {{ $option->id ==  $full->id ? 'active-color' : ''}}" style="background-color:{{$full->colors->value}}" href="{{route('product.single', $full->id)}}"></a>
                     </form>
                     @empty
                         
                     @endforelse
-                        
-                        @empty
-
-                        @endforelse 
-                    <div class="mt-3 color-product-box mr-3">
-                     <span>رنگ:</span>
-                     <span>آبی</span><br>
+                </div>
                          
-                        <a  class="rounded-circle d-inline-block mr-2 mt-2 color-boreder active" href="#" style="background-color:#ccc"></a>
-                        <a class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:blue" href="#"></a>
-                        <a class="rounded-circle d-inline-block mr-2 mt-2 color-boreder" style="background-color:red" href="#"></a>
-                    </div>
+                    
                     <div class="mt-5 text-right">
                         <ul class="Attributes">ویژگی ها
                             <li class="mt-2">
@@ -134,11 +109,11 @@
             <div class="card h-100">
                 <div class="card-body text-center">
                     <img src="{{asset('assets/img/svg element/فروشنده.svg')}}" alt="">
-                <span class="marketer1 mr-2">فروشنده: ایران توران</span>
+                <span class="marketer1 mr-2">فروشنده: {{$market->market_name}}</span>
                 <a href="" class="marketer1 mr-5">فروشنده های دیگر: 3</a>
                 <div class="text-right mr-4 mt-3">
                 <img src="{{asset('assets/img/svg element/گارانتی.svg')}}" alt="">
-                <span class="marketer1 mr-2">گارانتی اصالت و سلامت فیزیکی کالا</span>
+                <span class="marketer1 mr-2"> {{$option->waranty->name}} </span>
                 </div>
                 <div class="text-right mr-4 mt-2">
                 <img src="{{asset('assets/img/svg element/موجود در انبار.svg')}}" alt="">
@@ -154,10 +129,10 @@
                     </div> -->
                     <div class="mt-5 d-flex justify-content-center">
                        
-                        <a href="#" class="price-product">125,000تومان</a>
+                        <a href="#" class="price-product">{{$product->pure->price}} تومان</a>
                      
                         <div class="mr-5">
-                        <span class="badge badge-danger badge-1 text-left">25%</span>
+                        <span class="badge badge-danger badge-1 text-left"> تخفیف ویژه </span>
                         </div>
                     </div>
                     
@@ -235,7 +210,7 @@
 </div>
                             <!-- <table class="table  table-striped table-responsive text-right" cellspacing="0"> -->
                                 <!-- <tbody>
-                                    @forelse ($option->attributes as $attribute)
+                                    @forelse ($product->pure->attributes as $attribute)
                                     <tr>
                                         <td><a href="#">{{ $attribute->name }}</a></td>
                                         <td> {{ $attribute->pivot->values->value }} </td>
