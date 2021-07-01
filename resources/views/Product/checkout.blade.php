@@ -83,7 +83,7 @@
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item">
 							<div class="custom-control custom-radio col-md-6 custom-control-inline">
-								<input type="radio" id="online" value="online" name="method" class="custom-control-input">
+								<input type="radio" id="online" value="online" name="method" class="custom-control-input" checked>
 								<label class="custom-control-label" for="online">
 									پرداخت آنلاین
 								</label>
@@ -91,9 +91,7 @@
 							</div>
 
 							<select name='gateway'  class="custom-select col-md-4  custom-control-inline">
-								<option value="saman">سامان</option>
 								<option value="mellat"> ملت </option>
-								<option value="pasargad">پاسارگاد</option>
 							</select>
 
 							<p class='text-muted small'>
