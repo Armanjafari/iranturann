@@ -23,7 +23,7 @@
 <span>نوع پرداخت خود را انتخاب کنید</span><br><br>
 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 <a class=" active Seller3" id="nav-home-tab" data-toggle="tab" href="#nav-home2"
-                                role="tab" aria-controls="nav-home" aria-selected="true">پزداخت آنلاین</a>
+                                role="tab" aria-controls="nav-home" aria-selected="true">پرداخت آنلاین</a>
 								<a class="Seller3 active mr-3" id="nav-profile-tab" data-toggle="tab" href="#nav-profile2"
                                 role="tab" aria-controls="nav-profile2" aria-selected="false">کارت به کارت</a>
 								<a class="Seller3 active mr-3" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Full extends Model
 {
-    protected $fillable = ['stock' , 'price' ,'waranty_id' , 'color_id' , 'product_id'];
+    protected $fillable = ['stock' , 'price' ,'waranty_id' , 'color_id' , 'product_id' , 'ordering' , 'is_active'];
     public function colors()
     {
         return $this->belongsTo(Color::class , 'color_id' , 'id');

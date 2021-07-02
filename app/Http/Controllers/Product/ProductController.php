@@ -41,6 +41,7 @@ class ProductController extends Controller
         // $pure = $products->pure;
         // $diffrent_colors = $products->options->load('colors');
         $related = Product::all()->load('pure','fulls');
+        $related = Pure::where('category_id' , $product->pure->category_id)->paginate(10);
         // dd($product->options->first()->colors); 'product', 'diffrent_colors' , 'option' , 'pure' , 'related'
         return view('Product', compact('option','related' , 'product' , 'market'));
     }

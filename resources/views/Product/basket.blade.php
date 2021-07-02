@@ -27,7 +27,12 @@
 					<tbody>
 						@foreach ($items as $item)
 							<tr>
-							<td> {{$item->product->pure->title}} </td>
+							<td> {{$item->product->pure->title}}
+								<br>
+							@if ($item->ordering)
+							 <span style="font-size: 11px">ارسال از {{$item->ordering}} روز آینده</span>	
+							@endif
+							</td>
 							<td>{{ number_format($item->price) }} تومان</td>
 							<td>
                                 <form action="{{ route('basket.update', $item->id) }}" method="POST" class="">
