@@ -150,7 +150,7 @@ class MarketController extends Controller
             $this->imageDelete($market);
             $this->createImage($market->user , $request);
             }
-        return back()->withSuccess(__('iranturan.success message'));
+        return redirect()->route('show.market.form')->withSuccess(__('iranturan.success message'));
 
     }
 

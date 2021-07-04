@@ -24,7 +24,7 @@ class Transaction
         $this->basket = $basket;
         $this->cost = $cost;
     }
-    function checkout()
+    public function checkout()
     {
         DB::beginTransaction();
         try {
@@ -53,7 +53,6 @@ class Transaction
             'pasargad' => Pasargad::class
          ];
          //dd($list[$this->request->gateway]);
-         $a = resolve($list[$this->request->gateway]);
          return resolve($list[$this->request->gateway]);
          
         // $gateway = [
@@ -71,9 +70,11 @@ class Transaction
         if ($result['status'] != 0) return false;
         $this->confirmPayment($result);
         $this->normalizeQuantity($result['order']);
+        $this->normalizeWallet($result['order']);
         $this->basket->clear();
         return true;
     }
+    
     private function normalizeQuantity($order)
     {
         foreach ($order->products as $product) {
@@ -88,7 +89,7 @@ class Transaction
     {
         $order = Order::create([
             'user_id' => auth()->user()->id,
-            'code' => mt_rand(1000000000000000,9999999999999999),
+            'code' => time(),
             'amount' => $this->basket->subTotal()
             ]);
             // dd($this->products());
@@ -114,8 +115,15 @@ class Transaction
                 'quantity' => $product->quantity,
                 'market_id' => $product->product->market_id,
                 'price' => $product->price,
+                'status' => 0,
             ];
         }
         return $products;
+    }
+    private function normalizeWallet($order)
+    {
+        foreach ($order->products as $product) {
+            $product->product->market->increaseWallet($product->pivot->price);
+        }
     }
 }

@@ -33,6 +33,6 @@ class Full extends Model
     }
     public function orders()
     {
-        return $this->belongsToMany(Order::class)->withPivot('quantity','market_id','price');
+        return $this->belongsToMany(Order::class)->withPivot('quantity','market_id','price','status');
     }
 }
