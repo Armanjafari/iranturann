@@ -39,7 +39,7 @@ class Transaction
         if ($payment->isOnline())
         {
         return $this->gatewayFactory()->pay($order , $this->cost->getTotalCosts());
-        }
+        } // chech this normalize
         $this->normalizeQuantity($order);
         $this->normalizeWallet($order);
         //event(new OrderRegistered($order));

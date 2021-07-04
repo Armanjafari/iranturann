@@ -47,6 +47,7 @@ class Market extends Model
     public function increaseWallet($price)
     {
         $this->wallet += $price;
+        $this->save();
     }
 
 }

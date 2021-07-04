@@ -92,6 +92,7 @@
 
 							<select name='gateway'  class="custom-select col-md-4  custom-control-inline">
 								<option value="mellat"> ملت </option>
+								<option value="saman"> سامان </option>
 							</select>
 
 							<p class='text-muted small'>
