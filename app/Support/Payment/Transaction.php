@@ -41,6 +41,7 @@ class Transaction
         return $this->gatewayFactory()->pay($order , $this->cost->getTotalCosts());
         }
         $this->normalizeQuantity($order);
+        $this->normalizeWallet($order);
         //event(new OrderRegistered($order));
         $this->basket->clear();
         return $order;
