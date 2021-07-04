@@ -46,7 +46,7 @@ class Market extends Model
     }
     public function increaseWallet($price)
     {
-        $this->wallet += 
+        $this->wallet += $price;
     }
 
 }
