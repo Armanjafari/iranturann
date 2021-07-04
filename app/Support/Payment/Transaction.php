@@ -124,7 +124,7 @@ class Transaction
     private function normalizeWallet($order)
     {
         foreach ($order->products as $product) {
-            $product->product->market->increaseWallet($product->pivot->price);
+            $product->product->market->increaseWallet($product->pivot->price , $product->pivot->quantity);
         }
     }
 }

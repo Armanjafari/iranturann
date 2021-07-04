@@ -44,9 +44,9 @@ class Market extends Model
     {
         return $this->morphMany(Image::class , 'imageable');
     }
-    public function increaseWallet($price)
+    public function increaseWallet($price , $quantity)
     {
-        $this->wallet += $price;
+        $this->wallet += $price * $quantity;
         $this->save();
     }
 
