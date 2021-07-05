@@ -2025,7 +2025,6 @@
 .checked {
   color: rgb(255, 217, 0) !important;
   margin-right: 1vh;
-
 }
 
 .fa-star {
@@ -2095,6 +2094,12 @@ line-height: 70px;
   .nav-box{
     margin-top: -25px;
 }
+.checked{
+   font-size: 12px !important;
+}
+.unchecked{
+  font-size: 12px !important;
+}
 }
 @media screen and (min-width: 900px) and (max-width: 2000px){
   .nav-box{
@@ -2105,6 +2110,7 @@ line-height: 70px;
   background-color: #fff;
  border: none !important;
   box-shadow: 2px 4px 5px 2px #e2dfdf;
+  font-size: 10px;
 }
 .item1{
  height: 400px; 
@@ -2383,7 +2389,7 @@ display: none;
 .color-boreder{
   width: 30px;
   height: 30px;
-  border: 0.2em solid #ffffff;
+  border: 0.2em solid rgb(241, 241, 241);
 }
 .download-icon{
   width: 20px;
@@ -2438,6 +2444,13 @@ box-shadow: 2px 2px 5px 2px #ccc;
 @media screen and (min-width: 300px) and (max-width: 450px){
   .col-lg-12w{
     margin-top: -5rem !important;
+  }
+  .size-img1{
+width: 100px !important;
+height: 100px !important;
+  }
+  .link-application{
+    font-size: 10px;
   }
   .img-product-size{
     width: 271px !important;
@@ -2539,6 +2552,16 @@ border: 2px solid #33cccc;
   .active-color{
     border: 0.2em solid #60f3f3;
   }
+  @media screen and (min-width: 300px) and (max-width:450px) {
+    .table-basket1{
+      font-size: 7px;
+      white-space: pre;
+    }
+    .broz1{
+      font-size: 7px;
+    }
+  }
+ 
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */

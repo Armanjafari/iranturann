@@ -28,18 +28,18 @@
         </div>
     </div>
 
-    <div class="col-lg-12 ml-auto mr-auto col-12">
+    <div class="col-lg-12  col-12">
         <div class="owl-carousel owl-theme mt-5" id="owl-mobile5">
             @forelse ($users as $item)
             <div class="item item1">
                 <div class="card card-shopping2">
-                    <div class="card-body text-center">
-                        <div class="col-lg-8 ml-auto mr-auto col-8">
+                    <div class="card-body pr-0 pl-0 text-center">
+                        <div class="col-lg-8 ml-auto mr-auto col-12">
                             <a href="{{route('show.market', $item->id)}}"> <img
                                     src="{{$item->images()->whereType('logo')->first()->address}}" alt=""
-                                    class="rounded-circle img-shopp size-img img-fluid" data-holder-rendered="true"></a>
+                                    class="rounded-circle img-shopp ml-auto mr-auto size-img size-img1 img-fluid" data-holder-rendered="true"></a>
                         </div>
-                        <div action="" class="mt-3 ml-4">
+                        <div action="" class="mt-3 ml-2">
                             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span
                                 class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span
                                 class="fa fa-star unchecked"></span>

@@ -129,7 +129,7 @@
         </div>
         </a> 
         <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile16">
-          <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
+          <div class="item"><a href="#gba" class="Seller">لوزام برقی</a></div>
           <div class="item"><a href="" class="Seller">پوشاک</a></div>
           <div class="item"><a href="" class="Seller">دیجیتال</a></div>
           <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
