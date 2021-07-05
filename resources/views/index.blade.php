@@ -48,7 +48,7 @@
            </div> 
            <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>
                      <div class="product-card m-3">
-                     <a href="https://google.com">
+                     <a>
                      <span class="badge badge-danger badge-1">25%</span>
                       <span class="float-right Ready-to-send"> آماده ارسال<img src="assets/img/svg element/آماده ارسال جدید.svg" alt="" style="width:15px; display:inline-block" class="ml-1"></span>                      
             <img src="{{ asset('assets/img/01-2removebg-preview.png') }}" style=""  alt="" class="img-product-size">
@@ -64,7 +64,7 @@
         </div>  
     </div>
     
-        <a href="https://google.com" class="w-100">
+        <a class="w-100">
         <div class="shopping-centrew mt-5 p-3">
             <img src="assets/img/svg element/مراکز خرید.svg" alt="">
          مراکز خرید
@@ -89,7 +89,7 @@
         @endforelse
     </div>
 
-<a href="https://google.com" class="w-100">
+<a class="w-100">
         <div class="shopping-centrew mt-5 p-3">
             <img src="assets/img/svg element/فروشنده.svg" alt="">
          فروشندگان

@@ -22,8 +22,11 @@
 <hr>
 <span>نوع پرداخت خود را انتخاب کنید</span><br><br>
 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+	<form action="{{ route('basket.checkout') }}" id='checkout-formm' method="post" >
+		@csrf
 <a class=" active Seller3" id="nav-home-tab" data-toggle="tab" href="#nav-home2"
-                                role="tab" aria-controls="nav-home" aria-selected="true">پرداخت آنلاین</a>
+                                role="tab" aria-controls="nav-home" aria-selected="true">پرداخت آنلاین 
+								<input type="radio" name="method" value="online" style="" id=""></a>
 								<a class="Seller3 active mr-3" id="nav-profile-tab" data-toggle="tab" href="#nav-profile2"
                                 role="tab" aria-controls="nav-profile2" aria-selected="false">کارت به کارت</a>
 								<a class="Seller3 active mr-3" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
@@ -32,11 +35,11 @@
 <div class="tab-content mt-3" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home2" role="tabpanel"
                             aria-labelledby="nav-home-tab">
-
+						</form>
 <div class="contactChoice1">
 <span>انتخاب درگاه</span><br>
 <input type="radio" id="contactChoice1"
-     name="contact" value="email">
+     name="online" value="email" checked>
     <label for="contactChoice1"><img src="{{ asset('assets/img/bank-melat-removebg-preview.png') }}" alt=""></label>
 </div>
 <div class="kart-to-kart text-center">
@@ -68,7 +71,7 @@
 	</div>
 	<div class="col-md-4">
 		@include('Product.summary')
-		<a onclick="event.preventDefault();document.getElementById('checkout-form').submit()" class="btn btn-primary d-block w-100"> پرداخت </a>
+		<a onclick="event.preventDefault();document.getElementById('checkout-formm').submit()" class="btn btn-primary d-block w-100"> پرداخت </a>
 	</div>
 </div>
 <div class="row">
