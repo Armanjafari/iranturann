@@ -6,15 +6,15 @@
 	@if ($items->isEmpty())
 	<p>
 		محصولی در سبد خرید موجود نمیباشد 
-        <a href={{ route('product.index') }}>محصولات</a>
+        <a href="{{ route('product.index') }}">محصولات</a>
 	</p>
 	@else
 
 
 	<div class="row">
-		<div class="col-lg-7 card bg-light mr-3">
-			<div class="card-body well">
-				<table class="table text-center table-striped table-bordered">
+		<div class="col-lg-7 bg-light mt-5 pr-0 pl-0">
+			
+				<table class="table text-center table-striped table-bordered w-100 table-basket1">
 					<thead>
 						<tr>
 							<th>نام</th>
@@ -46,7 +46,7 @@
 									</select>
 									
 							</td>
-							<td><button type="submit" class="btn btn-success mr-3"> بروز رسانی </button></td>
+							<td><button type="submit" class="btn btn-success broz1 mr-3"> بروز رسانی </button></td>
 						</form>
 						<form action="{{ route('basket.update', $item->id) }}" method="POST" id="trash-from">
 							@csrf
@@ -62,9 +62,8 @@
 						
 					</tbody>
 				</table>
-			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-lg-5 text-right mt-5">
             @include('Product.summary')
 		<a href="{{ route('basket.checkout.form') }}" class="btn mt-4  btn-primary btn-lg w-100 d-block"> ثبت و ادامه سفارش </a>
 		</div>

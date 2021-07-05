@@ -30,10 +30,10 @@
 			<form action="{{route('coupons.store')}}"  method="post">
 				@csrf
 				<div class="input-group">
-					<input id='coupon' name='coupon' type="text" class="form-control">
-					<span class="input-group-btn">
-						<button id='coupon-apply' class="btn btn-primary  ml-3" type="submit"> اعمال کد تخفیف </button>
-					</span>
+					<input id='coupon' name='coupon' type="text" class="form-control p-2">
+				
+						<button id='coupon-apply' class="btn btn-primary mr-3 mt-3 mt-sm-0" type="submit"> اعمال کد تخفیف </button>
+					
 				</div>
 			</form>
 			@endif
