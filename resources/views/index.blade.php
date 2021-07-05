@@ -119,9 +119,9 @@
             
         @endforelse
 </div>
-<a href="https://google.com" class="w-100">
+<a  class="w-100">
         <div class="shopping-centrew mt-5 p-3">
-            <span class="Social-Networks pt-1 pb-1 pr-3 pl-3 ml-3"><img src="assets/img/svg element/واتساپ.svg" alt="">
+            <span class="Social-Networks pt-1 pb-1 pr-3 pl-3 ml-3"><img src="{{asset('assets/img/whatsapp-icon.svg')}}" alt="">
             <img src="assets/img/svg element/اینستاگرام.svg" alt="">
             <img src="assets/img/svg element/تلگرام.svg" alt="">
         </span>

@@ -61,6 +61,8 @@ class ProductController extends Controller
             'option' => 'required',
             'price' => 'required',
             'stock' => 'required',
+            'is_active' => 'required',
+            'ordering' => 'required',
             'product' => 'required',
         ]);
         // dd($request->all());
@@ -68,6 +70,8 @@ class ProductController extends Controller
             'color_id' => $request->input('option'),
             'price' => $request->input('price'),
             'stock' => $request->input('stock'),
+            'is_active' => $request->input('is_active'),
+            'ordering' => $request->input('ordering'),
             'waranty_id' => $request->input('waranty'),
             'product_id' => $request->input('product'),
         ]);

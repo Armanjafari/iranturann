@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Full extends Model
 {
-    protected $fillable = ['stock' , 'price' ,'waranty_id' , 'color_id' , 'product_id'];
+    protected $fillable = ['stock' , 'price' ,'waranty_id' , 'color_id' , 'product_id' , 'ordering' , 'is_active'];
     public function colors()
     {
         return $this->belongsTo(Color::class , 'color_id' , 'id');
@@ -33,6 +33,6 @@ class Full extends Model
     }
     public function orders()
     {
-        return $this->belongsToMany(Order::class)->withPivot('quantity','market_id','price');
+        return $this->belongsToMany(Order::class)->withPivot('quantity','market_id','price','status');
     }
 }

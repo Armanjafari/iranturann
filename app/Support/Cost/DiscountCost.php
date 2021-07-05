@@ -23,7 +23,7 @@ class DiscountCost implements CostInterface
     }
     public function persianDescription()
     {
-        return ' میزان تخفیف ';
+        return "میزان تخفیف";
     }
     public function getSummary()
     {

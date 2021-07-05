@@ -8,7 +8,7 @@ class Order extends Model
     protected $fillable = ['user_id', 'code','amount'];
     public function products()
     {
-        return $this->belongsToMany(Full::class)->withPivot('quantity','market_id','price');
+        return $this->belongsToMany(Full::class)->withPivot('quantity','market_id','price' , 'status');
     }
     public function payment()
     {

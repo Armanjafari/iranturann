@@ -53,7 +53,7 @@
                     <div class="mt-3 box-brand mr-3">
                         <span></span>
                         <span>برند:</span>
-                        <a href="#" class="link-brand">سامسونگ</a>
+                        <a href="#" class="link-brand">{{ $product->pure->brand->persian_name }}</a>
                         <span class="mr-3">دسته بندی:</span>
                         <a href="{{ route('product.by.category', $option->product->pure->category->id) }}" class="link-brand">
                             {{$option->product->pure->category->persian_name}} </a>
@@ -110,7 +110,7 @@
                 <div class="card-body text-center">
                     <img src="{{asset('assets/img/svg element/فروشنده.svg')}}" alt="">
                 <span class="marketer1 mr-2">فروشنده: {{$market->market_name}}</span>
-                <a href="" class="marketer1 mr-5">فروشنده های دیگر: 3</a>
+                {{-- <a href="" class="marketer1 mr-5">فروشنده های دیگر: 3</a> --}}
                 <div class="text-right mr-4 mt-3">
                 <img src="{{asset('assets/img/svg element/گارانتی.svg')}}" alt="">
                 <span class="marketer1 mr-2"> {{$option->waranty->name}} </span>
@@ -156,10 +156,10 @@
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
                         <figure class="mb-0">
-                            <img src="{{ $relate->pure->images->first()->address ?? "#"}}" alt="">
+                            <img src="{{ $relate->images->first()->address ?? "#"}}" alt="">
                         </figure>
                         <caption>
-                            <a href="#">{{ $relate->pure->persian_title }}</a>
+                            <a href="#">{{ $relate->persian_title }}</a>
                         </caption><br>
                         <p class="font-weight-bold mt-1 mb-0">
                             s</p>

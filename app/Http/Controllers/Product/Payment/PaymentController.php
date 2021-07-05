@@ -18,7 +18,6 @@ class PaymentController extends Controller
         return $this->transaction->verify()
         ? $this->sendSuccessResponse()
         : $this->sendErrorResponse();
-        dd('inja verify paymentController');
     }
     private function sendErrorResponse()
     {
@@ -26,7 +25,6 @@ class PaymentController extends Controller
     }
     private function sendSuccessResponse()
     {
-        dd('inja success');
         return redirect()->route('product.index')->with('success' , ' سفارش با موفقیت ثبت شد ');
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Market extends Model
 {
-    protected $fillable = ['market_name', 'slug', 'is_active','is_super_active' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'center_id' , 'agent_id'];
+    protected $fillable = ['market_name', 'slug', 'is_active','is_super_active' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'center_id' , 'agent_id' , 'wallet'];
 
     public function agent()
     {
@@ -43,6 +43,11 @@ class Market extends Model
     public function images()
     {
         return $this->morphMany(Image::class , 'imageable');
+    }
+    public function increaseWallet($price , $quantity)
+    {
+        $this->wallet += $price * $quantity;
+        $this->save();
     }
 
 }

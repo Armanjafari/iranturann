@@ -16,10 +16,6 @@ class Product extends Model
     {
         return $this->stock >= $quantity;
     }
-    public function decrementStock($count)
-    {
-        return $this->decrement('stock' , $count);
-    }
     // public function getPriceAttribute($price)
     // {
     //     $coupons = $this->category->validCoupons();
@@ -42,5 +38,9 @@ class Product extends Model
     public function fulls()
     {
         return $this->hasMany(Full::class);
+    }
+    public function market()
+    {
+        return $this->belongsTo(Market::class);
     }
 }
