@@ -23,7 +23,7 @@ class Market extends Model
     }
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class)->withPivot('percent');
     }
     public function products()
     {
@@ -48,6 +48,10 @@ class Market extends Model
     {
         $this->wallet += $price * $quantity;
         $this->save();
+    }
+    public function setProfit()
+    {
+        $this->categories();
     }
 
 }

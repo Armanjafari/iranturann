@@ -26,7 +26,7 @@ class AddFeildToImagesTable extends Migration
     public function down()
     {
         Schema::table('images', function (Blueprint $table) {
-            $table->string('type')->nullable();
+            $table->dropColumn('type');
         });
     }
 }

@@ -213,4 +213,14 @@ class MarketController extends Controller
             $image->delete();
         }
     }
+    public function setProfitForm(Market $market)
+    {
+        $categories = $market->categories;
+        return view('Admin.market.categorySet' , compact('categories' , 'market'));
+    }
+    public function setProfit(Market $market, Request $request)
+    {
+        dd($request->all());
+        return view('Admin.market.categorySet' , compact('market'));
+    }
 }

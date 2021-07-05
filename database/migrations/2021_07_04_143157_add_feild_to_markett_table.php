@@ -15,6 +15,7 @@ class AddFeildToMarkettTable extends Migration
     {
         Schema::table('markets', function (Blueprint $table) {
             $table->integer('wallet')->nullable();
+            $table->integer('profit')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AddFeildToMarkettTable extends Migration
     {
         Schema::table('markets', function (Blueprint $table) {
             $table->dropColumn('wallet');
+            $table->dropColumn('profit');
         });
     }
 }

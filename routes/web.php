@@ -163,6 +163,9 @@ Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.log
 
 Route::get('market/{seller}', 'Market\MarketController@index')->name('show.market');
 
+Route::get('admin/market/setcategory/{market}', 'Admin\MarketController@setProfitForm')->name('show.setprofit.form');
+Route::post('admin/market/setcategory/{market}', 'Admin\MarketController@setProfit')->name('market.setprofit');
+
 // TODO closuer error
 // Route::get('filter', function () {
 //     return view('filter');

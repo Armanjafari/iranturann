@@ -26,7 +26,7 @@ class AddOrderingFeildToFullsTable extends Migration
     public function down()
     {
         Schema::table('fulls', function (Blueprint $table) {
-            $table->integer('ordering')->default(0);
+            $table->dropColumn('ordering');
         });
     }
 }
