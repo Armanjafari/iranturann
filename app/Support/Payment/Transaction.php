@@ -5,13 +5,11 @@ use App\Order;
 use App\Payment;
 use App\Support\Basket\Basket;
 use App\Support\Cost\Contracts\CostInterface;
-use App\Support\Payment\Gateways\GatewayInterface;
 use App\Support\Payment\Gateways\Mellat;
 use App\Support\Payment\Gateways\Saman;
 use App\Support\Payment\Gateways\Pasargad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class Transaction
 {
@@ -26,7 +24,7 @@ class Transaction
     }
     public function checkout()
     {
-        dd($this->request->all());
+        // dd($this->request->all());
         DB::beginTransaction();
         try {
             $order = $this->makeOrder();

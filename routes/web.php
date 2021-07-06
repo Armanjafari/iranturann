@@ -164,12 +164,12 @@ Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.log
 Route::get('market/{seller}', 'Market\MarketController@index')->name('show.market');
 
 Route::get('admin/market/setcategory/{market}', 'Admin\MarketController@setProfitForm')->name('show.setprofit.form');
-Route::post('admin/market/setcategory/{market}', 'Admin\MarketController@setProfit')->name('market.setprofit');
+Route::post('admin/market/setcategory/{market}/{category}', 'Admin\MarketController@setProfit')->name('market.setprofit');
 
 // TODO closuer error
-// Route::get('filter', function () {
-//     return view('filter');
-// });
+Route::get('filter', function () {
+    return view('Market.financial');
+});
 // Route::get('etesal', function () {
 //     return view('etesal');
 // }); 
@@ -187,6 +187,7 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'i
 });
 Route::get('search/Product','Market\ProductController@search')->name('market.search');
 Route::get('addtest', 'Market\ProductController@vareityForm')->name('market.add.product.form');
+Route::get('financial', 'Market\MarketController@financalForm')->name('financial.index');
 
 Route::group(['namespace' => 'File',], function () {
     Route::get('file/create', 'FileController@create')->name('file.create');

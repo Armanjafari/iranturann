@@ -5,15 +5,19 @@
     <div class="card-header add-product-box text-center">
         <span class="add-product"> مدیریت درصد سود به ازای دسته بندی</span>
     </div>
+    @include('alerts.success')
+    @include('alerts.errors')
     <div class="card mt-3 text-right">
         <div class="card-body">
+            <span> {{$market->market_name}} </span>
             <div class="row">
                 @forelse ($categories as $category)
-                <form action="{{ route('show.setprofit') }}" method="post">
                 <div class="col-lg-6 mt-5">
+                <form action="{{ route('market.setprofit' ,['market' => $market->id , 'category' => $category->id]) }}" method="post">
+                    @csrf
                     <div class="first-name">
                         <label class="label">  {{$category->persian_name}}  </label>
-                        <input type="text" name="category" value="{{$category->pivot->percent}}"
+                        <input type="text" name="profit" value="{{$category->pivot->percent}}"
                             class="form-control p-3 form-control-one" placeholder=" درصد سود ">
                     </div>
                 </div>

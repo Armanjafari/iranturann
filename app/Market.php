@@ -53,6 +53,10 @@ class Market extends Model
     {
         $this->categories();
     }
+    public function financials()
+    {
+        return $this->hasMany(Financial::class);
+    }
 
 }
 

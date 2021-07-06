@@ -26,7 +26,7 @@
 		@csrf
 <a class=" active Seller3" id="nav-home-tab" data-toggle="tab" href="#nav-home2"
                                 role="tab" aria-controls="nav-home" aria-selected="true">پرداخت آنلاین 
-								<input type="radio" name="method" value="online" style="" id=""></a>
+								<input type="radio" value="online" style="" id=""></a>
 								<a class="Seller3 active mr-3" id="nav-profile-tab" data-toggle="tab" href="#nav-profile2"
                                 role="tab" aria-controls="nav-profile2" aria-selected="false">کارت به کارت</a>
 								<a class="Seller3 active mr-3" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
@@ -71,7 +71,7 @@
 	</div>
 	<div class="col-md-4">
 		@include('Product.summary')
-		<a onclick="event.preventDefault();document.getElementById('checkout-formm').submit()" class="btn btn-primary d-block w-100"> پرداخت </a>
+		<a onclick="event.preventDefault();document.getElementById('checkout-form').submit()" class="btn btn-primary d-block w-100"> پرداخت </a>
 	</div>
 </div>
 <div class="row">
