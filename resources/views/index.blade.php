@@ -36,17 +36,26 @@
                 <div id="empty" class="dropdown-header">شهر مورد نظر شما پیدا نشد</div>
             </div>
         </div>
-
     </nav>
 </header>
 <!-- end navbar !-->
 <main>
     <div class="row">
-    <div class="col-lg-12 col-lg-12w">
-           <div class="text-right">
+    <div class="col-lg-8 col-lg-12w">
+    <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile25">
+    <div class="item"><img src="assets/img/unnamed.jpg" alt=""></div>
+    <div class="item"><img src="assets/img/ss.jpg" alt=""></div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-lg-12w">
+    <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile26">
+   <div class="item"><img src="assets/img/unnamed.jpg" alt=""></div>
+</div> 
+    </div>
+           <!-- <div class="text-right">
            <span class="discount">تخفیف بالای 20درصد</span>
-           </div> 
-           <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>
+           </div>  -->
+           <!-- <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>
                      <div class="product-card m-3">
                      <a>
                      <span class="badge badge-danger badge-1">25%</span>
@@ -61,9 +70,8 @@
         </div>          
 </a>
                  </div>
-        </div>  
-    </div>
-    
+        </div>   -->
+ 
         <a class="w-100">
         <div class="shopping-centrew mt-5 p-3">
             <img src="assets/img/svg element/مراکز خرید.svg" alt="">

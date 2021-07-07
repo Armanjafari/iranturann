@@ -682,7 +682,7 @@
     border: none;
     outline: none !important;
     cursor: pointer;
-    padding: 1em;
+    padding: 0.5em;
     height: inherit;
     margin-top: 0.5em;
     padding-left: 1.5em;
@@ -929,7 +929,21 @@
     padding: 1.5em;
     border-radius: 10px;
   }
-  
+  .form-control6 {
+    color: #495057;
+    background-color: #fff;
+    outline: none !important;
+    box-shadow:0px 1px 6px 0.1rem #ffcc33;
+    border: none !important;
+    border-radius: 10px;
+  }
+  .form-control6:focus{
+    color: #495057;
+    background-color: #fff;
+    outline: none !important;
+    box-shadow:0px 1px 6px 0.1rem #33cccc;
+    border: none !important;
+  }
   .btn-login {
     cursor: pointer;
     font-size: 20px;
@@ -1314,7 +1328,7 @@
   @media screen and (min-width: 100px) and (max-width: 799px) {
     .svg-shopp {
       background-color: #ffcc33;
-      padding: 0.6em;
+      padding: 0.2em;
       border-radius: 10px;
       cursor: pointer;
       -webkit-box-shadow: 1px 4px 4px 0px #4e27273a;
@@ -2561,7 +2575,11 @@ border: 2px solid #33cccc;
       font-size: 7px;
     }
   }
- 
+ .fa-user{
+   background-color: #ffcc33;
+   padding: 0.7em;
+   border-radius: 10px;
+ }
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */

@@ -77,54 +77,64 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="card">
-			<div class="card-header">
+			<div class="card-header text-center">
                 روش پرداخت
             </div>
 			<div class="card-body">
 			<form action="{{ route('basket.checkout') }}" id='checkout-form' method="post" >
 					@csrf
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">
-							<div class="custom-control custom-radio col-md-6 custom-control-inline">
+					<ul class="list-group list-group-flush text-right">
+						<li class="list-group-item text-right">
+							<div class="custom-control custom-radio custom-control-inline">
+	
 								<input type="radio" id="online" value="online" name="method" class="custom-control-input" checked>
+								
 								<label class="custom-control-label" for="online">
 									پرداخت آنلاین
 								</label>
-
 							</div>
 
-							<select name='gateway'  class="custom-select col-md-4  custom-control-inline">
+							<select name='gateway'  class="custom-select col-md-4  custom-control-inline form-control6">
 								<option value="mellat"> ملت </option>
 								<option value="saman"> سامان </option>
 							</select>
 
-							<p class='text-muted small'>
+							<p class='text-muted small text-right mt-3'>
 							در این روش شما میتونید درب منزل خود مبلغ را پرداخت نمایید
 							</p>
 						</li>
 
 						<li class="list-group-item">
-							<div class="custom-control custom-radio">
-								<input type="radio" id="cash" value="cash" name="method" class="custom-control-input">
-								<label class="custom-control-label" for="cash">
-									پرداخت نقدی
-								</label>
-							</div>
-
-							<p class='text-muted small'>
+						
+							<div class="custom-control custom-radio custom-control-inline">
+	
+	<input type="radio" id="cash" value="cash" name="method" class="custom-control-input" checked>
+	
+	<label class="custom-control-label" for="cash">
+		پرداخت نقدی
+	</label>
+</div>
+							<p class='text-muted small text-right mt-3'>
 							در این روش شما میتونید درب منزل خود مبلغ را پرداخت نمایید
 							</p>
 
 						</li>
 						<li class="list-group-item">
-							<div class="custom-control custom-radio">
+							<!-- <div class="custom-control custom-radio">
 								<input type="radio" id="cart" value="cart" name="method" class="custom-control-input">
 								<label class="custom-control-label" for="cart">
 									کارت به کارت 
 								</label>
-							</div>
-
-							<p class='text-muted small'>
+							</div> -->
+							<div class="custom-control custom-radio custom-control-inline">
+	
+	<input type="radio" id="cart" value="cart" name="method" class="custom-control-input" checked>
+	
+	<label class="custom-control-label" for="cart">
+		کارت به کارت
+	</label>
+</div>
+							<p class='text-muted small text-right mt-3'>
 							لطفا مبلغ را به شماره کارت ۱۲۳ واریز نمایدد و کد پیگیری را به همکاران ما اطلاع دهید
 							</p>
 

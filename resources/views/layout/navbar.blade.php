@@ -326,12 +326,12 @@
             <a href="">
             <img src="{{ asset('assets/img/001.svg') }}" alt="" class="img-thumbnail ml-auto mr-3">
             </a>
-            <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-5 mt-2">
+            <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-3 mt-2">
                 <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
             {{-- <a href="">
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-4">
             </a> --}}
-            <i class="far fa-user mt-1"></i>
+          <a href="{{ route('login') }}">  <i class="far fa-user mt-2"></i></a>
            
                 <a class="text-center btn-logo ml-auto btn-logo1 p-3" href="">ورود/ثبت نام</a>
             

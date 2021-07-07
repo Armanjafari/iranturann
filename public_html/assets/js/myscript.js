@@ -1,5 +1,44 @@
-
 $(document).ready(function(){
+    $('#owl-mobile25').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        autoplay:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            400:{
+                items:1
+            },
+            700:{
+             items:1
+            },
+             1200:{
+                items:1
+             }
+        }   
+    });
+    $('#owl-mobile26').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        autoplay:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            400:{
+                items:1
+            },
+            700:{
+             items:1
+            },
+             1200:{
+                items:1
+             }
+        }   
+    });
   $("#nav-home-tab").click(function(){
     $(".kart-to-kart").css('display','none')
     $(".contactChoice1").css('display','block')
@@ -257,6 +296,7 @@ $( ".owl-prev").html('<img src="assets/img/svg element/left-arrow.svg" alt="">')
 $( ".owl-next").html('<img src="assets/img/svg element/write-arrow.svg" alt="">');
 $(".owl-prev").css('background','none');
 $(".owl-next").css('background','none');
+
 })
 var theToggle = document.getElementById('toggle');
 

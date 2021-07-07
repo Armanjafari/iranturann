@@ -28,7 +28,7 @@
 @csrf
 <div class="card  border-color-promiry">
     <div class="card-body text-right  col-md-12">
-        <p class="login-register ml-auto mr-auto font-weight-bold bg-light w-100 p-3">لاگین</p><br>
+        <p class="login-register ml-auto mr-auto font-weight-bold bg-light w-100 p-3">ورود</p><br>
       <div id="first_name" class="mt-5 mr-lg-5">
           <label>شماره موبایل</label>
          <input type="text" name="phone_number" class="form-control input-lg w-75 form-control-2" placeholder="شماره موبایل خود را وارد نمایید">

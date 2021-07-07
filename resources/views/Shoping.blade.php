@@ -54,7 +54,7 @@
                         <div class="mt-2">
                             <a href="" class="link-application">لینک دانلود اپلیکیشن</a>
                             <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt=""
-                                style="width:15px; display:inline-block" class="ml-1">
+                                style="width:10px; display:inline-block" class="ml-1">
                         </div>
                     </div>
                 </div>
