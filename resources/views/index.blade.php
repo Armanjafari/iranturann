@@ -43,14 +43,24 @@
     <div class="row">
     <div class="col-lg-8 col-lg-12w">
     <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile25">
-    <div class="item"><img src="assets/img/unnamed.jpg" alt=""></div>
-    <div class="item"><img src="assets/img/ss.jpg" alt=""></div>
-    </div>
+    <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.43 (1).jpeg" alt="" class="img-size4"></div>
+    <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.43.jpeg" alt="" class="img-size4"></div>
+    <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.45 (1).jpeg" alt="" class="img-size4"></div>
+    <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.45.jpeg" alt="" class="img-size4"></div>
+</div>
     </div>
     <div class="col-lg-4 col-lg-12w">
     <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile26">
-   <div class="item"><img src="assets/img/unnamed.jpg" alt=""></div>
+   <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.09.jpeg" alt="" class="img-size5"></div>
+   <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.13.jpeg" alt="" class="img-size5"></div>
+   <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.11.jpeg" alt="" class="img-size5"></div>
+   <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.12.jpeg" alt="" class="img-size5"></div>
 </div> 
+<div class="owl-carousel owl-theme mt-3 text-center" id="owl-mobile27">
+<div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.10.jpeg" alt="" class="img-size5"></div>
+<div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.14.jpeg" alt="" class="img-size5"></div>
+<div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.16.jpeg" alt="" class="img-size5"></div>
+</div>
     </div>
            <!-- <div class="text-right">
            <span class="discount">تخفیف بالای 20درصد</span>

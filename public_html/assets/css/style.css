@@ -2580,6 +2580,27 @@ border: 2px solid #33cccc;
    padding: 0.7em;
    border-radius: 10px;
  }
+.img-size4{
+  height: 620px;
+  border-radius: 1.2em;
+}
+.img-size5{
+  height: 310px;
+  border-radius: 1.2em;
+}
+@media screen and (min-width: 300px) and (max-width:450px){
+  .img-size4{
+    height: 300px;
+    border-radius: 1.2em;
+  }
+  #owl-mobile26{
+    margin-top: 7em !important;
+  }
+  .img-size5{
+    height: 300px;
+    border-radius: 1.2em;
+  }
+}
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */
