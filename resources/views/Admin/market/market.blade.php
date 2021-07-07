@@ -230,6 +230,7 @@
                             <th>ویرایش</th>
                             <th>حذف</th>
                             <th> مدیریت دسترسی </th>
+                            <th> مدیریت سود مشارکت </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -246,6 +247,7 @@
                             <td><a href="{{route('show.market.edit.form',$market->id)}}">ویرایش</a></td>
                             <td><a href="{{ route('delete.market',$market->id) }}">حذف</a></td>
                             <td><a href="{{ route('show.market.category.form',$market->id) }}">دسترسی</a></td>
+                            <td><a href="{{ route('show.setprofit.form',$market->id) }}">کنترل</a></td>
                         </tr>
                         @empty
                             

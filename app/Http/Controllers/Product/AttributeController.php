@@ -12,6 +12,8 @@ class AttributeController extends Controller
 {
     public function index(Pure $attribute)
     {
+        $attribute->load('attributes');
+        // dd($attribute->attributes->first()->pivot->s);
         // dd($attribute);
         // return $attribute->attributes;
         $product = Product::find(1)->id;

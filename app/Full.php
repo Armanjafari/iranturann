@@ -3,6 +3,7 @@
 namespace App;
 
 use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use App\Support\Pivot\PivotOrderMarket;
 use Illuminate\Database\Eloquent\Model;
 
 class Full extends Model
@@ -33,6 +34,6 @@ class Full extends Model
     }
     public function orders()
     {
-        return $this->belongsToMany(Order::class)->withPivot('quantity','market_id','price','status');
+        return $this->belongsToMany(Order::class)->using(PivotOrderMarket::class)->withPivot(['quantity','market_id','price','status' ,'category_id']);
     }
 }

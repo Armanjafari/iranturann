@@ -17,6 +17,7 @@ use Illuminate\Support\Str;
 
 class MarketController extends Controller
 {
+
     public function showForm()
     {
         $markets = Market::with('agent', 'user.shipings.city.province', 'center')->get();
@@ -218,9 +219,11 @@ class MarketController extends Controller
         $categories = $market->categories;
         return view('Admin.market.categorySet' , compact('categories' , 'market'));
     }
-    public function setProfit(Market $market, Request $request)
+    public function setProfit(Market $market,$category, Request $request)
     {
-        dd($request->all());
-        return view('Admin.market.categorySet' , compact('market'));
+        $market->categories()
+        ->updateExistingPivot($category,['percent' => $request->input('profit')]);
+        return redirect()->route('show.setprofit.form',$market->id)->withSuccess(__('iranturan.success message'));
     }
+
 }

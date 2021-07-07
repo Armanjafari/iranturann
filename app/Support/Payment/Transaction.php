@@ -5,13 +5,11 @@ use App\Order;
 use App\Payment;
 use App\Support\Basket\Basket;
 use App\Support\Cost\Contracts\CostInterface;
-use App\Support\Payment\Gateways\GatewayInterface;
 use App\Support\Payment\Gateways\Mellat;
 use App\Support\Payment\Gateways\Saman;
 use App\Support\Payment\Gateways\Pasargad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class Transaction
 {
@@ -26,7 +24,7 @@ class Transaction
     }
     public function checkout()
     {
-        dd($this->request->all());
+        // dd($this->request->all());
         DB::beginTransaction();
         try {
             $order = $this->makeOrder();
@@ -113,19 +111,28 @@ class Transaction
         foreach ($this->basket->all() as $product) {
             $product->load('product');
             // dd($product->product->market_id);
+            $cat_id = $product->product->pure->category_id;
+            $percent = $product->product->market->categories()->wherePivot('category_id',$cat_id)->first()->pivot->percent;
+
             $products[$product->id] = [
                 'quantity' => $product->quantity,
                 'market_id' => $product->product->market_id,
                 'price' => $product->price,
                 'status' => 0,
+                'category_id' => $percent,
             ];
         }
         return $products;
     }
     private function normalizeWallet($order)
     {
+        // TODO refactor needed
         foreach ($order->products as $product) {
-            $product->product->market->increaseWallet($product->pivot->price , $product->pivot->quantity);
+            $profit =($product->pivot->percent / 100) * ($product->pivot->price * $product->pivot->quantity);
+            $final = ($product->pivot->price * $product->pivot->quantity)  - $profit;
+            $product->product->market->increaseWallet($final);
+            $product->product->market->increaseProfit($profit);
         }
     }
+
 }

@@ -1,4 +1,3 @@
-<main>
 @if ($errors->any()) 
 <div class = "alert alert-danger text-right mt-3 mb-3">
    <ul>
@@ -14,4 +13,3 @@
 </div>
 
 @endif
-</main>
