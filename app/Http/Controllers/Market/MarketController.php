@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class MarketController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['is.market' , 'auth'])->only(['financalForm']);
+    }
     public function index(Request $request, Market $seller)
     {
         $seller->products->load('fulls');
