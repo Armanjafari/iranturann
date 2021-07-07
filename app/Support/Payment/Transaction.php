@@ -111,11 +111,14 @@ class Transaction
         foreach ($this->basket->all() as $product) {
             $product->load('product');
             // dd($product->product->market_id);
+            $percent = $product->product->market->categories()->whereCategory_id($product->product->pure->category_id)->first()->percent;
+            dd($percent);
             $products[$product->id] = [
                 'quantity' => $product->quantity,
                 'market_id' => $product->product->market_id,
                 'price' => $product->price,
                 'status' => 0,
+                'category_id' => $percent,
             ];
         }
         return $products;
@@ -126,4 +129,5 @@ class Transaction
             $product->product->market->increaseWallet($product->pivot->price , $product->pivot->quantity);
         }
     }
+
 }

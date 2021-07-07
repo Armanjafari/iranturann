@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Exceptions\FileHasExistsException;
+use App\Support\Pivot\PivotOrderMarket;
 use Illuminate\Database\Eloquent\Model;
 
 class Market extends Model
@@ -56,6 +57,10 @@ class Market extends Model
     public function financials()
     {
         return $this->hasMany(Financial::class);
+    }
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class , 'full_order')->using(PivotOrderMarket::class)->withPivot(['market_id' , 'quantity' , 'price' ,'status']);
     }
 
 }
