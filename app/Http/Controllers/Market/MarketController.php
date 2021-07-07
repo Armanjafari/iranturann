@@ -21,12 +21,12 @@ class MarketController extends Controller
     public function financalForm()
     {
         $user = auth()->user();
-        $this->testFunction($user);
         $products = $user->market->products->load('fulls.orders.payment');
         // dd($user->market->orders);
         $full_price = 0;
         $sef_product = null;
         $arr = [];
+        $ord = array();
         foreach ($products as $product) {
             // dd($product->market->categories->first()->pivot->percent);
             $user->market->categories->first()->pivot->percent;
@@ -36,10 +36,12 @@ class MarketController extends Controller
                     //  dd($order->pivot->market->categories->first()->pivot);
                     if ($order->payment->status >= 1)
                     {
-                       $order->pivot->wherePivot('market_id' , $user->market->id);
+                        array_push($ord, $order);
+                        $order->pivot->wherePivot('market_id' , $user->market->id);
                         $full_price += $order->pivot->price;
                     }
                 }
+                
             }
         }
         foreach ($products as $product) {
@@ -51,21 +53,6 @@ class MarketController extends Controller
         foreach ($user->market->financials as $financial) {
             $paid += $financial->price;
         }
-        return view('Market.financial' , compact('user' , 'products' , 'full_price' , 'paid'));
-    }
-
-    public function testFunction($user)
-    {
-        // dd($user->market->orders);
-        // dd($user->market->categories);
-        $categories = array('categories'=>$user->market->categories);
-        dd($categories);
-        foreach ($user->market->categories as $category) {
-    
-        }
-        dd($categories);
-        foreach ($user->market->orders as $order) {
-            dd($order->products);
-        }
+        return view('Market.financial' , compact('user' , 'products' , 'full_price' , 'paid' , 'ord'));
     }
 }

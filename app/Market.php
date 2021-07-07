@@ -45,9 +45,9 @@ class Market extends Model
     {
         return $this->morphMany(Image::class , 'imageable');
     }
-    public function increaseWallet($price , $quantity)
+    public function increaseWallet($price)
     {
-        $this->wallet += $price * $quantity;
+        $this->wallet += $price;
         $this->save();
     }
     public function setProfit()
@@ -61,6 +61,11 @@ class Market extends Model
     public function orders()
     {
         return $this->belongsToMany(Order::class , 'full_order')->using(PivotOrderMarket::class)->withPivot(['market_id' , 'quantity' , 'price' ,'status']);
+    }
+    public function increaseProfit($price)
+    {
+        $this->profit += $price;
+        $this->save();
     }
 
 }
