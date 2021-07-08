@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    $(document).ready(function(){
+        $("#activeclasses").click(function(){
+          $(this).addClass("active-1")
+           $("#activeclasses1").removeClass("active-1")
+          
+        })
+        $("#activeclasses1").click(function(){
+          $(this).addClass("active-1")
+          $("#activeclasses").removeClass("active-1")
+        })
+      })
     var navListItems = $('div.setup-panel div a'),
         allWells = $('.setup-content'),
         allNextBtn = $('.nextBtn'),

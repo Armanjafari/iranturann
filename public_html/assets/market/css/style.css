@@ -1874,8 +1874,6 @@ a {
 #blah {
   width: 100px;
   height: 100px;
-  border: none !important;
-  outline: none !important;
 }
 
 #blah1 {
@@ -2554,9 +2552,25 @@ p {
   color: #fff;
 }
 
+.active-1 {
+  background-color: #33cccc !important;
+}
+
 .form-control-5 {
   background-image: url("../img/phone.svg");
   background-repeat: no-repeat;
   background-position: 1em;
+}
+
+.table-seler4 {
+  font-size: 13px;
+}
+
+.table-seller5 {
+  font-size: 11px !important;
+}
+
+.steps-step:focus {
+  background-color: red !important;
 }
 /*# sourceMappingURL=style.css.map */

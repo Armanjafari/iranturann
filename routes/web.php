@@ -167,9 +167,9 @@ Route::get('admin/market/setcategory/{market}', 'Admin\MarketController@setProfi
 Route::post('admin/market/setcategory/{market}/{category}', 'Admin\MarketController@setProfit')->name('market.setprofit');
 
 // TODO closuer error
-Route::get('filter', function () {
-    return view('Market.financial');
-});
+// Route::get('filter', function () {
+//     return view('Market.financial');
+// });
 // Route::get('etesal', function () {
 //     return view('etesal');
 // }); 
@@ -186,9 +186,11 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'i
 
 });
 Route::get('search/Product','Market\ProductController@search')->name('market.search');
-Route::get('addtest', 'Market\ProductController@vareityForm')->name('market.add.product.form');
+Route::get('owner/addtest', 'Market\ProductController@vareityForm')->name('market.add.product.form');
 Route::get('owner/financial', 'Market\MarketController@financalForm')->name('financial.index');
 Route::get('owner/orders', 'Market\MarketController@ordersForm')->name('orders.index');
+Route::get('owner/product/submit', 'Market\MarketController@ProdcutRegistraitionForm')->name('Prodcut.registraition.form');
+Route::post('owner/product/submit', 'Market\MarketController@ProdcutRegistraition')->name('Prodcut.registraition');
 
 Route::group(['namespace' => 'File',], function () {
     Route::get('file/create', 'FileController@create')->name('file.create');

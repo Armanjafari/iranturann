@@ -1,53 +1,66 @@
 @extends('Market.layout.master')
 @section('content')
-<div class="container-fluid">
-    <div class="row">
-        <div class="mr-auto ml-auto mt-5">
-            <a href="" class="btn-warning p-3 product-new2">
-                ایجاد کالای جدید
-            </a>
-        </div>
-    </div>
-    <br> <br>
-    <div class="card serch-moving">
-        <div class="card-body serch-moving">
-            <form action="{{ route('market.search') }}" method="get">
-                <div class="container-2">
-                    <input name="query" type="text" placeholder="serch...">
-            </form>
-            <div class="serch"></div>
-        </div>
-    </div>
+<main class="mt-4">
+    <!-- start add-product box-->
+    <form action="{{ route('market.search') }}" method="get">
+
+    <div class="col-lg-12 d-flex justify-content-center">
+    <input type="search" name="query" id="" placeholder="دنبال چی می گردی؟" class="p-1 form-control serch-box">
+        </form>    
 </div>
-<div class="row">
+<div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile20">
+@forelse ($categories as $category)
+<div class="item"><a href="" class="Seller"> {{$category->persian_name}} </a></div>
+
+@empty
+
+@endforelse
+</div>
+<div class="col-lg-12 mt-5 pr-0 pl-0">
+  <div class="w-50 mr-auto ml-auto"> <a href=""><p class="discount">دیدن تمام محصولات این دسته بندی</p></a></div>
     @forelse ($categories as $category)
     @forelse ($category->products as $product)
-    <div class="col-lg-3 mt-5">
+    <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>
         <form action="{{ route('market.add.product') }}" method="post">
             @csrf
-            <div class="card text-center">
-                <img class="card-img-top" src="{{ $product->images->first()->address ?? '#' }}" alt="هپل">
-                <div class="card-body">
-                    <select name="product" style="visibility:hidden;">
-                        <option value="{{$product->id}}"></option>
-                    </select>
-                    <h5 class="card-title"> {{$product->persian_title}} </h5>
-                    <p class="card-text">{{ ' شناسه     محصول : ' . $product->id }}</p>
-                    @if (!Auth::user()->market->products()->wherePure_id($product->id)->first())
-                    <input type="submit" value="افزودن" class="btn btn-primary pl-5 pr-5 pt-2 pb-2">
-                    @else
-                    <input disabled type="submit" value="شما فروشنده هستید" class="btn btn-primary pl-5 pr-5 pt-2 pb-2">
-                    @endif
+        <div class="product-card mb-3">
+            <a class="w-100">
+
+
+                <img src="{{ $product->images->first()->address ?? '#' }}" alt=""
+                    class="img-product-size mr-auto ml-auto">
+                <caption>
+                    <p class="mt-3 caption-product mb-0">{{$product->persian_title}}</p>
+                </caption>
+                <select name="product" style="display: none">
+                    <option value="{{$product->id}}"></option>
+                </select>
+                @if (!Auth::user()->market->products()->wherePure_id($product->id)->first())
+                <div class="text-center caption-product mt-1">
+                    <button type="submit" class="btn btn-primary caption-product p-1 mb-2"> فروشنده شوید</button>
                 </div>
-            </div>
+
+                @else
+                <div class="text-center caption-product mt-1">
+                    <button disabled class="btn btn-primary caption-product p-1 mb-2">شما فروشنده شوید</button>
+                </div>
+                @endif
+            </a>
+        </div>
         </form>
     </div>
     @empty
+@endforelse
 
-    @endforelse
+@empty
 
-    @empty
+@endforelse
+<div class="text-center mt-4">
+    <a href="{{ route('Prodcut.registraition.form') }}" class="btn btn-success">
+       <i class="fa fa-plus"></i>
+       افزودن محصول
+    </a>
+    </div>
 
-    @endforelse
-</div>
-@endsection
+  </div>
+  @endsection

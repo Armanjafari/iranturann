@@ -1,50 +1,54 @@
 @extends('Market.layout.master')
 @section('content')
-<div class="container-fluid">
-    <div class="row">
-        <div class="mr-auto ml-auto mt-5">
-            <a href="" class="btn-warning p-3 product-new2">
-                ایجاد کالای جدید
+<main class="mt-4">
+    <!-- start add-product box-->
+    <form action="{{ route('market.search') }}" method="get">
+
+    <div class="col-lg-12 d-flex justify-content-center">
+    <input type="search" name="query" id="" placeholder="دنبال چی می گردی؟" class="p-1 form-control serch-box">
+        </form>    
+</div>
+<div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile20">
+@forelse ($categories as $category)
+<div class="item"><a href="" class="Seller"> {{$category->persian_name}} </a></div>
+
+@empty
+
+@endforelse
+</div>
+<div class="col-lg-12 mt-5 pr-0 pl-0">
+  <div class="w-50 mr-auto ml-auto"> <a href=""><p class="discount">دیدن تمام محصولات این دسته بندی</p></a></div>
+    @forelse (Auth::user()->market->products as $product)
+    <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>
+        <form action="{{ route('market.variety.add.form') }}" method="GET">
+            @csrf
+        <div class="product-card mb-3">
+            <a class="w-100">
+
+
+                <img src="{{ $product->pure->images->first()->address ?? '#' }}" alt=""
+                    class="img-product-size mr-auto ml-auto">
+                <caption>
+                    <p class="mt-3 caption-product mb-0">{{$product->persian_title}}</p>
+                </caption>
+                <select name="product" style="display: none">
+                    <option value="{{$product->id}}"></option>
+                </select>
+                <div class="text-center caption-product mt-1">
+                    <button type="submit" class="btn btn-primary caption-product p-1 mb-2">  تنوع </button>
+                </div>
             </a>
         </div>
+        </form>
     </div>
-    <br> <br>
-    <div class="card serch-moving">
-        <div class="card-body serch-moving">
-            <form action="{{ route('market.search') }}" method="get">
-                <div class="container-2">
-                    <input name="query" type="text" placeholder="serch...">
-                </div>
-            </form>
-        </div>
+@empty
+
+@endforelse
+<div class="text-center mt-4">
+    <a href="pre-registration.html" class="btn btn-success">
+       <i class="fa fa-plus"></i>
+       افزودن محصول
+    </a>
     </div>
-
-    <div class="row">
-        @forelse (Auth::user()->market->products as $product)
-        <div class="col-lg-3 mt-5">
-            <form action="{{ route('market.variety.add.form') }}" method="GET">
-                @csrf
-                <div class="card text-center">
-                    <img class="card-img-top" src="{{ $product->pure->images->first()->address ?? '#' }}" alt="test"
-                        width="100">
-                    <div class="card-body">
-                        <select name="product" style="visibility:hidden;">
-                            <option value="{{$product->id}}"></option>
-                        </select>
-                        <h5 class="card-title"> {{$product->persian_title}} </h5>
-                        <p class="card-text">{{ ' شناسه     محصول : ' . $product->pure->id }}</p>
-                        <input type="submit" value="تنوع" class="btn btn-primary pl-5 pr-5 pt-2 pb-2">
-
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        @empty
-
-        @endforelse
-
-
-    </div>
-</div>
+  </div>
 @endsection

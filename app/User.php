@@ -82,4 +82,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasOne(Market::class);
     }
+    public function customers()
+    {
+        return $this->hasMany(User::class, 'parent_id', 'id');
+    }
 }

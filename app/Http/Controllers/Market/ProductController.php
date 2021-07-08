@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','is.market']);
         
     }
     public function index()
@@ -31,6 +31,7 @@ class ProductController extends Controller
     public function add(Request $request)
     {
         $user = Auth::user();
+        $categories = $user->market->categories;
         $request->validate([
             'product' => 'required'
         ]);
@@ -41,7 +42,9 @@ class ProductController extends Controller
     }
     public function vareityForm()
     {
-        return view('Market.variety');
+        $user = Auth::user();
+        $categories = $user->market->categories;
+        return view('Market.variety' , compact('categories'));
     }
     public function vareityFinalForm(Request $request)
     {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Market;
 
 use App\Http\Controllers\Controller;
 use App\Market;
+use App\Pure;
 use Illuminate\Http\Request;
 
 class MarketController extends Controller
@@ -61,5 +62,42 @@ class MarketController extends Controller
         // $orders = auth()->user()->market->orders;
         // dd($orders);
         return view('Market.orders', compact('orders'));
+    }
+    public function ProdcutRegistraitionForm()
+    {
+        return view('Market.product_registration');
+    }
+    public function ProdcutRegistraition(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'persian_title' => 'required',
+            'category_id' => 'required|integer',
+            'price' => 'required',
+            'description' => 'required',
+            'weight' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048'
+
+        ]);
+        $pure = Pure::create([
+            'title' => $request->input('title'),
+            'persian_title' => $request->input('persian_title'),
+            'category_id' => $request->input('categoy'),
+            'description' => $request->input('description'),
+            'weight' => $request->input('weight'),
+            'status' => 0,
+        ]);
+        $this->createImages($request);
+    }
+    public function createImages(Request $request)
+    {
+        foreach ($request->file('images') as $image) {
+            $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
+            $image->move(public_path($destination), $image->getClientOriginalName());
+            $image->images()->create([
+                'address' => $destination . $image->getClientOriginalName()
+            ]);
+        }
+
     }
 }
