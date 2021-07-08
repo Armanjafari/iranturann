@@ -187,7 +187,8 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'i
 });
 Route::get('search/Product','Market\ProductController@search')->name('market.search');
 Route::get('addtest', 'Market\ProductController@vareityForm')->name('market.add.product.form');
-Route::get('financial', 'Market\MarketController@financalForm')->name('financial.index');
+Route::get('owner/financial', 'Market\MarketController@financalForm')->name('financial.index');
+Route::get('owner/orders', 'Market\MarketController@ordersForm')->name('orders.index');
 
 Route::group(['namespace' => 'File',], function () {
     Route::get('file/create', 'FileController@create')->name('file.create');

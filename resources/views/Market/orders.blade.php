@@ -4,7 +4,7 @@
     <div class="col-lg-12 pr-3">
       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active pr-2 pl-2 table-seler4" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">کل سفارشات</a>
+          <a class="nav-link pr-2 pl-2 table-seler4 active" id="pills-contact-tab1" data-toggle="pill" href="#pills-contact1" role="tab" aria-controls="pills-contact" aria-selected="false">پرداخت شده</a>
         </li>
         <li class="nav-item">
           <a class="nav-link pr-2 pl-2 table-seler4" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">آماده ارسال</a>
@@ -12,8 +12,9 @@
         <li class="nav-item">
           <a class="nav-link pr-2 pl-2 table-seler4" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">مرجوع شده</a>
         </li> 
+        
         <li class="nav-item">
-          <a class="nav-link pr-2 pl-2 table-seler4" id="pills-contact-tab1" data-toggle="pill" href="#pills-contact1" role="tab" aria-controls="pills-contact" aria-selected="false">پرداخت شده</a>
+          <a class="nav-link  pr-2 pl-2 table-seler4" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">کل سفارشات</a>
         </li>
       </ul>
       <div class="col-lg-12 d-flex justify-content-center">
@@ -32,13 +33,21 @@
           </tr>
         </thead>
         <tbody id="myTable">
+          @forelse ($orders as $order)
+          @if ($order->payment->status >= 1)
           <tr>
-            <td>#1234</td>
-            <td>هودی داس</td>
-            <td>2</td>
-            <td>1,000,000</td>
-            <td>پرداخت شده</td>
+            <td>{{$order->id}}</td>
+            <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
+            <td>{{$order->pivot->quantity}}</td>
+            <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
+            <td> {{ $order->payment->status }} </td>
           </tr>
+            
+          @endif
+          @empty
+            <span>سفارش وجود ندارد</span>
+          @endforelse
+         
         </tbody>
       </table>
       </div>
@@ -51,22 +60,23 @@
               <th class=" table-seller5">تعداد</th>
               <th class=" table-seller5">قیمت</th>
               <th class=" table-seller5">وضعیت</th>
-              <th class=" table-seller5">جزئیات</th>
             </tr>
           </thead>
           <tbody id="myTable">
+            @forelse ($orders as $order)
+            @if ($order->payment->status == 2)
             <tr>
-              <td>#1234</td>
-              <td>هودی داس</td>
-              <td>2</td>
-              <td>1,000,000</td>
-              <td>آماده ارسال</td>
-              <td>
-                <button type="button" class="btn btn-primary pt-1 pb-1 pr-2 pl-2 table-seler3" data-toggle="modal" data-target="#exampleModalCenter4">
-                  نمایش جزئیات
-                </button>
-              </td>
+              <td>{{$order->id}}</td>
+              <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}} </td>
+              <td>{{$order->pivot->quantity}}</td>
+              <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
+              <td> آماده ارسال </td>
             </tr>
+              
+            @endif
+            @empty
+              <span>سفارش وجود ندارد</span>
+            @endforelse
           </tbody>
         </table>
       </div>
@@ -79,46 +89,23 @@
             <th class=" table-seller5">تعداد</th>
             <th class=" table-seller5">قیمت</th>
             <th class=" table-seller5">وضعیت</th>
-            <th class=" table-seller5">جزئیات</th>
           </tr>
         </thead>
         <tbody id="myTable">
+          @forelse ($orders as $order)
+          @if ($order->payment->status == -10)
           <tr>
-            <td>#1234</td>
-            <td>هودی داس</td>
-            <td>2</td>
-            <td>1,000,000</td>
-            <td>مرجوع شده</td>
-            <td>
-              <button type="button" class="btn btn-primary pt-1 pb-1 pr-2 pl-2 table-seler3" data-toggle="modal" data-target="#exampleModalCenter4">
-                نمایش جزئیات
-              </button>
-            </td>
+            <td>{{$order->id}}</td>
+            <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
+            <td>{{$order->pivot->quantity}}</td>
+            <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
+            <td> {{ $order->payment->status }} </td>
           </tr>
-          <tr>
-            <td>#2345</td>
-            <td>عطر میلانو</td>
-            <td>5</td>
-              <td>500,000</td>
-              <td>مرجوع شده</td>
-              <td>
-                <button type="button" class="btn btn-primary pt-1 pb-1 pr-2 pl-2 table-seler3" data-toggle="modal" data-target="#exampleModalCenter4">
-                  نمایش جزئیات
-                </button>
-              </td>
-          </tr>
-          <tr>
-            <td>#4789</td>
-            <td>لباس مردانه</td>
-            <td>10</td>
-            <td>200,000</td>
-              <td>مرجوع شده</td>
-              <td>
-                <button type="button" class="btn btn-primary pt-1 pb-1 pr-2 pl-2 table-seler3" data-toggle="modal" data-target="#exampleModalCenter4">
-                  نمایش جزئیات
-                </button>
-              </td>
-          </tr>
+            
+          @endif
+          @empty
+            <span>سفارش وجود ندارد</span>
+          @endforelse
         </tbody>
       </table>
       </div>
@@ -131,46 +118,23 @@
               <th class=" table-seller5">تعداد</th>
               <th class=" table-seller5">قیمت</th>
               <th class=" table-seller5">وضعیت</th>
-              <th class=" table-seller5">جزئیات</th>
             </tr>
           </thead>
           <tbody id="myTable">
+            @forelse ($orders as $order)
+            @if ($order->payment->status == 1)
             <tr>
-              <td>#1234</td>
-              <td>هودی داس</td>
-              <td>2</td>
-              <td>1,000,000</td>
-              <td>پرداخت شده</td>
-              <td>
-                <button type="button" class="btn btn-primary pt-1 pb-1 pr-2 pl-2 table-seler3" data-toggle="modal" data-target="#exampleModalCenter4">
-                  نمایش جزئیات
-                </button>
-              </td>
+              <td>{{$order->id}}</td>
+              <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
+              <td>{{$order->pivot->quantity}}</td>
+              <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
+              <td> پرداخت شده </td>
             </tr>
-            <tr>
-              <td>#2345</td>
-              <td>عطر میلانو</td>
-              <td>5</td>
-                <td>500,000</td>
-                <td>پرداخت شده</td>
-                <td>
-                  <button type="button" class="btn btn-primary pt-1 pb-1 pr-2 pl-2 table-seler3" data-toggle="modal" data-target="#exampleModalCenter4">
-                    نمایش جزئیات
-                  </button>
-                </td>
-            </tr>
-            <tr>
-              <td>#4789</td>
-              <td>لباس مردانه</td>
-              <td>10</td>
-              <td>200,000</td>
-                <td>پرداخت شده</td>
-                <td>
-                  <button type="button" class="btn btn-primary pt-1 pb-1 pr-2 pl-2 table-seler3" data-toggle="modal" data-target="#exampleModalCenter4">
-                    نمایش جزئیات
-                  </button>
-                </td>
-            </tr>
+              
+            @endif
+            @empty
+              <span>سفارش وجود ندارد</span>
+            @endforelse
           </tbody>
         </table>
       </div>

@@ -10,7 +10,7 @@ class MarketController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['is.market' , 'auth'])->only(['financalForm']);
+        $this->middleware(['is.market' , 'auth'])->except(['index']);
     }
     public function index(Request $request, Market $seller)
     {
@@ -54,5 +54,12 @@ class MarketController extends Controller
             $paid += $financial->price;
         }
         return view('Market.financial' , compact('user' , 'products' , 'full_price' , 'paid' , 'ord'));
+    }
+    public function ordersForm()
+    {
+        $orders = auth()->user()->market->orders()->WherePivot('market_id' , auth()->user()->market->id)->get()->load('products.product');
+        // $orders = auth()->user()->market->orders;
+        // dd($orders);
+        return view('Market.orders', compact('orders'));
     }
 }
