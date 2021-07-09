@@ -55,8 +55,7 @@ class BasketController extends Controller
     {
         $this->validateForm($request);
         $order = $this->transaction->checkout(); // TODO check this
-        dd($order);
-        return redirect('products')->withSuccess('سفارش شما با شماره' .$order->id);
+        return redirect()->route('index')->withSuccess('سفارش شما با شماره' . $order->id ?? '');
     }
     private function validateForm(Request $request)
     {

@@ -14,7 +14,7 @@
                                 alt=""></span>
                     </a>
                     <a href="{{ "https://wa.me/" . $center->phone_number}}">bazar bozorg@
-                        <span class="mr-2"><img src="{{asset('assets/img/icons8-whatsapp.svg')}}" class="instagram1"
+                        <span class="mr-2"><img src="{{asset('assets/img/whatsapp-icon.svg')}}" class="instagram1"
                                 alt=""></span>
                     </a>
                     <span>bazar bozorg@</span>
@@ -69,7 +69,7 @@
             @endforelse
 
         </div>
-        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile29">
+        {{-- <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile29">
           <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
           <div class="item"><a href="" class="Seller">پوشاک</a></div>
           <div class="item"><a href="" class="Seller">دیجیتال</a></div>
@@ -183,7 +183,7 @@
                 </div>
             </nav>
             </div>
-        </div>
+        </div> --}}
         <!-- <div class="col-lg-4">
     <div class="text-center">
 <a href="" class="nav-link nav-link1">1</a>

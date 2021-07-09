@@ -114,13 +114,13 @@
          فروشندگان
         </div>
         </a> 
-        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile14">
+        {{-- <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile14">
           <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
           <div class="item"><a href="" class="Seller">پوشاک</a></div>
           <div class="item"><a href="" class="Seller">دیجیتال</a></div>
           <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
           <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
-        </div>
+        </div> --}}
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile15>
         @forelse ($markets as  $market)
         <div class="item">
@@ -145,13 +145,13 @@
       <img src="assets/img/svg element/رنگی.svg" alt="" class="size-icon">   
     </div>
         </a> 
-        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile16">
+        {{-- <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile16">
           <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
           <div class="item"><a href="" class="Seller">پوشاک</a></div>
           <div class="item"><a href="" class="Seller">دیجیتال</a></div>
           <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
           <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
-        </div>
+        </div> --}}
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile17>
         @forelse ($messenger_seller as $messenger)
         <div class="item">

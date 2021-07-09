@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
 <main>
-<div class="row mt-5">
+{{-- <div class="row mt-5">
 <div class="col-lg-8 mt-5 text-right">
 <div>
 <span class="discount">اطلاعات ارسال</span>
@@ -53,7 +53,7 @@
 
 </div>
 </div>
-</div>
+</div> --}}
 <div class="row mt-5">
 	<div class="col-md-8">
 		<div class="card">

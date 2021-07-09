@@ -17,7 +17,7 @@
                                         <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}"
                                                         class="instagram1" alt=""></span>
                                         <span class="bazar2">whatsapp</span>
-                                        <span class="mr-2"><img src="{{asset('assets/img/icons8-whatsapp.svg')}}"
+                                        <span class="mr-2"><img src="{{asset('assets/img/whatsapp-icon.svg')}}"
                                                         class="instagram1" alt=""></span>
                                         <span class="bazar2">telegram</span>
                                         <span class="mr-2"><img src="{{asset('assets/img/svg element/تلگرام2.svg')}}"
