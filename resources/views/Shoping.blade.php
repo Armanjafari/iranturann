@@ -13,14 +13,14 @@
                         <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}" class="instagram1"
                                 alt=""></span>
                     </a>
-                    <a href="{{ "https://wa.me/" . $center->phone_number}}">bazar bozorg@
+                    <a href="{{ "https://wa.me/" . $center->phone_number}}">negin@
                         <span class="mr-2"><img src="{{asset('assets/img/whatsapp-icon.svg')}}" class="instagram1"
                                 alt=""></span>
                     </a>
-                    <span>bazar bozorg@</span>
+                    <span>negin@</span>
                     <span class="mr-2"><img src="{{asset('assets/img/svg element/تلگرام2.svg')}}" alt=""
                             class="instagram1"></span>
-                    <span>bazar bozorg@</span>
+                    <span>negin@</span>
                 </div>
             </div>
             <img src="{{ $center->image->address }}" alt="" width="100%" class="mt-1 bootik"> 

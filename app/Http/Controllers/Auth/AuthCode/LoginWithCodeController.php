@@ -6,6 +6,7 @@ use App\ActiveCode;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CodeValidator;
 use App\Http\Requests\LoginWithCodeValidator;
+use App\Services\MeliPayamak\MeliPayamak;
 use App\Services\Notifications\Notification;
 use App\User;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -31,18 +32,26 @@ class LoginWithCodeController extends Controller
         }
         $this->incrementLoginAttempts($request);
         $phone_number = $request->input('phone_number');
+        session()->put('phone_nummber', $phone_number);
         //dd($phone_number);
         $user = User::where('phone_number',$phone_number)->first();
+        $this->check($user);
         $this->sendSms($user);
         return redirect()->route('verify_login_code');
         
 
 
     }
+    public function check($user)
+    {
+        if (!$user) {
+            return view('AuthWithCode.register');
+        }
+    }
     public function sendSms(User $user)
     {
-        $notif = resolve(Notification::class);
-        $notif->sendSms($user);
+        $notif = new MeliPayamak($user , 'code');
+        $notif->send($user , 'code');
     }
     public function verifyForm()
     {
