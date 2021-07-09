@@ -694,7 +694,13 @@
     .btn-logo {
       display: none;
     }
+     .Seller{
+      padding: 0.4em 2.5em 0.4em 2.5em !important;
+    }
     .menu-level-1>.btn-logo2{
+      display: none;
+    }
+    #owl-mobile26 ,#owl-mobile27{
       display: none;
     }
     .menu-level-1>.svg-shopp{
@@ -1445,7 +1451,7 @@
   
   @media screen and (min-width: 300px) and (max-width: 450px) {
     .serch-box {
-      width: 50% !important;
+      width: 75% !important;
     }
   }
   
@@ -2020,7 +2026,8 @@
     box-shadow: 5px 3px 8px 2px #DED6D6;
     box-sizing: border-box;
     border-radius: 1.2em;
-    background-color: #E4EFEF;
+    /* background-color: #E4EFEF; */
+    background-color: #fff;
     direction:ltr;
   }
   .badge-1{
@@ -2106,13 +2113,19 @@ line-height: 70px;
 }
 @media screen and (min-width: 300px) and (max-width: 450px){
   .nav-box{
-    margin-top: -25px;
+    margin-top: 80px;
 }
 .checked{
    font-size: 12px !important;
 }
 .unchecked{
   font-size: 12px !important;
+}
+.fa-star{
+  font-size: 12px !important;
+}
+.shopping-centre-caption{
+  font-size: 16px;
 }
 }
 @media screen and (min-width: 900px) and (max-width: 2000px){
@@ -2403,7 +2416,7 @@ display: none;
 .color-boreder{
   width: 30px;
   height: 30px;
-  border: 0.2em solid rgb(241, 241, 241);
+  border: 0.2em solid rgb(202, 198, 198);
 }
 .download-icon{
   width: 20px;
@@ -2600,6 +2613,10 @@ border: 2px solid #33cccc;
     height: 300px;
     border-radius: 1.2em;
   }
+}
+.size-icon{
+  width: 30px;
+  height: 30px;
 }
 /* .color-boreder:focus{
   border:3px solid #33cccc;

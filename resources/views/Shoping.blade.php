@@ -23,12 +23,17 @@
                     <span>bazar bozorg@</span>
                 </div>
             </div>
-            <img src="{{ $center->image->address }}" alt="" width="100%" class="mt-1 bootik">
-     
+            <div class="owl-carousel owl-theme mt-5" id="owl-mobile30">
+            <!-- <img src="{{ $center->image->address }}" alt="" width="100%" class="mt-1 bootik"> -->
+            <div class="item">  <img src="{{asset('assets/img/WhatsApp Image 2021-07-07 at 17.57.11.jpeg')}}" alt="" width="100%" class="mt-1 bootik"> </div>
+         <div class="item">  <img src="{{asset('assets/img/WhatsApp Image 2021-07-07 at 17.57.12.jpeg')}}" alt="" width="100%" class="mt-1 bootik"></div> 
+         <div class="item"> <img src="{{asset('assets/img/WhatsApp Image 2021-07-07 at 17.57.13.jpeg')}}" alt="" width="100%" class="mt-1 bootik"></div>
+       
+            </div>
         </div>
     </div>
 
-    <div class="col-lg-12  col-12">
+    <div class="col-lg-12  col-12 pr-0 pl-0">
         <div class="owl-carousel owl-theme mt-5" id="owl-mobile5">
             @forelse ($users as $item)
             <div class="item item1">
@@ -64,12 +69,12 @@
             @endforelse
 
         </div>
-        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile14">
-            <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
-            <div class="item"><a href="" class="Seller">پوشاک</a></div>
-            <div class="item"><a href="" class="Seller">دیجیتال</a></div>
-            <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
-            <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
+        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile29">
+          <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
+          <div class="item"><a href="" class="Seller">پوشاک</a></div>
+          <div class="item"><a href="" class="Seller">دیجیتال</a></div>
+          <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
+          <div class="item"><a href="" class="Seller">لوازم التحریر</a></div>
         </div>
         <div class="row">
             <div class="col-lg-3">

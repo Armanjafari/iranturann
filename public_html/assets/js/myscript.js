@@ -144,9 +144,10 @@ $(document).ready(function(){
       loop:true,
       margin:10,
       nav:true,
+      center:true,
       responsive:{
           0:{
-              items:1
+              items:2
           },
            450:{
            items:2
@@ -155,7 +156,41 @@ $(document).ready(function(){
               items:5
           }
       }   
-  }) 
+  });
+  $('#owl-mobile29').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    center:true,
+    responsive:{
+        0:{
+            items:2
+        },
+         450:{
+         items:2
+       },
+        1200:{
+            items:5
+        }
+    }   
+});
+$('#owl-mobile30').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    center:true,
+    responsive:{
+        0:{
+            items:1
+        },
+         450:{
+         items:1
+       },
+        1200:{
+            items:1
+        }
+    }   
+});
   $('#owl-mobile15').owlCarousel({
    loop:true,
    margin:30,
@@ -213,7 +248,7 @@ $('#owl-mobile16').owlCarousel({
   center:true,
   responsive:{
       0:{
-          items:1
+          items:2
       },
        540:{
        items:2

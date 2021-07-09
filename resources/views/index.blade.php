@@ -2,8 +2,10 @@
 @section('content')
 <!--start header2-->
 <header>
-    <nav class="navbar navbar-expand-lg   nav-box">
+    <nav class="navbar navbar-expand-lg nav-box text-right">
+    <div class="w-100">
         <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control2 serch-box mt-lg-1">
+        </div>     
         <!-- <div class="c-search__results text-right">
             <img src="assets/img/svg element/ice-cream (1).svg" alt="" class="icon-seller"> -->
             <!-- <a href="" class="Seller mr-3 mt-3 mt-lg-0">فروشنده موبایل</a>
@@ -23,10 +25,10 @@
                 </div>
        </div> -->
         <div class="dropdown dropdown-city mr-auto">
-            <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins"
+            <!-- <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                لار
-            </button>
+            </button> -->
             <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
                 <form class="px-4 py-2">
                     <input type="search" class="form-control search-city" id="searchCoin" placeholder="شهر مورد نظر"
@@ -43,23 +45,23 @@
     <div class="row">
     <div class="col-lg-8 col-lg-12w">
     <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile25">
-    <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.43 (1).jpeg" alt="" class="img-size4"></div>
-    <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.43.jpeg" alt="" class="img-size4"></div>
-    <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.45 (1).jpeg" alt="" class="img-size4"></div>
-    <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.45.jpeg" alt="" class="img-size4"></div>
+    <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.43 (1).jpeg" alt="" class="img-size4"></a></div>
+    <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.43.jpeg" alt="" class="img-size4"></a></div>
+    <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.45 (1).jpeg" alt="" class="img-size4"></a></div>
+    <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.45.jpeg" alt="" class="img-size4"></a></div>
 </div>
     </div>
     <div class="col-lg-4 col-lg-12w">
     <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile26">
-   <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.09.jpeg" alt="" class="img-size5"></div>
-   <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.13.jpeg" alt="" class="img-size5"></div>
-   <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.11.jpeg" alt="" class="img-size5"></div>
-   <div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.12.jpeg" alt="" class="img-size5"></div>
+   <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.09.jpeg" alt="" class="img-size5"></a></div>
+   <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.13.jpeg" alt="" class="img-size5"></a></div>
+   <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.11.jpeg" alt="" class="img-size5"></a></div>
+   <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.12.jpeg" alt="" class="img-size5"></a></div>
 </div> 
 <div class="owl-carousel owl-theme mt-3 text-center" id="owl-mobile27">
-<div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.10.jpeg" alt="" class="img-size5"></div>
-<div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.14.jpeg" alt="" class="img-size5"></div>
-<div class="item"><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.16.jpeg" alt="" class="img-size5"></div>
+<div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.10.jpeg" alt="" class="img-size5"></a></div>
+<div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.14.jpeg" alt="" class="img-size5"></a></div>
+<div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.57.16.jpeg" alt="" class="img-size5"></a></div>
 </div>
     </div>
            <!-- <div class="text-right">
@@ -88,8 +90,7 @@
          مراکز خرید
         </div>
         </a>
-        <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile13>
-
+        <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile13">
         @forelse ($centers as $center)
             <div class="item">
                <div><a href="{{ route('sellers.by.centers',$center->id) }}"> <img src="{{$center->image->address}}" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
@@ -139,15 +140,13 @@
 </div>
 <a  class="w-100">
         <div class="shopping-centrew mt-5 p-3">
-            <span class="Social-Networks pt-1 pb-1 pr-3 pl-3 ml-3"><img src="{{asset('assets/img/whatsapp-icon.svg')}}" alt="">
-            <img src="assets/img/svg element/اینستاگرام.svg" alt="">
-            <img src="assets/img/svg element/تلگرام.svg" alt="">
-        </span>
+            <img src="{{asset('assets/img/whatsapp-icon.svg')}}" alt="" class="size-icon">
         فروشندگان شبکه اجتماعی
-        </div>
+      <img src="assets/img/svg element/رنگی.svg" alt="" class="size-icon">   
+    </div>
         </a> 
         <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile16">
-          <div class="item"><a href="#gba" class="Seller">لوزام برقی</a></div>
+          <div class="item"><a href="" class="Seller">لوزام برقی</a></div>
           <div class="item"><a href="" class="Seller">پوشاک</a></div>
           <div class="item"><a href="" class="Seller">دیجیتال</a></div>
           <div class="item"><a href="" class="Seller">مواد غذایی</a></div>
