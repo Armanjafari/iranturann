@@ -313,7 +313,7 @@
                         @auth                    
                         <button type="button" class="btn-logo">
                             <i class="far fa-user"></i>
-                            <a class="text-center" href="{{ route('logout') }}">خروج به حساب کاربری</a>
+                            <a class="text-center" href="{{ route('logout') }}">خروج از حساب کاربری</a>
                         </button>
                         @endauth
                 </ul><!-- End Menu Level 1 --> 
@@ -331,15 +331,24 @@
             {{-- <a href="">
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-4">
             </a> --}}
-          <a href="{{ route('login') }}">  <i class="far fa-user mt-2"></i></a>
-           
-                <a class="text-center btn-logo ml-auto btn-logo1 p-3" href="">ورود/ثبت نام</a>
+            @guest
+          <a href="{{ route('login') }}">  <i class="far fa-user mt-2"></i></a>  
+            @endguest
+           @auth
+          <a href="{{ route('logout') }}" class="btn-logo1">خروج</a>  
+           @endauth
+           @guest
+                <a class="text-center btn-logo ml-auto btn-logo1 p-3" href="{{ route('logout') }}">ورود/ثبت نام</a> 
+           @endguest
+           @auth
+                <a class="text-center btn-logo ml-auto btn-logo1 p-3" href="{{ route('login') }}">خروج</a>  
+           @endauth
             
         </div>
         <!--end mobile nav-->
         </header>
         <!-- 
-
+{{-- 
         </a>
                 @guest
                 <button type="button" class="btn-logo">
@@ -350,7 +359,7 @@
                 @auth                    
                 <button type="button" class="btn-logo">
                     <i class="far fa-user"></i>
-                    <a class="text-center" href="{{ route('logout') }}">خروج به حساب کاربری</a>
+                    <a class="text-center" href="{{ route('logout') }}">خروج از حساب کاربری</a>
                 </button>
                 @endauth
-        -->
+        --> --}}

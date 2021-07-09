@@ -23,13 +23,13 @@
                     <span>bazar bozorg@</span>
                 </div>
             </div>
-            <div class="owl-carousel owl-theme mt-5" id="owl-mobile30">
-            <!-- <img src="{{ $center->image->address }}" alt="" width="100%" class="mt-1 bootik"> -->
+            <img src="{{ $center->image->address }}" alt="" width="100%" class="mt-1 bootik"> 
+            {{-- <div class="owl-carousel owl-theme mt-5" id="owl-mobile30">
             <div class="item">  <img src="{{asset('assets/img/WhatsApp Image 2021-07-07 at 17.57.11.jpeg')}}" alt="" width="100%" class="mt-1 bootik"> </div>
          <div class="item">  <img src="{{asset('assets/img/WhatsApp Image 2021-07-07 at 17.57.12.jpeg')}}" alt="" width="100%" class="mt-1 bootik"></div> 
          <div class="item"> <img src="{{asset('assets/img/WhatsApp Image 2021-07-07 at 17.57.13.jpeg')}}" alt="" width="100%" class="mt-1 bootik"></div>
        
-            </div>
+            </div> --}}
         </div>
     </div>
 
