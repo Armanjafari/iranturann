@@ -24,7 +24,14 @@ class LoginWithCodeValidator extends FormRequest
     public function rules()
     {
         return [
-            // 'phone_number' => 'required|numeric|exists:users,phone_number',
+            'phone_number' => 'required|numeric|starts_with:0|min:10',
+        ];
+    }
+    
+    public function messages()
+    {
+        return [
+            'phone_number.starts_with' => 'شماره تلفن باید با 0 شروع شود',
         ];
     }
 }

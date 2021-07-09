@@ -1114,6 +1114,11 @@ cursor: pointer;
    text-decoration-color:#E74C3C;
    text-decoration-thickness: 2px;
 }
+.price-product:hover{
+  text-decoration-color:#E74C3C !important;
+  text-decoration-thickness: 2px !important;
+  color: #839191 !important;
+}
 .Collect-basket{
 float: left;
 }
@@ -1243,8 +1248,13 @@ color: $Secendry-Color;
   background-color: #E4EFEF;
 }
 .How-to-send{
+  border-radius: 50%;
   background-color: #fff;
-  padding: 0.5em;
+  width: 4.3em;
+  height:4.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .How-to-send2{
   position: absolute;
@@ -1326,7 +1336,7 @@ box-shadow: 0 0 2px 2px #ffcc33;
       display: flex;
       flex-direction: row-reverse;
       justify-content: center;
-      height:64px;
+      height:50px;
   }
   
   .rating>input {
@@ -1335,7 +1345,7 @@ box-shadow: 0 0 2px 2px #ffcc33;
   
   .rating>label {
       position: relative;
-      width: 1.2em;
+      width: 1em;
       font-size:2.3em;
       color: #FFD600;
       cursor: pointer;
@@ -1390,5 +1400,267 @@ box-shadow: 0 0 2px 2px #ffcc33;
   background-image: url("../img/iconfinder_search_115695.svg");
 }
 }
+.download-app{
+  font-size: 1.1em;
+  color: $Secendry-Color;
+  font-weight:500;
+}
+.download-app:hover{
+  color: $Secendry-Color;
+} 
+.card-shopping2{
+
+}
+.item-header{
+  box-shadow: 2px 4px 4px 0px #DBD6D6;
+}
+.list-Grouping{
+  box-shadow: 0px 2px 16px 0px rgb(214, 214, 214);
+   background-color: #eeeeee;
+}
+#dropdown-toggle{
+    font-size: 14px;
+  color: #A29C9C;
+}
+// .nav-link::after{
+//   content: "\f067";
+//   float: left;
+//   font-size: 14px;
+//   font-family: FontAwesome;
+//   color: #f2859a;
+// }
+.card-header-list{
+  background-color: #F5F5F5 !important;
+}
+.mr-4-5{
+margin-right: 2rem !important;
+}
+.style-check-box{
   
+}
+.Ordering-box{
+  background-color: #eeeeee;
+  border: 1px solid #E2D9D9 !important;
+}
+.Ordering{
+  border: 1px solid #FFCC33;
+  border-radius: 1.2em;
+  padding: 0.3em 1em;
+  font-size: 0.9em;
+}
+@media screen and (min-width:300px) and (max-width: 767px){
+  .Ordering{
+    display: block;
+  }
+}
+.galery-product{
+  width: 300px;
+  height: 300px;
+}
+@media screen and (min-width:800px) and (max-width: 2000px){
+    // .Ordering-box2{
+    //   height: 66px !important;
+    // }
+}
+.card-box-product{
+  border-radius: 1em !important;
+  box-shadow: 0px 0px 16px 3px #DED6D6 !important;
+  border-color: #E4EFEF;
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+.link-brand{
+  color: #33cccc;
+}
+.box-brand{
+  font-size: 0.9em;
+}
+.link-brand:hover{
+  color: #33cccc;
+}
+.dot2{
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  display: inline-block;
+}
+.Available{
+  font-size: 1.1em;
+}
+.price{
+    font-size: 2em;
+    font-weight: bold;
+}
+.Add-to-cart{
+  background-color: $Secendry-Color;
+  color: #fff;
+  padding: 1em 4em;
+  border-radius: 1.2em;
+  box-shadow: 1px 1px 10px 3px #DED6D6;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.Add-to-cart:hover{
+  color: #fff;
+}
+@media screen and (min-width: 300px) and (max-width: 380px){
+  .Add-to-cart{
+    padding: 1em 2em;
+  }
+}
+.project-tab {
+  padding: 10%;
+  margin-top: -8%;
+}
+.project-tab #tabs{
+  background: #007b5e;
+  color: #eee;
+}
+.project-tab #tabs h6.section-title{
+  color: #eee;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #0062cc;
+  background-color: transparent;
+  border-color: transparent transparent #f3f3f3;
+  border-bottom: 3px solid !important;
+  font-size: 16px;
+  font-weight: bold;
+}
+.project-tab .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  color: #0062cc;
+  font-size: 16px;
+  font-weight: 600;
+}
+.project-tab .nav-link:hover {
+  border: none;
+}
+.project-tab thead{
+  background: #f3f3f3;
+  color: #333;
+}
+.project-tab a{
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+.table-responsive{
+  display: table;
+}
+.Scoring-system{
+  background-color: #F5F5F5;
+  padding: 1em;
+
+}
+.Scoring-system>span{
+font-size: 1.1em;
+}
+.card-coment>p{
+  color: #666666;
+}
+.question{
+  border: 2px solid #FFCC33;
+  padding: 1em;
+  border-radius: 5px;
+}
+.logo-shopping{
+  width: 5em;
+  height: 5em;
+}
+
+
   

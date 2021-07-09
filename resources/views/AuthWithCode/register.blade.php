@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
 <main>
-    <form action="" method="POST">
+    <form action="{{ route('register.with.code') }}" method="POST">
       @csrf
     <div class="col-lg-6 m-auto col-sm-7 col-12">
     <div class="card  border-color-promiry">

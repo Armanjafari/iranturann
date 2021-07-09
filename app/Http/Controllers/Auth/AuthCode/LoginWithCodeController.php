@@ -33,20 +33,19 @@ class LoginWithCodeController extends Controller
         $this->incrementLoginAttempts($request);
         $phone_number = $request->input('phone_number');
         session()->put('phone_nummber', $phone_number);
-        //dd($phone_number);
         $user = User::where('phone_number',$phone_number)->first();
-        $this->check($user);
+        if (!$user) {
+            return view('AuthWithCode.register');
+        }
         $this->sendSms($user);
         return redirect()->route('verify_login_code');
         
 
 
     }
-    public function check($user)
+    public function register(Request $request)
     {
-        if (!$user) {
-            return view('AuthWithCode.register');
-        }
+        dd($request->all());
     }
     public function sendSms(User $user)
     {
