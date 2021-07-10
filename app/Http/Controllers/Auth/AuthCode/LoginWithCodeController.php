@@ -32,7 +32,7 @@ class LoginWithCodeController extends Controller
         }
         $this->incrementLoginAttempts($request);
         $phone_number = $request->input('phone_number');
-        session()->put('phone_nummber', $phone_number);
+        session()->put('phone_number', $phone_number);
         $user = User::where('phone_number',$phone_number)->first();
         if (!$user) {
             return view('AuthWithCode.register');
@@ -62,13 +62,14 @@ class LoginWithCodeController extends Controller
     }
     public function codeValidator(CodeValidator $request)
     {
-        $user = User::where('phone_number',$request->input('phone_number'))->first();
+        $user = User::where('phone_number',session()->get('phone_number'))->first();
+        session()->forget('phone_number');
         $status = ActiveCode::ValidateCode($request->input('code'),$user);
         //dd($status);
         if( $status)
         {
             Auth::login($user);
-            return view('index');
+            return redirect()->route('index');
         }
         return redirect()->back()->withErrors('errors', 'کد منقظی شده است');   
     }

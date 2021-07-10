@@ -24,7 +24,7 @@ class CodeValidator extends FormRequest
     public function rules()
     {
         return [
-            'phone_number' => 'required|numeric|exists:users,phone_number',
+            // 'phone_number' => 'required|numeric|exists:users,phone_number',
             'code' => 'required|numeric|min:4|exists:active_code,code'
             //
         ];

@@ -108,7 +108,7 @@
 						
 							<div class="custom-control custom-radio custom-control-inline">
 	
-	<input type="radio" id="cash" value="cash" name="method" class="custom-control-input" checked>
+	<input type="radio" id="cash" value="cash" name="method" class="custom-control-input">
 	
 	<label class="custom-control-label" for="cash">
 		پرداخت نقدی
@@ -120,15 +120,15 @@
 
 						</li>
 						<li class="list-group-item">
-							<!-- <div class="custom-control custom-radio">
+							{{-- <!-- <div class="custom-control custom-radio">
 								<input type="radio" id="cart" value="cart" name="method" class="custom-control-input">
 								<label class="custom-control-label" for="cart">
 									کارت به کارت 
 								</label>
-							</div> -->
+							</div> --> --}}
 							<div class="custom-control custom-radio custom-control-inline">
 	
-	<input type="radio" id="cart" value="cart" name="method" class="custom-control-input" checked>
+	<input type="radio" id="cart" value="cart" name="method" class="custom-control-input">
 	
 	<label class="custom-control-label" for="cart">
 		کارت به کارت

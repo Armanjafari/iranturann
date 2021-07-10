@@ -24,6 +24,7 @@ class Transaction
     }
     public function checkout()
     {
+        
         // dd($this->request->all());
         DB::beginTransaction();
         try {
