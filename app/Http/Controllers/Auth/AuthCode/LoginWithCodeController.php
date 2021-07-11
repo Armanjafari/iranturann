@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth\AuthCode;
 
 use App\ActiveCode;
+use App\City;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CodeValidator;
 use App\Http\Requests\LoginWithCodeValidator;
@@ -31,26 +32,23 @@ class LoginWithCodeController extends Controller
             return $this->sendLockoutResponse($request);
         }
         $this->incrementLoginAttempts($request);
-        $phone_number = $request->input('phone_number');
+        $phone_number = $request->input('phone_number') ?? session()->get('phone_number');
         session()->put('phone_number', $phone_number);
         $user = User::where('phone_number',$phone_number)->first();
         if (!$user) {
-            return view('AuthWithCode.register');
+            $cities = City::all();
+            return view('AuthWithCode.register',compact('cities'));
         }
-        $this->sendSms($user);
+        $this->sendSms($user , 'code');
         return redirect()->route('verify_login_code');
         
 
 
     }
-    public function register(Request $request)
+    public function sendSms($user, $method)
     {
-        dd($request->all());
-    }
-    public function sendSms(User $user)
-    {
-        $notif = new MeliPayamak($user , 'code');
-        $notif->send($user , 'code');
+        $notif = new MeliPayamak($user , $method);
+        $notif->send();
     }
     public function verifyForm()
     {
@@ -72,6 +70,20 @@ class LoginWithCodeController extends Controller
             return redirect()->route('index');
         }
         return redirect()->back()->withErrors('errors', 'کد منقظی شده است');   
+    }
+    public function register(Request $request)
+    {
+        $user = User::create([
+            'name' => $request->input('name'),
+            'phone_number' => session()->get('phone_number'),
+        ]);
+        $user->shipings()->create([
+            'city_id' => $request->input('city'),
+            'postal_code' => $request->input('postal_code'),
+            'address' => $request->input('address'),
+        ]);
+        return redirect()->route('login_with_code')->withSuccess(' ثبت نام با موفقیت انجام شد ');
+        
     }
   
 }

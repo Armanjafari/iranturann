@@ -307,8 +307,7 @@
                         @guest
                      
                                 
-                                <a class="text-center btn-logo" href="{{ route('login') }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود</a>
-                                <a class="text-center btn-logo2" href="{{ route('register') }}"> <i class="far fa-user pl-1"></i>ثبت نام</a>            
+                                <a class="text-center btn-logo" href="{{ route('login_with_code') }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
                         @endguest
                         @auth                    
                         <button type="button" class="btn-logo">
@@ -332,16 +331,10 @@
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-4">
             </a> --}}
             @guest
-          <a href="{{ route('login') }}">  <i class="far fa-user mt-2"></i></a>  
+          <a href="{{ route('login_with_code') }}">  <i class="far fa-user mt-2"></i></a>  
             @endguest
            @auth
           <a href="{{ route('logout') }}" class="btn-logo1">خروج</a>  
-           @endauth
-           @guest
-                <a class="text-center btn-logo ml-auto btn-logo1 p-3" href="{{ route('logout') }}">ورود/ثبت نام</a> 
-           @endguest
-           @auth
-                <a class="text-center btn-logo ml-auto btn-logo1 p-3" href="{{ route('login') }}">خروج</a>  
            @endauth
             
         </div>
