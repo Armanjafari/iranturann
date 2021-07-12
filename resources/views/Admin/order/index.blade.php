@@ -5,6 +5,8 @@
         <span class="add-product"> وضعیت سفارشات </span>
     </div>
     <div class="row">
+        @include('alerts.errors')
+        @include('alerts.success')
         <div class="col-lg-12 mt-3">
             <table class="table table-bordered table-striped text-center form-control-two">
                 <thead>
@@ -17,20 +19,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($orders as $order)
+                    @forelse ($payments as $payment)
                     <tr>
-                        <td><a href="" class="btn btn-light">{{ $order->id }}</a></td>
-                        <td> {{$order->user->name}} </td>
-                        <td> {{number_format($order->payment->amount)}} تومان </td>
+                        <td><a href="" class="btn btn-light">{{ $payment->order->id }}</a></td>
+                        <td> {{$payment->order->user->name}} </td>
+                        <td> {{number_format($payment->amount)}} تومان </td>
                         <td>
-                            <form action="">
+                            @for ($i = -1; $i <= 4; $i++)
+                            @endfor
+                            <form action="{{ route('order.change.status') }}" method="POST">
+                                @csrf
+                                <input style="display: none;" type="radio" value="{{$payment->id}}" name="payment" checked>
+                                {{$i == $payment->status ? 'selected' : ''}}
                                 <select name="status" class="form-select w-50" id="exampleFormControlSelect1">
-                                    <option value="0">لغو شده</option>
-                                    <option value="1">پرداخت شده</option>
-                                    <option value="2">تایید فروشنده</option>
-                                    <option value="3"> تایید و تست نماینده </option>
-                                    <option value="4">ارسال شده</option>
-                                    <option value="-1">مرجوع شده</option>
+                                    @for ($i = -1; $i <= 4; $i++) 
+                                    {{-- // TODO check this --}}
+                                 <option value="{{$i}}" {{$i == $payment->status ? 'selected' : ''}}>   @lang('iranturan.' .$i) </option>
+                                @endfor
                                 </select>
                                 <input type="submit" value="ثبت" class="btn btn-info mt-3 w-50">
                             </form>

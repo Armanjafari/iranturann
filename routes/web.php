@@ -158,6 +158,7 @@ Route::get('admin/settings/market/{market}', 'Admin\Market\MarketManagementContr
 Route::post('admin/settings/market/{market}/status', 'Admin\Market\MarketManagementController@marketStatus')->name('admin.market.status');
 
 Route::get('admin/orders' , 'Admin\OrderController@index')->name('admin.order.index');
+Route::post('admin/orders' , 'Admin\OrderController@changeStatus')->name('order.change.status');
 
 Route::get('admin/login/', 'Admin\Auth\LoginController@showForm')->name('show.admin.login.form');
 Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.login');

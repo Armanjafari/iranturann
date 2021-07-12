@@ -50,7 +50,7 @@
                     </li>
                 </li>
               </ul>
-              <li class="nav-item"><a href="Status of orders.html" class="nav-link"><span class="text">مدیریت
+              <li class="nav-item"><a href="{{ route('admin.order.index') }}" class="nav-link"><span class="text">مدیریت
                     سفارشات</span></a></li>
               <li class="nav-item"><a href="#Product-management" data-toggle="collapse" aria-expanded="false"
                   class="nav-link"><span class="text" id="dropdown-toggle">مدیریت مراکز خرید <i
