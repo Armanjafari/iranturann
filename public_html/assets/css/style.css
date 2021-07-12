@@ -711,6 +711,14 @@
       padding: 0.9em;
       border-radius: 0.7em;
     }
+    .Ready-to-send {
+      background-color: #F9F9F9;
+      padding: 0.3em 0.7em 0.3em 0.7em;
+      border-radius: 3px;
+      color: #606060;
+      font-size: 8px;
+      float: right;
+    }
   }
   
   @media screen and (min-width: 451px) and (max-width: 820px) {
@@ -2115,17 +2123,34 @@ line-height: 70px;
   .nav-box{
     margin-top: 80px;
 }
+.price-line{
+  font-size: 10px;
+  color: #9B9393;
+  text-decoration: line-through;
+  text-decoration-color: #E74C3C;
+}
+.prodict-price3{
+  font-size: 10px;
+}
+.caption-product{
+  font-size: 10px;
+}
 .checked{
-   font-size: 12px !important;
+   font-size: 8px !important;
 }
 .unchecked{
-  font-size: 12px !important;
+  font-size: 8px !important;
 }
 .fa-star{
-  font-size: 12px !important;
+  font-size: 8px !important;
 }
 .shopping-centre-caption{
   font-size: 16px;
+}
+.badge-1 {
+  border-radius: 0px 10px 10px 0px;
+  padding: 0.8em;
+  font-size: 8px;
 }
 }
 @media screen and (min-width: 900px) and (max-width: 2000px){
@@ -2202,6 +2227,9 @@ line-height: 70px;
 @media screen and (min-width: 300px) and (max-width: 450px){
   .bazar2{
     font-size: 8px;
+}
+.Seller2{
+  font-size: 8px;
 }
 .discount{
   font-size: 0.9em;
@@ -2340,7 +2368,7 @@ input[type=range].ps6{
 
  @media screen and (min-width: 300px) and (max-width:800px){
   .Seller2{
-    padding: 0.5em 1em 0.5em 1em;
+    padding: 0.5em 0.6em 0.5em 0.6em;
   }
  }
  .c-search__results{
@@ -2609,6 +2637,10 @@ border: 2px solid #33cccc;
   .img-size4{
     height: 300px;
     border-radius: 1.2em;
+  }
+  .img-product-size1{
+    width: 100px;
+    height: 100px;
   }
   #owl-mobile26{
     margin-top: 7em !important;
