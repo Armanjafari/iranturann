@@ -8,7 +8,7 @@
             <input type="search" name="query" id="" placeholder="دنبال چی می گردی؟" class="p-1 form-control serch-box">
     </form>
     </div>
-    <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile20">
+    <div class="owl-carousel owl-theme mt-3 text-center" id="owl-mobile20">
         @forelse ($categories as $category)
         <div class="item"><a href="" class="Seller"> {{$category->persian_name}} </a></div>
 
@@ -60,7 +60,7 @@
             @endforelse
         </div>
 
-        <div class="text-center mt-3">
+        <div class="text-center mt-2">
             <a href="{{ route('Prodcut.registraition.form') }}" class="btn btn-success">
                 <i class="fa fa-plus"></i>
                 افزودن محصول

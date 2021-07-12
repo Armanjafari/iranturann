@@ -8,7 +8,7 @@
     <input type="search" name="query" id="" placeholder="دنبال چی می گردی؟" class="p-1 form-control serch-box">
         </form>    
 </div>
-<div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile20">
+<div class="owl-carousel owl-theme mt-4 text-center" id="owl-mobile20">
 @forelse ($categories as $category)
 <div class="item"><a href="" class="Seller"> {{$category->persian_name}} </a></div>
 
@@ -16,7 +16,7 @@
 
 @endforelse
 </div>
-<div class="col-lg-12 mt-5 pr-0 pl-0">
+<div class="col-lg-12 mt-3 pr-0 pl-0">
   <div class="w-50 mr-auto ml-auto"> <a href=""><p class="discount">دیدن تمام محصولات این دسته بندی</p></a></div>
   <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>  
   @forelse (Auth::user()->market->products as $product)
@@ -45,7 +45,7 @@
 @endforelse
 </div>
 
-<div class="text-center mt-4">
+<div class="text-center mt-2">
     <a href="{{ route('Prodcut.registraition.form') }}" class="btn btn-success">
         <i class="fa fa-plus"></i>
         افزودن محصول

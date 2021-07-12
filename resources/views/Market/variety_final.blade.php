@@ -2,7 +2,7 @@
 @section('content')
 <form action="{{ route('market.variety.add') }}" method="post">
     @csrf
-    <select name="product" style="visibility: hidden;" class="form-control" >
+    <select name="product" style="display:none;" class="form-control" >
         <option value="{{$product}}"></option>
     </select>
     <div class="col-lg-12">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center">
+            <div class="text-center mb-5">
                 <input type="submit" class="btn btn-danger" value="ثبت">
             </div>
         </div>
