@@ -166,8 +166,8 @@
                                                 </div>
                                         </div>
                                         @forelse ($products as $product)
-                                        <div class="col-lg-4">
-                                                <div class="product-card m-3">
+                                        <div class="col-lg-6 col-6 pr-2 pl-2 mt-3">
+                                                <div class="product-card text-center">
                                                         @if ($product->fulls->count())
                                                         <a href="{{ route('product.single' , $product->fulls->first()->id ?? '') }}">
                                                         @else
@@ -196,10 +196,10 @@
                                                                                 class="price-line"> {{number_format($product->pure->price)}} </span>  <br> 
                                                                        @if ($product->fulls->count())
                                                                        <span
-                                                                       class="font-weight-bold"> تومان {{  number_format($product->fulls()->orderBy('price','asc')->get('price')->first()->price) ?? 'ناموجود' }}  </span>   
+                                                                       class="font-weight-bold prodict-price3"> تومان {{  number_format($product->fulls()->orderBy('price','asc')->get('price')->first()->price) ?? 'ناموجود' }}  </span>   
                                                                        @else
                                                                        <span
-                                                                       class="font-weight-bold">  ناموجود </span>   
+                                                                       class="font-weight-bold prodict-price3">  ناموجود </span>   
                                                                        @endif
                                                                 </div>
                                                         </a>
