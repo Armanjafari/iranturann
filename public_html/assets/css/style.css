@@ -2228,6 +2228,17 @@ line-height: 70px;
   .bazar2{
     font-size: 8px;
 }
+.category1{
+  width: 100%;
+  border:2px dashed #0E6B4C;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-size: 10px;
+}
+.bootik{
+  position: relative;
+  height: 200px;
+}
 .Seller2{
   font-size: 8px;
 }
