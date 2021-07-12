@@ -65,7 +65,7 @@
                 <i class="fa fa-plus"></i>
                 افزودن محصول
             </a>
-        </div>
+        </div><br><br><br><br>
 
     </div>
     @endsection

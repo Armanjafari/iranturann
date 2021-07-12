@@ -29,7 +29,7 @@
                         @endforelse
                     </select>
                 </div> -->
-                <div class="col-lg-12">
+                <div class="col-lg-12 mt-3">
                     <div class="card form-control-one p-3">
                         <div class="row">
                             <div class="col-lg-3 text-right">
@@ -90,7 +90,7 @@
             <div class="text-center mb-5">
                 <input type="submit" class="btn btn-danger" value="ثبت">
             </div>
-        </div>
+        </div><br><br><br><br>   
     </div>
 </form>
 @endsection
