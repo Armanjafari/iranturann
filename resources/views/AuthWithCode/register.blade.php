@@ -35,10 +35,6 @@
             <label> آدرس </label>
             <textarea type="text" name="address" class="form-control w-75" placeholder="ادرس خود را وارد کنید"> </textarea>
           </div>
-          <div id="first_name" class="mt-5 mr-lg-5">
-            <label> کد پیامک شده </label>
-            <input type="text" name="code" class="form-control w-75" placeholder=" کد پیامک شده را وارد کنید ">
-          </div>
           <div class="text-center ml-lg-5">
             <input type="submit" class="button mt-5  pt-3 pb-3 btn-login sign-up" value="ورود به سیستم">
           </div>

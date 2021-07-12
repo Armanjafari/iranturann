@@ -73,6 +73,12 @@ class LoginWithCodeController extends Controller
     }
     public function register(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'city' => 'required',
+            'postal_code' => 'required',
+            'address' => 'required',
+        ]);
         $user = User::create([
             'name' => $request->input('name'),
             'phone_number' => session()->get('phone_number'),
@@ -82,7 +88,8 @@ class LoginWithCodeController extends Controller
             'postal_code' => $request->input('postal_code'),
             'address' => $request->input('address'),
         ]);
-        return redirect()->route('login_with_code')->withSuccess(' ثبت نام با موفقیت انجام شد ');
+        $this->sendSms($user , 'code');
+        return redirect()->route('verify_login_code')->withSuccess(' ثبت نام با موفقیت انجام شد ');
         
     }
   
