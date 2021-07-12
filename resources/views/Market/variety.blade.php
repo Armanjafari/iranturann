@@ -46,10 +46,10 @@
 </div>
 
 <div class="text-center mt-4">
-    <a href="pre-registration.html" class="btn btn-success">
-       <i class="fa fa-plus"></i>
-       افزودن محصول
+    <a href="{{ route('Prodcut.registraition.form') }}" class="btn btn-success">
+        <i class="fa fa-plus"></i>
+        افزودن محصول
     </a>
-    </div>
+</div>
   </div>
 @endsection

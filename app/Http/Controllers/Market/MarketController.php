@@ -17,6 +17,9 @@ class MarketController extends Controller
     {
         $seller->products->load('fulls');
         $products = $seller->products;
+        foreach ($products as $product) {
+            $product->fulls()->where('is_active',1)->get();
+        }
         return view('market' , compact('seller' , 'products'));
     }
     public function financalForm()

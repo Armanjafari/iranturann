@@ -37,7 +37,7 @@ class MeliPayamak
             'code' => $code,
             'expired_at' => now()->addMinutes(2)]);
         
-        $this->text =  "کد تایید وبسایت بزرگ ایران توران
+        $this->text =  "کد تایید
 " . $code;
     }
     public function validate()
