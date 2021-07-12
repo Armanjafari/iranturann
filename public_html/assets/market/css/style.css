@@ -684,6 +684,7 @@ header > .navbar {
   }
 }
 
+
 @media screen and (min-width: 451px) and (max-width: 820px) {
   .mobile-nav > .mt-1 {
     display: none;
