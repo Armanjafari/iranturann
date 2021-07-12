@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'role:admin']);
+    }
     public function index()
     {
         $payments = Payment::with('order.user' ,'order.products')->get();
@@ -25,5 +29,10 @@ class OrderController extends Controller
             'status' => $request->input('status')
         ]);
         return redirect()->route('admin.order.index')->withSuccess(__('iranturan.success message'));
+    }
+    public function details(Payment $payment)
+    {
+        $payment->load('order.user' ,'order.products');
+        return view('Admin.order.details' , compact('payment'));
     }
 }

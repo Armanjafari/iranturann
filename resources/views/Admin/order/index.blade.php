@@ -4,9 +4,10 @@
     <div class="card-header add-product-box text-center">
         <span class="add-product"> وضعیت سفارشات </span>
     </div>
+    @include('alerts.errors')
+    @include('alerts.success')
     <div class="row">
-        @include('alerts.errors')
-        @include('alerts.success')
+
         <div class="col-lg-12 mt-3">
             <table class="table table-bordered table-striped text-center form-control-two">
                 <thead>
@@ -40,7 +41,7 @@
                                 <input type="submit" value="ثبت" class="btn btn-info mt-3 w-50">
                             </form>
                         </td>
-                        <td><a href="" class="btn btn-light">جزئیات</a></td>
+                        <td><a href="{{route('admin.order.details',$payment->id)}}" class="btn btn-light">جزئیات</a></td>
                     </tr>
                     @empty
 

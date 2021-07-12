@@ -11,6 +11,11 @@ class Order extends Model
     {
         return $this->belongsToMany(Full::class)->using(PivotOrderMarket::class)->withPivot(['quantity','market_id','price' , 'status' ,'category_id']);
     }
+    // TODO fix this thing
+    public function fulls()
+    {
+        return $this->belongsToMany(Full::class);
+    }
     public function payment()
     {
         return $this->hasOne(Payment::class);
