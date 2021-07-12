@@ -16,7 +16,7 @@
 
         @endforelse
     </div>
-    <div class="col-lg-12 mt-5 pr-0 pl-0">
+    <div class="col-lg-12 mt-3 pr-0 pl-0">
         <div class="w-50 mr-auto ml-auto"> <a href="">
                 <p class="discount">دیدن تمام محصولات این دسته بندی</p>
             </a></div>
@@ -60,7 +60,7 @@
             @endforelse
         </div>
 
-        <div class="text-center mt-4">
+        <div class="text-center mt-3">
             <a href="{{ route('Prodcut.registraition.form') }}" class="btn btn-success">
                 <i class="fa fa-plus"></i>
                 افزودن محصول

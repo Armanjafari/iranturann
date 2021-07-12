@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                         <div class="text-right">
                                 <img src="{{$seller->images()->whereType("logo")->first()->address}}" alt=""
-                                        class="rounded-circle" style="width: 116px;height:116px;">
+                                        class="rounded-circle" style="width: 80px;height:80px;">
                                 <span class="discount"> {{$seller->market_name}} </span>
                                 <a href="" class="link-application discount mr-3"><img
                                                 src="{{asset('assets/img/svg element/دانلود.svg')}}" alt=""

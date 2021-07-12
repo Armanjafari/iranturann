@@ -1,6 +1,6 @@
 @if (session('success'))
 <main>
-<div class = "alert alert-success text-right mt-3 mb-3">
+<div class = "alert alert-success text-right mt-3 mb-3 position-absolute">
    <ul>
       {{ session('success') }}   
    </ul>

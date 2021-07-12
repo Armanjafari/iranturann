@@ -2203,6 +2203,10 @@ line-height: 70px;
   .bazar2{
     font-size: 8px;
 }
+.discount{
+  font-size: 0.9em;
+  border-bottom: 3px dashed #10747B;
+}
 }
 @media screen and (min-width: 451px) and (max-width: 800px){
 .bazar2{
@@ -2492,8 +2496,8 @@ height: 100px !important;
   }
 }
 .img-product-size1{
-  width: 240px;
-  height: 240px;
+  width: 230px;
+  height: 230px;
 }
 .form-group>label{
   position: absolute;

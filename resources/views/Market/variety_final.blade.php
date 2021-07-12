@@ -5,7 +5,7 @@
     <select name="product" style="visibility: hidden;" class="form-control" >
         <option value="{{$product}}"></option>
     </select>
-    <div class="col-lg-12 mt-3">
+    <div class="col-lg-12">
         <div class="card border-dark-d mb-3">
             <div class="row">
             <!-- <div class="col-lg-3 text-right">
@@ -29,7 +29,7 @@
                         @endforelse
                     </select>
                 </div> -->
-                <div class="col-lg-12 mt-3">
+                <div class="col-lg-12">
                     <div class="card form-control-one p-3">
                         <div class="row">
                             <div class="col-lg-3 text-right">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5 mb-5">
+            <div class="text-center">
                 <input type="submit" class="btn btn-danger" value="ثبت">
             </div>
         </div>
