@@ -30,4 +30,7 @@
     
     </div>
   </nav>
+  <div class="text-center">
+  <a href="" class="btn btn-success mt-5">توقف کل فروش محصولات</a>
+  </div>
 @endsection

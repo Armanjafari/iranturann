@@ -62,6 +62,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function(){
+
     $("#img-link1").click(function(){
 
     })

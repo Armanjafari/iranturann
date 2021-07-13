@@ -2144,7 +2144,7 @@ a {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 1.2em;
-  background-color: #E4EFEF;
+  background-color: #fff;
   direction: ltr;
 }
 
@@ -2574,4 +2574,5 @@ p {
 .steps-step:focus {
   background-color: red !important;
 }
+
 /*# sourceMappingURL=style.css.map */

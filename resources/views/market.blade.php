@@ -166,7 +166,7 @@
                                                 </div>
                                         </div>
                                         @forelse ($products as $product)
-                                        <div class="col-lg-6 col-6 pr-2 pl-2 mt-3">
+                                        <div class="col-lg-4 col-xl-4 col-6 pr-2 pl-2 mt-3">
                                                 <div class="product-card text-center">
                                                         @if ($product->fulls->count())
                                                         <a href="{{ route('product.single' , $product->fulls->first()->id ?? '') }}">

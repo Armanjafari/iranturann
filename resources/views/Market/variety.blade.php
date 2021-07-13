@@ -48,7 +48,7 @@
 <div class="text-center mt-2">
     <a href="{{ route('Prodcut.registraition.form') }}" class="btn btn-success">
         <i class="fa fa-plus"></i>
-        افزودن محصول
+       افزودن محصول به فروشگاه
     </a>
 </div><br><br><br><br>
   </div>

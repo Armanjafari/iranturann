@@ -79,9 +79,9 @@
                                 <input type="radio" id="no-active" class="mr-3">
                                 <label for="no-active" class="mt-2 mr-2" name="gender">غیرفعال</label> -->
                                   <input type="radio" value="1" id="html" name="is_active">
-  <label for="html" class="mr-2 mt-2">فعال</label><br>
+  <label for="html" class="mr-2 mt-2">فروش</label><br>
   <input type="radio" value="0" id="css" name="is_active" class="mr-2">
-  <label for="css" class="mr-2 mt-2">غیر فعال</label><br>
+  <label for="css" class="mr-2 mt-2">توقف فروش</label><br>
                             </div>
                         </div>
                     </div>

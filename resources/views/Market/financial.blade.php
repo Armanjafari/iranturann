@@ -21,15 +21,15 @@
       aria-labelledby="pills-home-tab">
       <div>
         <p> {{$user->market->market_name}} </p>
-        <span class="Your-total-sales">میزان کل فروش شما :</span>
+        <span class="Your-total-sales">میزان کل فروش :</span>
         <span>{{number_format($full_price)}} تومان</span>
       </div>
       <div class="mt-3">
-        <span class="Your-total-sales">کل سهم شما :</span>
+        <span class="Your-total-sales">موجودی فروشنده :</span>
         <span>{{number_format(($paid + $user->market->wallet) ?? '0') }} تومان</span>
       </div>
       <div class="mt-3">
-        <span class="Your-total-sales">کل سهم ما :</span>
+        <span class="Your-total-sales">حق عمل کل ایران توران :</span>
         <span> {{number_format($user->market->profit)}} تومان</span>
       </div>
     </div>
