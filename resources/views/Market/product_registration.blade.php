@@ -78,22 +78,12 @@
                        </div>
                       <select name="category" id="" class="w-100 mt-3 border-warning border-style">
                         <option value='0'>انتخاب دسته بندی</option>          
-                        <option value='1'>لوازم خانگی</option>  
-                        <option value='2'>لوازم التحریر</option>   
-                        <option value='3'>خانه و آشپزخانه</option>        
-                        <option value='4'>صنایع دستی</option>        
-                        <option value='5'>مد وپوشاک</option>
+                        @forelse ($categories as $category)
+                        <option value='{{ $category->id }}'> {{ $category->persian_name }} </option>           
+                        @empty
+                            
+                        @endforelse
                       </select>
-                             <!-- <div class="mt-3">
-                             <select id='selUser' style='width: 100%;' class="form-control">
-                              <option value='0'>انتخاب دسته بندی</option>          
-                              <option value='1'>لوازم خانگی</option>  
-                              <option value='2'>لوازم التحریر</option>   
-                              <option value='3'>خانه و آشپزخانه</option>        
-                              <option value='4'>صنایع دستی</option>        
-                              <option value='5'>مد وپوشاک</option>
-                          </select>
-                      </div> -->
                       <div id="price1" class=" text-right body-product">
                         
                           
