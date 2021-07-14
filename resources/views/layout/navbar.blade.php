@@ -302,7 +302,15 @@
                             <img src="assets/img/download (4).png" alt="">
                             <span>خانه، آشپزخانه و ابزار</span>
                             <img class="item-icon" src="assets/img/download.png" alt=""></a></li>
-                            <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-5 mt-2">
+                           <div class="mt-2 mr-auto ml-3"> <a href="" class=""><i class="fas fa-user p-3"></i>
+                        </a>
+                        <div class="profile-box">
+                        
+                        </div>
+                        </div>
+                        
+                            <a href="{{route('basket.index')}}" class="svg-shopp  ml-5 mt-2">
+        
                             <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
                         @guest
                      

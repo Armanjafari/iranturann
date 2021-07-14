@@ -2665,6 +2665,16 @@ border: 2px solid #33cccc;
   width: 30px;
   height: 30px;
 }
+.profile-box{
+  top: calc(100% + 2px);
+  width: 200px;
+  -webkit-box-shadow: 0 3px 8px 0 rgb(0 0 0 / 30%);
+  box-shadow: 0 3px 8px 0 rgb(0 0 0 / 30%);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+}
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */

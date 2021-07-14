@@ -1,6 +1,5 @@
 @extends('Market.layout.master')
 @section('content')
-
 <main class="mt-3">
   <ul class="nav nav-pills mb-3 pr-2" id="pills-tab" role="tablist">
     <li class="nav-item">
