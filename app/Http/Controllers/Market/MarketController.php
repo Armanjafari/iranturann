@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Market;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Market;
 use App\Pure;
@@ -68,7 +69,8 @@ class MarketController extends Controller
     }
     public function ProdcutRegistraitionForm()
     {
-        return view('Market.product_registration');
+        $categories = Category::all();
+        return view('Market.product_registration' , compact('categories'));
     }
     public function ProdcutRegistraition(Request $request)
     {
