@@ -35,7 +35,7 @@
                     <option value="{{$product->id}}"></option>
                 </select>
                 <div class="text-center caption-product mt-1">
-                    <button type="submit" class="btn btn-primary caption-product p-1 mb-2">  تنوع </button>
+                    <button type="submit" class="btn btn-primary caption-product p-1 mb-2"> قیمت گذاری </button>
                 </div>
             </a>
         </div>

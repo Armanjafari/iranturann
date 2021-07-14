@@ -2574,5 +2574,11 @@ p {
 .steps-step:focus {
   background-color: red !important;
 }
-
+.ellipsis{
+  max-width: 100px;
+  white-space:normal;
+}
+.color-green{
+  color: green !important;
+}
 /*# sourceMappingURL=style.css.map */

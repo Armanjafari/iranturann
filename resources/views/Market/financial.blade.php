@@ -49,12 +49,12 @@
           <tbody>
             @forelse ($ord as $order)
             <tr>
-              <td> {{$order->pivot->full->product->pure->persian_title}} <br> <span class="mt-3">{{$order->pivot->full->colors->title}} </span> </td>
-              <td>{{$order->pivot->category_id}}</td>
-              <td> {{number_format($order->pivot->price)}} </td>
-              <td>{{number_format(($order->pivot->price) - (($order->pivot->category_id / 100) *  $order->pivot->price)  )}}</td>
-              <td>{{number_format(($order->pivot->category_id / 100) *  $order->pivot->price)}}</td>
-              <td>{{$order->created_at}}</td>
+              <td> <span class="ellipsis"> {{$order->pivot->full->product->pure->persian_title}} </span><br> <span class="mt-3">{{$order->pivot->full->colors->title}} </span> </td>
+              <td><span class="ellipsis">{{$order->pivot->category_id}}</span></td>
+              <td><span class="ellipsis">{{number_format($order->pivot->price)}}</span>  </td>
+              <td><span class="ellipsis">{{number_format(($order->pivot->price) - (($order->pivot->category_id / 100) *  $order->pivot->price)  )}}</span></td>
+              <td><span class="ellipsis">{{number_format(($order->pivot->category_id / 100) *  $order->pivot->price)}}</span></td>
+              <td><span class="ellipsis">{{$order->created_at}}</span></td>
             </tr>
             @empty
 

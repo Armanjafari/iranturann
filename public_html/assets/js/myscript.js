@@ -594,6 +594,11 @@ buildDropDown(names)
 //   captionText.innerHTML = dots[slideIndex-1].alt;
 // }
 $(document).ready(function(){
+    $(".hide-show").hide()
+    $(".bvn").click(function(){
+        $(".hide-show").show()
+        $(this).hide()
+    })
   $('#exampleFormCotrolSelenct1').change(function(){
       if($(this).val() == 'lar'){ // or this.value == 'volvo'
      

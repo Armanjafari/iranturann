@@ -62,7 +62,13 @@ $(document).ready(function () {
 });
 
 $(document).ready(function(){
-
+$(".active4").click(function(){
+    $(this).siblings().removeClass("color-green");
+    $(".active4").addClass("color-green");
+});
+function savesubcat(){
+    return null
+  }
     $("#img-link1").click(function(){
 
     })

@@ -16,19 +16,17 @@
 
         @endforelse
     </div>
-    <div class="col-lg-12 mt-3 pr-0 pl-0">
-        <div class="w-50 mr-auto ml-auto"> <a href="">
+    <div class="col-lg-12 mt-4 pr-0 pl-0">
+        <!-- <div class="w-50 mr-auto ml-auto"> <a href="">
                 <p class="discount">دیدن تمام محصولات این دسته بندی</p>
-            </a></div>
-        <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>
+            </a></div> -->
+            <div class="row">
             @forelse ($categories as $category)
             @forelse ($category->products as $product)
-            <form action="{{ route('market.add.product') }}" method="post">
+            <form action="{{ route('market.add.product') }}" method="post" class="mr-2">
                 @csrf
-                <div class="product-card mb-3">
+                <div class="product-card col-12 mb-3">
                     <a class="w-100">
-
-
                         <img src="{{ $product->images->first()->address ?? '#' }}" alt=""
                             class="img-product-size mr-auto ml-auto">
                         <caption>
@@ -58,8 +56,9 @@
             @empty
 
             @endforelse
+            
         </div>
-
+       
         <div class="text-center mt-2">
             <a href="{{ route('Prodcut.registraition.form') }}" class="btn btn-success">
                 <i class="fa fa-plus"></i>

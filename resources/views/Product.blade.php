@@ -71,6 +71,8 @@
                     @empty
                         
                     @endforelse
+             <br>  <br>   <a href="" class="">شناسه محصول :</a>
+             <a href="" class="link-brand">#13683</a>
                 </div>
                          
                     
@@ -86,10 +88,7 @@
                                 <span>جنس:</span>
                                 <span>پنبه کلاه دار</span>
                             </li>
-                            <li class="mt-2">
-                                <span class="dot2" style="background-color: #FFCC33;"></span>
-                                <span>قیمت مناسب</span>
-                            </li>
+                         
                         </ul>
                         <!-- <form action="" class="mt-3">
                             <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label
@@ -100,7 +99,14 @@
                                     for="1">☆</label>
                             </div>
                         </form> -->
-                       <span class="bvn">مشاهده بیشتر</span>
+                       <span class="bvn mr-4">مشاهده بیشتر</span>
+                       <div class="hide-show mr-5">
+                           <li class="mt-2">
+                       <span class="dot2" style="background-color: #FFCC33;"></span>
+                       <span>قیمت مناسب</span>
+                       </li>
+                       </div>
+                       
                     </div>
                 </div>
             </div>

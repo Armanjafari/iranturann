@@ -1563,11 +1563,11 @@
     background-color: #eeeeee;
   }
   
-  @media (min-width: 25em) {
+
     .serch-box {
       background-image: url("../img/iconfinder_search_115695.svg");
     }
-  }
+
   @media (min-width: 25em) {
     .serch-box2{
       background-image: url("../img/iconfinder_search_115695.svg");
@@ -2675,6 +2675,7 @@ border: 2px solid #33cccc;
   overflow: hidden;
   position: absolute;
 }
+
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */
