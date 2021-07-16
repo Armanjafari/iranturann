@@ -17,9 +17,9 @@ function buildDropDown(values) {
 }
 
 //Capture the event when user types into the search box
-window.addEventListener('input', function () {
-    filter(search.value.trim().toLowerCase())
-})
+// window.addEventListener('input', function () {
+//     filter(search.value.trim().toLowerCase())
+// })
 
 //For every word entered by the user, check if the symbol starts with that word
 //If it does show the symbol, else hide it
@@ -73,7 +73,7 @@ function filter(word) {
 const nodeArray = (selector, parent=document) => [].slice.call(parent.querySelectorAll(selector));
 
 //  checkboxes of interest 
-const allThings = nodeArray('input');
+// const allThings = nodeArray('input');
 
 
 //  global listener
@@ -85,15 +85,15 @@ addEventListener('change', e => {
   if(allThings.indexOf(check) === -1) return;
 
   //  check/unchek children (includes check itself)
-  const children = nodeArray('input', check.parentNode);
+//   const children = nodeArray('input', check.parentNode);
   children.forEach(child => child.checked = check.checked);
   
   //  traverse up from target check
   while(check){
     
     //  find parent and sibling checkboxes (quick'n'dirty)
-    const parent   = (check.closest(['ul']).parentNode).querySelector('input');
-    const siblings = nodeArray('input', parent.closest('li').querySelector(['ul']));
+    // const parent   = (check.closest(['ul']).parentNode).querySelector('input');
+    // const siblings = nodeArray('input', parent.closest('li').querySelector(['ul']));
 
     //  get checked state of siblings
     //  are every or some siblings checked (using Boolean as test function) 

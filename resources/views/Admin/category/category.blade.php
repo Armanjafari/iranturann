@@ -37,8 +37,7 @@
                                                         <input type="radio" name="parent_id" value="{{ $child->id }}"
                                                             id="">
                                                             <a href="{{ route('show.category.edit.form',$child->id) }}">
-                                                        <label for=""> {{$child->persian_name}} </label>
-                                                            </a>
+                                                        <label for=""> {{$child->persian_name}} </label></a>
                                                         @forelse ($child->child as $child)
                                                         <ul>
                                                             <li>
