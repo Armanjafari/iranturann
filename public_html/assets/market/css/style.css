@@ -2581,4 +2581,7 @@ p {
 .color-green{
   color: green !important;
 }
+.active4:active{
+  color: green !important;
+}
 /*# sourceMappingURL=style.css.map */
