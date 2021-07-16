@@ -11,8 +11,9 @@ class MeliPayamak
     private $user;
     private $text;
     private $method;
-    public function __construct(User $user , String $method)
+    public function __construct(User $user , String $method , $text = null)
     {
+        $this->text = $text;
         $this->user = $user;
         $this->method = $method;
         $this->username = config('services.meli_payamak.username');
@@ -21,6 +22,7 @@ class MeliPayamak
     public function send()
     {   
         $this->validate();
+        // dd($this->text);
         $api = new MelipayamakApi($this->username,$this->password);
         $sms = $api->sms();
         $to = $this->user->phone_number;
@@ -46,9 +48,7 @@ class MeliPayamak
             case 'code':
                 $this->createCode();
                 break;
-            
             default:
-                # code...
                 break;
         }
     }

@@ -194,6 +194,7 @@ Route::get('owner/financial', 'Market\MarketController@financalForm')->name('fin
 Route::get('owner/orders', 'Market\MarketController@ordersForm')->name('orders.index');
 Route::get('owner/product/submit', 'Market\MarketController@ProdcutRegistraitionForm')->name('Prodcut.registraition.form');
 Route::post('owner/product/submit', 'Market\MarketController@ProdcutRegistraition')->name('Prodcut.registraition');
+Route::get('owner/dashboard', 'Market\MarketController@dashboardForm')->name('dashboard.form');
 
 Route::group(['namespace' => 'File',], function () {
     Route::get('file/create', 'FileController@create')->name('file.create');
@@ -203,7 +204,8 @@ Route::group(['namespace' => 'File',], function () {
     Route::get('file/delete/{file}', 'FileController@delete')->name('file.delete');
 
 });
-
+Route::get('failed', 'homecontroller@failed')->name('response.failed');
+Route::get('success', 'homecontroller@success')->name('response.success');
 // use Spatie\Sitemap\SitemapGenerator;
 // Route::get('sitemappp', function () {
 //     $a = SitemapGenerator::create('https://iranturan.com/')

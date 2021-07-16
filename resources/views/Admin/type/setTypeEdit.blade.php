@@ -67,7 +67,7 @@
                         {{ $value->title }}
                     </td>
                     <td>
-                        <p style="background-color:{{ $value->value }}; width: 20px; height: 20px;" class="mr-auto ml-auto"></p>
+                        <p style="background-color:{{ $value->value }};border-radius:50%; width: 20px; height: 20px;" class="mr-auto ml-auto"></p>
                     </td>
                     <td>
                         {{ $value->option_id }}

@@ -17,7 +17,8 @@ class TypeController extends Controller
     }
     public function edit(Option $option ,Request $request)
     {
-        $this->validator($request);
+        // TODO check this
+        // $this->validator($request);
         $option->update([
             'name' => $request->input('name'),
             ]);

@@ -9,8 +9,8 @@
     <!--start navbar menu-->
             @include('layout.navbar')
          <!--start main-->
-         @include('alerts.errors') <!-- TODO Fix this problem (alerts under navbar) !-->
-         @include('alerts.success')
+         @include('alerts-index.errors') <!-- TODO Fix this problem (alerts under navbar) !-->
+         @include('alerts-index.success')
     @yield('content')
         <!--end main-->
     @include('layout.footer')

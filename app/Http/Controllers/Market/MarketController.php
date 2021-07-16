@@ -105,4 +105,8 @@ class MarketController extends Controller
         }
 
     }
+    public function dashboardForm()
+    {
+        return view('Market.dashboard');
+    }
 }
