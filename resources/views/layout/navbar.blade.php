@@ -302,20 +302,9 @@
                             <img src="assets/img/download (4).png" alt="">
                             <span>خانه، آشپزخانه و ابزار</span>
                             <img class="item-icon" src="assets/img/download.png" alt=""></a></li>
-                           <div class="mt-2 mr-auto ml-3 fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>
-                        </a>
-                        <div class="profile-box p-3">
-                       <a href="">  <i class="fas fa-user-circle ml-2"></i>زهرا رنجبر</a>
-                       <hr>
-                       <a href="">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
-                       <hr>
-                       <a href="">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
-                       <hr>
-                       <a href="">  <i class="fas fa-sign-out-alt fa-sign-out-alt1 ml-2"></i>خروج از حساب کاربری</a>
-                        </div>
-                        </div>
+                          
                         
-                            <a href="{{route('basket.index')}}" class="svg-shopp  ml-5 mt-2">
+                            <a href="{{route('basket.index')}}" class="svg-shopp  mr-auto ml-3 mt-2">
         
                             <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
                         @guest
@@ -324,11 +313,18 @@
                                 <a class="text-center btn-logo" href="{{ route('login_with_code') }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
                         @endguest
                         @auth       
-                        <a class="text-center btn-logo" href="{{ route('logout') }}">خروج از حساب کاربری</a>       
-                        <!-- <button type="button" class="btn-logo">
-                            <i class="far fa-user"></i>
-                            <a class="text-center" href="{{ route('logout') }}">خروج از حساب کاربری</a>
-                        </button> -->
+                        <div class="mt-2  ml-auto fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>
+                        </a>
+                        <div class="profile-box p-3">
+                       <a href="">  <i class="fas fa-user-circle ml-2"></i>زهرا رنجبر</a>
+                       <hr>
+                       <a href="">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
+                       <hr>
+                       <a href="">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
+                       <hr>
+                       <a href="{{ route('logout') }}">  <i class="fas fa-sign-out-alt fa-sign-out-alt1 ml-2"></i>خروج از حساب کاربری</a>
+                        </div>
+                        </div>
                         @endauth
                 </ul><!-- End Menu Level 1 --> 
             </div>
@@ -349,7 +345,10 @@
           <a href="{{ route('login_with_code') }}">  <i class="far fa-user fa-user1 mt-2"></i></a>  
             @endguest
            @auth
-          <a href="{{ route('logout') }}" class="btn-logo1">خروج</a>  
+           <div class="mt-2 mr-auto ml-3 fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>
+           </a>
+           <div class="profile-box p-3">
+          {{-- <a href="{{ route('logout') }}" class="btn-logo1">خروج</a>   --}}
            @endauth
             
         </div>

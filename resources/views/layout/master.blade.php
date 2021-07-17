@@ -33,5 +33,6 @@
 <!--end owl carousel js-->
 <!--start kit fontawesome-->
 <script src="{{ asset('assets/js/a076d05399.js') }}"></script>
+<script src="{{asset('assets/js/index.js')}}"> </script>
 <!--end kit fontawesome-->
 </html>

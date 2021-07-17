@@ -210,3 +210,5 @@ Route::get('success', 'homecontroller@success')->name('response.success');
 //     $a = SitemapGenerator::create('https://iranturan.com/')
 //     ->writeToFile(public_path('sitemap.xml'));
 // });
+ Route::get('pre_registration', 'PreController@index')->name('pre.registration.form');
+ Route::post('pre_registration', 'PreController@create')->name('pre.registration');

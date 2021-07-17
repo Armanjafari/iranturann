@@ -14,4 +14,5 @@
 <!--end owl-carousel-->
 <!--start style css-->
 <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
 <!--end style css-->
