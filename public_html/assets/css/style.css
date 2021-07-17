@@ -2697,3 +2697,11 @@ font-size: 20px;
 } */
 /* 6104337378510976   زلفیان  */
 /*# sourceMappingURL=style.css.map */
+.payment-success{
+  background-color: #E3DFDF;
+  border-radius: 20px;
+  }
+  .check{
+    width: 50px;
+    height: 50px;
+  }

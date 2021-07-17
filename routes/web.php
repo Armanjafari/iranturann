@@ -183,7 +183,7 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'i
     Route::post('/', 'ProductController@add')->name('market.add.product');
     Route::get('variety/add/', 'ProductController@vareityFinalForm')->name('market.variety.add.form');
     Route::post('variety/add/', 'ProductController@vareityAdd')->name('market.variety.add');
-    Route::get('variety/index', 'ProductController@varietyIndex')->name('market.variety.index');
+    Route::get('variety/index/{product}', 'ProductController@varietyIndex')->name('market.variety.index');
     Route::get('variety/edit/{full}', 'ProductController@editFinalVarietyForm')->name('market.variety.edit.form');
     Route::post('variety/edit/{full}', 'ProductController@editFinalVariety')->name('market.variety.edit');
 
@@ -195,7 +195,6 @@ Route::get('owner/orders', 'Market\MarketController@ordersForm')->name('orders.i
 Route::get('owner/product/submit', 'Market\MarketController@ProdcutRegistraitionForm')->name('Prodcut.registraition.form');
 Route::post('owner/product/submit', 'Market\MarketController@ProdcutRegistraition')->name('Prodcut.registraition');
 Route::get('owner/dashboard', 'Market\MarketController@dashboardForm')->name('dashboard.form');
-
 Route::group(['namespace' => 'File',], function () {
     Route::get('file/create', 'FileController@create')->name('file.create');
     Route::post('file', 'FileController@new')->name('file.new');

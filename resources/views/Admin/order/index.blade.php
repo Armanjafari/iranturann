@@ -33,6 +33,7 @@
                                 <input style="display: none;" type="radio" value="{{$payment->id}}" name="payment" checked>
                                 {{$i == $payment->status ? 'selected' : ''}}
                                 <select name="status" class="form-select w-50" id="exampleFormControlSelect1">
+                                 <option value="100" {{100 == $payment->status ? 'selected' : ''}}>   @lang('iranturan.' . 100) </option>
                                     @for ($i = -1; $i <= 4; $i++) 
                                     {{-- // TODO check this --}}
                                  <option value="{{$i}}" {{$i == $payment->status ? 'selected' : ''}}>   @lang('iranturan.' .$i) </option>
