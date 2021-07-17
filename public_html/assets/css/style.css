@@ -2675,6 +2675,10 @@ border: 2px solid #33cccc;
   overflow: hidden;
   position: absolute;
   top: 60px;
+  display: none !important;
+}
+.fa-user5:hover .profile-box{
+  display: block !important;
 }
 .fa-user-circle{
   color: #9A9696 !important;
@@ -2692,6 +2696,37 @@ font-size: 20px;
   font-size: 18px;
   color: #575656;
 }
+/* ----- CSS ----- */
+#popup {
+  display: inline-block;
+  opacity: 0;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  padding: 1em;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #888;
+  box-shadow: 1px 1px .5em 0 rgba(0, 0, 0, .5);
+  transition: opacity 1s ease-in-out;
+  width: 400px;
+  height: 300px;
+  z-index: 20000;
+  border-radius: 1em;
+}
+.close{
+width: 40px;
+height: 30px;
+border: 2px solid red !important;
+}
+
+#popup.hidden {
+  display: none;
+}
+#popup.fade-in {
+  opacity: 1;
+}
+
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */
