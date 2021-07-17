@@ -2731,6 +2731,10 @@ border: 2px solid red !important;
   font-weight: bold;
   font-size: 14px;
 }
+#popup{
+  width:250px;
+  height: 350px;
+}
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */
