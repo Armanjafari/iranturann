@@ -2714,11 +2714,11 @@ font-size: 20px;
   z-index: 20000;
   border-radius: 1em;
 }
-.close{
+/* .close{
 width: 40px;
 height: 30px;
 border: 2px solid red !important;
-}
+} */
 
 #popup.hidden {
   display: none;
@@ -2726,7 +2726,11 @@ border: 2px solid red !important;
 #popup.fade-in {
   opacity: 1;
 }
-
+.text-box-popup{
+  color: green;
+  font-weight: bold;
+  font-size: 14px;
+}
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */
