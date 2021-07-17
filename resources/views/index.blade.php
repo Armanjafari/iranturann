@@ -43,6 +43,11 @@
 <!-- end navbar !-->
 <main>
     <div class="row">
+    <div id = "popup" class = "hidden">
+    <button type="button" class="close" aria-label="Close">
+  <span aria-hidden="true" class="close1 mt-3">&times;</span>
+</button>
+</div>
     <div class="col-lg-8 col-lg-12w">
     <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile25">
     <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.43 (1).jpeg" alt="" class="img-size4"></a></div>
