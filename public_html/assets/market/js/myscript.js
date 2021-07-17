@@ -63,12 +63,11 @@ $(document).ready(function () {
 
 $(document).ready(function(){
 $(".active4").click(function(){
-    $(this).siblings().removeClass("color-green");
-    $(".active4").addClass("color-green");
+    $(".active4").removeClass("color-green");
+    $(this).addClass("color-green");
+    $(".active4").preventDefault;
 });
-function savesubcat(){
-    return null
-  }
+
     $("#img-link1").click(function(){
 
     })

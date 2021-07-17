@@ -1,13 +1,10 @@
 @extends('Market.layout.master')
 @section('content')
-
 <main class="mt-0">
-                  
     <div class="container-fluid pr-0 pl-0">  
   <div class="col-lg-12 pr-0 pl-0">
           <div class="row">
-  <div class="col-lg-4 mr-auto ml-auto">
-       
+  <div class="col-lg-4 mr-auto ml-auto"> 
   </div>         
                   <!-- Steps form -->
 <div class="card w-100">
@@ -46,7 +43,12 @@
                         <div class="file-input mt-3">
                           <input type="file"name="images[]" id="imgInp" class="file" multiple>
                           <label for="imgInp">آپلود عکس</label>
-                          <img id="blah" alt="محل آپلود شدن عکس">
+                          <img id="blah" alt="عکس اصلی">
+                        </div>
+                        <div class="file-input mt-3 mr-3">
+                          <input type="file"name="images[]" id="imgInp1" class="file" multiple>
+                          <label for="imgInp1">آپلود عکس</label>
+                          <img id="blah1" alt="عکس گالری">
                         </div>
                     </div>
                       </div>
@@ -89,7 +91,7 @@
                           
                                 <div class="first-name mt-4">
                                   <label for="">وزن محصول</label>
-                                  <input type="text" name="weight" class="form-control-one p-2 w-100" placeholder="وزن مورد نظر خود را وارد نمایید">
+                                  <input type="text" name="weight" class="form-control-one p-2 w-100" placeholder="وزن محصول را با واحد گرم وارد کنید">
                                 </div>
                              
                           </div>

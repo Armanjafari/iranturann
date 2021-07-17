@@ -9,6 +9,5 @@
 <div class="col-2 text-center pr-4 pl-4 "> <a href="{{ route('orders.index') }}" class="{{URL::full() == route('orders.index') ? 'active4' : ''}}"><i class="fas fa-user  "></i>سفارشات</a></div>
 <div class="col-2 text-center pr-4 pl-4 "><a href="{{ route('financial.index') }}" class="{{URL::full() == route('financial.index') ? 'active4' : ''}}"><i class="fas fa-coins "></i>مالی </a></div>
 </div> 
-
 </ul>
   </div>

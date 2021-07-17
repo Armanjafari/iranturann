@@ -2631,7 +2631,7 @@ border: 2px solid #33cccc;
       font-size: 7px;
     }
   }
- .fa-user{
+ .fa-user1{
    background-color: #ffcc33;
    padding: 0.7em;
    border-radius: 10px;
@@ -2674,8 +2674,24 @@ border: 2px solid #33cccc;
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
+  top: 60px;
 }
-
+.fa-user-circle{
+  color: #9A9696 !important;
+font-size: 20px;
+}
+.fa-user2{
+  color: #575656 !important;
+  font-size: 18px;
+}
+.fa-scroll1{
+  font-size: 16px;
+  color: #575656;
+}
+.fa-sign-out-alt1{
+  font-size: 18px;
+  color: #575656;
+}
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */
