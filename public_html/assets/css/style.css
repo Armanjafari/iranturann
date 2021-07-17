@@ -691,6 +691,11 @@
   }
   
   @media screen and (min-width: 300px) and (max-width:450px) {
+    #popup{
+      width:250px !important;
+      height: 350px !important;
+      z-index: 30000;
+    }
     .btn-logo {
       display: none;
     }
@@ -2731,10 +2736,7 @@ border: 2px solid red !important;
   font-weight: bold;
   font-size: 14px;
 }
-#popup{
-  width:250px;
-  height: 350px;
-}
+
 /* .color-boreder:focus{
   border:3px solid #33cccc;
 } */

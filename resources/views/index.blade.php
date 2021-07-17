@@ -43,6 +43,7 @@
 <!-- end navbar !-->
 <main>
     <div class="row">
+        <div class="m-auto">
     <div id = "popup" class = "hidden">
     <button type="button" class="close" aria-label="Close">
   <span aria-hidden="true" class="close1 mt-3">&times;</span>
@@ -58,7 +59,7 @@
 <a href="{{ route('pre.registration.form') }}" class="btn btn-success">ثبت نام</a>
 <p class="mt-3">تماس با ما : 09333551414</p>
 </div>
-
+</div>
 </div>
 </div>
     <div class="col-lg-8 col-lg-12w">
