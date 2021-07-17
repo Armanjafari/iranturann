@@ -77,10 +77,9 @@ class MarketController extends Controller
         $request->validate([
             'title' => 'required',
             'persian_title' => 'required',
-            'category_id' => 'required|integer',
-            'price' => 'required',
+            'category' => 'required|integer',
             'description' => 'required',
-            'weight' => 'required',
+            'weight' => 'required|integer',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048'
 
         ]);
@@ -92,14 +91,21 @@ class MarketController extends Controller
             'weight' => $request->input('weight'),
             'status' => 0,
         ]);
-        $this->createImages($request);
+        $this->createImages($request , $pure);
+        return redirect()->route('market.index')->withSuccess('محصول با موفقیت ثبت و پس از تایید در سایت قرار میگیرد');
     }
-    public function createImages(Request $request)
+    public function createImages(Request $request,Pure $pure)
     {
+        $image = $request->file('image');
+        $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
+        $image->move(public_path($destination), $image->getClientOriginalName());
+        $pure->images()->create([
+            'address' => $destination . $image->getClientOriginalName()
+        ]);
         foreach ($request->file('images') as $image) {
             $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
             $image->move(public_path($destination), $image->getClientOriginalName());
-            $image->images()->create([
+            $pure->images()->create([
                 'address' => $destination . $image->getClientOriginalName()
             ]);
         }

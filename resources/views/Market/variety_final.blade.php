@@ -8,27 +8,6 @@
     <div class="col-lg-12">
         <div class="card border-dark-d mb-3">
             <div class="row">
-            <!-- <div class="col-lg-3 text-right">
-                            
-                                 <label for="exampleFormControlSelect2" class=""> آدرس محل فروشگاه</label>
-                                 <select class="w-100 p-2" name="waranty" id="exampleFormCotrolSelenct2" style="border: 3px solid #ffcc33;">
-                                   <option value="lar">لار</option>
-                                   <option value="evaz">اوز</option>
-                                   <option value="gerash">گراش</option>
-                                   <option value="ghor">خور</option>
-                                   <option value="latifi">لطیفی</option>
-                                 </select>
-                             </div> -->
-                <!-- <div class="col-lg-3 mt-5">
-                  <label for="">گارانتی محصول</label>
-                    <select name="waranty" class="form-control" id="">
-                        @forelse ($waranties as $waranty)
-                        <option value="{{$waranty->id}}">{{$waranty->name}}</option>
-                        @empty
-
-                        @endforelse
-                    </select>
-                </div> -->
                 <div class="col-lg-12 mt-3">
                     <div class="card form-control-one p-3">
                         <div class="row">
@@ -66,7 +45,11 @@
                             </select>
                         </div>
                             <div class="col-lg-3 text-right">
-                                <label for="">قیمت</label>
+                                <label for=""> قیمت بدون تخفیف </label>
+                                <input type="text" name="show_price" placeholder="قیمت بدون تخفیف خود را وارد نمایید"  class="w-100 p-2" style="border: 3px solid #ffcc33;">
+                            </div>
+                            <div class="col-lg-3 text-right">
+                                <label for="">قیمت با تخفیف</label>
                                 <input type="text" name="price" placeholder="قیمت خود را وارد نمایید"  class="w-100 p-2" style="border: 3px solid #ffcc33;">
                             </div>
                             <div class="col-lg-3 text-right">

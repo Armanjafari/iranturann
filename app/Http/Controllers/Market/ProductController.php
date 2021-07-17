@@ -80,12 +80,12 @@ class ProductController extends Controller
         ]);
         return back()->withSuccess(__('iranturan.success message'));
     }
-    public function varietyIndex()
+    public function varietyIndex(Product $product)
     {
         $user = Auth::user();
-        $products = $user->market->products->load('fulls');
+        $product->load('fulls');
         // dd($products->last()->pure->images->first());
-        return view('Market.index_variety' , compact('products') );
+        return view('Market.index_variety' , compact('product') );
     }
     public function editFinalVarietyForm(Full $full , Request $request)
     {

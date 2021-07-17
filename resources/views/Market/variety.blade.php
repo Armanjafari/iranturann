@@ -23,7 +23,7 @@
         <form action="{{ route('market.variety.add.form') }}" method="GET">
             @csrf
         <div class="product-card mb-3">
-            <a class="w-100">
+            <a class="w-100" href="{{route('market.variety.index',$product->id)}}">
 
 
                 <img src="{{ $product->pure->images->first()->address ?? '#' }}" alt=""
@@ -46,7 +46,7 @@
 </div>
 
 <div class="text-center mt-2">
-    <a href="{{ route('Prodcut.registraition.form') }}" class="btn btn-success">
+    <a href="{{route('market.index')}}" class="btn btn-success">
         <i class="fa fa-plus"></i>
        افزودن محصول به فروشگاه
     </a>

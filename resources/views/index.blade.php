@@ -55,7 +55,7 @@
 
 <p class="mt-3">40% تخفیف</p>
 <div class="mt-3 text-center">
-<a href="" class="btn btn-success">ثبت نام</a>
+<a href="{{ route('pre.registration.form') }}" class="btn btn-success">ثبت نام</a>
 <p class="mt-3">تماس با ما : 09333551414</p>
 </div>
 

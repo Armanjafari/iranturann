@@ -41,7 +41,7 @@
                      
                           <div class="row">
                         <div class="file-input mt-3">
-                          <input type="file"name="images[]" id="imgInp" class="file" multiple>
+                          <input type="file"name="image" id="imgInp" class="file" multiple>
                           <label for="imgInp">آپلود عکس</label>
                           <img id="blah" alt="عکس اصلی">
                         </div>
