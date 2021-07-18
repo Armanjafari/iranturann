@@ -60,7 +60,7 @@
                     </div>
                     <div class="mt-3 box-brand mr-3">
                          <span class="link-product"> {{$option->product->pure->persian_title}} </span>
-                         <p class="link-in mt-2 text-right">{{$option->pure->title}}</p>
+                         <p class="link-in mt-2 text-right">{{$option->product->pure->title}}</p>
                     </div>
                     <div class="mt-3 color-product-box mr-3">
                         <p class="text-right"> رنگ : {{ $option->colors->title }}</p>
