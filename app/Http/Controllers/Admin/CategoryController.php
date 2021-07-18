@@ -44,8 +44,8 @@ class CategoryController extends Controller
     public function validator(Request $request)
     {
         return $request->validate([
-            'name' => 'required|unique:categories',
-            'persian_name' => 'required|unique:categories',
+            'name' => 'required',
+            'persian_name' => 'required',
             'parent_id' => 'integer' 
         ]);
     }
