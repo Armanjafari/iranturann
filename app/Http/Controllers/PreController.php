@@ -25,6 +25,6 @@ class PreController extends Controller
             'mobile' => $request->input('mobile'),
             'address' => $request->input('address'),
         ]);
-        return redirect()->route('index')->withSuccess('درخواست شما با موفقیت ثبت گردید');
+        return redirect()->route('index')->withSuccess('درخواست شما با موفقیت ثبت گردید. در کمتر از ۲۴ ساعت دیگر با شما تماس گرفته میشود');
     }
 }
