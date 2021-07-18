@@ -25,6 +25,7 @@ class PreController extends Controller
             'mobile' => $request->input('mobile'),
             'address' => $request->input('address'),
         ]);
-        return redirect()->route('index')->withSuccess('درخواست شما با موفقیت ثبت گردید. در کمتر از ۲۴ ساعت دیگر با شما تماس گرفته میشود');
+        return redirect()->route('index')->withSuccess("  خش اندسی همشهری . 
+        ثبت نام شما با  موفقیت ثبت شد.تا ساعاتی دیگر با شما تماس خواهیم گرفت ");
     }
 }

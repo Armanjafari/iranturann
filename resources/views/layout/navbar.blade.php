@@ -316,7 +316,7 @@
                         <div class="mt-2  ml-auto fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>
                         </a>
                         <div class="profile-box p-3">
-                       <a href="">  <i class="fas fa-user-circle ml-2"></i>زهرا رنجبر</a>
+                       <a href="">  <i class="fas fa-user-circle ml-2"></i> {{auth()->user()->name}} </a>
                        <hr>
                        <a href="">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
                        <hr>
