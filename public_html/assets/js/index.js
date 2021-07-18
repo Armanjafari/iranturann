@@ -23,10 +23,10 @@
        
                }
                if($(this).val()=='ghor'){
-                $(".img-bg").html('<img src="assets/img/ghor.jpg" class="img-city1">')
+                $(".img-bg").html('<img src="assets/img/434e7e40-f4ea-4993-ba04-fa3e4d18d526.jpg" class="img-city1">')
                }
                if($(this).val()=='latifi'){
-                $(".img-bg").html('<img src="assets/img/WhatsApp Image 2021-06-27 at 21.38.12.jpeg" class="img-city1">')
+                $(".img-bg").html('<img src="assets/img/42744027.jpg" class="img-city1">')
                }
         }
       });

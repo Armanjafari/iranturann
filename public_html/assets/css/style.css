@@ -753,7 +753,7 @@
       margin: 15px 15px !important;
     }
   }
-  
+
   @media (max-width: 50em) {
     main {
       margin-top: 6.5em;
@@ -2681,6 +2681,8 @@ border: 2px solid #33cccc;
   position: absolute;
   top: 60px;
   display: none !important;
+  left: 10px;
+
 }
 .fa-user5:hover .profile-box{
   display: block !important;
