@@ -36,7 +36,7 @@
                         <img src="{{ $product->images->first()->address ?? '#' }}" alt=""
                             class="img-product-size mr-auto ml-auto">
                         <caption>
-                            <p class="mt-3 caption-product mb-0">{{$product->persian_title}}</p>
+                            <p class="mt-3 caption-product mb-0">{{substr($product->persian_title ,20)}}</p>
                         </caption>
                         <select name="product" style="display: none">
                             <option value="{{$product->id}}"></option>

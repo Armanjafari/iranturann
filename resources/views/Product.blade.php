@@ -72,7 +72,7 @@
                         
                     @endforelse
              <br>  <br>   <a href="" class="">شناسه محصول :</a>
-             <a href="" class="link-brand">#13683</a>
+             <a class="link-brand">{{$option->id}}</a>
                 </div>
                          
                     
