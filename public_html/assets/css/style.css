@@ -2876,3 +2876,95 @@ border-radius: 5px;
   left: 10px;
 
 }
+/* profile */
+.information-box1{
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+   border-radius: 1.2em !important;
+   border: 5px solid #f5f5f5;
+   box-shadow: 1px 1px 6px 1px #B4B2B2;
+}
+.information-box2{
+background-color: #F5F5F5;
+}
+.Personal-Information{
+font-size: 1.2em;
+font-weight: bold;
+border-bottom: 3px dashed #10747B;
+}
+.name-last{
+color: #CFD8DC;
+font-size: 1.2em;
+}
+.name1{
+font-size: 1.2em;
+}
+.box-card{
+border-radius: 1em;
+}
+.th-border{
+border: 1px solid #e4e4e4;
+background-color: #ECEFF1;
+font-size: 1.2em;
+font-weight: bold;
+white-space: nowrap;
+}
+td{
+white-space: nowrap;
+}
+.profile-user2{
+box-shadow: 0px 4px 7px #B8CACB;
+}
+.profile-user3{
+box-shadow: 0px 4px 7px #14D1D6;
+}
+.btn-Record2{
+background-color:#33cccc;
+padding: 1em 2em;
+color: #fff;
+border-radius: 10px;
+text-align: center;
+box-shadow: 2px 4px 4px 0px #ded6d6;
+border: none;
+outline: none !important;
+}
+.btn-Record2:hover{
+color: #fff;
+}
+.content{
+background-color: #EEEEEE;
+border: 1px solid #E4D7D7;
+}
+.iranturan-signup{
+font-size: 1em;
+font-weight: bold;
+color: #0A0101;
+border-bottom: 3px dashed #10747B;
+}
+.btn-sign-up{
+background-color:#33cccc;
+padding: 1em 10em;
+color: #fff;
+border-radius: 10px;
+text-align: center;
+box-shadow: 2px 4px 4px 0px #ded6d6;
+border: none;
+outline: none !important;
+}
+@media screen and (min-width: 100px) and (max-width: 800px) {
+
+.btn-sign-up {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+}

@@ -17,10 +17,11 @@ class MarketController extends Controller
     public function index(Request $request, Market $seller)
     {
         $seller->products->load('fulls');
-        $products = $seller->products;
-        foreach ($products as $product) {
-            $product->fulls()->where('is_active',1)->get();
-        }
+        $products = $seller->products()->where('is_active',1)->get();
+        // dd( $seller->products);
+        // foreach ($products as $product) {
+        //     $product->fulls()->where('is_active',1)->get();
+        // }
         return view('market' , compact('seller' , 'products'));
     }
     public function financalForm()

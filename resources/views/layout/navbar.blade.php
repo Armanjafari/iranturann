@@ -318,9 +318,9 @@
                         <div class="profile-box p-3">
                        <a href="">  <i class="fas fa-user-circle ml-2"></i> {{auth()->user()->name}} </a>
                        <hr>
-                       <a href="">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
+                       <a href="{{route('show.profile')}}">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
                        <hr>
-                       <a href="">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
+                       <a href="{{route('user.orders.index')}}">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
                        <hr>
                        <a href="{{ route('logout') }}">  <i class="fas fa-sign-out-alt fa-sign-out-alt1 ml-2"></i>خروج از حساب کاربری</a>
                         </div>

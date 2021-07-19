@@ -214,7 +214,13 @@ Route::get('success', 'homecontroller@success')->name('response.success');
  Route::post('pre_registration', 'PreController@create')->name('pre.registration');
 
  Route::prefix('profile')->namespace('User')->group(function () {
-    Route::get('orders/', 'OrderController@index')->name('user.orders.form');
+    Route::get('orders/', 'OrderController@index')->name('user.orders.index');
     Route::get('orders/details/{order}', 'OrderController@details')->name('user.orders.details.form');
+    Route::get('/', 'UserController@showProfile')->name('show.profile');
+    Route::get('edit/', 'UserController@editForm')->name('edit.profile.form');
+    Route::post('edit/', 'UserController@edit')->name('edit.profile');
      
+ });
+ Route::prefix('mobile')->namespace('App')->group(function () {
+    
  });

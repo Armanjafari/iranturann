@@ -67,6 +67,10 @@ class Market extends Model
         $this->profit += $price;
         $this->save();
     }
+    public function fulls()
+    {
+        
+    }
 
 }
 
