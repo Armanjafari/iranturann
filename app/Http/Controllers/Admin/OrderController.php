@@ -33,10 +33,7 @@ class OrderController extends Controller
     public function details(Payment $payment)
     {
         $payment->load('order.user' ,'order.products');
-        $post_price = $payment->amount;
-        foreach ($payment->order->products as $product) {
-            $post_price -= $product->pivot->price * $product->pivot->quantity;
-        }
+        $post_price = $payment->post();
         return view('Admin.order.details' , compact('payment', 'post_price'));
     }
 }

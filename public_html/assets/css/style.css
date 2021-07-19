@@ -2752,3 +2752,127 @@ border: 2px solid red !important;
     width: 50px;
     height: 50px;
   }
+/* edit orders-information */
+.discount{
+  font-size: 1.2em;
+  border-bottom: 3px dashed #10747B;
+}
+.o__box{
+background-color: white;
+width: 30px;
+height: 30px;
+padding-top: 5px;
+border-radius: 5px;
+}
+.Transferee{
+  color: #817A7A !important;
+  font-size: 15px;
+}
+.img-roduct-order{
+  width: 200px;
+  height: 200px;
+}
+.c-profile-order__list-item{
+  background-color: #fff;
+  border: 1px solid #dfdfdf;
+    border-radius: 8px;
+    width: 100%;
+}
+.o-link--has-arrow{
+  color: #00bfd6;
+    font-size: 16px;
+    font-size: 1.143rem;
+    line-height: 28px;
+    font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+}
+.o-link--has-arrow:hover{
+  color: #00bfd6 !important;
+}
+.c-profile-order__list-item-detail-title{
+  color: #81858b;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 4px;
+}
+.c-profile-order__list-item-parcel-product{
+  width: 64px;
+  height: 64px;
+}
+.c-profile-order__list-item-parcel-product1{
+  width: 100px;
+  height: 100px;
+}
+@media screen and (min-width: 300px) and (max-width: 450px){
+  .garant{
+    font-size: 10px !important;
+  }
+  .shopping8{
+    font-size: 10px !important;
+  }
+  .seller-all-img-icon{
+    width: 15px;
+    height: 15px;
+  }
+  .discount2{
+    font-size: 14px;
+  }
+  #nav-tabContent{
+    font-size: 12px !important;
+  }
+  .o-link--has-arrow{
+    font-size: 12px !important;
+    margin-top: 10px;
+  }
+  .nav-tabs{
+    font-size: 10px;
+  }
+  .project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    font-size: 10px;
+  }
+  .img-roduct-order{
+    width: 80px;
+    height: 80px;
+  }
+  .content3{
+    font-size: 10px;
+  }
+  .c-profile-order__list-item-parcel-product1{
+    width: 150px;
+    height: 150px;
+  }
+  .font-size-mobile{
+    font-size: 12px;
+  }
+  .Transferee{
+    font-size: 12px;
+  }
+}
+.garant{
+  font-size: 14px;
+}
+.shopping8{
+  font-size: 14px;
+}
+.seller-all-img-icon{
+  width: 20px;
+  height: 20px;
+}
+.profile-box-order{
+  top: calc(100% + 2px);
+  width: 100%;
+  -webkit-box-shadow: 0 3px 8px 0 rgb(0 0 0 / 30%);
+  box-shadow: 0 3px 8px 0 rgb(0 0 0 / 30%);
+  background: #fff;
+  border-radius: 8px;
+  text-align: right;
+  overflow: hidden;
+  top: 60px;
+  left: 10px;
+
+}

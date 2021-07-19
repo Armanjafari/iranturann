@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Product;
 use App\Pure;
 use App\Waranty;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -70,6 +71,7 @@ class ProductController extends Controller
             'product' => 'required',
         ]);
         // dd($request->all());
+        try {
         Full::create([
             'color_id' => $request->input('option'),
             'price' => $request->input('price'),
@@ -80,6 +82,10 @@ class ProductController extends Controller
             'waranty_id' => $request->input('waranty'),
             'product_id' => $request->input('product'),
         ]);
+    } catch (Exception $e){
+        return back()->withSuccess('قبل این به رنگ قیمت داده اید');
+
+    }
         return back()->withSuccess(__('iranturan.success message'));
     }
     public function varietyIndex(Product $product)

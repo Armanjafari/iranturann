@@ -62,7 +62,7 @@
             @empty
 
             @endforelse
-            @forelse ($categories as $category)
+            {{-- @forelse ($categories as $category)
             @forelse ($category->products as $product)
             <form action="{{ route('market.add.product') }}" method="post" class="mr-2">
                 @csrf
@@ -96,7 +96,7 @@
 
             @empty
 
-            @endforelse
+            @endforelse --}}
         </div>
        
         <br><br><br><br>

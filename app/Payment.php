@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
-    protected $fillable = ['order_id' , 'gateway' , 'status' , 'amount' , 'method' , 'ref_num'];
+    protected $fillable = ['order_id' , 'gateway' , 'trackingCode', 'status' , 'amount' , 'method' , 'ref_num'];
     protected $attributes = ['status' => 0];
     public function isOnline()
     {
@@ -22,5 +22,13 @@ class Payment extends Model
     public function order()
     {
         return $this->belongsTo(Order::class);
+    }
+    public function post()
+    {
+        $post_price = $this->amount;
+        foreach ($this->order->products as $product) {
+            $post_price -= $product->pivot->price * $product->pivot->quantity;
+        }
+        return $post_price;
     }
 }

@@ -212,3 +212,9 @@ Route::get('success', 'homecontroller@success')->name('response.success');
 // });
  Route::get('pre_registration', 'PreController@index')->name('pre.registration.form');
  Route::post('pre_registration', 'PreController@create')->name('pre.registration');
+
+ Route::prefix('profile')->namespace('User')->group(function () {
+    Route::get('orders/', 'OrderController@index')->name('user.orders.form');
+    Route::get('orders/details/{order}', 'OrderController@details')->name('user.orders.details.form');
+     
+ });
