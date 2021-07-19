@@ -25,7 +25,7 @@ class ProductController extends Controller
             'title' => 'required',
             'persian_title' => 'required',
             'category_id' => 'required',
-            'price' => 'required|integer',
+            'price' => 'integer',
             'slug' => 'required',
             'brand_id' => 'required',
             'option_id' => 'required',

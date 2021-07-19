@@ -19,7 +19,7 @@
       </div>
       <div class="col-lg-4 mt-4 text-center">
         <caption>درصورتی که نیاز به مشاوره دارید با ما تماس حاصل نمایید</caption>
-        <p class="mt-2">07122334455</p>
+        <p class="mt-2">09359214103</p>
       </div>
     </div>
     <hr>
