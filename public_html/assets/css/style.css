@@ -141,7 +141,7 @@
     -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.095);
             box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.095);
     width: 100%;
-    padding: 1em 2em;
+    padding: 1em 1em;
     z-index: 2;
     position: absolute;
   }
@@ -2682,7 +2682,7 @@ border: 2px solid #33cccc;
   top: 60px;
   display: none !important;
   left: 10px;
-
+  z-index: 50000 !important;
 }
 .fa-user5:hover .profile-box{
   display: block !important;
