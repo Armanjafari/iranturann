@@ -339,10 +339,10 @@
             <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-3 mt-2">
                 <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
             {{-- <a href="">
-            <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-4">
+            <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-3">
             </a> --}}
             @guest
-          <a href="{{ route('login_with_code') }}">  <i class="far fa-user fa-user1 mt-2"></i></a>  
+          <a href="{{ route('login_with_code') }}" class="fa-user1"> <img src="assets/img/svg element/ورود.svg" alt="" style="margin-left:3px;">ورود</a>  
             @endguest
            @auth
            <div class="mt-2 mr-auto ml-3 fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>
