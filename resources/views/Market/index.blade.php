@@ -36,7 +36,7 @@
                         <img src="{{ $product->images->first()->address ?? '#' }}" alt=""
                             class="img-product-size mr-auto ml-auto">
                         <caption>
-                            <p class="mt-3 caption-product mb-0">{{substr($product->persian_title ,20)}}</p>
+                            <p class="mt-3 caption-product mb-0">{{substr($product->persian_title ,0,20)}}</p>
                         </caption>
                         <select name="product" style="display: none">
                             <option value="{{$product->id}}"></option>
@@ -62,41 +62,6 @@
             @empty
 
             @endforelse
-            {{-- @forelse ($categories as $category)
-            @forelse ($category->products as $product)
-            <form action="{{ route('market.add.product') }}" method="post" class="mr-2">
-                @csrf
-                <div class="product-card col-12 mb-3">
-                    <a class="w-100">
-                        <img src="{{ $product->images->first()->address ?? '#' }}" alt=""
-                            class="img-product-size mr-auto ml-auto">
-                        <caption>
-                            <p class="mt-3 caption-product mb-0">{{$product->persian_title}}</p>
-                        </caption>
-                        <select name="product" style="display: none">
-                            <option value="{{$product->id}}"></option>
-                        </select>
-                        @if (!Auth::user()->market->products()->wherePure_id($product->id)->first())
-                        <div class="text-center caption-product mt-1">
-                            <button type="submit" class="btn btn-primary caption-product p-1 mb-2"> فروشنده
-                                شوید</button>
-                        </div>
-
-                        @else
-                        <div class="text-center caption-product mt-1">
-                            <button disabled class="btn btn-primary caption-product p-1 mb-2"> شما فروشنده هستید
-                            </button>
-                        </div>
-                        @endif
-                    </a>
-                </div>
-            </form>
-            @empty
-            @endforelse
-
-            @empty
-
-            @endforelse --}}
         </div>
        
         <br><br><br><br>
