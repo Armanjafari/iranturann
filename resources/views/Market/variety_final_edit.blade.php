@@ -8,6 +8,16 @@
     <div class="col-lg-12 mt-3">
         <div class="card border-dark-d mb-3">
             <div class="row">
+                <div class="col-lg-3 text-right">
+                            
+                    <label for="exampleFormControlSelect2" class=""> وضعیت ارسال</label>
+                    <select class="w-100 p-2" name="ordering" id="exampleFormCotrolSelenct2" style="border: 3px solid #ffcc33;">
+                        <option value="0"> آماده ارسال </option>
+                @for ($i = 1; $i < 30; $i++)
+                    <option value="{{$i}}"> ارسال از {{$i}} اینده روز کاری </option>
+                @endfor
+                    </select>
+                </div>
                 <div class="col-lg-3 mt-5">
                     <select name="waranty" class="form-control form-select" id="">
                         @forelse ($waranties as $waranty)
@@ -38,6 +48,10 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-lg-3 align-items-end d-flex mb-3">
+                                <input type="text" name="show_price" value="{{$full->show_price}}" class="form-control"
+                                    placeholder="قیمت">
                             </div>
                             <div class="col-lg-3 align-items-end d-flex mb-3">
                                 <input type="text" name="price" value="{{$full->price}}" class="form-control"

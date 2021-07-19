@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  $(".close").click(function(){
+      $("#popup").hide();
+  })
     $('#owl-mobile25').owlCarousel({
         loop:true,
         margin:10,
@@ -609,3 +612,22 @@ $(document).ready(function(){
       }
     });
 });
+window.onload = function () {
+    /* Cache the popup. */
+    var popup = document.getElementById("popup");
+    
+    /* Show the popup. */
+    popup.classList.remove("hidden");
+    
+    /* Fade the popup in */
+    setTimeout(()=>popup.classList.add("fade-in"));
+    
+    /* Close the popup when a city is selected. */
+    document.getElementById("selectCity").onchange = function () {
+       /* Fade the popup out */
+       popup.classList.remove("fade-in");
+       
+       /* Hide the popup. */
+       setTimeout(()=>popup.classList.add("hidden"), 300);
+    };
+  };

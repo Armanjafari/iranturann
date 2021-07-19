@@ -21,4 +21,12 @@ class homecontroller extends Controller
         $categories = Category::all();
         return view('index',compact('messenger_seller', 'centers' , 'categories' , 'markets'));
     }
+    public function failed()
+    {
+        return view('response.failed');
+    }
+    public function success()
+    {
+        return view('response.success');
+    }
 }

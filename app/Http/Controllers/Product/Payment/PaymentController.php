@@ -21,10 +21,10 @@ class PaymentController extends Controller
     }
     private function sendErrorResponse()
     {
-        return redirect()->route('product.index')->with('error' , ' مشکلی در هنگام ثبت سفارش به وجود امده است ');
+        return redirect()->route('response.failed');
     }
     private function sendSuccessResponse()
     {
-        return redirect()->route('product.index')->with('success' , ' سفارش با موفقیت ثبت شد ');
+        return redirect()->route('response.success');
     }
 }

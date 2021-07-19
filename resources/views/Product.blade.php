@@ -59,8 +59,8 @@
                             {{$option->product->pure->category->persian_name}} </a>
                     </div>
                     <div class="mt-3 box-brand mr-3">
-                         <span class="link-product"> هودی ادی داس طرح زمستانه</span>
-                         <p class="link-in mt-2 text-right">Men's winter hoodie</p>
+                         <span class="link-product"> {{$option->product->pure->persian_title}} </span>
+                         <p class="link-in mt-2 text-right">{{$option->product->pure->title}}</p>
                     </div>
                     <div class="mt-3 color-product-box mr-3">
                         <p class="text-right"> رنگ : {{ $option->colors->title }}</p>
@@ -72,7 +72,7 @@
                         
                     @endforelse
              <br>  <br>   <a href="" class="">شناسه محصول :</a>
-             <a href="" class="link-brand">#13683</a>
+             <a class="link-brand">{{$option->id}}</a>
                 </div>
                          
                     

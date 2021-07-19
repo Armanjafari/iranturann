@@ -63,6 +63,7 @@ class ProductController extends Controller
             'waranty' => 'required|exists:waranties,id',
             'option' => 'required',
             'price' => 'required',
+            'show_price' => 'required',
             'stock' => 'required',
             'is_active' => 'required',
             'ordering' => 'required',
@@ -72,6 +73,7 @@ class ProductController extends Controller
         Full::create([
             'color_id' => $request->input('option'),
             'price' => $request->input('price'),
+            'show_price' => $request->input('show_price'),
             'stock' => $request->input('stock'),
             'is_active' => $request->input('is_active'),
             'ordering' => $request->input('ordering'),
@@ -80,12 +82,12 @@ class ProductController extends Controller
         ]);
         return back()->withSuccess(__('iranturan.success message'));
     }
-    public function varietyIndex()
+    public function varietyIndex(Product $product)
     {
         $user = Auth::user();
-        $products = $user->market->products->load('fulls');
+        $product->load('fulls');
         // dd($products->last()->pure->images->first());
-        return view('Market.index_variety' , compact('products') );
+        return view('Market.index_variety' , compact('product') );
     }
     public function editFinalVarietyForm(Full $full , Request $request)
     {

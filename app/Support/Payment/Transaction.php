@@ -3,6 +3,7 @@ namespace App\Support\Payment;
 
 use App\Order;
 use App\Payment;
+use App\Services\MeliPayamak\MeliPayamak;
 use App\Support\Basket\Basket;
 use App\Support\Cost\Contracts\CostInterface;
 use App\Support\Payment\Gateways\Mellat;
@@ -42,6 +43,7 @@ class Transaction
         } // chech this normalize
         $this->normalizeQuantity($order);
         $this->normalizeWallet($order);
+        $this->sendSms($order);
         //event(new OrderRegistered($order));
         $this->basket->clear();
         return $order;
@@ -72,6 +74,7 @@ class Transaction
         $this->confirmPayment($result);
         $this->normalizeQuantity($result['order']);
         $this->normalizeWallet($result['order']);
+        $this->sendSms($result['order']);
         $this->basket->clear();
         return true;
     }
@@ -133,6 +136,18 @@ class Transaction
             $final = ($product->pivot->price * $product->pivot->quantity)  - $profit;
             $product->product->market->increaseWallet($final);
             $product->product->market->increaseProfit($profit);
+        }
+    }
+    private function  sendSms($order)
+    {
+        $sms = new MeliPayamak($order->user , '' , 'مشتری گرامی خرید شما با موفقیت انجام شد');
+        $sms->send();
+        foreach ($order->products as $product) {
+            $sms = new MeliPayamak($product->pivot->market->user , '' ,
+             $product->product->pure->persian_title .
+             '  ثبت شد محصول :' . $order->id .
+              'فروشنده محترم سفارش شما با شماره');
+            $sms->send();
         }
     }
 

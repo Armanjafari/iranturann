@@ -43,6 +43,25 @@
 <!-- end navbar !-->
 <main>
     <div class="row">
+        <div class="m-auto">
+    <div id = "popup" class = "hidden">
+    <button type="button" class="close" aria-label="Close">
+  <span aria-hidden="true" class="close1 mt-3">&times;</span>
+</button>
+<p>سلام خودمونی خشش؟</p>
+<div class="text-right">
+<span>فقط فروشندگان</span>
+<span class="text-box-popup">لار و گراش و خور و لطیفی و اوز</span>
+<span>شما می توانید پس از ثبت نام در کمتر از 2روز اپلیکیشن فروشگاه آنلاین اختصاصی خودتان را داشته باشید</span>
+
+<p class="mt-3">40% تخفیف</p>
+<div class="mt-3 text-center">
+<a href="{{ route('pre.registration.form') }}" class="btn btn-success">ثبت نام</a>
+<p class="mt-3">تماس با ما : 09333551414</p>
+</div>
+</div>
+</div>
+</div>
     <div class="col-lg-8 col-lg-12w">
     <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile25">
     <div class="item"><a href=""><img src="assets/img/WhatsApp Image 2021-07-07 at 17.38.43 (1).jpeg" alt="" class="img-size4"></a></div>

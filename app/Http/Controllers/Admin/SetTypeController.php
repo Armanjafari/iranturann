@@ -27,7 +27,7 @@ class SetTypeController extends Controller
     }
     public function edit(Color $value ,Request $request)
     {
-        $this->validator($request);
+        // $this->validator($request);
         $value->update([
             'title' => $request->input('title'),
             'value' => $request->input('value'),
