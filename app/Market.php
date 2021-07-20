@@ -3,12 +3,28 @@
 namespace App;
 
 use App\Exceptions\FileHasExistsException;
+use App\Services\ProductFiltering\FilteringByMarket;
 use App\Support\Pivot\PivotOrderMarket;
 use Illuminate\Database\Eloquent\Model;
 
 class Market extends Model
 {
-    protected $fillable = ['market_name', 'slug', 'is_active','is_super_active' , 'bank_number', 'shaba_number','instagram', 'type' ,'user_id', 'center_id' , 'agent_id' , 'wallet'];
+    use FilteringByMarket;
+
+    protected $fillable = [
+    'market_name',
+    'slug',
+    'is_active',
+    'is_super_active',
+    'bank_number',
+    'shaba_number',
+    'instagram',
+    'type',
+    'user_id',
+    'center_id',
+    'agent_id',
+    'wallet'
+];
 
     public function agent()
     {

@@ -32,10 +32,10 @@
         <div class="col-lg-12">
                 <div class="row">
                         <div class="col-lg-3 mt-3">
-                        <a href="#categry" data-toggle="collapse" aria-expanded="false">
-                                <div class="text-center category1">
-                                      دسته بندی
-                                </div>
+                                <a href="#categry" data-toggle="collapse" aria-expanded="false">
+                                        <div class="text-center category1">
+                                                دسته بندی
+                                        </div>
                                 </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="categry">
@@ -57,9 +57,9 @@
                                         </ul>
                                 </div>
                                 <a href="#brand" data-toggle="collapse" aria-expanded="false">
-                                <div class="text-center category1">
-                                        برند
-                                </div>
+                                        <div class="text-center category1">
+                                                برند
+                                        </div>
                                 </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="brand">
@@ -80,9 +80,9 @@
                                         </ul>
                                 </div>
                                 <a href="#color" data-toggle="collapse" aria-expanded="false">
-                                <div class="text-center category1">
-                                        رنگ
-                                </div>
+                                        <div class="text-center category1">
+                                                رنگ
+                                        </div>
                                 </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="color">
@@ -106,10 +106,10 @@
                                         </ul>
                                 </div>
                                 <a href="#Price-range" data-toggle="collapse" aria-expanded="false">
-                                <div class="text-center category1">
-                                       محدوده
+                                        <div class="text-center category1">
+                                                محدوده
                                                 قیمت
-                                </div>
+                                        </div>
                                 </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="Price-range">
@@ -131,9 +131,9 @@
                                         </ul>
                                 </div>
                                 <a href="#size" data-toggle="collapse" aria-expanded="false">
-                                <div class="text-center category1">
-                                       سایز ها
-                                </div>
+                                        <div class="text-center category1">
+                                                سایز ها
+                                        </div>
                                 </a>
                                 <div class="box-categry text-center mt-2">
                                         <ul class="collapse pr-0 m-3" id="size">
@@ -154,15 +154,29 @@
                                         </ul>
                                 </div>
                         </div>
-                        <div class="col-lg-9">
+                        <div class="col-lg-9 ">
                                 <div class="row">
-                                        <div class="content-categry text-right mt-3">
+                                        <div class="content-categry text-right mt-3 w-98">
                                                 <div class="m-3">
-                                                        <a href="" class="Seller2">پربازدیدترین</a>
-                                                        <a href="" class="Seller2 mr-sm-3">پرفروش ترین</a>
-                                                        <a href="" class="Seller2 mr-sm-3">محبوب ترین</a>
-                                                        <a href="" class="Seller2 mr-sm-3">ارزان ترین</a>
-                                                        <a href="" class="Seller2 mr-sm-3">گران ترین</a>
+                                                        <form action="{{route('show.market',$seller->id)}}"
+                                                                method="get">
+                                                                <button class="Seller2{{$sort == 'viewed' ? ' Seller2-active' : ''}}"
+                                                                        value="viewed" name="sort" type="submit">
+                                                                        پربازدیدترین
+                                                                </button>
+                                                                <button class="Seller2{{$sort == 'desc' ? ' Seller2-active' : ''}}"
+                                                                        value="desc" name="sort" type="submit">
+                                                                        ارزان ترین
+                                                                </button>
+                                                                <button class="Seller2{{$sort == 'asc' ? ' Seller2-active' : ''}}"
+                                                                        value="asc" name="sort" type="submit">
+                                                                        گران ترین
+                                                                </button>
+                                                                <button class="Seller2{{$sort == 'created' ? ' Seller2-active' : ''}}"
+                                                                        value="created" name="sort" type="submit">
+                                                                        جدید ترین
+                                                                </button>
+                                                        </form>
                                                 </div>
                                         </div>
                                         @forelse ($products as $product)
@@ -170,42 +184,52 @@
                                                 <div class="product-card text-center">
                                                         @if ($product->count())
                                                         <a href="{{ route('product.single' , $product->id ?? '') }}">
-                                                        @else
-                                                        <a href="#">
-                                                        @endif
-                                                                <span class="badge badge-danger badge-1"> تخفیف ویژه </span>
-                                                                <span class="float-right Ready-to-send mr-3"> آماده ارسال<img
-                                                                                src="assets/img/svg element/آماده ارسال جدید.svg"
-                                                                                alt=""
-                                                                                style="width:15px; display:inline-block"
-                                                                                class="ml-1"></span>
-                                                                <img src="{{$product->product->pure->images->first()->address}}"
-                                                                        alt=""  class="img-product-size1">
-                                                                <caption>
-                                                                        <p class="mt-3 caption-product mb-0">
-                                                                        {{$product->product->pure->persian_title}}
-                                                                        </p>
-                                                                </caption>
-                                                                <div class="text-center ml-3 mt-2"><span
-                                                                                class="fa fa-star checked"></span> <span
-                                                                                class="fa fa-star checked"></span> <span
-                                                                                class="fa fa-star checked"></span> <span
-                                                                                class="fa fa-star checked"></span><span
-                                                                                class="fa fa-star"></span> </div>
-                                                                <div class="text-center mt-2 pb-3"><span
-                                                                                class="price-line"> {{number_format($product->show_price)}} </span>  <br> 
-                                                                       @if ($product->count())
-                                                                       <span
-                                                                       class="font-weight-bold prodict-price3"> تومان {{  number_format($product->orderBy('price','asc')->get('price')->first()->price) ?? 'ناموجود' }}  </span>   
-                                                                       @else
-                                                                       <span
-                                                                       class="font-weight-bold prodict-price3">  ناموجود </span>   
-                                                                       @endif
-                                                                </div>
-                                                        </a>
+                                                                @else
+                                                                <a href="#">
+                                                                        @endif
+                                                                        <span class="badge badge-danger badge-1"> تخفیف
+                                                                                ویژه </span>
+                                                                        <span class="float-right Ready-to-send mr-3">
+                                                                                آماده ارسال<img
+                                                                                        src="assets/img/svg element/آماده ارسال جدید.svg"
+                                                                                        alt=""
+                                                                                        style="width:15px; display:inline-block"
+                                                                                        class="ml-1"></span>
+                                                                        <img src="{{$product->product->pure->images->first()->address}}"
+                                                                                alt="" class="img-product-size1">
+                                                                        <caption>
+                                                                                <p class="mt-3 caption-product mb-0">
+                                                                                        {{$product->product->pure->persian_title}}
+                                                                                </p>
+                                                                        </caption>
+                                                                        <div class="text-center ml-3 mt-2"><span
+                                                                                        class="fa fa-star checked"></span>
+                                                                                <span class="fa fa-star checked"></span>
+                                                                                <span class="fa fa-star checked"></span>
+                                                                                <span
+                                                                                        class="fa fa-star checked"></span><span
+                                                                                        class="fa fa-star"></span>
+                                                                        </div>
+                                                                        <div class="text-center mt-2 pb-3"><span
+                                                                                        class="price-line">
+                                                                                        {{number_format($product->show_price)}}
+                                                                                </span> <br>
+                                                                                @if ($product->count())
+                                                                                <span
+                                                                                        class="font-weight-bold prodict-price3">
+                                                                                        تومان
+                                                                                        {{  number_format($product->price) ?? 'ناموجود' }}
+                                                                                </span>
+                                                                                @else
+                                                                                <span
+                                                                                        class="font-weight-bold prodict-price3">
+                                                                                        ناموجود </span>
+                                                                                @endif
+                                                                        </div>
+                                                                </a>
                                                 </div>
-                                        </div>  
-                                        
+                                        </div>
+
                                         @empty
 
                                         @endforelse
@@ -213,30 +237,10 @@
                         </div>
                         <nav aria-label="Page navigation example" class="mr-auto ml-auto mt-5">
                                 <div class="row">
-                                        <a href="">
-                                                <div
-                                                        class="pagaition1 d-flex justify-content-center align-items-center">
-                                                        1
-                                                </div>
-                                        </a>
-                                        <a href="">
-                                                <div
-                                                        class="pagaition1 d-flex justify-content-center align-items-center">
-                                                        2
-                                                </div>
-                                        </a>
-                                        <a href="">
-                                                <div
-                                                        class="pagaition1 d-flex justify-content-center align-items-center">
-                                                        3
-                                                </div>
-                                        </a>
-                                        <a href="">
-                                                <div
-                                                        class="pagaition1 d-flex justify-content-center align-items-center">
-                                                        <img src="{{ asset('assets/img/فلش صفحه بعدی.svg') }}" alt="">
-                                                </div>
-                                        </a>
+                                        {{-- <div class="pagaition1 d-flex justify-content-center align-items-center">
+                                                {{$products->render()}}
+                                        </div> --}}
+                                        
                                 </div>
                         </nav>
                 </div>

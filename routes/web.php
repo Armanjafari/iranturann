@@ -173,9 +173,9 @@ Route::post('admin/market/setcategory/{market}/{category}', 'Admin\MarketControl
 Route::get('filter', function () {
     return view('mousavi');
 });
-// Route::get('etesal', function () {
-//     return view('etesal');
-// }); 
+Route::get('etesal', function () {
+    return view('etesal');
+}); 
 
 Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'is.market'], function () {
     Route::get('/', 'ProductController@index')->name('market.index');

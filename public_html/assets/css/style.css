@@ -2368,14 +2368,22 @@ input[type=range].ps6{
 }
 .Seller2{
   border-radius:20px;
-  padding: 0.7em 2.5em 0.7em 2.5em;
+  padding: 0.2em 3em 0.2em 3em;
   color: #616161;
+  margin-right: 2em;
   background-color: #fff;
   cursor: pointer;
   line-height: 50px;
   transition: all ease 0.5s;
+  
 }
 .Seller2:hover{
+  color: #fff;
+  border: 2px solid #FFCC33;
+  background-color: #FFCC33;
+  transition: all ease 0.5s;
+ }
+ .Seller2-active{
   color: #fff;
   border: 2px solid #FFCC33;
   background-color: #FFCC33;
