@@ -3,11 +3,14 @@
 namespace App;
 
 use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use App\Services\ProductFiltering\FilteringByMarket;
 use App\Support\Pivot\PivotOrderMarket;
 use Illuminate\Database\Eloquent\Model;
 
 class Full extends Model
 {
+    use FilteringByMarket;
+
     protected $fillable = [
         'stock',
         'views',
@@ -17,7 +20,7 @@ class Full extends Model
         'color_id',
         'product_id',
         'ordering',
-        'is_active'
+        'is_active',
 ];
     public function colors()
     {
@@ -45,5 +48,9 @@ class Full extends Model
     public function orders()
     {
         return $this->belongsToMany(Order::class)->using(PivotOrderMarket::class)->withPivot(['quantity','market_id','price','status' ,'category_id']);
+    }
+    public function percentage()
+    {
+        return 100 - (int)($this->price*100 / $this->show_price) ; 
     }
 }

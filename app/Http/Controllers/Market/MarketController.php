@@ -22,7 +22,7 @@ class MarketController extends Controller
         // dd($request->all());
         // $seller->orderBy('asc');
         $products = $products->unique('product_id');
-        $products = $products->paginate(1)->all();
+        $products = $products->paginate(1);
         // dd($products);
         // dd($products->where('is_active',1)->unique('product_id'));
         // dd( $seller->products);

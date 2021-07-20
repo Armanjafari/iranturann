@@ -4,8 +4,10 @@
 <header>
     <nav class="navbar navbar-expand-lg nav-box text-right">
     <div class="w-100">
-        <input type="search" name="" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control2 serch-box mt-lg-1">
-        </div>     
+        <form action="{{ route('index.search') }}" method="get">
+        <input type="search" name="query" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control2 serch-box mt-lg-1">
+        </div>  .
+    </form>   
         <!-- <div class="c-search__results text-right">
             <img src="assets/img/svg element/ice-cream (1).svg" alt="" class="icon-seller"> -->
             <!-- <a href="" class="Seller mr-3 mt-3 mt-lg-0">فروشنده موبایل</a>
@@ -24,20 +26,20 @@
                    </div>  
                 </div>
        </div> -->
-        <div class="dropdown dropdown-city mr-auto">
+        {{-- <div class="dropdown dropdown-city mr-auto">
             <!-- <button class="btn  dropdown-toggle dropdown-city-button pl-5 mt-lg-1" type="button" id="dropdown_coins"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                لار
             </button> -->
             <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_coins">
-                <form class="px-4 py-2">
+                <form action="asd" class="px-4 py-2">
                     <input type="search" class="form-control search-city" id="searchCoin" placeholder="شهر مورد نظر"
                         autofocus="autofocus">
                 </form>
                 <div id="menuItems"></div>
                 <div id="empty" class="dropdown-header">شهر مورد نظر شما پیدا نشد</div>
             </div>
-        </div>
+        </div> --}}
     </nav>
 </header>
 <!-- end navbar !-->

@@ -238,8 +238,9 @@
                         <nav aria-label="Page navigation example" class="mr-auto ml-auto mt-5">
                                 <div class="row">
                                         {{-- <div class="pagaition1 d-flex justify-content-center align-items-center">
-                                                {{$products->render()}}
                                         </div> --}}
+                                        
+                                                {{$products->links()}}
                                         
                                 </div>
                         </nav>

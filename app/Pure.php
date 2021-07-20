@@ -47,4 +47,8 @@ class Pure extends Model
     {
         return $this->belongsTo(Brand::class);
     }
+    public function fulls()
+    {
+        return $this->hasManyThrough(Full::class , Product::class , 'pure_id','product_id', 'id' , 'id');
+    }
 }

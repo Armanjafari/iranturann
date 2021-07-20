@@ -9,17 +9,22 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function byProduct(Category $category)
-    {
+    {        
+        // $products = $category->products()->first->fulls;
+        // dd($products);
         $products = [];
-        for ($i=0; $i < sizeof($category->products); $i++) { 
-                array_push($products , $category->products[$i]);
+        foreach ($category->products as $product) {
+            
+                array_push($products , $product->fulls);
                 # code...
             }
+            // TODO refactor this
+        $products = collect($products)->collapse();
+        $products = $products->unique('product_id');
         // dd($products);
+        $products = $products->paginate(12);
         
-        // dd($category->products);
-        return response()->json([
-            'products' => $products
-        ]);
+        // dd($category->products); 
+        return view('category.categoryByProducts', compact('products'));
     }
 }
