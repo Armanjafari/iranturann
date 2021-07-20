@@ -51,7 +51,6 @@ $(document).ready(function () {
             $target.find('input:eq(0)').focus();
         }
     });
-
     allPrevBtn.click(function(){
         var curStep = $(this).closest(".setup-content"),
             curStepBtn = curStep.attr("id"),
