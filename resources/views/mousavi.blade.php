@@ -119,8 +119,8 @@
                                                                 <span
                                                                        class="font-weight-bold prodict-price3"> 50,000تومان   </span> 
                                                                        </div>
-                                                                    </a>
-                                                </div>
+                                                                   </a>
+                                                </div> 
                                         </div>  
                                         <div class="col-lg-3 col-xl-3 col-6 pr-2 pl-2 mt-3">
                                                 <div class="product-card text-center">
