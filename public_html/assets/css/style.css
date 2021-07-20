@@ -2085,6 +2085,16 @@
   font-size: 16px;
   font-weight: bold;
 }
+.link-application3{
+  color: #0B7676;
+  font-size: 16px;
+  font-weight: bold;
+}
+.link-application3:hover{
+  color: #0B7676 !important;
+  font-size: 16px;
+  font-weight: bold;
+}
 .link-application:hover{
   color: #33CCCC;
 }
@@ -2169,6 +2179,9 @@ line-height: 70px;
   box-shadow: 2px 4px 5px 2px #e2dfdf;
   font-size: 10px;
 }
+.card-shopping3{
+  background-color: #def0f0;
+}
 .item1{
  height: 400px; 
 }
@@ -2203,6 +2216,7 @@ line-height: 70px;
  margin-left: 0.2em; 
  color: rgb(248, 248, 248);
 }
+
 /* .page-item{
   width: 40px !important;
   height: 40px !important;
