@@ -168,8 +168,8 @@
                                         @forelse ($products as $product)
                                         <div class="col-lg-4 col-xl-4 col-6 pr-2 pl-2 mt-3">
                                                 <div class="product-card text-center">
-                                                        @if ($product->fulls->count())
-                                                        <a href="{{ route('product.single' , $product->fulls->first()->id ?? '') }}">
+                                                        @if ($product->count())
+                                                        <a href="{{ route('product.single' , $product->id ?? '') }}">
                                                         @else
                                                         <a href="#">
                                                         @endif
@@ -179,11 +179,11 @@
                                                                                 alt=""
                                                                                 style="width:15px; display:inline-block"
                                                                                 class="ml-1"></span>
-                                                                <img src="{{$product->pure->images->first()->address}}"
+                                                                <img src="{{$product->product->pure->images->first()->address}}"
                                                                         alt=""  class="img-product-size1">
                                                                 <caption>
                                                                         <p class="mt-3 caption-product mb-0">
-                                                                        {{$product->pure->persian_title}}
+                                                                        {{$product->product->pure->persian_title}}
                                                                         </p>
                                                                 </caption>
                                                                 <div class="text-center ml-3 mt-2"><span
@@ -193,10 +193,10 @@
                                                                                 class="fa fa-star checked"></span><span
                                                                                 class="fa fa-star"></span> </div>
                                                                 <div class="text-center mt-2 pb-3"><span
-                                                                                class="price-line"> {{number_format($product->pure->price)}} </span>  <br> 
-                                                                       @if ($product->fulls->count())
+                                                                                class="price-line"> {{number_format($product->show_price)}} </span>  <br> 
+                                                                       @if ($product->count())
                                                                        <span
-                                                                       class="font-weight-bold prodict-price3"> تومان {{  number_format($product->fulls()->orderBy('price','asc')->get('price')->first()->price) ?? 'ناموجود' }}  </span>   
+                                                                       class="font-weight-bold prodict-price3"> تومان {{  number_format($product->orderBy('price','asc')->get('price')->first()->price) ?? 'ناموجود' }}  </span>   
                                                                        @else
                                                                        <span
                                                                        class="font-weight-bold prodict-price3">  ناموجود </span>   

@@ -69,7 +69,7 @@ class Market extends Model
     }
     public function fulls()
     {
-        
+        return $this->hasManyThrough(Full::class , Product::class , 'market_id','product_id', 'id' , 'id');
     }
 
 }

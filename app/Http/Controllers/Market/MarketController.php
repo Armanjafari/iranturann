@@ -16,8 +16,9 @@ class MarketController extends Controller
     }
     public function index(Request $request, Market $seller)
     {
-        $seller->products->load('fulls');
-        $products = $seller->products()->where('is_active',1)->get();
+        // $seller->orderBy('asc');
+        $products = collect($seller->fulls);
+        // dd($products->where('is_active',1)->unique('product_id'));
         // dd( $seller->products);
         // foreach ($products as $product) {
         //     $product->fulls()->where('is_active',1)->get();

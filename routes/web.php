@@ -170,9 +170,9 @@ Route::get('admin/market/setcategory/{market}', 'Admin\MarketController@setProfi
 Route::post('admin/market/setcategory/{market}/{category}', 'Admin\MarketController@setProfit')->name('market.setprofit');
 
 // TODO closuer error
-// Route::get('filter', function () {
-//     return view('Market.financial');
-// });
+Route::get('filter', function () {
+    return view('mousavi');
+});
 // Route::get('etesal', function () {
 //     return view('etesal');
 // }); 
