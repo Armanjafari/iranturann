@@ -154,7 +154,7 @@
                                         </ul>
                                 </div>
                         </div>
-                        <div class="col-lg-9 ">
+                        <div class="col-lg-9">
                                 <div class="row">
                                         <div class="content-categry text-right mt-3 w-98">
                                                 <div class="m-3">

@@ -2030,7 +2030,7 @@
   }
   
   .discount{
-    font-size: 1.2em;
+    font-size:16px;
     border-bottom: 3px dashed #10747B;
   }
   .product-card{
@@ -2247,6 +2247,7 @@ line-height: 70px;
   .bazar2{
     font-size: 8px;
 }
+
 .category1{
   width: 100%;
   border:2px dashed #0E6B4C;
@@ -2262,7 +2263,7 @@ line-height: 70px;
   font-size: 8px;
 }
 .discount{
-  font-size: 0.9em;
+  font-size: 10px !important;
   border-bottom: 3px dashed #10747B;
 }
 }
@@ -2275,6 +2276,7 @@ line-height: 70px;
   background-color: #EEEEEE;
   border: 1px solid #B8B3B3;
   border-radius: 5px;
+ 
 }
 .serch-box2{
   width:100% !important;
@@ -2406,7 +2408,19 @@ input[type=range].ps6{
 
  @media screen and (min-width: 300px) and (max-width:800px){
   .Seller2{
-    padding: 0.5em 0.6em 0.5em 0.6em;
+    padding: 0.2em 1em 0.2em 1em;
+  
+  }
+  .box-categry{
+    font-size: 10px !important;
+  }
+  .link-range{
+    font-size: 10px !important;
+  }
+  .Seller2{
+    margin-right: 1px !important;
+    border: none !important;
+    outline: none !important;
   }
  }
  .c-search__results{
@@ -2831,6 +2845,9 @@ border-radius: 5px;
   height: 100px;
 }
 @media screen and (min-width: 300px) and (max-width: 450px){
+  .discount{
+    font-size: 8px !important;
+  }
   .garant{
     font-size: 10px !important;
   }

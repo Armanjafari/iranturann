@@ -5,9 +5,7 @@
             <div class="container">
                 <ul class="menu-level-1">
                     <!-- Menu Level 1 -->
-                    <a href="{{route('index')}}">
-                    <img src="{{asset('assets/img/001.svg')}}" alt="" class="img-thumbnail">
-                    </a>
+                 
                     <li class="menu-list-1">
                         <a href="#" class="list-item">
                             <img src="assets/img/download (1).png" alt="">
