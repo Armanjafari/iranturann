@@ -222,6 +222,7 @@ Route::get('success', 'homecontroller@success')->name('response.success');
     Route::post('edit/', 'UserController@edit')->name('edit.profile');
      
  });
- Route::prefix('mobile')->namespace('App')->group(function () {
-    
+ Route::prefix('mobile')->namespace('mobile')->group(function () {
+    Route::get('market/{seller}', 'MarketController@index')->name('mobile.show.market');
+
  });

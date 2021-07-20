@@ -49,6 +49,25 @@ class homecontroller extends Controller
         $markets = Market::where('market_name' ,'LIKE',$query . '%')
         ->orWhere('market_name' ,'LIKE',$query . '%')
         ->orWhere('market_name' ,'LIKE',$query . '%')->get();
-        return view()
+        // dd($products);
+        if($products)
+        $products = $this->products($products);
+        $products = $products->paginate(12);
+        return view('search',compact('products' , 'centers' , 'markets'));;
+    }
+    private function products($pures)
+    {
+        // dd($pures);
+        $products = [];
+        foreach ($pures as $product) {
+            
+                array_push($products , $product->fulls);
+                # code...
+            }
+            // TODO refactor this
+        $products = collect($products)->collapse();
+        $products = $products->unique('product_id');
+        // dd($products);
+        return $products;
     }
 }

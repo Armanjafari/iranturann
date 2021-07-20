@@ -7,7 +7,7 @@
             <div class="product-card text-center">
 
                 <a href="{{route('product.single', $product->id)}}">
-                    <span class="badge badge-danger badge-1 float-left"> {{$product->percentage()}} </span>
+                    <span class="badge badge-danger badge-1 float-left"> %{{$product->percentage()}} </span>
                     <span class="float-right Ready-to-send"> فروشنده : {{$product->product->market->market_name}}<img
                             src="assets/img/svg element/آماده ارسال جدید.svg" alt=""
                             style="width:15px; display:inline-block" class=""></span>
