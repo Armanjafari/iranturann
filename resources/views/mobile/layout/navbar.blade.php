@@ -5,7 +5,7 @@
             <div class="container">
                 <ul class="menu-level-1">
                     <!-- Menu Level 1 -->
-                    <a href="{{route('index')}}">
+                    <a href="#">
                     <img src="{{asset('assets/img/001.svg')}}" alt="" class="img-thumbnail">
                     </a>
                     <li class="menu-list-1">
@@ -310,7 +310,7 @@
                         @guest
                      
                                 
-                                <a class="text-center btn-logo" href="{{ route('login_with_code') }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
+                                <a class="text-center btn-logo" href="{{ route('mobile.login',$market->id) }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
                         @endguest
                         @auth       
                         <div class="mt-2 fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>
@@ -322,7 +322,7 @@
                        <hr>
                        <a href="{{route('user.orders.index')}}">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
                        <hr>
-                       <a href="{{ route('logout') }}">  <i class="fas fa-sign-out-alt fa-sign-out-alt1 ml-2"></i>خروج از حساب کاربری</a>
+                       <a href="{{ route('mobile.logout',$market->id) }}">  <i class="fas fa-sign-out-alt fa-sign-out-alt1 ml-2"></i>خروج از حساب کاربری</a>
                         </div>
                         </div>
                         @endauth

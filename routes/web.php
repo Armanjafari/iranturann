@@ -144,23 +144,22 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'role
     Route::post('market/{market}', 'MarketController@edit')->name('edit.market');
     Route::get('market/delete/{market}', 'MarketController@delete')->name('delete.market');
 
-    Route::get('users' , 'UserController@showForm')->name('show.user.form.admin');
-    Route::post('users' , 'UserController@createUser')->name('user.create.admin');
-    Route::get('user/{user}' , 'UserController@editForm')->name('show.user.edit.form.admin');
-    Route::post('user/{user}' , 'UserController@edit')->name('user.edit.admin');
+    Route::get('users', 'UserController@showForm')->name('show.user.form.admin');
+    Route::post('users', 'UserController@createUser')->name('user.create.admin');
+    Route::get('user/{user}', 'UserController@editForm')->name('show.user.edit.form.admin');
+    Route::post('user/{user}', 'UserController@edit')->name('user.edit.admin');
 
 
     Route::get('market/category/{market}', 'MarketController@categoryForm')->name('show.market.category.form');
     Route::post('market/category/{market}', 'MarketController@editCategory')->name('edit.market.category');
-
-});    
+});
 Route::get('admin/settings/market', 'Admin\Market\MarketManagementController@showForm');
 Route::get('admin/settings/market/{market}', 'Admin\Market\MarketManagementController@productsForm')->name('admin.market.settings');
 Route::post('admin/settings/market/{market}/status', 'Admin\Market\MarketManagementController@marketStatus')->name('admin.market.status');
 
-Route::get('admin/orders' , 'Admin\OrderController@index')->name('admin.order.index');
-Route::post('admin/orders' , 'Admin\OrderController@changeStatus')->name('order.change.status');
-Route::get('admin/orders/details/{payment}' , 'Admin\OrderController@details')->name('admin.order.details');
+Route::get('admin/orders', 'Admin\OrderController@index')->name('admin.order.index');
+Route::post('admin/orders', 'Admin\OrderController@changeStatus')->name('order.change.status');
+Route::get('admin/orders/details/{payment}', 'Admin\OrderController@details')->name('admin.order.details');
 
 Route::get('admin/login/', 'Admin\Auth\LoginController@showForm')->name('show.admin.login.form');
 Route::post('admin/login/', 'Admin\Auth\LoginController@login')->name('admin.login');
@@ -176,9 +175,9 @@ Route::get('filter', function () {
 });
 Route::get('etesal', function () {
     return view('etesal');
-}); 
+});
 
-Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'is.market'], function () {
+Route::group(['namespace' => 'Market', 'prefix' => 'market', 'middleware' => 'is.market'], function () {
     Route::get('/', 'ProductController@index')->name('market.index');
     // Route::get('variety', 'ProductController@vareityForm')->name('aaaaaa'); // TODO search this error
     Route::post('/', 'ProductController@add')->name('market.add.product');
@@ -187,9 +186,8 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market' , 'middleware' => 'i
     Route::get('variety/index/{product}', 'ProductController@varietyIndex')->name('market.variety.index');
     Route::get('variety/edit/{full}', 'ProductController@editFinalVarietyForm')->name('market.variety.edit.form');
     Route::post('variety/edit/{full}', 'ProductController@editFinalVariety')->name('market.variety.edit');
-
 });
-Route::get('search/Product','Market\ProductController@search')->name('market.search');
+Route::get('search/Product', 'Market\ProductController@search')->name('market.search');
 Route::get('owner/addtest', 'Market\ProductController@vareityForm')->name('market.add.product.form');
 Route::get('owner/financial', 'Market\MarketController@financalForm')->name('financial.index');
 Route::get('owner/orders', 'Market\MarketController@ordersForm')->name('orders.index');
@@ -202,7 +200,6 @@ Route::group(['namespace' => 'File',], function () {
     Route::get('files', 'FileController@index')->name('files');
     Route::get('file/{file}', 'FileController@show')->name('file.show');
     Route::get('file/delete/{file}', 'FileController@delete')->name('file.delete');
-
 });
 Route::get('failed', 'homecontroller@failed')->name('response.failed');
 Route::get('success', 'homecontroller@success')->name('response.success');
@@ -211,18 +208,22 @@ Route::get('success', 'homecontroller@success')->name('response.success');
 //     $a = SitemapGenerator::create('https://iranturan.com/')
 //     ->writeToFile(public_path('sitemap.xml'));
 // });
- Route::get('pre_registration', 'PreController@index')->name('pre.registration.form');
- Route::post('pre_registration', 'PreController@create')->name('pre.registration');
+Route::get('pre_registration', 'PreController@index')->name('pre.registration.form');
+Route::post('pre_registration', 'PreController@create')->name('pre.registration');
 
- Route::prefix('profile')->namespace('User')->group(function () {
+Route::prefix('profile')->namespace('User')->group(function () {
     Route::get('orders/', 'OrderController@index')->name('user.orders.index');
     Route::get('orders/details/{order}', 'OrderController@details')->name('user.orders.details.form');
     Route::get('/', 'UserController@showProfile')->name('show.profile');
     Route::get('edit/', 'UserController@editForm')->name('edit.profile.form');
     Route::post('edit/', 'UserController@edit')->name('edit.profile');
-     
- });
- Route::prefix('mobile')->namespace('mobile')->group(function () {
-    Route::get('market/{seller}', 'MarketController@index')->name('mobile.show.market');
-
- });
+});
+Route::prefix('mobile')->namespace('mobile')->group(function () {
+        Route::get('market/{seller}', 'MarketController@index')->name('mobile.show.market');
+        Route::get('market/{market}/login/a', 'LoginController@showLoginForm')->name('mobile.login');
+        Route::get('market/{market}/logout/a', 'LoginController@logout')->name('mobile.logout');
+        Route::post('market/register/withcode/', 'LoginController@register')->name('mobile.register.with.code');
+        Route::post('market/{market}/loginwithcode/', 'LoginController@login')->name('mobile.login_with_code');
+        Route::get('market/{market}/verify/a', 'LoginController@verifyForm')->name('mobile.verify_login_code');
+        Route::post('market/{market}/verify/a/', 'LoginController@codeValidator')->name('mobile.validate_code');
+});

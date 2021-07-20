@@ -24,7 +24,8 @@ class MarketController extends Controller
         // foreach ($products as $product) {
         //     $product->fulls()->where('is_active',1)->get();
         // }
-        return view('mobile.market' , compact('seller' ,'sort', 'products'));
+        $market = $seller;
+        return view('mobile.market', compact('seller','market' ,'sort', 'products'));
     }
     private function filtering($sort, Market $seller ,$products)
     {

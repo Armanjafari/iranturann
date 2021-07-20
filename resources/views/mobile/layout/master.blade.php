@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-@include('layout.header')
+@include('mobile.layout.header')
 <meta name="google-site-verification" content="G5Jn8M-O5gunSKHFNh0z9EJIzDeWB3MH4ent21mF-xI" />
 <meta property="og:description" content="فروشگاه اینترنتی ایران توران مرجع خرید کالای اصل و اورجینال جنس هایی که در ایران توران مشاهده میکیند همگی مستقیم از دبی وارد میشوند انواع موبایل , لوازم خانگی و لباس" /> 
 <meta name="description" content="فروشگاه اینترنتی ایران توران مرجع خرید کالای اصل و اورجینال جنس هایی که در ایران توران مشاهده میکیند همگی مستقیم از دبی وارد میشوند انواع موبایل , لوازم خانگی و لباس" />
@@ -18,13 +18,13 @@
 
 <body dir="rtl">
     <!--start navbar menu-->
-            @include('layout.navbar')
+            @include('mobile.layout.navbar')
          <!--start main-->
          @include('alerts-index.errors') <!-- TODO Fix this problem (alerts under navbar) !-->
          @include('alerts-index.success')
     @yield('content')
         <!--end main-->
-    @include('layout.footer')
+    @include('mobile.layout.footer')
         <!-- start footer -->
     
 </body>
