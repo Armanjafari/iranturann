@@ -45,11 +45,7 @@
                                                      
                                                
                                                                 <span class="badge badge-danger badge-1 float-left"> 25%</span>
-                                                                <span class="float-right Ready-to-send"> آماده ارسال<img
-                                                                                src="assets/img/svg element/آماده ارسال جدید.svg"
-                                                                                alt=""
-                                                                                style="width:15px; display:inline-block"
-                                                                                class=""></span>
+                                                                <span class="float-right Ready-to-send"> عباس رنجبر</span>
                                                                                
                                                                 <img src="assets/img/03.png"
                                                                         alt=""  class="img-product-size1 img-fluid m-3">
@@ -85,11 +81,7 @@
                                                      
                                                
                                                                 <span class="badge badge-danger badge-1 float-left"> 50% </span>
-                                                                <span class="float-right Ready-to-send"> آماده ارسال<img
-                                                                                src="assets/img/svg element/آماده ارسال جدید.svg"
-                                                                                alt=""
-                                                                                style="width:15px; display:inline-block"
-                                                                                class=""></span>
+                                                                <span class="float-right Ready-to-send"> فروشنئه : عباس رنجبر</span>
                                                                                
                                                                 <img src="assets/img/03.png"
                                                                         alt=""  class="img-product-size1 img-fluid m-3">
@@ -125,11 +117,7 @@
                                                      
                                                
                                                                 <span class="badge badge-danger badge-1 float-left"> 20% </span>
-                                                                <span class="float-right Ready-to-send"> آماده ارسال<img
-                                                                                src="assets/img/svg element/آماده ارسال جدید.svg"
-                                                                                alt=""
-                                                                                style="width:15px; display:inline-block"
-                                                                                class=""></span>
+                                                                <span class="float-right Ready-to-send">  فروشنده : عباس رنجبر</span>
                                                                                
                                                                 <img src="assets/img/03.png"
                                                                         alt=""  class="img-product-size1 img-fluid m-3">
@@ -165,11 +153,7 @@
                                                      
                                                
                                                                 <span class="badge badge-danger badge-1 float-left"> 35% </span>
-                                                                <span class="float-right Ready-to-send"> آماده ارسال<img
-                                                                                src="assets/img/svg element/آماده ارسال جدید.svg"
-                                                                                alt=""
-                                                                                style="width:15px; display:inline-block"
-                                                                                class=""></span>
+                                                                <span class="float-right Ready-to-send"> فروشنده عباس رنجبر</span>
                                                                                
                                                                 <img src="assets/img/03.png"
                                                                         alt=""  class="img-product-size1 img-fluid m-3">
