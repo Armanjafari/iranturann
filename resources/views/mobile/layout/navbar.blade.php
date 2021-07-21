@@ -5,9 +5,7 @@
             <div class="container">
                 <ul class="menu-level-1">
                     <!-- Menu Level 1 -->
-                    {{-- <a href="#">
-                    <img src="{{asset('assets/img/001.svg')}}" alt="" class="img-thumbnail">
-                    </a> --}}
+              
                     <li class="menu-list-1">
                         <a href="#" class="list-item">
                             <img src="assets/img/download (1).png" alt="">
@@ -333,9 +331,7 @@
         <!--start mobile nav-->
         <div class="mobile-nav">
             <a href="#" class="toggle-btn" id="toggle"><span></span></a>
-            <a href="">
-            <img src="{{ asset('assets/img/001.svg') }}" alt="" class="img-thumbnail ml-auto mr-3">
-            </a>
+           
             <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-3 mt-2">
                 <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
             {{-- <a href="">

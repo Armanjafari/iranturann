@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-12">
                 <div class="row">
-                        {{-- <div class="col-lg-3 mt-3">
+                        <div class="col-lg-3 mt-3">
                                 <a href="#categry" data-toggle="collapse" aria-expanded="false">
                                         <div class="text-center category1">
                                                 دسته بندی
