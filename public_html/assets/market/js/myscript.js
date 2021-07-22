@@ -1,6 +1,4 @@
-
-$(document).ready(function () {
-    $(document).ready(function(){
+$(document).ready(function(){
         $("#activeclasses").click(function(){
           $(this).addClass("active-1")
            $("#activeclasses1").removeClass("active-1")
@@ -11,6 +9,9 @@ $(document).ready(function () {
           $("#activeclasses").removeClass("active-1")
         })
       })
+      $(document).ready(function(){
+
+     
     var navListItems = $('div.setup-panel div a'),
         allWells = $('.setup-content'),
         allNextBtn = $('.nextBtn'),
@@ -60,7 +61,7 @@ $(document).ready(function () {
     });
 
     $('div.setup-panel div a.btn-indigo').trigger('click');
-});
+
 
 $(document).ready(function(){
 $(".active4").click(function(){
@@ -179,18 +180,19 @@ $(".active4").click(function(){
         }   
     });
 });
-// imgInp.onchange = evt => {
-//     const [file] = imgInp.files
-//     if (file) {
-//       blah.src = URL.createObjectURL(file)
-//     }
-//   }
-//   imgInp1.onchange = evt => {
-//     const [file] = imgInp1.files
-//     if (file) {
-//       blah1.src = URL.createObjectURL(file)
-//     }
-//   }
+});
+imgInp.onchange = evt => {
+    const [file] = imgInp.files
+    if (file) {
+      blah.src = URL.createObjectURL(file)
+    }
+  }
+  imgInp1.onchange = evt => {
+    const [file] = imgInp1.files
+    if (file) {
+      blah1.src = URL.createObjectURL(file)
+    }
+  }
 //   imgInp2.onchange = evt => {
 //     const [file] = imgInp2.files
 //     if (file) {
