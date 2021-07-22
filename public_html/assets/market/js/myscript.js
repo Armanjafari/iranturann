@@ -146,7 +146,7 @@ $(".active4").click(function(){
         center:true,
         responsive:{
             0:{
-                items:4
+                items:2
             },
             400:{
                 items:2
