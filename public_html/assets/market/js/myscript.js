@@ -181,18 +181,18 @@ $(".active4").click(function(){
     });
 });
 });
-imgInp.onchange = evt => {
-    const [file] = imgInp.files
-    if (file) {
-      blah.src = URL.createObjectURL(file)
-    }
-  }
-  imgInp1.onchange = evt => {
-    const [file] = imgInp1.files
-    if (file) {
-      blah1.src = URL.createObjectURL(file)
-    }
-  }
+// imgInp.onchange = evt => {
+//     const [file] = imgInp.files
+//     if (file) {
+//       blah.src = URL.createObjectURL(file)
+//     }
+//   }
+//   imgInp1.onchange = evt => {
+//     const [file] = imgInp1.files
+//     if (file) {
+//       blah1.src = URL.createObjectURL(file)
+//     }
+//   }
 //   imgInp2.onchange = evt => {
 //     const [file] = imgInp2.files
 //     if (file) {
