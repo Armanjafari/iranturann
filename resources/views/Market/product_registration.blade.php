@@ -41,12 +41,12 @@
                      
                           <div class="row">
                         <div class="file-input mt-3">
-                          <input type="file"name="image" id="imgInp" class="file" multiple>
+                          <input type="file"name="image" id="imgInp" class="file" accept="image/*" capture="camera" multiple>
                           <label for="imgInp">آپلود عکس</label>
                           <img id="blah" alt="عکس اصلی">
                         </div>
                         <div class="file-input mt-3 mr-3">
-                          <input type="file"name="images[]" id="imgInp1" class="file" multiple>
+                          <input type="file"name="images[]" id="imgInp1" class="file" accept="image/*" multiple="multiple" multiple>
                           <label for="imgInp1">آپلود عکس</label>
                           <img id="blah1" alt="عکس گالری">
                         </div>
