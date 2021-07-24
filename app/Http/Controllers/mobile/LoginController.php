@@ -45,7 +45,7 @@ class LoginController extends Controller
         $user = User::where('phone_number',$phone_number)->first();
         if (!$user) {
             $cities = City::all();
-            return view('mobile.AuthWithCode.register',compact('cities'));
+            return view('mobile.AuthWithCode.register',compact('cities' , 'market'));
         }
 
         $this->sendSms($user , 'code');//mobile.verify
@@ -83,6 +83,7 @@ class LoginController extends Controller
     }
     public function register(Request $request ,Market $market)
     {
+        // dd($request->all());
         $request->validate([
             'name' => 'required',
             'city' => 'required',
@@ -92,6 +93,7 @@ class LoginController extends Controller
         $user = User::create([
             'name' => $request->input('name'),
             'phone_number' => session()->get('phone_number'),
+            'parent_id' => $request->input('parent'),
         ]);
         $user->shipings()->create([
             'city_id' => $request->input('city'),
@@ -99,7 +101,7 @@ class LoginController extends Controller
             'address' => $request->input('address'),
         ]);
         $this->sendSms($user , 'code');
-        return redirect()->route('mobile.verify_login_code')->withSuccess(' ثبت نام با موفقیت انجام شد ');
+        return redirect()->route('mobile.verify_login_code',$market->id)->withSuccess(' ثبت نام با موفقیت انجام شد ');
         
     }
 

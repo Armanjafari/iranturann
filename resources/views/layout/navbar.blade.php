@@ -310,7 +310,7 @@
                         @guest
                      
                                 
-                                <a class="text-center btn-logo" href="{{ route('login_with_code') }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
+                                <a class="text-center btn-logo" href="{{ route('login_with_code') }}"><img src="{{asset('assets/img/svg element/ورود.svg')}}" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
                         @endguest
                         @auth       
                         <div class="mt-2 fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>

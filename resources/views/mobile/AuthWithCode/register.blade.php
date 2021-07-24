@@ -1,7 +1,7 @@
 @extends('mobile.layout.master')
 @section('content')
 <main>
-  <form action="{{ route('mobile.register.with.code') }}" method="POST">
+  <form action="{{ route('mobile.register.with.code',$market->id) }}" method="POST">
     @csrf
     <div class="col-lg-6 m-auto col-sm-7 col-12">
       <div class="card  border-color-promiry">
@@ -12,6 +12,7 @@
             <input type="text" name="name" class="form-control input-lg w-75"
               placeholder="شماره موبایل خود را وارد نمایید">
           </div>
+          <input type="text" name="parent" value="{{$market->user->id}}" style="display: none" id="">
           <div id="" class="mt-5 mr-lg-5">
             <label> استان </label>
             <select name="province" class="" id="">

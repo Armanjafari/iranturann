@@ -140,4 +140,9 @@ class MarketController extends Controller
     {
         return view('Market.dashboard');
     }
+    public function customers()
+    {
+        $user = auth()->user();
+        return view('Market.customers',compact('user'));
+    }
 }

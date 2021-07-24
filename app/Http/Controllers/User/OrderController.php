@@ -22,7 +22,7 @@ class OrderController extends Controller
     public function details(Order $order)
     {
         if ($order->user_id != auth()->user()->id)
-        return abort(403);
+        return abort(404);
         $user = auth()->user();
         $post_price =$order->payment->post();
         return view('user.details', compact('order' , 'user','post_price'));
