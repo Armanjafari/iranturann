@@ -354,6 +354,15 @@
         </div>
         <!--end mobile nav-->
         </header>
+        <header>
+                <nav class="navbar navbar-expand-lg nav-box text-right">
+                <div class="w-100">
+                    <form action="{{ route('index.search') }}" method="get">
+                    <input type="search" name="query" id="" placeholder="دنبال چی می گردی؟" class="p-2 form-control2 serch-box mt-lg-1">
+                    </div>  .
+                </form>
+                </nav>
+            </header>
         <!-- 
 {{-- 
         </a>
@@ -370,3 +379,4 @@
                 </button>
                 @endauth
         --> --}}
+        
