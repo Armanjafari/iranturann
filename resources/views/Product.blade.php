@@ -151,9 +151,9 @@
                 </div>
             </div>
         </div>
-        <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product">محصولات مربوط</a>
-        </div>
-        <div class="owl-carousel owl-theme mt-5" id="owl-mobile10">
+        <!-- <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product">محصولات مربوط</a>
+        </div> -->
+        <!-- <div class="owl-carousel owl-theme mt-5" id="owl-mobile10">
             @forelse ($related as $relate)
             <div class="item">
                 <div class="card card-product-warning">
@@ -175,7 +175,7 @@
             @empty
                 
             @endforelse
-        </div>
+        </div> -->
         <div class="col-lg-12 mt-5">
             <div class="container">
                 <div class="col-md-12 pr-0 pl-0">
