@@ -117,7 +117,6 @@ class Transaction
             // dd($product->product->market_id);
             $cat_id = $product->product->pure->category_id;
             $percent = $product->product->market->categories()->wherePivot('category_id',$cat_id)->first()->pivot->percent;
-
             $products[$product->id] = [
                 'quantity' => $product->quantity,
                 'market_id' => $product->product->market_id,
@@ -132,7 +131,7 @@ class Transaction
     {
         // TODO refactor needed
         foreach ($order->products as $product) {
-            $profit =($product->pivot->percent / 100) * ($product->pivot->price * $product->pivot->quantity);
+            $profit =($product->pivot->category_id / 100) * ($product->pivot->price * $product->pivot->quantity);
             $final = ($product->pivot->price * $product->pivot->quantity)  - $profit;
             $product->product->market->increaseWallet($final);
             $product->product->market->increaseProfit($profit);
