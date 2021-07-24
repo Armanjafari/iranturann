@@ -23,7 +23,8 @@ class Market extends Model
     'user_id',
     'center_id',
     'agent_id',
-    'wallet'
+    'wallet',
+    'profit',
 ];
 
     public function agent()

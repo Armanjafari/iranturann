@@ -40,7 +40,7 @@
             <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
             <td>{{$order->pivot->quantity}}</td>
             <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
-            <td> {{ $order->payment->status }} </td>
+            <td> @lang('iranturan.'. $order->payment->status) </td>
           </tr>
             
           @endif
