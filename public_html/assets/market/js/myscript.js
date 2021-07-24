@@ -160,7 +160,7 @@ $(".active4").click(function(){
         }   
     });
     $('#owl-mobile12').owlCarousel({
-        loop:true,
+        loop:false,
         margin:10,
         nav:true,
         center:true,
