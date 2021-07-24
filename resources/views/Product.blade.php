@@ -74,22 +74,20 @@
              <br>  <br>   <a href="" class="">شناسه محصول :</a>
              <a class="link-brand">{{$option->id}}</a>
                 </div>
-                         
-                    
-                    <div class="mt-5 text-right">
-                        <ul class="Attributes">ویژگی ها
-                            <li class="mt-2">
+            <div class="mt-5 text-right">
+                        <!-- <ul class="Attributes">ویژگی ها -->
+                            <!-- <li class="mt-2">
                                 <span class="dot2" style="background-color: #FFCC33;"></span>
                                 <span>کیفیت:</span>
                                 <span>خوب</span>
-                            </li>
-                            <li class="mt-2">
+                            </li> -->
+                            <!-- <li class="mt-2">
                                 <span class="dot2" style="background-color: #FFCC33;"></span>
                                 <span>جنس:</span>
                                 <span>پنبه کلاه دار</span>
-                            </li>
+                            </li> -->
                          
-                        </ul>
+                        <!-- </ul> -->
                         <!-- <form action="" class="mt-3">
                             <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label
                                     for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label
@@ -99,14 +97,13 @@
                                     for="1">☆</label>
                             </div>
                         </form> -->
-                       <span class="bvn mr-4">مشاهده بیشتر</span>
-                       <div class="hide-show mr-5">
+                       <!-- <span class="bvn mr-4">مشاهده بیشتر</span> -->
+                       <!-- <div class="hide-show mr-5">
                            <li class="mt-2">
                        <span class="dot2" style="background-color: #FFCC33;"></span>
                        <span>قیمت مناسب</span>
                        </li>
-                       </div>
-                       
+                       </div> -->
                     </div>
                 </div>
             </div>
