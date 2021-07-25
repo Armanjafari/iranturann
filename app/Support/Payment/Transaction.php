@@ -137,7 +137,7 @@ class Transaction
             $product->product->market->increaseProfit($profit);
         }
     }
-    private function  sendSms($order)
+    private function sendSms($order)
     {
         $sms = new MeliPayamak($order->user , '' , 'مشتری گرامی خرید شما با موفقیت انجام شد');
         $sms->send();

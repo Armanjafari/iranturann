@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<form role="form" action="{{route('Prodcut.registraition')}}" method="post" enctype="multipart/form-data">
+<form role="form" action="{{route('Prodcut.registraition')}}" method="POST" enctype="multipart/form-data">
     @csrf
   
   <!-- First Step -->
@@ -41,12 +41,12 @@
                      
                           <div class="row">
                         <div class="file-input mt-3">
-                          <input type="file"name="image" id="imgInp" class="file" accept="image/*" capture="camera" multiple>
+                          <input type="file"name="image" value="{{old('image')}}" id="imgInp" class="file" accept="image/*" capture="camera" multiple>
                           <label for="imgInp">آپلود عکس</label>
                           <img id="blah" alt="عکس اصلی">
                         </div>
                         <div class="file-input mt-3 mr-3">
-                          <input type="file"name="images[]" id="imgInp1" class="file" accept="image/*" multiple="multiple" multiple>
+                          <input type="file"name="images[]" value="{{old('images')}}" id="imgInp1" class="file" accept="image/*" multiple="multiple" multiple>
                           <label for="imgInp1">آپلود عکس</label>
                           <img id="blah1" alt="عکس گالری">
                         </div>
@@ -67,16 +67,16 @@
                               <form action="">
                              <div class="first-name mt-4">
                               <label for="">نام محصول</label>
-                              <input name="persian_title" type="text" class="form-control-one p-2 w-100" placeholder="نام محصول خود را وارد نمایید">
+                              <input name="persian_title" value="{{old('persian_title')}}" type="text" class="form-control-one p-2 w-100" placeholder="نام محصول خود را وارد نمایید">
                              </div>
                              <div class="first-name mt-4">
                              <label for="">نام انگلیسی</label>
-                             <input type="text" name="title" class="form-control-one p-2 w-100" placeholder="نام انگلیسی محصول خود را وارد نمایید">
+                             <input type="text" name="title" value="{{old('title')}}" class="form-control-one p-2 w-100" placeholder="نام انگلیسی محصول خود را وارد نمایید">
                       </div>
                     
                        <div class="first-name mt-4">
                               <label for="">توضیحات</label>
-                           <textarea name="description" id="" cols="5" rows="5" class="form-control-one p-2 w-100" placeholder="این فیلد اجباری است"></textarea>
+                           <textarea name="description" id="" cols="5" rows="5" class="form-control-one p-2 w-100" placeholder="این فیلد اجباری است">{{old('description')}}</textarea>
                        </div>
                       <select name="category" id="" class="w-100 mt-3 border-warning border-style">
                         <option value='0'>انتخاب دسته بندی</option>          
@@ -86,12 +86,20 @@
                             
                         @endforelse
                       </select>
+                      <select name="brand" id="" class="w-100 mt-3 border-warning border-style">
+                        <option value='0'>انتخاب برند</option>          
+                        @forelse ($brands as $brand)
+                        <option value='{{ $brand->id }}'> {{ $brand->persian_name }} </option>           
+                        @empty
+                            
+                        @endforelse
+                      </select>
                       <div id="price1" class=" text-right body-product">
                         
                           
                                 <div class="first-name mt-4">
                                   <label for="">وزن محصول</label>
-                                  <input type="text" name="weight" class="form-control-one p-2 w-100" placeholder="وزن محصول را با واحد گرم وارد کنید">
+                                  <input type="text" value="{{old('weight')}}" name="weight" class="form-control-one p-2 w-100" placeholder="وزن محصول را با واحد گرم وارد کنید">
                                 </div>
                              
                           </div>

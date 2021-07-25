@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Market;
 
+use App\Brand;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Market;
@@ -95,7 +96,8 @@ class MarketController extends Controller
     public function ProdcutRegistraitionForm()
     {
         $categories = Category::all();
-        return view('Market.product_registration' , compact('categories'));
+        $brands = Brand::all();
+        return view('Market.product_registration' , compact('categories', 'brands'));
     }
     public function ProdcutRegistraition(Request $request)
     {
@@ -105,13 +107,14 @@ class MarketController extends Controller
             'category' => 'required|integer',
             'description' => 'required',
             'weight' => 'required|integer',
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048'
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048'
 
         ]);
         $pure = Pure::create([
             'title' => $request->input('title'),
             'persian_title' => $request->input('persian_title'),
-            'category_id' => $request->input('categoy'),
+            'category_id' => $request->input('category'),
+            'brand_id' => $request->input('brand'),
             'description' => $request->input('description'),
             'weight' => $request->input('weight'),
             'status' => 0,
