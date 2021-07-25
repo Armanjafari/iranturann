@@ -18,7 +18,7 @@
             <div class="card border-0">
             @forelse ($product->pure->images as $image)
             <div class="mySlides">
-                <img src="{{ $image->address }}" style="width:100%;">
+                <img src="{{ $image->address }}" style="width:100%;" class="img-slides">
                 </div>
             @empty
                 
