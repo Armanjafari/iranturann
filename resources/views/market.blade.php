@@ -187,19 +187,13 @@
                                                                 @else
                                                                 <a href="#">
                                                                         @endif
-                                                                        <span class="badge badge-danger badge-1"> تخفیف
-                                                                                ویژه </span>
-                                                                        <span class="float-right Ready-to-send mr-3">
-                                                                                آماده ارسال<img
-                                                                                        src="assets/img/svg element/آماده ارسال جدید.svg"
-                                                                                        alt=""
-                                                                                        style="width:15px; display:inline-block"
-                                                                                        class="ml-1"></span>
+                                                                        <span class="badge badge-danger badge-1 float-left"> %{{$product->percentage()}} </span>
+                                                                        <br> <br>
                                                                         <img src="{{$product->product->pure->images->first()->address}}"
                                                                                 alt="" class="img-product-size1">
                                                                         <caption>
                                                                                 <p class="mt-3 caption-product mb-0">
-                                                                                        {{$product->product->pure->persian_title}}
+                                                                                        {{mb_substr($product->product->pure->persian_title,0,30)}}
                                                                                 </p>
                                                                         </caption>
                                                                         <div class="text-center ml-3 mt-2"><span

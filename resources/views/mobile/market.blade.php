@@ -201,7 +201,7 @@
                                                                                 alt="" class="img-product-size1">
                                                                         <caption>
                                                                                 <p class="mt-3 caption-product mb-0">
-                                                                                        {{$product->product->pure->persian_title}}
+                                                                                        {{mb_substr($product->product->pure->persian_title,0,30)}}
                                                                                 </p>
                                                                         </caption>
                                                                         <div class="text-center ml-3 mt-2"><span
