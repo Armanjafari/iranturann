@@ -111,9 +111,11 @@
         <div class="col-lg-4">
             <div class="card h-100">
                 <div class="card-body text-center">
+                    <div class="text-right mr-4 mt-3">
                     <img src="{{asset('assets/img/svg element/فروشنده.svg')}}" alt="">
                 <span class="marketer1 mr-2">فروشنده: {{$market->market_name}}</span>
                 {{-- <a href="" class="marketer1 mr-5">فروشنده های دیگر: 3</a> --}}
+                </div>
                 <div class="text-right mr-4 mt-3">
                 <img src="{{asset('assets/img/svg element/گارانتی.svg')}}" alt="">
                 <span class="marketer1 mr-2"> {{$option->waranty->name}} </span>
@@ -121,6 +123,10 @@
                 <div class="text-right mr-4 mt-2">
                 <img src="{{asset('assets/img/svg element/موجود در انبار.svg')}}" alt="">
                 <span class="marketer1 mr-2">موجود در انبار</span>
+                </div>
+                <div class="text-right mr-4 mt-2">
+                <img src="{{asset('assets/img/svg element/post.svg')}}" alt="" class="post">
+                <span class="marketer1 mr-2">ارسال از 10روزکاری آینده</span>
                 </div>
                     <!-- <div
                         class="Circle-discount  text-light position-relative d-inline-flex justify-content-center align-items-center mr-5 mt-5 p-5">

@@ -164,7 +164,6 @@ $(".active4").click(function(){
         margin:10,
         nav:true,
         center:true,
-        rtl:true,
         responsive:{
             0:{
                 items:3
