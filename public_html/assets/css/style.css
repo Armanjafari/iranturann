@@ -1467,7 +1467,7 @@
   
   @media screen and (min-width: 300px) and (max-width: 450px) {
     .serch-box {
-      width: 75% !important;
+      width: 55% !important;
     }
   }
   
@@ -2140,6 +2140,7 @@ line-height: 70px;
 @media screen and (min-width: 300px) and (max-width: 450px){
   .nav-box{
     margin-top: 80px;
+    height: 70px;
 }
 .price-line{
   font-size: 10px;
