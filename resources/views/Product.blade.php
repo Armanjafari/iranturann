@@ -132,10 +132,10 @@
                     </div> -->
                     <div class="mt-5 d-flex justify-content-center">
                        
-                        <a href="#" class="price-product">{{number_format($product->pure->price)}} تومان</a>
+                        <a href="#" class="price-product">{{number_format($option->show_price)}} تومان</a>
                      
                         <div class="mr-5">
-                        <span class="badge badge-danger badge-1 text-left"> تخفیف ویژه </span>
+                        <span class="badge badge-danger badge-1 text-left"> %{{$option->percentage()}} </span>
                         </div>
                     </div>
                     
@@ -154,7 +154,7 @@
         <!-- <div class="card-header text-center mt-5 card-header-product w-100"><a class="new-product">محصولات مربوط</a>
         </div> -->
         <!-- <div class="owl-carousel owl-theme mt-5" id="owl-mobile10">
-            @forelse ($related as $relate)
+            {{-- @forelse ($related as $relate)
             <div class="item">
                 <div class="card card-product-warning">
                     <div class="card-body text-center">
@@ -174,7 +174,7 @@
         
             @empty
                 
-            @endforelse
+            @endforelse --}}
         </div> -->
         <div class="col-lg-12 mt-5">
             <div class="container">
