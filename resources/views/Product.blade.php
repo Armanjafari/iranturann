@@ -124,10 +124,17 @@
                 <img src="{{asset('assets/img/svg element/موجود در انبار.svg')}}" alt="">
                 <span class="marketer1 mr-2">موجود در انبار</span>
                 </div>
+                @if ($option->ordering)
                 <div class="text-right mr-4 mt-2">
-                <img src="{{asset('assets/img/svg element/post.svg')}}" alt="" class="post">
-                <span class="marketer1 mr-2">ارسال از 10روزکاری آینده</span>
-                </div>
+                    <img src="{{asset('assets/img/svg element/post.svg')}}" alt="" class="post">
+                    <span class="marketer1 mr-2">ارسال از {{$option->ordering}} روزکاری آینده</span>
+                    </div>
+                @else
+                <div class="text-right mr-4 mt-2">
+                    <img src="{{asset('assets/img/svg element/post.svg')}}" alt="" class="post">
+                    <span class="marketer1 mr-2">آماده ارسال</span>
+                    </div>
+                @endif
                     <!-- <div
                         class="Circle-discount  text-light position-relative d-inline-flex justify-content-center align-items-center mr-5 mt-5 p-5">
                         <div class="text-center mt-2">
