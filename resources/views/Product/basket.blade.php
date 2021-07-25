@@ -27,7 +27,7 @@
 					<tbody>
 						@foreach ($items as $item)
 							<tr>
-							<td> {{$item->product->pure->title}}
+							<td> {{mb_subrt($item->product->pure->title,0,30)}}
 								<br>
 							@if ($item->ordering)
 							 <span style="font-size: 11px">ارسال از {{$item->ordering}} روز آینده</span>	
