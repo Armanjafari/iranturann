@@ -10,7 +10,7 @@
           <div id="first_name" class="mt-5 mr-lg-5">
             <label> نام و نام خانوادگی </label>
             <input type="text" name="name" class="form-control input-lg w-75"
-              placeholder="شماره موبایل خود را وارد نمایید">
+              placeholder="نام ونام خانوادگی خود را وارد نمایید">
           </div>
           <input type="text" name="parent" value="{{$market->user->id}}" style="display: none" id="">
           <div id="" class="mt-5 mr-lg-5">

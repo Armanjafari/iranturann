@@ -2556,6 +2556,7 @@ box-shadow: 2px 2px 5px 2px #ccc;
   .col-lg-12w{
     margin-top: -5rem !important;
   }
+
   .size-img1{
 width: 100px !important;
 height: 100px !important;
@@ -3005,5 +3006,10 @@ outline: none !important;
 .btn-sign-up {
   padding-left: 3em;
   padding-right: 3em;
+}
+}
+@media screen and (min-width: 300px) and (max-width: 800px){
+.profile-box{
+  display: none;
 }
 }
