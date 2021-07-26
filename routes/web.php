@@ -232,7 +232,7 @@ Route::prefix('mobile')->namespace('mobile')->group(function () {
         Route::post('market/{market}/basket/checkout/a', 'BasketController@checkout')->name('mobile.basket.checkout');
         Route::get('market/{market}/basket/a', 'BasketController@index')->name('mobile.basket.index');
         
-        Route::prefix('profile')->namespace('user')->group(function () {
+        Route::namespace('user')->group(function () {
             Route::get('market/{market}/orders/a', 'OrderController@index')->name('mobile.user.orders.index');
             Route::get('market/{market}/orders/details/{order}/a', 'OrderController@details')->name('mobile.user.orders.details.form');
             Route::get('market/{market}/a', 'UserController@showProfile')->name('mobile.show.profile');
