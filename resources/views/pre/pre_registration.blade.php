@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('content')
+<main>
 <div class="card w-100 mt-5">
         <div class="card-body mb-4">  
           <!-- Stepper -->

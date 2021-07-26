@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AuthMobileMiddleware;
 use App\Http\Middleware\CorsMiddleware;
 use App\Http\Middleware\IsMarketMiddleWare;
 use App\Http\Middleware\RoleMiddleware;
@@ -70,6 +71,8 @@ class Kernel extends HttpKernel
         'role' => RoleMiddleware::class,
         'cors' => CorsMiddleware::class,
         'is.market' => IsMarketMiddleWare::class,
+        'auth.mobile' => AuthMobileMiddleware::class,
+
     ];
 
     /**

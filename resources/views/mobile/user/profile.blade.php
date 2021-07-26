@@ -1,9 +1,9 @@
-@extends('layout.master')
+@extends('mobile.layout.master')
 @section('content')
 <main>
     <div class="container-fluid">
         <div class="row">
-        @include('user.mini_nav')
+        @include('mobile.user.mini_nav')
             <div class="col-lg-9 mt-5">
                 <div class="information-box1">
                     <div class="card-body p-1 information-box2">
@@ -48,7 +48,7 @@
                                 <div class="card p-4 text-right border-0 box-card">
                                     <div>
                                         <span class="name-last">آدرس :</span>
-                                        <span class="name1 mr-3">{{$user->shipings->address ?? ''}}</span>
+                                        <span class="name1 mr-3">{{$user->shipings->address}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -56,12 +56,12 @@
                                 <div class="card p-4 text-right border-0 box-card">
                                     <div>
                                         <span class="name-last">کد پستی :</span>
-                                        <span class="name1 mr-3">{{$user->shipings->postal_code ? ''}}</span>
+                                        <span class="name1 mr-3">{{$user->shipings->postal_code}}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-12 d-flex justify-content-center mt-5">
-                                <a href="{{route('edit.profile.form')}}" class="btn-Record"> ویرایش </a>
+                                <a href="{{route('mobile.edit.profile.form' , $market->id)}}" class="btn-Record"> ویرایش </a>
                             </div>
                             <div class="col-lg-12 mt-3">
                                 <hr>

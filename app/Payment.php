@@ -28,7 +28,7 @@ class Payment extends Model
         $post_price = $this->amount;
         foreach ($this->order->products as $product) {
             $post_price -= ($product->pivot->price * $product->pivot->quantity);
-            dd($post_price);
+            // dd($post_price);
         }
         return $post_price;
     }

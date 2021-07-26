@@ -1,11 +1,11 @@
-@extends('layout.master')
+@extends('mobile.layout.master')
 @section('content')
 <main>
 <div class="justify-content-center mt-5">
 	@if ($items->isEmpty())
 	<p>
 		محصولی در سبد خرید موجود نمیباشد
-		<a href="{{ route('product.index') }}">محصولات</a>
+		<a href="{{ route('mobile.show.market',$market->id) }}">محصولات</a>
 	</p>
 	@else
 
@@ -27,10 +27,9 @@
 					@foreach ($items as $item)
 					<tr>
 						<td>
-							<a href="{{route('product.single',$item->id)}}" class="control-text d-block">
+							<a href="{{route('mobile.product.single',['market' => $market->id,'option'=>$item->id])}}" class="control-text d-block">
 
-								{{mb_substr($item->product->pure->persian_title,0,10)}}
-							</a>
+								{{mb_substr($item->product->pure->persian_title,0,10)}}							</a>
 
 							<br>
 							@if ($item->ordering)
@@ -73,7 +72,7 @@
 		</div>
 		<div class="col-lg-5 text-right mt-5">
 			@include('Product.summary')
-			<a href="{{ route('basket.checkout.form') }}" class="btn mt-4  btn-primary btn-lg w-100 d-block"> ثبت و
+			<a href="{{ route('mobile.basket.checkout.form',$market->id) }}" class="btn mt-4  btn-primary btn-lg w-100 d-block"> ثبت و
 				ادامه سفارش </a>
 		</div>
 	</div>

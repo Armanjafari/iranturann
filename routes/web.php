@@ -224,9 +224,19 @@ Route::prefix('mobile')->namespace('mobile')->group(function () {
         Route::get('market/{market}/login/a', 'LoginController@showLoginForm')->name('mobile.login');
         Route::get('market/{market}/logout/a', 'LoginController@logout')->name('mobile.logout');
         Route::post('market/{market}/register/withcode/a', 'LoginController@register')->name('mobile.register.with.code');
-        Route::post('market/{market}/loginwithcode/as', 'LoginController@login')->name('mobile.login_with_code');
+        Route::post('market/{market}/loginwithcode/a', 'LoginController@login')->name('mobile.login_with_code');
         Route::get('market/{market}/verify/a', 'LoginController@verifyForm')->name('mobile.verify_login_code');
         Route::post('market/{market}/verify/a/', 'LoginController@codeValidator')->name('mobile.validate_code');
         Route::get('market/{market}/product/{option}/a', 'ProductController@product')->name('mobile.product.single');
-
+        Route::get('market/{market}/basket/checkout/a', 'BasketController@checkoutForm')->name('mobile.basket.checkout.form');
+        Route::post('market/{market}/basket/checkout/a', 'BasketController@checkout')->name('mobile.basket.checkout');
+        Route::get('market/{market}/basket/a', 'BasketController@index')->name('mobile.basket.index');
+        
+        Route::namespace('user')->group(function () {
+            Route::get('market/{market}/orders/a', 'OrderController@index')->name('mobile.user.orders.index');
+            Route::get('market/{market}/orders/details/{order}/a', 'OrderController@details')->name('mobile.user.orders.details.form');
+            Route::get('market/{market}/a', 'UserController@showProfile')->name('mobile.show.profile');
+            Route::get('market/{market}/edit/a', 'UserController@editForm')->name('mobile.edit.profile.form');
+            Route::post('market/{market}/edit/a', 'UserController@edit')->name('mobile.edit.profile');
+        });
 });
