@@ -41,7 +41,7 @@
                      
                           <div class="row">
                         <div class="file-input mt-3">
-                          <input type="file"name="image" value="{{old('image')}}" id="imgInp" class="file" accept="image/*" capture="camera" multiple>
+                          <input type="file"name="image" value="{{old('image')}}" id="imgInp" class="file" accept="image/*" capture="camera">
                           <label for="imgInp">آپلود عکس</label>
                           <img id="blah" alt="عکس اصلی">
                         </div>

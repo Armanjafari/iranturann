@@ -1,8 +1,7 @@
 @extends('layout.master')
 @section('content')
+<main>
 <div class="justify-content-center mt-5">
-
-
 	@if ($items->isEmpty())
 	<p>
 		محصولی در سبد خرید موجود نمیباشد
@@ -81,5 +80,5 @@
 	@endif
 </div>
 
-
+</main>
 @endsection
