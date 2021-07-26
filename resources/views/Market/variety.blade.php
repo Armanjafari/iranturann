@@ -3,7 +3,6 @@
 <main class="mt-4">
     <!-- start add-product box-->
     <form action="{{ route('market.search') }}" method="get">
-
     <div class="col-lg-12 d-flex justify-content-center">
     <input type="search" name="query" id="" placeholder="دنبال چی می گردی؟" class="p-1 form-control serch-box">
         </form>    
@@ -17,15 +16,12 @@
 @endforelse
 </div>
 <div class="col-lg-12 mt-3 pr-0 pl-0">
-  <div class="w-50 mr-auto ml-auto"> <a href=""><p class="discount">دیدن تمام محصولات این دسته بندی</p></a></div>
-  <div class="owl-carousel owl-theme mt-2" id=owl-mobile12>  
+ <div class="row">
   @forelse (Auth::user()->market->products as $product)
         <form action="{{ route('market.variety.add.form') }}" method="GET">
             @csrf
-        <div class="product-card mb-3">
+        <div class="product-card col-6 mb-3">
             <a class="w-100" href="{{route('market.variety.index',$product->id)}}">
-
-
                 <img src="{{ $product->pure->images->first()->address ?? '#' }}" alt=""
                     class="img-product-size mr-auto ml-auto">
                 <caption>
@@ -44,7 +40,6 @@
 
 @endforelse
 </div>
-
 <div class="text-center mt-2">
     <a href="{{route('market.index')}}" class="btn btn-success">
         <i class="fa fa-plus"></i>

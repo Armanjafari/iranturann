@@ -27,7 +27,7 @@
 					@foreach ($items as $item)
 					<tr>
 						<td>
-							<a href="{{route('product.single',$item->id)}}">
+							<a href="{{route('product.single',$item->id)}}" class="control-text d-block">
 
 								{{mb_substr($item->product->pure->title,0,30)}}
 							</a>
