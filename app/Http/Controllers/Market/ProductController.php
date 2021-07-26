@@ -83,7 +83,7 @@ class ProductController extends Controller
             'product_id' => $request->input('product'),
         ]);
     } catch (Exception $e){
-        return back()->withSuccess('قبل این به رنگ قیمت داده اید');
+        return back()->withError('قبل این به رنگ قیمت داده اید');
 
     }
         return back()->withSuccess(__('iranturan.success message'));
@@ -119,13 +119,23 @@ class ProductController extends Controller
         {
         return abort(404);
         }
-        $full->update([
-            'stock' => $request->input('stock'),
-            'waranty_id' => $request->input('waranty'),
-            'color_id' => $request->input('option'),
-            'price' => $request->input('price'),
-        ]);
-        return back()->withSuccess(__('iranturan.success message'));
+        try {
+            $full->update([
+                'color_id' => $request->input('option'),
+                'price' => $request->input('price'),
+                'show_price' => $request->input('show_price'),
+                'stock' => $request->input('stock'),
+                'is_active' => $request->input('is_active'),
+                'ordering' => $request->input('ordering'),
+                'waranty_id' => $request->input('waranty'),
+                'product_id' => $request->input('product'),
+            ]);
+        } catch (Exception $e) { // TODO refactor this
+            return back()->withError('قبل این به رنگ قیمت داده اید');
+
+        }
+        
+        return redirect()->route('market.variety.index', $request->input('product'))->withSuccess(__('iranturan.success message'));
     }
     public function search(Request $request)
     {
