@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-12">
                 <div class="row">
-                        <div class="col-lg-3 mt-3">
+                        {{-- <div class="col-lg-3 mt-3">
                                 <a href="#categry" data-toggle="collapse" aria-expanded="false">
                                         <div class="text-center category1">
                                                 دسته بندی
@@ -153,8 +153,8 @@
                                                 </li>
                                         </ul>
                                 </div>
-                        </div>
-                                                
+                        </div> --}}
+
 
                         <div class="col-lg-12">
                                 <div class="row">
@@ -185,50 +185,42 @@
                                         <div class="col-lg-3 col-xl-3 col-6 pr-2 pl-2 mt-3">
                                                 <div class="product-card text-center">
                                                         @if ($product->count())
-                                                        <a href="{{ route('product.single' , $product->id ?? '') }}">
+                                                        <a
+                                                                href="{{ route('mobile.product.single' ,['market' =>$market->id,'option' => $product->id ?? '']) }}">
                                                                 @else
-                                                                <a href="#">
-                                                                        @endif
-                                                                        <span class="badge badge-danger badge-1"> تخفیف
-                                                                                ویژه </span>
-                                                                        <span class="float-right Ready-to-send mr-3">
-                                                                                آماده ارسال<img
-                                                                                        src="assets/img/svg element/آماده ارسال جدید.svg"
-                                                                                        alt=""
-                                                                                        style="width:15px; display:inline-block"
-                                                                                        class="ml-1"></span>
+                                                                @endif
+                                                                <span class="badge badge-danger badge-1 float-left">
+                                                                        %{{$product->percentage()}} </span><br><br>
+                                                                <div class=" ml-auto">
                                                                         <img src="{{$product->product->pure->images->first()->address}}"
-                                                                                alt="" class="img-product-size1">
-                                                                        <caption>
-                                                                                <p class="mt-3 caption-product mb-0">
-                                                                                        {{mb_substr($product->product->pure->persian_title,0,30)}}
-                                                                                </p>
-                                                                        </caption>
-                                                                        <div class="text-center ml-3 mt-2"><span
-                                                                                        class="fa fa-star checked"></span>
-                                                                                <span class="fa fa-star checked"></span>
-                                                                                <span class="fa fa-star checked"></span>
-                                                                                <span
-                                                                                        class="fa fa-star checked"></span><span
-                                                                                        class="fa fa-star"></span>
-                                                                        </div>
-                                                                        <div class="text-center mt-2 pb-3"><span
-                                                                                        class="price-line">
-                                                                                        {{number_format($product->show_price)}}
-                                                                                </span> <br>
-                                                                                @if ($product->count())
-                                                                                <span
-                                                                                        class="font-weight-bold prodict-price3">
-                                                                                        تومان
-                                                                                        {{  number_format($product->price) ?? 'ناموجود' }}
-                                                                                </span>
-                                                                                @else
-                                                                                <span
-                                                                                        class="font-weight-bold prodict-price3">
-                                                                                        ناموجود </span>
-                                                                                @endif
-                                                                        </div>
-                                                                </a>
+                                                                                alt="" class="img-product-size1 ">
+                                                                </div>
+                                                                <caption>
+                                                                        <p class="mt-3 caption-product mb-0">
+                                                                                {{mb_substr($product->product->pure->persian_title,0,30)}}
+                                                                        </p>
+                                                                </caption>
+                                                                <div class="text-center ml-3 mt-2"><span
+                                                                                class="fa fa-star checked"></span>
+                                                                        <span class="fa fa-star checked"></span>
+                                                                        <span class="fa fa-star checked"></span>
+                                                                        <span class="fa fa-star checked"></span><span
+                                                                                class="fa fa-star"></span>
+                                                                </div>
+                                                                <div class="text-center mt-2 pb-3"><span
+                                                                                class="price-line">
+                                                                                {{number_format($product->show_price)}}
+                                                                        </span> <br>
+                                                                        @if ($product->count())
+                                                                        <span class="font-weight-bold prodict-price3">
+                                                                                تومان
+                                                                                {{  number_format($product->price) ?? 'ناموجود' }}
+                                                                        </span>
+                                                                        @else
+                                                                        <span class="font-weight-bold prodict-price3">
+                                                                                ناموجود </span>
+                                                                        @endif
+                                                                </div>
                                                 </div>
                                         </div>
 

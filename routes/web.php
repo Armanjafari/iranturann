@@ -227,4 +227,6 @@ Route::prefix('mobile')->namespace('mobile')->group(function () {
         Route::post('market/{market}/loginwithcode/as', 'LoginController@login')->name('mobile.login_with_code');
         Route::get('market/{market}/verify/a', 'LoginController@verifyForm')->name('mobile.verify_login_code');
         Route::post('market/{market}/verify/a/', 'LoginController@codeValidator')->name('mobile.validate_code');
+        Route::get('market/{market}/product/{option}/a', 'ProductController@product')->name('mobile.product.single');
+
 });
