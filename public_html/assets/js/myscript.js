@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $(".table-basket1")
   $(".close").click(function(){
       $("#popup").hide();
   })

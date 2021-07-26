@@ -699,6 +699,11 @@
       height: 350px !important;
       z-index: 30000;
     }
+    .control-text{
+      max-width: 38px !important;
+      overflow: hidden;
+      white-space: nowrap;
+    }
     .btn-logo {
       display: none;
     }
