@@ -29,8 +29,7 @@
 						<td>
 							<a href="{{route('mobile.product.single',['market' => $market->id,'option'=>$item->id])}}" class="control-text d-block">
 
-								{{mb_substr($item->product->pure->title,0,30)}}
-							</a>
+								{{mb_substr($item->product->pure->persian_title,0,10)}}							</a>
 
 							<br>
 							@if ($item->ordering)
