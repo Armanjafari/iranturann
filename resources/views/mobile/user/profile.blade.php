@@ -1,9 +1,9 @@
-@extends('layout.master')
+@extends('mobile.layout.master')
 @section('content')
 <main>
     <div class="container-fluid">
         <div class="row">
-        @include('user.mini_nav')
+        @include('mobile.user.mini_nav')
             <div class="col-lg-9 mt-5">
                 <div class="information-box1">
                     <div class="card-body p-1 information-box2">
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 d-flex justify-content-center mt-5">
-                                <a href="{{route('edit.profile.form')}}" class="btn-Record"> ویرایش </a>
+                                <a href="{{route('mobile.edit.profile.form' , $market->id)}}" class="btn-Record"> ویرایش </a>
                             </div>
                             <div class="col-lg-12 mt-3">
                                 <hr>

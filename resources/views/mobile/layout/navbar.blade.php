@@ -302,7 +302,7 @@
                             <img class="item-icon" src="assets/img/download.png" alt=""></a></li>
                           
                         
-                            <a href="{{route('basket.index')}}" class="svg-shopp  mr-auto ml-3 mt-2">
+                            <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp  mr-auto ml-3 mt-2">
         
                             <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
                         @guest
@@ -316,9 +316,9 @@
                         <div class="profile-box p-3">
                        <a href="">  <i class="fas fa-user-circle ml-2"></i> {{auth()->user()->name}} </a>
                        <hr>
-                       <a href="{{route('show.profile')}}">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
+                       <a href="{{route('mobile.show.profile',$market->id)}}">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
                        <hr>
-                       <a href="{{route('user.orders.index')}}">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
+                       <a href="{{route('mobile.user.orders.index',$market->id)}}">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
                        <hr>
                        <a href="{{ route('mobile.logout',$market->id) }}">  <i class="fas fa-sign-out-alt fa-sign-out-alt1 ml-2"></i>خروج از حساب کاربری</a>
                         </div>
@@ -332,7 +332,7 @@
         <div class="mobile-nav">
             <a href="#" class="toggle-btn" id="toggle"><span></span></a>
            
-            <a href="{{route('basket.index')}}" class="svg-shopp mr-auto ml-3 mt-2">
+            <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp mr-auto ml-3 mt-2">
                 <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
             {{-- <a href="">
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-3">
