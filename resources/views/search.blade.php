@@ -11,7 +11,7 @@
             <div class="item item1">
                 <div class="card card-shopping2 card-shopping3">
                     <div class="text-right">
-                        <span class="float-right text-right Ready-to-send w-25" style="font-size: 14px"> مراکز خرید
+                        <span class="float-right text-right Ready-to-send" style="font-size: 14px"> مراکز خرید
                         </span></div>
 
                     <div class="card-body pr-0 pl-0 text-center">
@@ -29,8 +29,10 @@
                                 class="fa fa-star unchecked"></span>
                         </div>
                         <div class="mt-2">
-                            <caption><a href="{{route('sellers.by.centers', $center->id)}}" style="font-size: 18px">
-                                    {{$center->name}}</a>
+                            <caption>
+                                <a href="{{route('sellers.by.centers', $center->id)}}" style="font-size: 18px">
+                                    {{$center->name}}
+                                </a>
                             </caption>
                         </div>
                         <div class="mt-2">
@@ -45,13 +47,12 @@
                 </div>
             </div>
             @empty
-
             @endforelse
             @forelse ($markets as $market)
             <div class="item item1">
                 <div class="card card-shopping2 card-shopping3">
                     <div class="text-right">
-                        <span class="float-right text-right Ready-to-send w-20" style="font-size: 15px"> فروشنده </span>
+                        <span class="float-right text-right Ready-to-send Ready-to-send2" style="font-size: 15px"> فروشنده </span>
                     </div>
                     <div class="card-body pr-0 pl-0 text-center">
                         <div class="col-lg-8 ml-auto mr-auto col-12">
