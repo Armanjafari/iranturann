@@ -2590,8 +2590,7 @@ p {
   font-size: 12px;
 }
 .content6{
-  display: flex;
-  justify-content: center;
+ text-align: center;
 }
 .product-size{
   width: 100px;
