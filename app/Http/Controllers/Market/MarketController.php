@@ -149,4 +149,9 @@ class MarketController extends Controller
         $user = auth()->user();
         return view('Market.customers',compact('user'));
     }
+    public function showProduct(Pure $product)
+    {
+        
+        return view('Market.product_detail', compact('product'));
+    }
 }

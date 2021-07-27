@@ -30,6 +30,10 @@ class BasketController extends Controller
     }
     public function add(Full $product)
     {
+        if (!$product->is_active) {
+            return back()->with('error', "محصول مورد نظر وجود ندارد");
+
+        }
         try {
             $this->basket->add($product , 1);
             return back()->with('success', "محصول به سبد خرید اضافه شد");

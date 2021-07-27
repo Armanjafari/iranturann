@@ -31,6 +31,8 @@ class ProductController extends Controller
     }
     public function product(Full $option)
     {
+        if (!$option->is_active)
+            return abort(404);
         $option->load('product.pure');
         // dd($option);
         $product = $option->product;
