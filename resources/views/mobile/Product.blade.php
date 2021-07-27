@@ -54,7 +54,7 @@
                     </div>
                     <div class="mt-3 color-product-box mr-3">
                         <p class="text-right"> رنگ : {{ $option->colors->title }}</p>
-                        @forelse ($product->fulls as $full)
+                        @forelse ($product->fulls()->where('is_active' , 1)->get() as $full)
                         {{-- <form style="display: inline" action="{{ route('product.single' , $full->id) }}" method="GET"> --}}
                             <a class="rounded-circle d-inline-block mr-2 mt-2 color-boreder {{ $option->id ==  $full->id ? 'active-color' : ''}}"
                                 style="background-color:{{$full->colors->value}}"

@@ -57,10 +57,6 @@
                                 <input type="text" name="stock" value="{{$full->stock}}"  placeholder="موجودی خود را وارد نمایید"    class="w-100 p-2" style="border: 3px solid #ffcc33;">
                             </div>  
                             <div class="col-lg-3 d-flex justify-content-center align-items-center mt-3">
-                                <!-- <input type="radio" id="active">
-                                <label for="active" class="mt-2 mr-2" name="gender">فعال</label>
-                                <input type="radio" id="no-active" class="mr-3">
-                                <label for="no-active" class="mt-2 mr-2" name="gender">غیرفعال</label> -->
                                   <input type="radio" {{$full->is_active == '1' ? 'checked' : ''}} value="1" id="html" name="is_active" checked>
   <label for="html" class="mr-2 mt-2">فروش</label><br>
   <input type="radio" {{$full->is_active == '0' ? 'checked' : ''}} value="0" id="css" name="is_active" class="mr-2">
