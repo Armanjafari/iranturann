@@ -11,12 +11,6 @@
         </p>
        
         <div>
-          <p>
-            توضیحات محصول:
-          </p>
-          <span>
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam molestiae perspiciatis ullam explicabo, error quos sed ipsum perferendis architecto rerum quae recusandae eligendi cupiditate praesentium voluptates similique aspernatur quia soluta.
-          </span><br><br>
           <span>قیمت مرجع :</span>
           <span class="link-brand">125,000تومان</span>
         </div>
@@ -27,7 +21,13 @@
         <div class="mt-3">
           <span>دسته بندی:</span>
           <span class="link-brand">پوشاک</span>
-        </div>
+        </div><br>
+        <span class="">
+            توضیحات محصول:
+        </span><br><br>
+          <span>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam molestiae perspiciatis ullam explicabo, error quos sed ipsum perferendis architecto rerum quae recusandae eligendi cupiditate praesentium voluptates similique aspernatur quia soluta.
+          </span><br><br>
       </div>
 </main>
 @endsection
