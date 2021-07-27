@@ -2589,5 +2589,12 @@ p {
 .btn-font-add{
   font-size: 12px;
 }
-
+.content6{
+  display: flex;
+  justify-content: center;
+}
+.product-size{
+  width: 100px;
+  height: 100px;
+}
 /*# sourceMappingURL=style.css.map */
