@@ -311,7 +311,7 @@
                                 <a class="text-center btn-logo" href="{{ route('mobile.login',$market->id) }}"><img src="assets/img/svg element/ورود.svg" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
                         @endguest
                         @auth       
-                        <div class="mt-2 fa-user5"> <a href="{{route('show.profile')}}" class=""><i class="fas fa-user fa-user1 p-3"></i>
+                        <div class="mt-2 fa-user5"> <a href="{{route('mobile.show.profile')}}" class=""><i class="fas fa-user fa-user1 p-3"></i>
                         </a>
                         <div class="profile-box p-3">
                        <a href="">  <i class="fas fa-user-circle ml-2"></i> {{auth()->user()->name}} </a>
