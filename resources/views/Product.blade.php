@@ -195,7 +195,7 @@
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                            <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
                                 role="tab" aria-controls="nav-profile" aria-selected="false">توضیحات</a>
                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
                                 role="tab" aria-controls="nav-contact" aria-selected="false">نظرات</a>
@@ -204,7 +204,7 @@
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                        {{-- <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                             aria-labelledby="nav-home-tab">
                              <table class="table  table-striped table-responsive text-right" cellspacing="0"> 
                                  <tbody>
@@ -218,7 +218,7 @@
                                     @endforelse
                                 </tbody>
                              </table> 
-                        </div>
+                        </div> --}}
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="card p-5">
                                 <p>

@@ -187,7 +187,7 @@
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                            <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
                                 role="tab" aria-controls="nav-profile" aria-selected="false">توضیحات</a>
                             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
                                 role="tab" aria-controls="nav-contact" aria-selected="false">نظرات</a>

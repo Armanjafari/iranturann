@@ -99,12 +99,12 @@
 								<option value="saman"> سامان </option>
 							</select>
 
-							<p class='text-muted small text-right mt-3'>
+							{{-- <p class='text-muted small text-right mt-3'>
 							در این روش شما میتونید درب منزل خود مبلغ را پرداخت نمایید
-							</p>
+							</p> --}}
 						</li>
 
-						<li class="list-group-item">
+						{{-- <li class="list-group-item">
 						
 							<div class="custom-control custom-radio custom-control-inline">
 	
@@ -118,14 +118,14 @@
 							در این روش شما میتونید درب منزل خود مبلغ را پرداخت نمایید
 							</p>
 
-						</li>
-						<li class="list-group-item">
-							{{-- <!-- <div class="custom-control custom-radio">
+						</li> --}}
+						{{-- <li class="list-group-item">
+							<!-- <div class="custom-control custom-radio">
 								<input type="radio" id="cart" value="cart" name="method" class="custom-control-input">
 								<label class="custom-control-label" for="cart">
 									کارت به کارت 
 								</label>
-							</div> --> --}}
+							</div> --> 
 							<div class="custom-control custom-radio custom-control-inline">
 	
 	<input type="radio" id="cart" value="cart" name="method" class="custom-control-input">
@@ -138,7 +138,7 @@
 							لطفا مبلغ را به شماره کارت ۱۲۳ واریز نمایدد و کد پیگیری را به همکاران ما اطلاع دهید
 							</p>
 
-						</li>
+						</li> --}}
 					</ul>
 				</form>
 				@include('alerts.errors')
