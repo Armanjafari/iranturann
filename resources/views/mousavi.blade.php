@@ -1,4 +1,8 @@
-@extends('Market.layout.master')
+@extends('admin.layout.master')
 @section('content')
-
+<main>
+<div>
+    
+</div>
+</main>
 @endsection

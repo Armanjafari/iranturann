@@ -2,7 +2,9 @@
 @section('content')
 <main class="mt-3">
      <div class="content6 pr-3 pl-3">
-       <img src="img/01.png" alt="" class="product-size">
+     <div class="owl-carousel owl-theme mt-3" id="owl-mobile35">
+       <div class="item"><img src="img/01.png" alt="" class="product-size"></div>
+      </div>
         <caption>
           <p>پیراهن مردانه مدلadidas</p>
         </caption>

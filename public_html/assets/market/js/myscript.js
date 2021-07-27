@@ -159,6 +159,26 @@ $(".active4").click(function(){
              }
         }   
     });
+    $('#owl-mobile35').owlCarousel({
+        loop:false,
+        margin:10,
+        nav:true,
+        center:true,
+        responsive:{
+            0:{
+                items:3
+            },
+            400:{
+                items:2
+            },
+            700:{
+             items:3
+            },
+             1200:{
+                items:4
+             }
+        }   
+    });
     $('#owl-mobile12').owlCarousel({
         loop:false,
         margin:10,
