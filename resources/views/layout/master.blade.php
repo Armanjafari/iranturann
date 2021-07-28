@@ -2,7 +2,7 @@
 <html>
 <head>
 @include('layout.header')
-<meta name="google-site-verification" content="G5Jn8M-O5gunSKHFNh0z9EJIzDeWB3MH4ent21mF-xI" />
+<meta name="google-site-verification" content="vVEZ20H2CIWnaEKelO0DYcS3lwXMJ-VLvNPV5dqAM8A" />
 <meta property="og:description" content="فروشگاه اینترنتی ایران توران مرجع خرید کالای اصل و اورجینال . جنس هایی که در ایران توران مشاهده میکیند همگی مستقیم از دبی وارد میشوند . خرید موبایل , قیمت لباسشویی و پوشاک" /> 
 <meta name="description" content="فروشگاه اینترنتی ایران توران مرجع خرید کالای اصل و اورجینال . جنس هایی که در ایران توران مشاهده میکیند همگی مستقیم از دبی وارد میشوند . خرید موبایل , قیمت لباسشویی و پوشاک" />
 <meta property="og:locale" content="fa_IR" />
