@@ -223,7 +223,7 @@
                                                                 </div>
                                                 </div>
                                         </div>
-
+                                </a>
                                         @empty
 
                                         @endforelse

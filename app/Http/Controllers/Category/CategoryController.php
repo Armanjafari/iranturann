@@ -20,6 +20,7 @@ class CategoryController extends Controller
             }
             // TODO refactor this
         $products = collect($products)->collapse();
+        $products = $products->where('is_actove',1);
         $products = $products->unique('product_id');
         // dd($products);
         $products = $products->paginate(12);
