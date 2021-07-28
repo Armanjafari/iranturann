@@ -2596,4 +2596,25 @@ p {
   width: 100px;
   height: 100px;
 }
+.popup2{
+  position: fixed;
+  background-color: rgb(231, 230, 230);
+  width: 100%;
+  height: 250px;
+  z-index: 10000;
+  display: inline-block;
+  padding: 1em;
+  top:50%;
+  bottom: 50%;
+}
+.btn-Record{
+  background-color:#33cccc;
+  padding: 0.6em 2em;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 4px 4px 0px #ded6d6;
+  border: none;
+  outline: none !important;
+}
 /*# sourceMappingURL=style.css.map */

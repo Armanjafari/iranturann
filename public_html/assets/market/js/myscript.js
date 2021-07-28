@@ -1,29 +1,33 @@
 $(document).ready(function(){
+    $(".popup2").hide();
+    $('#brand1').change(function(){
+        if($(this).val() === "null"){ // or this.value == 'volvo'
+            $(".popup2").show();
+        }
+      });
+      $(".close").click(function(){
+        $(".popup2").hide();
+        $(' #brand1 option[value="0"]').prop("selected", true);
+      })
         $("#activeclasses").click(function(){
           $(this).addClass("active-1")
            $("#activeclasses1").removeClass("active-1")
-          
         })
         $("#activeclasses1").click(function(){
           $(this).addClass("active-1")
           $("#activeclasses").removeClass("active-1")
         })
-      })
+      });
       $(document).ready(function(){
-
-     
     var navListItems = $('div.setup-panel div a'),
-        allWells = $('.setup-content'),
-        allNextBtn = $('.nextBtn'),
-        allPrevBtn = $('.prevBtn');
-
-    allWells.hide();
-
+         allWells = $('.setup-content'),
+         allNextBtn = $('.nextBtn'),
+         allPrevBtn = $('.prevBtn');
+         allWells.hide();
     navListItems.click(function (e) {
         e.preventDefault();
         var $target = $($(this).attr('href')),
             $item = $(this);
-
         if (!$item.hasClass('disabled')) {
             navListItems.removeClass('btn-indigo').addClass('btn-default');
             $item.addClass('btn-indigo');
@@ -32,7 +36,6 @@ $(document).ready(function(){
             $target.find('input:eq(0)').focus();
         }
     });
-
     allPrevBtn.click(function(){
         var curStep = $(this).closest(".setup-content"),
             curStepBtn = curStep.attr("id"),
@@ -55,14 +58,10 @@ $(document).ready(function(){
                 $(curInputs[i]).closest(".form-group").addClass("has-error");
             }
         }
-
         if (isValid)
             nextStepWizard.removeAttr('disabled').trigger('click');
     });
-
     $('div.setup-panel div a.btn-indigo').trigger('click');
-
-
 $(document).ready(function(){
 $(".active4").click(function(){
     $(".active4").removeClass("color-green");
@@ -213,15 +212,15 @@ imgInp.onchange = evt => {
       blah1.src = URL.createObjectURL(file)
     }
   }
-  imgInp2.onchange = evt => {
-    const [file] = imgInp2.files
-    if (file) {
-      blah2.src = URL.createObjectURL(file)
-    }
-  }
-  imgInp3.onchange = evt => {
-    const [file] = imgInp3.files
-    if (file) {
-      blah3.src = URL.createObjectURL(file)
-    }
-  }
+//   imgInp2.onchange = evt => {
+//     const [file] = imgInp2.files
+//     if (file) {
+//       blah2.src = URL.createObjectURL(file)
+//     }
+//   }
+//   imgInp3.onchange = evt => {
+//     const [file] = imgInp3.files
+//     if (file) {
+//       blah3.src = URL.createObjectURL(file)
+//     }
+//   }

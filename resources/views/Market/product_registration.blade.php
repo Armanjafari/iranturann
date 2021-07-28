@@ -59,8 +59,26 @@
   </div>
   <!-- Second Step -->
   <div class="row setup-content" id="step-11">
+    <form action="">
+  <div class="popup2">
+  <button type="button" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+           <p>ثبت برند جدید</p>
+           <div class="first-name mt-4">
+                              <input name="persian_title" value="{{old('persian_title')}}" type="text" class="form-control-one p-2 w-100" placeholder="نام فارسی برند">
+                             </div>
+                             <div class="first-name mt-4">
+                          
+                             <input type="text" name="title" value="{{old('title')}}" class="form-control-one p-2 w-100" placeholder="نام انگلیسی برند">
+                      </div>
+                      <div class="d-flex justify-content-center mt-3">
+                      <input type="submit" class="btn-Record" value="ثبت">
+                        </div>
+             </div>
+             </form>
       <div class="col-lg-12 text-right">
-              
+      
               <h5 class="font-weight-bold pl-0 my-4 text-right"><strong>مرحله دوم</strong></h5>
               <div class="row">
                       <div id="name-and-categry" class=" text-right body-product">
@@ -73,7 +91,7 @@
                              <label for="">نام انگلیسی</label>
                              <input type="text" name="title" value="{{old('title')}}" class="form-control-one p-2 w-100" placeholder="نام انگلیسی محصول خود را وارد نمایید">
                       </div>
-                    
+        
                        <div class="first-name mt-4">
                               <label for="">توضیحات</label>
                            <textarea name="description" id="" cols="5" rows="5" class="form-control-one p-2 w-100" placeholder="این فیلد اجباری است">{{old('description')}}</textarea>
@@ -86,22 +104,21 @@
                             
                         @endforelse
                       </select>
-                      <select name="brand" id="" class="w-100 mt-3 border-warning border-style">
-                        <option value='0'>انتخاب برند</option>          
+                      <select name="brand" id="brand1" class="w-100 mt-3 border-warning border-style">
+                        <option value='0' selected>انتخاب برند</option>
                         @forelse ($brands as $brand)
-                        <option value='{{ $brand->id }}'> {{ $brand->persian_name }} </option>           
+                        <option value='{{ $brand->id }}'> {{ $brand->persian_name }} </option> 
                         @empty
                             
                         @endforelse
+                        <option value="null">افزودن برند جدید</option>
                       </select>
                       <div id="price1" class=" text-right body-product">
-                        
-                          
                                 <div class="first-name mt-4">
                                   <label for="">وزن محصول</label>
                                   <input type="text" value="{{old('weight')}}" name="weight" class="form-control-one p-2 w-100" placeholder="وزن محصول را با واحد گرم وارد کنید">
                                 </div>
-                             
+                            
                           </div>
                       </form>
                           </div>
