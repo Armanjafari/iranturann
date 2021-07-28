@@ -196,6 +196,7 @@ Route::post('owner/product/submit', 'Market\MarketController@ProdcutRegistraitio
 Route::get('owner/dashboard', 'Market\MarketController@dashboardForm')->name('dashboard.form');
 Route::get('owner/customers', 'Market\MarketController@customers')->name('owner.customers');
 Route::get('owner/product/{product}', 'Market\MarketController@showProduct')->name('owner.product');
+Route::post('owner/create/brand', 'Market\BrandController@create')->name('owner.create.brand');
 Route::group(['namespace' => 'File',], function () {
     Route::get('file/create', 'FileController@create')->name('file.create');
     Route::post('file', 'FileController@new')->name('file.new');

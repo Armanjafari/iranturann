@@ -59,24 +59,7 @@
   </div>
   <!-- Second Step -->
   <div class="row setup-content" id="step-11">
-    <form action="">
-  <div class="popup2">
-  <button type="button" class="close" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-           <p>ثبت برند جدید</p>
-           <div class="first-name mt-4">
-                              <input name="persian_title" value="{{old('persian_title')}}" type="text" class="form-control-one p-2 w-100" placeholder="نام فارسی برند">
-                             </div>
-                             <div class="first-name mt-4">
-                          
-                             <input type="text" name="title" value="{{old('title')}}" class="form-control-one p-2 w-100" placeholder="نام انگلیسی برند">
-                      </div>
-                      <div class="d-flex justify-content-center mt-3">
-                      <input type="submit" class="btn-Record" value="ثبت">
-                        </div>
-             </div>
-             </form>
+    
       <div class="col-lg-12 text-right">
       
               <h5 class="font-weight-bold pl-0 my-4 text-right"><strong>مرحله دوم</strong></h5>
@@ -121,12 +104,32 @@
                             
                           </div>
                       </form>
+                      <form action="{{ route('owner.create.brand') }}" method="POST">
+                        @csrf
+                        <div class="popup2">
+                          <button type="button" class="close" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                                   <p>ثبت برند جدید</p>
+                                   <div class="first-name mt-4">
+                                                      <input name="brand_persian_title" value="{{old('brand_persian_title')}}" type="text" class="form-control-one p-2 w-100" placeholder="نام فارسی برند">
+                                                     </div>
+                                                     <div class="first-name mt-4">
+                                                  
+                                                     <input type="text" name="brand_title" value="{{old('brand_title')}}" class="form-control-one p-2 w-100" placeholder="نام انگلیسی برند">
+                                              </div>
+                                              <div class="d-flex justify-content-center mt-3">
+                                              <input type="submit" class="btn-Record" value="ثبت">
+                                                </div>
+                                     </div>
+                               </form>
                           </div>
                                    </div>
                                    <button class="btn btn-indigo btn-rounded prevBtn float-right" type="button">قبلی</button>
                                    <button class="btn btn-default btn-rounded float-left" type="submit">ارسال</button>
       </div>
   </div>
+ 
 
   <!-- Third Step -->
   <div class="row setup-content" id="step-12">
