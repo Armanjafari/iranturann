@@ -2618,6 +2618,6 @@ p {
   outline: none !important;
 }
 option[value="null"]{
-  font-weight: bold;
+  font-weight: bold !important;
 }
 /*# sourceMappingURL=style.css.map */
