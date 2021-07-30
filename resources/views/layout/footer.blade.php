@@ -58,11 +58,20 @@
       </div>
       <div class="col-lg-2 col-sm-4 col-6 mt-5 col-md-4">
         <div class="card border-dark">
+          
           <div class="card-body text-right p-3">
+            <a href="https://www.facebook.com/people/Iranturan-Iranturan/100069522891679/">
             <img src="{{ asset('assets/img/svg element/Icon awesome-facebook-f.svg') }}" alt="facebook" class="facebook">
-            <img src="{{ asset('assets/img/svg element/Icon awesome-twitter.svg') }}" alt="twitter" class="mr-3 twitter">
-            <img src="{{ asset('assets/img/svg element/Icon awesome-youtube.svg') }}" alt="youtube" class="mr-3 youtube">
+            </a>
+            <a href="https://twitter.com/iranturan1">
+              <img src="{{ asset('assets/img/svg element/Icon awesome-twitter.svg') }}" alt="twitter" class="mr-3 twitter">
+            </a>
+            <a href="https://www.youtube.com/channel/UCaLmRVLrtMjcemfNFSPqjLA">
+              <img src="{{ asset('assets/img/svg element/Icon awesome-youtube.svg') }}" alt="youtube" class="mr-3 youtube">
+            </a>
+            <a href="https://instagram.com/iranturan14">
             <img src="{{ asset('assets/img/svg element/Icon awesome-instagram.svg') }}" alt="instagram" class="mr-3 instagram">
+          </a>
           </div>
         </div>
       </div>
