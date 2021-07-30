@@ -2617,4 +2617,7 @@ p {
   border: none;
   outline: none !important;
 }
+option[value="null"]{
+  font-weight: bold;
+}
 /*# sourceMappingURL=style.css.map */
