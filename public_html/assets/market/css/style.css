@@ -2604,8 +2604,9 @@ p {
   z-index: 10000;
   display: inline-block;
   padding: 1em;
-  top:50%;
   bottom: 50%;
+   left: 1%;
+   top: 30%;
 }
 .btn-Record{
   background-color:#33cccc;
