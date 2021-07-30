@@ -332,7 +332,7 @@
         <div class="mobile-nav">
             <a href="#" class="toggle-btn" id="toggle"><span></span></a>
            
-            <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp mr-auto ml-3 mt-2">
+            <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp mr-auto  mt-2">
                 <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
             {{-- <a href="">
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-3">
@@ -341,13 +341,14 @@
           <a href="{{ route('mobile.login',$market->id) }}" class="fa-user1"> <img src="assets/img/svg element/ورود.svg" alt="" style="margin-left:3px;">ورود</a>  
             @endguest
            @auth
-           <div class="mt-2 mr-auto ml-3 fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>
+           <div class="mt-2 mr-3 fa-user5"> <a href="{{ route('mobile.show.profile',$market->id) }}" class=""><i class="fas fa-user fa-user1 p-3"></i>
            </a>
            <div class="profile-box p-3">
+        </div>
+
           {{-- <a href="{{ route('logout') }}" class="btn-logo1">خروج</a>   --}}
            @endauth
             
-        </div>
         <!--end mobile nav-->
         </header>
         <!-- 
