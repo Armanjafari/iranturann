@@ -2619,6 +2619,6 @@ p {
 }
 option[value="null"]{
   font-weight: bold !important;
-  color: #06ad06 !important;
+  color: #06ad06;
 }
 /*# sourceMappingURL=style.css.map */

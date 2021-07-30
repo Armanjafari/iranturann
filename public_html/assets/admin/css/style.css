@@ -168,6 +168,16 @@ margin-top: 2em;
    border: none;
    outline: none !important;
 }
+.btn-wait{
+ background-color: #FC2626;
+  padding: 1em 2em;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 4px 4px 0px #ded6d6;
+  border: none;
+  outline: none !important;
+}
 .btn-Record1{
   background-color: var(--Secendry-Color);
   padding: 0.5em 1em;
@@ -408,4 +418,8 @@ border-right: 1px solid var(--Secendry-Color) !important;
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+.img-product-size3{
+  width: 150px;
+  height: 150px;
 }
