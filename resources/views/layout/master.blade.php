@@ -10,8 +10,8 @@
 <meta name="keywords" content="فروشگاه اینترنتی, خرید آنلاین، موبایل, تبلت, لپ تاپ, تلویزیون, کامپیوتر, صنایع دستی, قیمت لباسشویی, فروش اینترنتی، ایران توران، ایران توران"/> 
 <meta property="og:site_name" content="ایران توران" />
 <meta property="og:title" content="فروشگاه اینترتی ایران توران" />
-<meta property="og:url" content="https://www.iranturan.com/" />
-<link rel="canonical" href="https://www.iranturan.com/" />
+<meta property="og:url" content="https://iranturan.com/" />
+<link rel="canonical" href="https://iranturan.com/" />
 
 
 </head>

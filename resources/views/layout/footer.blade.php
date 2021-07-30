@@ -59,10 +59,10 @@
       <div class="col-lg-2 col-sm-4 col-6 mt-5 col-md-4">
         <div class="card border-dark">
           <div class="card-body text-right p-3">
-            <img src="{{ asset('assets/img/svg element/Icon awesome-facebook-f.svg') }}" alt="" class="facebook">
-            <img src="{{ asset('assets/img/svg element/Icon awesome-twitter.svg') }}" alt="" class="mr-3 twitter">
-            <img src="{{ asset('assets/img/svg element/Icon awesome-youtube.svg') }}" alt="" class="mr-3 youtube">
-            <img src="{{ asset('assets/img/svg element/Icon awesome-instagram.svg') }}" alt="" class="mr-3 instagram">
+            <img src="{{ asset('assets/img/svg element/Icon awesome-facebook-f.svg') }}" alt="facebook" class="facebook">
+            <img src="{{ asset('assets/img/svg element/Icon awesome-twitter.svg') }}" alt="twitter" class="mr-3 twitter">
+            <img src="{{ asset('assets/img/svg element/Icon awesome-youtube.svg') }}" alt="youtube" class="mr-3 youtube">
+            <img src="{{ asset('assets/img/svg element/Icon awesome-instagram.svg') }}" alt="instagram" class="mr-3 instagram">
           </div>
         </div>
       </div>
