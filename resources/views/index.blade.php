@@ -67,21 +67,21 @@
  
         <a class="w-100">
         <div class="shopping-centrew mt-5 p-3">
-            <img src="assets/img/svg element/مراکز خرید.svg" alt="">
+            <img src="assets/img/svg element/مراکز خرید.svg" alt="مراکز خرید">
          مراکز خرید
         </div>
         </a>
         <div class="owl-carousel owl-theme mt-5 text-center" id="owl-mobile13">
         @forelse ($centers as $center)
             <div class="item">
-               <div><a href="{{ route('sellers.by.centers',$center->id) }}"> <img src="{{$center->image->address}}" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
+               <div><a href="{{ route('sellers.by.centers',$center->id) }}"> <img src="{{$center->image->address}}" alt="{{$center->name}}" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
                <div class="text-center  mt-2 mr-lg-5">
                <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
                </div>
               <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{ route('sellers.by.centers',$center->id) }}"> {{$center->name}} </a>
               </div>
               <div class="mt-2 mr-lg-5">
-              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class=""> </a>
+              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="دانلود" style="width:15px; display:inline-block" class=""> </a>
               </div>
             </div>     
         @empty
@@ -91,7 +91,7 @@
 
 <a class="w-100">
         <div class="shopping-centrew mt-5 p-3">
-            <img src="assets/img/svg element/فروشنده.svg" alt="">
+            <img src="assets/img/svg element/فروشنده.svg" alt="فروشندگان">
          فروشندگان
         </div>
         </a> 
@@ -105,14 +105,14 @@
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile15>
         @forelse ($markets as  $market)
         <div class="item">
-            <div><a href="{{route('show.market', $market->id)}}"> <img src="{{$market->images()->whereType('logo')->first()->address}}" alt="" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
+            <div><a href="{{route('show.market', $market->id)}}"> <img src="{{$market->images()->whereType('logo')->first()->address}}" alt="{{$market->market_name}}" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
             <div class="text-center mr-lg-5 mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
            <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{route('show.market', $market->id)}}"> {{$market->market_name}} </a>
            </div>
            <div class="mt-2 mr-lg-5">
-              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class=""> </a>
+              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="دانلود" style="width:15px; display:inline-block" class=""> </a>
               </div>
          </div>     
         @empty
@@ -121,7 +121,7 @@
 </div>
 <a  class="w-100">
         <div class="shopping-centrew mt-5 p-3">
-            <img src="{{asset('assets/img/whatsapp-icon.svg')}}" alt="" class="size-icon">
+            <img src="{{asset('assets/img/whatsapp-icon.svg')}}" alt="فروشندگان شبکه اجتماعی" class="size-icon">
         فروشندگان شبکه اجتماعی
       <img src="assets/img/svg element/رنگی.svg" alt="" class="size-icon">   
     </div>
@@ -136,14 +136,14 @@
         <div class="owl-carousel owl-theme mt-5 text-center" id=owl-mobile17>
         @forelse ($messenger_seller as $messenger)
         <div class="item">
-            <div class=""><a href="{{route('show.market', $messenger->id)}}" class=""> <img src="{{$messenger->images()->whereType('logo')->first()->address ?? '#'}}" alt="a" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
+            <div class=""><a href="{{route('show.market', $messenger->id)}}" class=""> <img src="{{$messenger->images()->whereType('logo')->first()->address ?? '#'}}" alt="{{$messenger->market_name}}" class="rounded-circle img-shopp size-img" data-holder-rendered="true"></a></div>
             <div class="text-center mr-lg-5 mt-2">
             <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star"></span>
             </div>
            <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{route('show.market', $messenger->id)}}">{{$messenger->market_name}}</a>
            </div>
            <div class="mt-2 mr-lg-5">
-              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="" style="width:15px; display:inline-block" class=""> </a>
+              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="دانلود" style="width:15px; display:inline-block" class=""> </a>
               </div>
          </div>     
         @empty
@@ -154,7 +154,7 @@
             <div class="card">
                 <div class="card-body text-right mr-4">
                     <span class="mr-5">تضمین کیفیت کالا</span><br>
-                    <img src="assets/img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
+                    <img src="assets/img/svg element/Icon awesome-box.svg" alt="ضمانت" class="box-img mt-2">
                     <span class="position-absolute mt-2">ضمانت کیفیت کالا توسط ما</span>
                     <span class="position-absolute mt-4">ضمانت کیفیت کالا توسط ما</span>
                 </div>
@@ -164,7 +164,7 @@
             <div class="card">
                 <div class="card-body text-right mr-4">
                     <span class="mr-5">تضمین کیفیت کالا</span><br>
-                    <img src="assets/img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
+                    <img src="assets/img/svg element/Icon awesome-box.svg" alt="ضمانت" class="box-img mt-2">
                     <span class="position-absolute mt-2">ضمانت کیفیت کالا توسط ما</span>
                     <span class="position-absolute mt-4">ضمانت کیفیت کالا توسط ما</span>
                 </div>
@@ -184,7 +184,7 @@
             <div class="card">
                 <div class="card-body text-right mr-4">
                     <span class="mr-5">تضمین کیفیت کالا</span><br>
-                    <img src="assets/img/svg element/Icon awesome-box.svg" alt="" class="box-img mt-2">
+                    <img src="assets/img/svg element/Icon awesome-box.svg" alt="ضمانت" class="box-img mt-2">
                     <span class="position-absolute mt-2">ضمانت کیفیت کالا توسط ما</span>
                     <span class="position-absolute mt-4">ضمانت کیفیت کالا توسط ما</span>
                 </div>
