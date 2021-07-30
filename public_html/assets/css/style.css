@@ -3018,8 +3018,16 @@ padding-right: 3em;
 .profile-box{
 display: none;
 }
+.img-product-size7{
+  width: 300px !important;
+  height: 150px !important;
+}
 }
 .post{
 width: 20px !important;
 height: 20px !important;
+}
+.img-product-size7{
+  width: 800px;
+  height: 500px;
 }

@@ -4,7 +4,9 @@
 <div class="text-center mt-5">
 	@if ($items->isEmpty())
 	<img src="assets/img/Desktop - 1.png" class="img-product-size7" alt="">
+
 	@else
+	</div>
 	<div class="row">
 		<div class="col-lg-7 bg-light mt-5 pr-0 pl-0">
 
