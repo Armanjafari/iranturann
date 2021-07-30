@@ -338,7 +338,7 @@
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-3">
             </a> --}}
             @guest
-          <a href="{{ route('login_with_code') }}" class="fa-user1"> <img src="assets/img/svg element/ورود.svg" alt="" style="margin-left:3px;">ورود</a>  
+          <a href="{{ route('login_with_code',$market->id) }}" class="fa-user1"> <img src="assets/img/svg element/ورود.svg" alt="" style="margin-left:3px;">ورود</a>  
             @endguest
            @auth
            <div class="mt-2 mr-auto ml-3 fa-user5"> <a href="" class=""><i class="fas fa-user fa-user1 p-3"></i>
