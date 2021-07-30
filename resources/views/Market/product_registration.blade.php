@@ -89,12 +89,13 @@
                       </select>
                       <select name="brand" id="brand1" class="w-100 mt-3 border-warning border-style">
                         <option value='0' selected>انتخاب برند</option>
+                        <option value="null">افزودن برند جدید</option>
                         @forelse ($brands as $brand)
                         <option value='{{ $brand->id }}'> {{ $brand->persian_name }} </option> 
                         @empty
                             
                         @endforelse
-                        <option value="null">افزودن برند جدید</option>
+                  
                       </select>
                       <div id="price1" class=" text-right body-product">
                                 <div class="first-name mt-4">
