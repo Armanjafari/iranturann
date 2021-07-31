@@ -19,10 +19,11 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //'payment/Saman/callback',
         // 'api/v1/*',
+        //'payment/Saman/callback',
         'payment/saman/callback',
         'payment/mellat/callback',
+        'payment/mellat/*',
         'payment/pasargad/callback'
     ];
 }
