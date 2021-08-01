@@ -122,7 +122,6 @@
 </div>
 <div class="row">
         <div class="col-lg-3 text-center mt-2">
-    
         <img src="{{asset('assets/admin/img/0f4fa28ac647dda271460bdcf9c4dee30b12082c_1622025774.jpg')}}"  class="img-product-size3" alt="">
         </div>
         <div class="col-lg-3  text-center mt-5">

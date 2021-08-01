@@ -649,6 +649,9 @@ header > .navbar {
   header > .navigation > .container > .menu-level-1 >a> .svg-shopp {
     display: none;
   }
+  header > .navigation > .container > .menu-level-1 >  .fa-user5> a>  .fa-user1 {
+    display: none !important;
+  }
   .navigation {
     margin-top: 1.4em;
   }

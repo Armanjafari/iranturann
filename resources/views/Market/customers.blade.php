@@ -1,6 +1,5 @@
 @extends('Market.layout.master')
 @section('content')
-
 <main>
     <!-- start add-product box-->
       <div class="container">
@@ -59,7 +58,7 @@
             <a href="sms:?body=this is for test" class="mr-3">
             <i class="fas fa-sms"></i>
             پیامک
-          </a>
+          </a> 
           </div>
           </div>
           </div>

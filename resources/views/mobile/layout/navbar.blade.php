@@ -291,15 +291,8 @@
                                 </a></li>
                         </ul><!-- End Menu Level 2 -->
                     </li>
-                    <li class="menu-list-1"><a href="#" class="list-item">
-                            <img src="assets/img/download (3).png" alt="">
-                            <span>مد و پوشاک</span>
-                            <img class="item-icon" src="assets/img/download.png" alt="">
-                        </a></li>
-                    <li class="menu-list-1"><a href="#" class="list-item">
-                            <img src="assets/img/download (4).png" alt="">
-                            <span>خانه، آشپزخانه و ابزار</span>
-                            <img class="item-icon" src="assets/img/download.png" alt=""></a></li>
+                 
+    
                           
                         
                             <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp  mr-auto ml-3 mt-2">
@@ -332,7 +325,7 @@
         <div class="mobile-nav">
             <a href="#" class="toggle-btn" id="toggle"><span></span></a>
            
-            <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp mr-auto  mt-2">
+            <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp ml-3 mr-auto  mt-2">
                 <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
             {{-- <a href="">
             <img src="assets/img/svg element/Icon awesome-shopping-cart.svg" alt="" class="svg-shopp ml-3">
