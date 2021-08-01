@@ -55,7 +55,7 @@
             <div class="modal-body">
             <a href="https://wa.me/?text=urlencodedtext"><img src="{{asset('assets/img/svg element/icons8-whatsapp.svg')}}" class="ml-1" alt=""> واتساپ</a>
             <a href="" class="mr-3"><img src="{{asset('assets/img/svg element/telegram.svg')}}" alt=""> تلگرام</a>
-            <a href="sms:this is for test" class="mr-3">
+            <a href="sms:?body=this is for test" class="mr-3">
             <i class="fas fa-sms"></i>
             پیامک
           </a>
