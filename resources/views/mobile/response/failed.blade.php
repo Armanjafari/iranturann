@@ -7,7 +7,7 @@
 <img src="assets/img/svg element/multiply.svg" class="check" alt=""> 
 <p class="mt-3">پرداخت ناموفق</p><br>
 <div class="mb-3">
-<a href="{{route('index')}}" class="btn-Record">بازگشت به سایت</a>
+<a href="{{route('mobile.show.market',$market->id)}}" class="btn-Record">بازگشت به سایت</a>
 </div>
 </div>
 </div>
