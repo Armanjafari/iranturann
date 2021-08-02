@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('content')
-<main style="margin-top: 7rem">
+<main>
     <div class="row">
         @include('user.mini_nav')
         <div class="col-lg-9">

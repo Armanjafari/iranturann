@@ -40,7 +40,7 @@ class Transaction
         }
         if ($payment->isOnline())
         {
-        return $this->gatewayFactory()->pay($order , $this->cost->getTotalCosts() , $market);
+        return $this->gatewayFactory($market)->pay($order , $this->cost->getTotalCosts());
         } // chech this normalize
         $this->normalizeQuantity($order);
         $this->normalizeWallet($order);
@@ -49,7 +49,7 @@ class Transaction
         $this->basket->clear();
         return $order;
     }
-    private function gatewayFactory()
+    private function gatewayFactory(Market $market)
     {
         $list = [
             'saman' => Saman::class,
@@ -57,7 +57,7 @@ class Transaction
             'pasargad' => Pasargad::class
          ];
          //dd($list[$this->request->gateway]);
-         return resolve($list[$this->request->gateway]);
+         return resolve($list[$this->request->gateway], ['market' => $market->id]);
          
         // $gateway = [
         //     'saman' => Saman::class,

@@ -233,6 +233,11 @@ Route::prefix('mobile')->namespace('mobile')->group(function () {
         Route::get('market/{market}/basket/checkout/a', 'BasketController@checkoutForm')->name('mobile.basket.checkout.form');
         Route::post('market/{market}/basket/checkout/a', 'BasketController@checkout')->name('mobile.basket.checkout');
         Route::get('market/{market}/basket/a', 'BasketController@index')->name('mobile.basket.index');
+
+        Route::post('market/{market}/payment/{gateway}/callback', 'PaymentController@verify')->name('mobile.payment.verify');
+        Route::get('market/{market}/payment/{gateway}/callback', 'PaymentController@verify')->name('mobile.payment.verify.get');
+        Route::get('market/{market}/failed', 'homecontroller@failed')->name('mobile.response.failed');
+        Route::get('market/{market}/success', 'homecontroller@success')->name('mobile.response.success');
         
         Route::namespace('user')->group(function () {
             Route::get('market/{market}/orders/a', 'OrderController@index')->name('mobile.user.orders.index');

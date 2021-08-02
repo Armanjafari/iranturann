@@ -156,6 +156,6 @@
   @empty
     
   @endforelse
-
+  {{$pures->links()}}
 </div>
 @endsection

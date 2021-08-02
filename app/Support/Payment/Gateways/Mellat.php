@@ -11,19 +11,26 @@ use SoapClient;
 
 class Mellat implements GatewayInterface
 {
+    private $market;
     private $merchantID;
     private $callback;
     protected $serverUrl = 'https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl';
-    public function __construct()
+    public function __construct($market=null)
     {
+        $this->market = $market;
         $this->merchantID = mt_rand(10000,99999);
-        $this->callback = route('payment.verify' , $this->getName()); // TODO solid problem
+        if ($market== null) {
+        $this->callback = route('payment.verify' , $this->getName()); // TODO refactor this
+            
+        }else{
+        $this->callback = route('mobile.payment.verify' , ['market'=> $market,'gateway'=> $this->getName()]);
+        }
     }
-    public function pay($order , int $amount , Market $market=null)
+    public function pay($order , int $amount )
     {
-        $this->redirectToBank($order , $amount , $market);
+        $this->redirectToBank($order , $amount);
     }
-    private function redirectToBank($order , $amount , Market $market=null)
+    private function redirectToBank($order , $amount )
     {
         $terminalId		= "5453042";					// Terminal ID
         $userName		= "iranturan123";				// Username
@@ -32,7 +39,7 @@ class Mellat implements GatewayInterface
         $amount 		= $amount * 10;					// Price / Rial
         $localDate		= date('Ymd');					// Date
         $localTime		= date('Gis');					// Time
-        $additionalData	= $market->id ?? '';            // auth()->user()->phone_number;
+        $additionalData	= $this->market ?? '';            // auth()->user()->phone_number;
         $callBackUrl	= $this->callback;	            // Callback URL
         $payerId		= 0;
          
