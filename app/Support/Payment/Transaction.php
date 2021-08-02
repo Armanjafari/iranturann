@@ -57,7 +57,7 @@ class Transaction
             'pasargad' => Pasargad::class
          ];
          //dd($list[$this->request->gateway]);
-         return resolve($list[$this->request->gateway], ['market' => $market->id]);
+         return resolve($list[$this->request->gateway], ['market' => $market->id ?? '']);
          
         // $gateway = [
         //     'saman' => Saman::class,
