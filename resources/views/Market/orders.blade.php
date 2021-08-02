@@ -4,17 +4,16 @@
     <div class="col-lg-12 pr-3">
       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link pr-2 pl-2 table-seler4 active" id="pills-contact-tab1" data-toggle="pill" href="#pills-contact1" role="tab" aria-controls="pills-contact" aria-selected="false">پرداخت شده</a>
+          <a class="nav-link pr-2 pl-2 table-seler4  active" id="pills-contact-tab1" data-toggle="pill" href="#pills-contact1" role="tab" aria-controls="pills-contact1" aria-selected="true">پرداخت شده</a>
         </li>
         <li class="nav-item">
           <a class="nav-link pr-2 pl-2 table-seler4" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">آماده ارسال</a>
         </li>
         <li class="nav-item">
           <a class="nav-link pr-2 pl-2 table-seler4" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">مرجوع شده</a>
-        </li> 
-        
+        </li>
         <li class="nav-item">
-          <a class="nav-link  pr-2 pl-2 table-seler4" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">کل سفارشات</a>
+          <a class="nav-link  pr-2 pl-2 table-seler4" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">کل سفارشات</a>
         </li>
       </ul>
       <div class="col-lg-12 d-flex justify-content-center">
