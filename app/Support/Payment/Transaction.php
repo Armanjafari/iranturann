@@ -49,7 +49,7 @@ class Transaction
         $this->basket->clear();
         return $order;
     }
-    private function gatewayFactory(Market $market)
+    private function gatewayFactory(Market $market=null)
     {
         $list = [
             'saman' => Saman::class,
