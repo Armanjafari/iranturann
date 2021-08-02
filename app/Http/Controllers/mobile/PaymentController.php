@@ -14,7 +14,7 @@ class PaymentController extends Controller
     {
         $this->transaction = $transaction;
     }
-    public function verify(Request $request , Market $market)
+    public function verify(Request $request ,$gateway, Market $market)
     {
         return $this->transaction->verify()
         ? $this->sendSuccessResponse($market)
