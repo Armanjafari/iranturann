@@ -28,14 +28,22 @@ class LoginController extends Controller
     public $code;
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        // if (Auth::check()) {
+            
+        // }
     }
     public function showLoginForm(Market $market)
     {
+        if (Auth::check()) {
+            return redirect()->route('mobile.show.market',$market->id);   
+           }
         return view('mobile.AuthWithCode.login',compact('market'));
     }
     public function login(LoginWithCodeValidator $request , Market $market)
     {
+        if (Auth::check()) {
+         return redirect()->route('mobile.show.market',$market->id);   
+        }
         if ($this->hasTooManyLoginAttempts($request)) {
             return $this->sendLockoutResponse($request);
         }
@@ -50,8 +58,6 @@ class LoginController extends Controller
 
         $this->sendSms($user , 'code');//mobile.verify
         return redirect()->route('mobile.verify_login_code',$market->id);
-        
-
 
     }
     public function sendSms($user, $method)
@@ -61,6 +67,9 @@ class LoginController extends Controller
     }
     public function verifyForm(Market $market)
     {
+        if (Auth::check()) {
+            return redirect()->route('mobile.show.market',$market->id);   
+           }
         // dd('verify');
         return view('mobile.AuthWithCode.verify',compact('market'));
     }
@@ -70,6 +79,9 @@ class LoginController extends Controller
     }
     public function codeValidator(CodeValidator $request , Market $market)
     {
+        if (Auth::check()) {
+            return redirect()->route('mobile.show.market',$market->id);   
+           }
         $user = User::where('phone_number',session()->get('phone_number'))->first();
         session()->forget('phone_number');
         $status = ActiveCode::ValidateCode($request->input('code'),$user);
@@ -83,6 +95,9 @@ class LoginController extends Controller
     }
     public function register(Request $request ,Market $market)
     {
+        if (Auth::check()) {
+            return redirect()->route('mobile.show.market',$market->id);   
+           }
         // dd($request->all());
         $request->validate([
             'name' => 'required',

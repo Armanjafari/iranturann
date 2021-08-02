@@ -3,10 +3,8 @@ namespace App\Support\Payment\Gateways;
 
 use App\Order;
 use App\Support\Payment\Gateways\GatewayInterface;
-use DateTime;
 use Illuminate\Http\Request;
 use nusoap_client;
-use SoapClient;
 
 class Mellat implements GatewayInterface
 {
@@ -15,6 +13,7 @@ class Mellat implements GatewayInterface
     protected $serverUrl = 'https://bpm.shaparak.ir/pgwchannel/services/pgw?wsdl';
     public function __construct()
     {
+        dd($this);
         $this->merchantID = mt_rand(10000,99999);
         $this->callback = route('payment.verify' , $this->getName());
     }

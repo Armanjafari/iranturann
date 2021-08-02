@@ -1,6 +1,7 @@
 <?php
 namespace App\Support\Payment\Gateways;
 
+use App\Market;
 use App\Order;
 use App\Support\Payment\Gateways\GatewayInterface;
 use DateTime;
@@ -16,35 +17,23 @@ class Mellat implements GatewayInterface
     public function __construct()
     {
         $this->merchantID = mt_rand(10000,99999);
-        $this->callback = route('payment.verify' , $this->getName());
+        $this->callback = route('payment.verify' , $this->getName()); // TODO solid problem
     }
-    public function pay($order , int $amount)
+    public function pay($order , int $amount , Market $market=null)
     {
-        $this->redirectToBank($order , $amount);
+        $this->redirectToBank($order , $amount , $market);
     }
-        // $parameters = [
-        //     'terminalId' => '5453042',
-        //     'userName' => 'iranturan123',
-        //     'userPassword' => '20862902',
-        //     'orderId' => $order->code,
-        //     'amount' => $amount,
-        //     'localDate' => date("Ymd"),
-        //     'localTime' => date("His"),
-        //     'additionalData' => auth()->user()->phone_number,
-        //     'callBackUrl' => $this->callback,
-        //     'payerId' => '0'
-        // ];
-    private function redirectToBank($order , $amount)
+    private function redirectToBank($order , $amount , Market $market=null)
     {
         $terminalId		= "5453042";					// Terminal ID
-        $userName		= "iranturan123";					// Username
+        $userName		= "iranturan123";				// Username
         $userPassword	= "65916041";					// Password
-        $orderId		= $order->code;						// Order ID
-        $amount 		= $amount * 10;						// Price / Rial
+        $orderId		= $order->code;					// Order ID
+        $amount 		= $amount * 10;					// Price / Rial
         $localDate		= date('Ymd');					// Date
         $localTime		= date('Gis');					// Time
-        $additionalData	= auth()->user()->phone_number;
-        $callBackUrl	= $this->callback;	// Callback URL
+        $additionalData	= $market->id ?? '';            // auth()->user()->phone_number;
+        $callBackUrl	= $this->callback;	            // Callback URL
         $payerId		= 0;
          
         $parameters = array(

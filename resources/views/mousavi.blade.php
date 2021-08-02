@@ -102,6 +102,12 @@
             <label for="files">آپلود عکس</label>
             <input id="files" value="{{ old('images') }}" name="images[]" class="apload-img" type="file" multiple>
           </div>
+          <div class="col-lg-6 text-center mt-4">
+            <label for="md">فعال</label>
+              <input type="radio" value="1" name="is_active" id="md">
+              <label for="rd" class="mr-3 mt-4">غیرفعال</label>
+              <input type="radio" value="0" name="is_active" id="rd">
+          </div>
           <div class="col-lg-6 mt-4"></div>   
         </div>
         <br>

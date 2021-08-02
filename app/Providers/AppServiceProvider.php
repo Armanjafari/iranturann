@@ -12,6 +12,7 @@ use App\Support\Cost\Contracts\CostInterface;
 use App\Support\Cost\DiscountCost;
 use App\Support\Cost\ShippingCost;
 use App\Support\Discount\DiscountManager;
+use App\Support\Payment\Gateways\Mellat;
 use App\Support\Storage\Contracts\StorageInterface;
 use App\Support\Storage\SessionStorage;
 use Illuminate\Support\ServiceProvider;

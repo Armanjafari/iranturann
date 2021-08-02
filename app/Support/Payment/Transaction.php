@@ -1,6 +1,7 @@
 <?php
 namespace App\Support\Payment;
 
+use App\Market;
 use App\Order;
 use App\Payment;
 use App\Services\MeliPayamak\MeliPayamak;
@@ -23,7 +24,7 @@ class Transaction
         $this->basket = $basket;
         $this->cost = $cost;
     }
-    public function checkout()
+    public function checkout(Market $market=null)
     {
         
         // dd($this->request->all());
@@ -39,7 +40,7 @@ class Transaction
         }
         if ($payment->isOnline())
         {
-        return $this->gatewayFactory()->pay($order , $this->cost->getTotalCosts());
+        return $this->gatewayFactory()->pay($order , $this->cost->getTotalCosts() , $market);
         } // chech this normalize
         $this->normalizeQuantity($order);
         $this->normalizeWallet($order);

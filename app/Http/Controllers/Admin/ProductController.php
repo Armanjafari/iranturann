@@ -13,10 +13,11 @@ class ProductController extends Controller
 {
     public function showForm()
     {
+        $pures = Pure::paginate(30);
         $categories = Category::all();
         $brands = Brand::all();
         $options = Option::all();
-        return view('Admin.product.product', compact('categories', 'brands', 'options'));
+        return view('Admin.product.product', compact('categories', 'brands', 'options' , 'pures'));
     }
     public function createProduct(Request $request)
     {
