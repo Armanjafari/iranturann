@@ -31,7 +31,7 @@
 
 							<br>
 							@if ($item->ordering)
-							<span style="font-size: 11px">ارسال از {{$item->ordering}} روز آینده</span>
+							<span style="font-size: 8px !important">ارسال از {{$item->ordering}} روز آینده</span>
 							@endif
 						</td>
 						<td>{{ number_format($item->price) }} تومان</td>
