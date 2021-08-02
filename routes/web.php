@@ -237,8 +237,8 @@ Route::prefix('mobile')->namespace('mobile')->group(function () {
         Route::post('payment/{gateway}/callback/market/{market}/', 'PaymentController@verify')->name('mobile.payment.verify');
         Route::get('payment/{gateway}/callback/market/{market}/', 'PaymentController@verify')->name('mobile.payment.verify.get');
         
-        Route::get('market/{market}/failed', 'homecontroller@failed')->name('mobile.response.failed');
-        Route::get('market/{market}/success', 'homecontroller@success')->name('mobile.response.success');
+        Route::get('market/{market}/failed', 'PaymentController@failed')->name('mobile.response.failed');
+        Route::get('market/{market}/success', 'PaymentController@success')->name('mobile.response.success');
         
         Route::namespace('user')->group(function () {
             Route::get('market/{market}/orders/a', 'OrderController@index')->name('mobile.user.orders.index');
