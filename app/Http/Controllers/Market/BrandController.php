@@ -18,6 +18,6 @@ class BrandController extends Controller
             'name' => $request->input('brand_title'),
             'persian_name' => $request->input('brand_persian_title'),
         ]);
-        return back()->withSuccess('برند شما ایجاد شد لطفا از لیست برند مورد نظر را ایجاد کنید');
+        return back()->withInput()->withSuccess('برند شما ایجاد شد لطفا از لیست برند مورد نظر را ایجاد کنید');
     }
 }
