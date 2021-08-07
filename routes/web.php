@@ -121,6 +121,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'role
 
     Route::get('product', 'ProductController@showForm')->name('show.form.product');
     Route::post('product', 'ProductController@createProduct')->name('create.product');
+    Route::get('product/{pure}', 'ProductController@editForm')->name('edit.form.product');
+    Route::post('product/{pure}', 'ProductController@edit')->name('edit.product');
 
     Route::get('shopingcenter', 'ShopingCenterController@showForm')->name('show.form.shop');
     Route::post('shopingcenter', 'ShopingCenterController@createShop')->name('create.shop');

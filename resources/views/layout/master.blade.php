@@ -12,8 +12,7 @@
 <meta property="og:title" content="فروشگاه اینترتی ایران توران" />
 <meta property="og:url" content="https://iranturan.com/" />
 <link rel="canonical" href="https://iranturan.com/" />
-
-
+<meta name="robots" content="index, follow"/>
 </head>
 
 <body dir="rtl">

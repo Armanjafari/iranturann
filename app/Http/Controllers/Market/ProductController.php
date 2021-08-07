@@ -141,7 +141,7 @@ class ProductController extends Controller
     {
         // dd($request->all());
         $query = $request->input('query');
-        if(!$query)
+        if(!$request->has('query'))
         return response()->json(['error' => 'ورودی وارد نشده ']);
         $result = Pure::where('persian_title' ,'LIKE','%' . $query . '%')
         ->orWhere('persian_title' ,'LIKE','%' .$query)

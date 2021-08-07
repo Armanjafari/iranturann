@@ -104,6 +104,13 @@
                                 </div>
                             
                           </div>
+                          <div id="price1" class=" text-right body-product">
+                            <div class="first-name mt-4">
+                              <label for="">کلمات کلیدی</label>
+                              <input type="text" value="{{old('keywords')}}" name="keywords" class="form-control-one p-2 w-100" placeholder="کلمات کلیدی محصول خود را وارد کنید">
+                            </div>
+                        
+                      </div>
                       </form>
                       <form action="{{ route('owner.create.brand') }}" method="POST">
                         @csrf

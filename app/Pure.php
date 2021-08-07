@@ -8,7 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pure extends Model
 {
-    protected $fillable = ['title','persian_title','description','price','option_id','brand_id', 'category_id' , 'slug' , 'weight','status'];
+    protected $fillable = [
+    'title',
+    'persian_title',
+    'description',
+    'price',
+    'option_id',
+    'brand_id',
+    'category_id',
+    'slug',
+    'weight',
+    'status',
+    'keywords',
+];
     use EagerLoadPivotTrait;
     public function category()
     {
@@ -50,5 +62,9 @@ class Pure extends Model
     public function fulls()
     {
         return $this->hasManyThrough(Full::class , Product::class , 'pure_id','product_id', 'id' , 'id');
+    }
+    public function creator()
+    {
+        return $this->belongsTo(Market::class);
     }
 }

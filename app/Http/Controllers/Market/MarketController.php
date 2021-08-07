@@ -118,7 +118,9 @@ class MarketController extends Controller
             'brand_id' => $request->input('brand'),
             'description' => $request->input('description'),
             'weight' => $request->input('weight'),
+            'keywords' => $request->input('keywords') ?? '',
             'status' => 0,
+            'market_id' => auth()->user()->market->id
         ]);
         $this->createImages($request , $pure);
         return redirect()->route('market.index')->withSuccess('محصول با موفقیت ثبت و پس از تایید در سایت قرار میگیرد');
@@ -131,12 +133,15 @@ class MarketController extends Controller
         $pure->images()->create([
             'address' => $destination . $image->getClientOriginalName()
         ]);
-        foreach ($request->file('images') as $image) {
-            $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
-            $image->move(public_path($destination), $image->getClientOriginalName());
-            $pure->images()->create([
-                'address' => $destination . $image->getClientOriginalName()
-            ]);
+        if ($request->has('images')) {
+            foreach ($request->file('images') as $image) {
+                $destination = '/images/' . now()->year . '/' . now()->month . '/' . now()->day . '/';
+                $image->move(public_path($destination), $image->getClientOriginalName());
+                $pure->images()->create([
+                    'address' => $destination . $image->getClientOriginalName()
+                ]);
+        }
+        
         }
 
     }
