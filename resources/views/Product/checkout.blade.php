@@ -93,7 +93,6 @@
 									پرداخت آنلاین
 								</label>
 							</div>
-
 							<select name='gateway'  class="custom-select col-md-4  custom-control-inline form-control6">
 								<option value="mellat"> ملت </option>
 								<option value="saman"> سامان </option>

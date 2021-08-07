@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ShippingCost implements CostInterface
 {
-    private $SHIPPING_COST = 20000;
+    private $SHIPPING_COST = 0;
     private $cost;
     public function __construct(CostInterface $cost)
     {
@@ -16,12 +16,13 @@ class ShippingCost implements CostInterface
     }
     public function setCost(Request $request)
     {
-        // TODO set this !
+        foreach ($this->cost->basket->all() as $full) {
+            $this->SHIPPING_COST += $full->product->pure->weight;
+        }
         
     }
     public function getCost()
     {
-        // dd($this->cost->basket->all()); // TODO start here 29 may
         // dd(Shipping::pishtaz(5,1,6000)->getPrice());
         // return Shipping::pishtaz(22,5,5000)->getPrice() / 10;
         return 0;
