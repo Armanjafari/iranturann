@@ -17,7 +17,7 @@
                                 <select class="w-100 p-2" name="ordering" id="exampleFormCotrolSelenct2" style="border: 3px solid #ffcc33;">
                                     <option value="0"> آماده ارسال </option>
                             @for ($i = 1; $i < 30; $i++)
-                                <option value="{{$i}}"> ارسال از {{$i}} اینده روز کاری </option>
+                                <option value="{{$i}}"> ارسال از {{$i}}  روز کاری </option>
                             @endfor
                                 </select>
                             </div>
