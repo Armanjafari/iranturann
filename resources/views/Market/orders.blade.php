@@ -35,11 +35,11 @@
           @forelse ($orders as $order)
           @if ($order->payment->status >= 1)
           <tr>
-            <td>{{$order->id}}</td>
-            <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
-            <td>{{$order->pivot->quantity}}</td>
-            <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
-            <td> @lang('iranturan.'. $order->payment->status) </td>
+            <td class="td-form">{{$order->id}}</td>
+            <td class="td-form"> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
+            <td class="td-form">{{$order->pivot->quantity}}</td>
+            <td class="td-form">{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
+            <td class="td-form"> @lang('iranturan.'. $order->payment->status) </td>
           </tr>
             
           @endif
@@ -109,7 +109,7 @@
       </table>
       </div>
       <div class="tab-pane fade" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact-tab1">
-        <table class="table table-bordered table-striped text-center mt-5 table-seler table-seler3">
+      <table class="table table-bordered table-striped text-center mt-5 table-seler table-seler3">
           <thead class="">
             <tr>
               <th class=" table-seller5">شماره سفارش</th>
