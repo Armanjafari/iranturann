@@ -20,7 +20,7 @@
         <input type="search" name="" id="myInput" placeholder="سرچ کن" class="p-1 form-control serch-box">
         </div>
         <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active mt-5 text-center" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="tab-pane fade show  mt-5 text-center" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <table class="table table-bordered table-striped text-center mt-5 table-seler table-seler3">
         <thead class="">
           <tr>
@@ -65,11 +65,11 @@
             @forelse ($orders as $order)
             @if ($order->payment->status == 2)
             <tr>
-              <td>{{$order->id}}</td>
-              <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}} </td>
-              <td>{{$order->pivot->quantity}}</td>
-              <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
-              <td> آماده ارسال </td>
+              <td class="td-form">{{$order->id}}</td>
+              <td class="td-form"> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}} </td>
+              <td class="td-form">{{$order->pivot->quantity}}</td>
+              <td class="td-form">{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
+              <td class="td-form"> آماده ارسال </td>
             </tr>
               
             @endif
@@ -94,11 +94,11 @@
           @forelse ($orders as $order)
           @if ($order->payment->status == -10)
           <tr>
-            <td>{{$order->id}}</td>
-            <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
-            <td>{{$order->pivot->quantity}}</td>
-            <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
-            <td> {{ $order->payment->status }} </td>
+            <td class="td-form">{{$order->id}}</td>
+            <td class="td-form"> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
+            <td class="td-form">{{$order->pivot->quantity}}</td>
+            <td class="td-form">{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
+            <td class="td-form"> {{ $order->payment->status }} </td>
           </tr>
             
           @endif
@@ -108,7 +108,7 @@
         </tbody>
       </table>
       </div>
-      <div class="tab-pane fade" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact-tab1">
+      <div class="tab-pane fade active" id="pills-contact1" role="tabpanel" aria-labelledby="pills-contact-tab1">
       <table class="table table-bordered table-striped text-center mt-5 table-seler table-seler3">
           <thead class="">
             <tr>
@@ -123,13 +123,12 @@
             @forelse ($orders as $order)
             @if ($order->payment->status == 1)
             <tr>
-              <td>{{$order->id}}</td>
-              <td> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
-              <td>{{$order->pivot->quantity}}</td>
-              <td>{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
-              <td> پرداخت شده </td>
+              <td class="td-form">{{$order->id}}</td>
+              <td class="td-form"> {{$order->products->first()->product->pure->persian_title}} <br> {{$order->products->first()->colors->title}}</td>
+              <td class="td-form">{{$order->pivot->quantity}}</td>
+              <td class="td-form">{{number_format($order->pivot->price * $order->pivot->quantity)}}</td>
+              <td class="td-form"> پرداخت شده </td>
             </tr>
-              
             @endif
             @empty
               <span>سفارش وجود ندارد</span>
