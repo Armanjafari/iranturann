@@ -2623,7 +2623,7 @@ option[value="null"]{
   color: #06ad06;
 }
 .td-form{
-  max-width: 40px;
+  max-width: 100px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
