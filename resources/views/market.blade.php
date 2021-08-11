@@ -1,9 +1,9 @@
 @extends('layout.master')
 @section('content')
 <main>
-        <div class="col-lg-12">
-        </div>
-        <div class="mt-3">
+    <div class="col-lg-12">   
+    </div>
+        <div class="col-lg-12w">
                 <div class="col-lg-12">
                         <div class="text-right">
                                 <img src="{{$seller->images()->whereType("logo")->first()->address}}" alt=""
@@ -13,7 +13,7 @@
                                                 src="{{asset('assets/img/svg element/دانلود.svg')}}" alt=""
                                                 style="width:15px; display:inline-block" class="ml-2">لینک دانلود
                                         اپلیکیشن</a>
-                                <div class="float-left bg-light p-3">
+                                <div class="float-left bg-light p-3 mt-3">
                                         <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}"
                                                         class="instagram1" alt=""></span>
                                         <span class="bazar2">whatsapp</span>
