@@ -29,6 +29,7 @@
             <div class="row">
             @forelse ($categories as $category)
             @forelse ($category->products as $product)
+            @if ($product->status)
             <form action="{{ route('market.add.product') }}" method="post" class="mr-2">
                 @csrf
                 <div class="product-card col-12 mb-3">
@@ -56,6 +57,7 @@
                     </a>
                 </div>
             </form>
+            @endif
             @empty
             @endforelse
 
