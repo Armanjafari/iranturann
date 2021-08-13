@@ -41,24 +41,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 text-center col-sm-6 col-6 mt-lg-0 mt-3">
-        <img src="{{ asset('assets/img/svg element/download-3.svg') }}" alt="" class="img-cafe">
-      </div>
-      <div class="col-lg-3 text-center col-sm-6 col-6 mt-lg-0 mt-3">
-        <img src="{{ asset('assets/img/svg element/logoapple.svg') }}" alt="" class="img-apple">
-      </div>
-      <div class="col-lg-3 text-center col-sm-6 col-6 mt-lg-0 mt-3">
-        <img src="{{ asset('assets/img/svg element/01.svg') }}" alt="" class="img-google">
-      </div>
-      <div class="col-lg-3 text-center col-sm-6 col-6 mt-lg-0 mt-3">
-        <img src="{{ asset('assets/img/svg element/download.svg') }}" alt="" class="img-app">
-      </div>
       <div class="col-lg-3 text-sm-right text-lg-center text-right col-sm-6 col-6 mt-5">
         <p>همراه با ایران توران در شبکه های اجتماعی</p>
       </div>
       <div class="col-lg-2 col-sm-4 col-6 mt-5 col-md-4">
         <div class="card border-dark">
-          
           <div class="card-body text-right p-3">
             <a href="https://www.facebook.com/people/Iranturan-Iranturan/100069522891679/">
             <img src="{{ asset('assets/img/svg element/Icon awesome-facebook-f.svg') }}" alt="facebook" class="facebook">
