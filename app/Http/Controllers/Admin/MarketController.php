@@ -76,7 +76,7 @@ class MarketController extends Controller
             return back()->withSuccess(__('iranturan.success message'));
         } catch (\Exception $e) {
             DB::rollBack();
-            throw new RollBackException('something went wrong contact Arman Jafari');
+            throw new RollBackException($e->getMessage());
         }
     }
     public function showEditForm(Market $market)
