@@ -35,7 +35,7 @@ class Transaction
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
-			dd($e->getMessage());
+			dd($e->getMessage() . 'erorr');
             return null;
         }
         if ($payment->isOnline())
