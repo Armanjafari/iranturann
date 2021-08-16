@@ -2043,7 +2043,6 @@ td{
 }
 .product-card{
   max-width: 100%;
-  display: flex;
   box-shadow: 5px 3px 8px 2px #DED6D6;
   box-sizing: border-box;
   border-radius: 1.2em;
