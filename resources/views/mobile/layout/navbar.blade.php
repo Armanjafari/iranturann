@@ -146,8 +146,8 @@
                                             <li class="menu-list-last">
                                                 <h2 class="list-heading">گجت های موبایل</h2>
                                             </li>
-                                        </ul>
-                                    </li>
+                                        </li>
+                                </ul>
                                     <li class="menu-list-3 background1">
                                         <ul class="menu-level-last">
                                             <li class="menu-list-last">
@@ -203,7 +203,6 @@
                                                     alt="list item icon"><a href="#" class="list-item">Howavi</a></li>
                                             <li class="menu-list-last"><img src="assets/img/level3-item-icon.png"
                                                     alt="list item icon"><a href="#" class="list-item">Sony</a></li>
-
                                         </ul>
                                     </li>
                                     <li class="menu-list-3">
@@ -231,7 +230,6 @@
                                                     alt="list item icon"><a href="#" class="list-item">Howavi</a></li>
                                             <li class="menu-list-last"><img src="assets/img/level3-item-icon.png"
                                                     alt="list item icon"><a href="#" class="list-item">Sony</a></li>
-
                                         </ul>
                                     </li>
                                     <li class="menu-list-3">

@@ -46,10 +46,6 @@
                     <figcaption>
                         <a href="#" class="caption-product"> {{ $option->title }} </a>
                     </figcaption>
-                   
-                    
-                   
-                
                     <div class="mt-3 box-brand mr-3">
                         <span></span>
                         <span>برند:</span>

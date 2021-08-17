@@ -89,8 +89,7 @@
                     <div class="form-group">
                       <label for="exampleFormControlSelect1" style="font-size: 1.1em;"> انتخاب متغیر </label>
                       <select name="option_id" class="form-control" id="exampleFormControlSelect1">
-                        <option value="">  </option>
-
+                        <option value=""> </option>
                       </select>
                     </div>
                   </div>

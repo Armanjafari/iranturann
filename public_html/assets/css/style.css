@@ -2037,6 +2037,8 @@ td{
   margin-top: 7rem;
 }
 
+
+
 .discount{
   font-size:16px;
   border-bottom: 3px dashed #10747B;
@@ -2179,6 +2181,9 @@ font-size: 8px;
 @media screen and (min-width: 900px) and (max-width: 2000px){
 .nav-box{
   position: fixed;
+}
+.back-app{
+ display: none; 
 }
 }
 .card-shopping2{
