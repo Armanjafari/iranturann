@@ -11,6 +11,9 @@
 </div>
 </div>
 </div>
+<div class="col-lg-4">
+   <a href="https://iranturan://back" class="back-app">بازگشت به برنامه</a>   
+</div>
 </div>
 </main>
 @endsection
