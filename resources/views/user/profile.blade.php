@@ -16,7 +16,7 @@
                                 <div class="card p-4 text-right border-0 box-card">
                                         <div>
                                             <span class="name-last">نام و نام خانوادگی :</span>
-                                            <span class="name1 mr-3">{{$user->name}}</span>
+                                            <span class="name1 mr-3">{{$user->name ?? ''}}</span>
                                         </div>
                                 </div>
                             </div>

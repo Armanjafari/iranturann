@@ -48,7 +48,7 @@
                                 <div class="card p-4 text-right border-0 box-card">
                                     <div>
                                         <span class="name-last">آدرس :</span>
-                                        <span class="name1 mr-3">{{$user->shipings->address}}</span>
+                                        <span class="name1 mr-3">{{$user->shipings->address ?? ''}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                 <div class="card p-4 text-right border-0 box-card">
                                     <div>
                                         <span class="name-last">کد پستی :</span>
-                                        <span class="name1 mr-3">{{$user->shipings->postal_code}}</span>
+                                        <span class="name1 mr-3">{{$user->shipings->postal_code ?? ''}}</span>
                                     </div>
                                 </div>
                             </div>
