@@ -40,18 +40,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 text-center col-sm-6 col-6 mt-lg-0 mt-3">
-        <img src="{{ asset('assets/img/svg element/download-3.svg') }}" alt="" class="img-cafe">
-      </div>
-      <div class="col-lg-3 text-center col-sm-6 col-6 mt-lg-0 mt-3">
-        <img src="{{ asset('assets/img/svg element/logoapple.svg') }}" alt="" class="img-apple">
-      </div>
-      <div class="col-lg-3 text-center col-sm-6 col-6 mt-lg-0 mt-3">
-        <img src="{{ asset('assets/img/svg element/01.svg') }}" alt="" class="img-google">
-      </div>
-      <div class="col-lg-3 text-center col-sm-6 col-6 mt-lg-0 mt-3">
-        <img src="{{ asset('assets/img/svg element/download.svg') }}" alt="" class="img-app">
-      </div>
+    
       <div class="col-lg-5 mr-auto mt-lg-0 mt-3 col-sm-12 col-12 ml-sm-3">
         <a href="https://trustseal.enamad.ir/?id=153838&code=7SuhHcVpcGxSaUSzRNTr">
           <img src="{{ asset('assets/img/svg element/namad.svg') }}" alt="" class="namad">
