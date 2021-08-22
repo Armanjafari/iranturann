@@ -3,87 +3,48 @@
 <header>
         <nav class="navigation text-right">
                 <div class="container">
-                    <ul class="menu-level-1">
                         <!-- Menu Level 1 -->
-                        <a href="{{route('index')}}">
-                        <img src="{{asset('assets/img/001.svg')}}" alt="" class="img-thumbnail">
-                        </a>
+                    <ul class="menu-level-1">
+
+                    @forelse ($market->categories as $category)
                         <li class="menu-list-1">
                             <a href="#" class="list-item">
                                 <img src="assets/img/download (1).png" alt="">
                                 <span>کالای دیجیتال</span>
                                 <img class="item-icon" src="assets/img/download.png" alt=""></a>
-                            <ul class="menu-level-2">
-                                <!-- Menu Level 2 -->
-                                <li class="menu-list-2">
-                                    <a href="#" class="list-item">
-                                        <img src="assets/img/arrow-level2.png" alt="mobile">
-                                        <span>موبایل</span>
-                                    </a>
-                                    <ul class="menu-level-3">
-                                        <!-- Menu Level 3 -->
-                                        <li class="menu-list-3">
-                                            <ul class="menu-level-last">
-                                                <li class="menu-list-last">
-                                                    <h2 class="list-heading">گوشی موبایل</h2>
-                                                </li>
-                                                <li class="menu-list-last"><img src="assets/img/level3-item-icon.png"
-                                                        alt="list item icon"><a href="#" class="list-item">Apple</a></li>
-                                                
-                                                
-                            
-                                            </ul>
-                                        </li>
-                                   
-                                       
-                                       
-                                    </ul><!-- End Menu Level 3 -->
-                                </li>
-                               
-                                        
-                                    </a>
-                                    <ul class="menu-level-3">
-                                        <!-- Menu Level 3 -->
-                                     
-                                        <li class="menu-list-3">
-                                           
-                                        </li>
-                                        <li class="menu-list-3">
-                                            <ul class="menu-level-last">
-                                                <li class="menu-list-last">
-                                                    <h2 class="list-heading">گوشی موبایل</h2>
-                                                </li>
-                                            </ul>
-                                        </li>
-                            
-                                    </ul><!-- End Menu Level 3 -->
-                                </li>
+                              </li>
+
+                    @empty 
                         
-                            </ul><!-- End Menu Level 2 -->
-                        </li>
+                     @endforelse
+                </ul>
+
+
+                    <!-- End Menu Level 2 -->
+                     
                   
            
                               
                             
-                                <a href="{{route('basket.index')}}" class="svg-shopp  mr-auto ml-3 mt-2">
+                                <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp  mr-auto ml-3 mt-2">
             
                                 <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
                             @guest
                          
                                     
-                                    <a class="text-center btn-logo" href="{{ route('login_with_code') }}"><img src="{{asset('assets/img/svg element/ورود.svg')}}" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
+                                    <a class="text-center btn-logo" href="{{ route('mobile.login_with_code',$market->id) }}"><img src="{{asset('assets/img/svg element/ورود.svg')}}" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
                             @endguest
                             @auth       
-                            <div class="mt-2 fa-user5"> <a href="{{route('show.profile')}}" class=""><i class="fas fa-user fa-user1 p-3"></i>
+                            <div class="mt-2 fa-user5"> <a href="{{route('mobile.show.profile',$market->id)}}" class=""><i class="fas fa-user fa-user1 p-3"></i>
                             </a>
                             <div class="profile-box p-3">
                            <a href="">  <i class="fas fa-user-circle ml-2"></i> {{auth()->user()->name}} </a>
                            <hr>
-                           <a href="{{route('show.profile')}}">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
+                           <a href="{{route('mobile.show.profile',$market->id)}}">  <i class="fas fa-user fa-user2 ml-2"></i>مشاهده حساب کاربری</a>
                            <hr>
-                           <a href="{{route('user.orders.index')}}">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
+                           <a href="{{route('mobile.user.orders.index',$market->id)}}">  <i class="fas fa-scroll fa-scroll1 ml-2"></i>سفارش های من</a>
                            <hr>
-                           <a href="{{ route('logout') }}">  <i class="fas fa-sign-out-alt fa-sign-out-alt1 ml-2"></i>خروج از حساب کاربری</a>
+                           <a href="{{ route('mobile.logout',$market->id) }}">  <i class="fas fa-sign-out-alt fa-sign-out-alt1 ml-2"></i>خروج از حساب کاربری</a>
                             </div>
                             </div>
                             @endauth

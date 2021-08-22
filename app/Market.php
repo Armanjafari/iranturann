@@ -88,6 +88,10 @@ class Market extends Model
     {
         return $this->hasManyThrough(Full::class , Product::class , 'market_id','product_id', 'id' , 'id');
     }
+    public function SettedCategories()
+    {
+        
+    }
 
 }
 

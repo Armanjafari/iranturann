@@ -189,7 +189,7 @@ Route::group(['namespace' => 'Market', 'prefix' => 'market', 'middleware' => 'is
     Route::get('variety/edit/{full}', 'ProductController@editFinalVarietyForm')->name('market.variety.edit.form');
     Route::post('variety/edit/{full}', 'ProductController@editFinalVariety')->name('market.variety.edit');
 });
-Route::get('search/Product', 'Market\ProductController@search')->name('market.search');
+Route::get('search/Product', 'Market\ProductController@search')->name('market.index.search');
 Route::get('owner/addtest', 'Market\ProductController@vareityForm')->name('market.add.product.form');
 Route::get('owner/financial', 'Market\MarketController@financalForm')->name('financial.index');
 Route::get('owner/orders', 'Market\MarketController@ordersForm')->name('orders.index');
