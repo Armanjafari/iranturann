@@ -39,6 +39,10 @@
           <div class="text-center ml-lg-5">
             <input type="submit" class="button mt-5  pt-3 pb-3 btn-login sign-up" value="ورود به سیستم">
           </div>
+          <div class="text-right p-3">
+            <span>ثبت نام در سایت به منزله اطلاع و تایید شرایط و قوانین است</span>
+            <a href="https://iranturan.com/rules" class="mr-3 text-success">لینک قوانین</a>
+           </div>
         </div>
       </div>
     </div>
