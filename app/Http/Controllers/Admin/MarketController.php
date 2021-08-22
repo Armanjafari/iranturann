@@ -133,13 +133,24 @@ class MarketController extends Controller
                 'instagram' => $request->input('instagram'),
                 'type' => $request->input('type'),
             ]);
-            $market->user->shipings()->update([
-                'address' => $request->input('address'),
-                'work_address' => $request->input('work_address'),
-                'work_phone' => $request->input('work_phone'),
-                'postal_code' => $request->input('postal_code'),
-                'city_id' => $request->input('city_id')
-            ]);
+            if ($market->user->shipings) {
+                $market->user->shipings()->create([
+                    'address' => $request->input('address'),
+                    'work_address' => $request->input('work_address'),
+                    'work_phone' => $request->input('work_phone'),
+                    'postal_code' => $request->input('postal_code'),
+                    'city_id' => $request->input('city_id')
+                ]);
+            }else{
+                $market->user->shipings()->update([
+                    'address' => $request->input('address'),
+                    'work_address' => $request->input('work_address'),
+                    'work_phone' => $request->input('work_phone'),
+                    'postal_code' => $request->input('postal_code'),
+                    'city_id' => $request->input('city_id')
+                ]);
+            }
+            
             
             DB::commit();
         } catch (\Exception $e) {
