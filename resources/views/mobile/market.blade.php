@@ -14,7 +14,7 @@
                                                 style="width:15px; display:inline-block" class="ml-2">لینک دانلود
                                         اپلیکیشن</a>
                                 <div class="float-left bg-light p-3">
-                                        <a href="{{'https://wa.me/' .'+98'. $market->user->phone_number}}">
+                                        <a href="{{'https://wa.me/+98' . $market->user->phone_number}}">
                                         <span class="bazar2">whatsapp</span>
                                         <span class="mr-2"><img src="{{asset('assets/img/whatsapp-icon.svg')}}"
                                                         class="instagram1" alt=""></span> 
