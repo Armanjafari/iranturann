@@ -133,7 +133,7 @@ class MarketController extends Controller
                 'instagram' => $request->input('instagram'),
                 'type' => $request->input('type'),
             ]);
-            if ($market->user->shipings) {
+            if ($market->user->shipings == null) {
                 $market->user->shipings()->create([
                     'address' => $request->input('address'),
                     'work_address' => $request->input('work_address'),
