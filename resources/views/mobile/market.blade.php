@@ -14,15 +14,15 @@
                                                 style="width:15px; display:inline-block" class="ml-2">لینک دانلود
                                         اپلیکیشن</a>
                                 <div class="float-left bg-light p-3">
-                                        <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}"
-                                                        class="instagram1" alt=""></span>
+                                        <a href="{{'https://wa.me/' . $market->user->phone_number}}">
                                         <span class="bazar2">whatsapp</span>
                                         <span class="mr-2"><img src="{{asset('assets/img/whatsapp-icon.svg')}}"
+                                                        class="instagram1" alt=""></span> 
+                                                </a>
+                                        <a href="{{'https://instagram.com/' . $market->instagram ?? ''}}">
+                                                <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}"
                                                         class="instagram1" alt=""></span>
-                                        <span class="bazar2">telegram</span>
-                                        <span class="mr-2"><img src="{{asset('assets/img/svg element/تلگرام2.svg')}}"
-                                                        alt="" class="instagram1"></span>
-                                        <span class="bazar2">instagram</span>
+                                        <span class="bazar2">instagram</span></a>
                                 </div>
                         </div>
                         <img src="{{$seller->images()->whereType("market_picture")->first()->address}}" alt=""

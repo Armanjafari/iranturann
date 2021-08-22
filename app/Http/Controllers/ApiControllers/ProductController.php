@@ -74,7 +74,7 @@ class ProductController extends Controller
     public function allproducts()
     {
         $products = Pure::all();
-        $products->load('images','products.fulls.waranty','category' , 'brand');
+        $products->load('images','products.fulls.waranty','category' , 'brand' ,'option');
         return response()->json(['products' => $products, 'code' => 200]);
     }
 
