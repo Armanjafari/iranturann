@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function showForm()
     {
-        $pures = Pure::paginate(20);
+        $pures = Pure::orderBy('id', 'desc')->paginate(20);
         $categories = Category::all();
         $brands = Brand::all();
         $options = Option::all();

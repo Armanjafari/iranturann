@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ApiControllers;
 use App\Exceptions\QuantityExceededException;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Pure;
 use App\Support\Basket\Basket;
 use App\Support\Payment\Transaction;
 use Illuminate\Http\Request;
@@ -72,7 +73,8 @@ class ProductController extends Controller
     }
     public function allproducts()
     {
-        $products = Product::all();
+        $products = Pure::all();
+        $products->load('images','products.fulls.waranty','category' , 'brand');
         return response()->json(['products' => $products, 'code' => 200]);
     }
 
