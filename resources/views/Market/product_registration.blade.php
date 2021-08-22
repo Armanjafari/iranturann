@@ -61,7 +61,7 @@
   <div class="row setup-content" id="step-11">
     
       <div class="col-lg-12 text-right">
-      
+     
               <h5 class="font-weight-bold pl-0 my-4 text-right"><strong>مرحله دوم</strong></h5>
               <div class="row">
                       <div id="name-and-categry" class=" text-right body-product">

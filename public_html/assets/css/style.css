@@ -2424,6 +2424,9 @@ transition: all ease 0.5s;
   padding: 0.2em 1em 0.2em 1em;
 
 }
+.namad{
+  display: none !important;
+}
 .box-categry{
   font-size: 10px !important;
 }
