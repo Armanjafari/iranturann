@@ -70,4 +70,8 @@ class homecontroller extends Controller
         // dd($products);
         return $products;
     }
+    public function rules()
+    {
+        return view('rules');
+    }
 }

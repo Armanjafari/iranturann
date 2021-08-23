@@ -41,7 +41,7 @@
         </div>
         <div class="text-right p-3">
            <span>ثبت نام در سایت به منزله اطلاع و تایید شرایط و قوانین است</span>
-           <a href="#" class="mr-3 text-success">لینک قوانین</a>
+           <a href="https://iranturan.com/rules" class="mr-3 text-success">لینک قوانین</a>
           </div>
       </div>
     </div>
