@@ -8,9 +8,9 @@
                     @forelse ($market->categories as $category)
                         <li class="menu-list-1">
                             <a href="#" class="list-item">
-                                <img src="assets/img/download (1).png" alt="">
-                                <span>کالای دیجیتال</span>
-                                <img class="item-icon" src="assets/img/download.png" alt=""></a>
+                                <img src="{{asset('assets/img/download (1).png')}}" alt="">
+                                <span>{{$category->persian_name}}</span>
+                                <img class="item-icon" src="{{asset('assets/img/download.png')}}" alt=""></a>
                               </li>
                               
                     @empty 
