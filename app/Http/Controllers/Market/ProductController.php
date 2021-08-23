@@ -151,6 +151,6 @@ class ProductController extends Controller
         ->orWhere('title' ,'LIKE','%' . $query)->get();
         // if ($result)
         // return response()->json(['error' => ' محصولی پیدا نشد ']);
-        return $result;
+        return view('Market.indexSearch');
     }
 }

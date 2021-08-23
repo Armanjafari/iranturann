@@ -2,7 +2,7 @@
 @section('content')
 <main class="mt-4">
     <!-- start add-product box-->
-    <form action="{{ route('market.search') }}" method="get">
+    <form action="{{ route('market.index.search') }}" method="get">
 
         <div class="col-lg-12 d-flex justify-content-center">
             <input type="search" name="query" id="" placeholder="دنبال چی می گردی؟" class="p-1 form-control serch-box">
