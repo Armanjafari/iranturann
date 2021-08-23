@@ -5,7 +5,6 @@
                 <div class="container">
                         <!-- Menu Level 1 -->
                     <ul class="menu-level-1">
-
                     @forelse ($market->categories as $category)
                         <li class="menu-list-1">
                             <a href="#" class="list-item">
@@ -13,11 +12,11 @@
                                 <span>کالای دیجیتال</span>
                                 <img class="item-icon" src="assets/img/download.png" alt=""></a>
                               </li>
-
+                              
                     @empty 
-           
+
                      @endforelse
-                </ul>
+              
 
 
                     <!-- End Menu Level 2 -->
