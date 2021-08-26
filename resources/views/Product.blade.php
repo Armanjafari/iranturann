@@ -2,6 +2,7 @@
 @section('head')
 <title> {{$product->pure->persian_title}} </title>
 <meta property="og:title" content=" {{$product->pure->persian_title}} " />
+<meta name="keywords" content="{{$product->pure->keywords ?? ''}}"/>
 <meta property="og:description" content="با بهترین قیمت در ایران توران, {{$product->pure->persian_title }}  از فروشگاه آنلاین ایران توران . جدیدترین مدل های {{$product->pure->brand->persian_name ??  ''}} , {{$product->pure->persian_title}} و قیمت انواع  {{$product->pure->persian_title}}  خرید اینترنتی" /> 
 <meta name="description" content="
   با بهترین قیمت در ایران توران, {{$product->pure->persian_title }}  از فروشگاه آنلاین ایران توران . جدیدترین مدل های {{$product->pure->brand->persian_name ??  ''}} , {{$product->pure->persian_title}} و قیمت انواع  {{$product->pure->persian_title}}  خرید اینترنتی" />
