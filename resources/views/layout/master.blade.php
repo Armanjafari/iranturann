@@ -2,17 +2,15 @@
 <html>
 <head>
 @include('layout.header')
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="vVEZ20H2CIWnaEKelO0DYcS3lwXMJ-VLvNPV5dqAM8A" />
-<meta property="og:description" content="فروشگاه اینترنتی ایران توران مرجع خرید کالای اصل و اورجینال . جنس هایی که در ایران توران مشاهده میکیند همگی مستقیم از دبی وارد میشوند . خرید موبایل , قیمت لباسشویی و پوشاک" /> 
-<meta name="description" content="فروشگاه اینترنتی ایران توران مرجع خرید کالای اصل و اورجینال . جنس هایی که در ایران توران مشاهده میکیند همگی مستقیم از دبی وارد میشوند . خرید موبایل , قیمت لباسشویی و پوشاک" />
 <meta property="og:locale" content="fa_IR" />
 <meta property="og:type" content="website" />
-<meta name="keywords" content="فروشگاه اینترنتی, خرید آنلاین، موبایل, تبلت, لپ تاپ, تلویزیون, کامپیوتر, صنایع دستی, قیمت لباسشویی, فروش اینترنتی، ایران توران، ایران توران"/> 
-<meta property="og:site_name" content="ایران توران" />
-<meta property="og:title" content="فروشگاه اینترتی ایران توران" />
-<meta property="og:url" content="https://iranturan.com/" />
-<link rel="canonical" href="https://iranturan.com/" />
 <meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://iranturan.com/" />
+<meta property="og:url" content="https://iranturan.com/" />
+@yield('head')
 </head>
 
 <body dir="rtl">

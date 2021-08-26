@@ -35,6 +35,7 @@ class MarketController extends Controller
             'market_name' => 'required',
             'city_id' => 'required',
             'address' => 'required',
+            'description' => 'required',
             'postal_code' => 'required',
             'work_address' => 'required',
             'work_phone' => 'required',
@@ -70,6 +71,7 @@ class MarketController extends Controller
                 'center_id' => $request->input('center_id'),
                 'instagram' => $request->input('instagram'),
                 'type' => $request->input('type'),
+                'description' => $request->input('description'),
             ]);
             $this->createImage($user, $request);
             DB::commit();
@@ -94,6 +96,7 @@ class MarketController extends Controller
         $request->validate([
             'name' => 'required',
             'market_name' => 'required',
+            'description' => 'required',
             'city_id' => 'required',
             'address' => 'required',
             'postal_code' => 'required',
@@ -132,6 +135,7 @@ class MarketController extends Controller
                 'center_id' => $request->input('center_id'),
                 'instagram' => $request->input('instagram'),
                 'type' => $request->input('type'),
+                'description' => $request->input('description'),
             ]);
             if ($market->user->shipings == null) {
                 $market->user->shipings()->create([

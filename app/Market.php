@@ -25,6 +25,7 @@ class Market extends Model
     'agent_id',
     'wallet',
     'profit',
+    'description',
 ];
 
     public function agent()

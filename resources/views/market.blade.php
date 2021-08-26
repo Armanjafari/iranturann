@@ -1,4 +1,10 @@
 @extends('layout.master')
+@section('head')
+<title> فروشگاه اینترنتی {{$seller->market_name}} </title>
+<meta property="og:title" content=" فروشگاه اینترنتی {{$seller->market_name}} " />
+<meta property="og:description" content="{{$seller->description ?? ''}}" /> 
+<meta name="description" content="{{$seller->description ?? ''}}" />
+@endsection
 @section('content')
 <main>
     <div class="col-lg-12">   

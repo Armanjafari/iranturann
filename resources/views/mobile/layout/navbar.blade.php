@@ -15,16 +15,11 @@
                               
                     @empty 
 
-                     @endforelse
+                    @endforelse
               
 
 
                     <!-- End Menu Level 2 -->
-                     
-                  
-           
-                              
-                            
                                 <a href="{{route('mobile.basket.index',$market->id)}}" class="svg-shopp  mr-auto ml-3 mt-2">
             
                                 <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>

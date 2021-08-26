@@ -1,6 +1,4 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> فروشگاه اینترنتی ایران توران </title>
+
 <!--start font awesome-->
 <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-free-5.15.1-web/css/all.min.css') }}">
 <link rel='stylesheet prefetch' href='{{ asset('http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css') }}'>

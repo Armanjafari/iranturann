@@ -146,6 +146,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 mt-4-5">
+                        <div class="first-name">
+                          <label>توضیحات محصول</label>
+                          <textarea id="" cols="50" name="description" value="" rows="4"
+                            class="form-control p-3 form-control-one over-flow-auto"
+                            placeholder="توضیحات فروشنده را وارد نمایید">{{ old('description') }}</textarea>
+                        </div>
+                      </div>
                     <div class="col-lg-6 mt-4-5 markaz">
                         <div class="card form-control-one">
                             <div class="card-body">
