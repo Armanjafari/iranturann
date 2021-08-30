@@ -185,8 +185,7 @@
                                         <div class="col-lg-3 col-xl-3 col-6 pr-2 pl-2 mt-3">
                                                 <div class="product-card text-center">
                                                         @if ($product->count())
-                                                        <a
-                                                                href="{{ route('mobile.product.single' ,['market' =>$market->id,'option' => $product->id ?? '']) }}">
+                                                        <a href="{{ route('mobile.product.single' ,['market' =>$market->id,'option' => $product->id ?? '']) }}">
                                                                 @else
                                                                 @endif
                                                                 <span class="badge badge-danger badge-1 float-left">

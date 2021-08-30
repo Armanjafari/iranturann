@@ -12,38 +12,30 @@
 <meta property="og:title" content="فروشگاه اینترتی ایران توران" />
 <meta property="og:url" content="https://www.iranturan.com/" />
 <link rel="canonical" href="https://www.iranturan.com/" />
-
+<meta name="robots" content="noindex, nofollow">
 
 </head>
 
 <body dir="rtl">
-    <!--start navbar menu-->
-            @include('mobile.layout.navbar')
-         <!--start main-->
+
          @include('alerts-index.errors') <!-- TODO Fix this problem (alerts under navbar) !-->
          @include('alerts-index.success')
     @yield('content')
         <!--end main-->
-    @include('mobile.layout.footer')
+    @include('mobile.layout.navbar')
+    {{-- @include('mobile.layout.footer') --}}
         <!-- start footer -->
     
 </body>
-<script src="{{ asset('assets/js/jquery-3.2.1.slim.min.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<!--end bootstrap jquery and js file-->
+<!--start bootstrap juery and js file-->
+<script src="{{ asset('assets/mobile/js/jquery-3.2.1.slim.min.js') }}"></script>
+<script src="{{ asset('assets/mobile/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/mobile/js/bootstrap.min.js') }}"></script>
+<!--end bootstrap juery and js file-->
 <!--start jquery file-->
-<script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
+<script src="{{ asset('assets/mobile/js/jquery-3.5.1.min.js') }}"></script>
 <!--end jquery file-->
 <!--start js file-->
-<script src="{{ asset('assets/js/myscript.js') }}"></script>
+<script src="{{ asset('assets/mobile/js/myscript.js') }}"></script>
 <!--end js file-->
-<script src="{{ asset('assets/js/myscript2.js') }}"></script>
-<!--start owl carousel js-->
-<script src="{{ asset('assets/plogin/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
-<!--end owl carousel js-->
-<!--start kit fontawesome-->
-<script src="{{ asset('assets/js/a076d05399.js') }}"></script>
-<script src="{{asset('assets/js/index.js')}}"> </script>
-<!--end kit fontawesome-->
 </html>
