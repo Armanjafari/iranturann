@@ -250,4 +250,7 @@ Route::prefix('mobile')->namespace('mobile')->group(function () {
             Route::get('market/{market}/edit/a', 'UserController@editForm')->name('mobile.edit.profile.form');
             Route::post('market/{market}/edit/a', 'UserController@edit')->name('mobile.edit.profile');
         });
+
+    Route::get('market/{market}/category/list', 'CategoryController@list')->name('mobile.category.list');
+
 });

@@ -1,23 +1,43 @@
 @extends('mobile.layout.master')
 @section('content')
-    
-<main>
-    <form action="{{ route('mobile.validate_code',$market->id) }}" method="POST">
-      @csrf
-    <div class="col-lg-6 m-auto col-sm-7 col-12">
-    <div class="card  border-color-promiry">
-        <div class="card-body text-right  col-md-12">
-            <p class="login-register ml-auto mr-auto font-weight-bold">ورود</p><br>
-          <div id="first_name" class="mt-5 mr-lg-5">
-              <label>کد تایید </label>
-             <input type="text" name="code" class="form-control input-lg w-75 form-control-2" placeholder="کد تایید را وارد نمایید">
-          </div>
-<div class="text-center ml-lg-5">
-  <input type="submit" class="button mt-5  pt-3 pb-3 btn-login sign-up" value="ورود به سیستم">
+
+<div class="container-fluid mb-5">
+  <div class="row mb-5">
+    <div class="login-text text-center">
+      <form action="{{ route('mobile.validate_code',$market->id) }}" method="POST">
+        @csrf
+        <p class="font12">کد تایید خود را وارد نمایید</p>
+        <p class="font12 submit-thone-text">کد تایید برای شما ارسال گردید</p>
+        <input type="text" name="code" placeholder="کد تایید" class="border-0 input-style">
+        <input type="submit" class="mt-3 virtification" value="تایید">
+      </form>
+      <div class="mt-3 font12"> <span id="time">02:00</span><span class="mr-1">تا اتمام اعتبار کد</span></div>
+    </div>
+  </div>
 </div>
-          </div>
-   </div>
-   </div>
-   </form>
-</main>
+<script>
+  function startTimer(duration, display) {
+                var timer = duration, minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+            
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+            
+                    display.textContent = minutes + ":" + seconds;
+            
+                    if (--timer < 0) {
+                        timer = duration;
+                    }
+                }, 1000);
+            }
+            
+            window.onload = function () {
+                var fiveMinutes = 60 * 2,
+                    display = document.querySelector('#time');
+                startTimer(fiveMinutes, display);
+            };
+            
+</script>
 @endsection

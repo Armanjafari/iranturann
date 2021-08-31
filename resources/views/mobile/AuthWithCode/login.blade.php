@@ -1,23 +1,20 @@
 @extends('mobile.layout.master')
 @section('content')
-    
-<main>
-    <form action="{{ route('mobile.login_with_code',$market->id) }}" method="POST">
-      @csrf
-    <div class="col-lg-6 m-auto col-sm-7 col-12">
-    <div class="card  border-color-promiry">
-        <div class="card-body text-right  col-md-12">
-            <p class="login-register ml-auto mr-auto font-weight-bold">ورود / ثبت نام</p><br>
-          <div id="first_name" class="mt-5 mr-lg-5">
-              <label>شماره موبایل</label>
-             <input type="tel" name="phone_number" class="form-control input-lg w-75 form-control-2" placeholder="شماره موبایل خود را وارد نمایید">
-          </div>
-<div class="text-center ml-lg-5">
-  <input type="submit" class="button mt-5  pt-3 pb-3 btn-login sign-up" value="ورود به سیستم">
-</div>
-          </div>
-   </div>
-   </div>
-   </form>
-</main>
+
+    <div class="container-fluid mb-5">
+        <div class="row mb-5"> 
+            <!-- start login -->
+                 <div class="login-text text-center">
+                 <form action="{{ route('mobile.login_with_code',$market->id) }}" method="POST">
+                     @csrf
+                <p class="font12">برای ورود یا ثبت نام شماره موبایل خود را وارد نمایید</p>
+               <input type="tel" name="phone_number" placeholder="شماره موبایل خود راوارد کنید" class="border-0 input-style">
+            <input type="submit" class="mt-3 loginsystem" value="ورود به سیستم">
+               </form> 
+           </div>
+            <!-- end login -->
+           </div>
+           </div>
+
 @endsection
+

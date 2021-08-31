@@ -3,10 +3,9 @@
 <main>
 <div class="justify-content-center mt-5">
 	@if ($items->isEmpty())
-	<p>
+	<span class="text-center">
 		محصولی در سبد خرید موجود نمیباشد
-		<a href="{{ route('mobile.show.market',$market->id) }}">محصولات</a>
-	</p>
+	</span>
 	@else
 
 

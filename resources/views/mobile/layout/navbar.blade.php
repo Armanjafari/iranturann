@@ -5,12 +5,12 @@
     <ul class="pr-0 mb-0">
         <div class="row">
             <div class="col-3 text-center box-menu">
-                <a href="index.html"> <i class="fas fa-home fas1"></i>
+                <a href="{{route('mobile.show.market',$market->id)}}"> <i class="fas fa-home fas1"></i>
                     <p>خانه</p>
                 </a>
             </div>
             <div class="col-3 text-center box-menu">
-                <a href="category.html"> <i class="fas fa-list-alt fas1"></i>
+                <a href="{{route('mobile.category.list',$market->id)}}"> <i class="fas fa-list-alt fas1"></i>
                     <p>دسته بندی</p>
                 </a>
             </div>

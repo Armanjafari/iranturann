@@ -1,51 +1,36 @@
 @extends('mobile.layout.master')
 @section('content')
-<main>
-  <form action="{{ route('mobile.register.with.code',$market->id) }}" method="POST">
-    @csrf
-    <div class="col-lg-6 m-auto col-sm-7 col-12">
-      <div class="card  border-color-promiry">
-        <div class="card-body text-right  col-md-12">
-          <p class="login-register ml-auto mr-auto font-weight-bold">ثبت نام</p><br>
-          <div id="first_name" class="mt-5 mr-lg-5">
-            <label> نام و نام خانوادگی </label>
-            <input type="text" name="name" class="form-control input-lg w-75"
-              placeholder="نام ونام خانوادگی خود را وارد نمایید">
-          </div>
-          <input type="text" name="parent" value="{{$market->user->id}}" style="display: none" id="">
-          <div id="" class="mt-5 mr-lg-5">
-            <label> استان </label>
-            <select name="province" class="" id="">
-              <option value=""> </option>
-            </select>
-            <label> شهر </label>
-            <select name="city" id="">
-              @forelse ($cities as $city)
-              <option value="{{$city->id}}"> {{$city->name}} </option>
-              @empty
-                
-              @endforelse
-            </select>
-          </div>
-          <div id="first_name" class="mt-5 mr-lg-5">
-            <label> کد پستی </label>
-            <input type="text" name="postal_code" class="form-control input-lg w-75"
-              placeholder="کد پستی خود را وارد کنید">
-          </div>
-          <div id="first_name" class="mt-5 mr-lg-5">
-            <label> آدرس </label>
-            <textarea type="text" name="address" class="form-control w-75" placeholder="ادرس خود را وارد کنید"> </textarea>
-          </div>
-          <div class="text-center ml-lg-5">
-            <input type="submit" class="button mt-5  pt-3 pb-3 btn-login sign-up" value="ورود به سیستم">
-          </div>
-          <div class="text-right p-3">
-            <span>ثبت نام در سایت به منزله اطلاع و تایید شرایط و قوانین است</span>
-            <a href="https://iranturan.com/rules" class="mr-3 text-success">لینک قوانین</a>
-           </div>
-        </div>
-      </div>
+<div class="container-fluid mb-5">
+  <div class="row mb-5">
+    <!-- start register -->
+    <div class="register-box text-center p-3 mt-3">
+      <p>ثبت نام</p>
+      <form action="{{ route('mobile.register.with.code',$market->id) }}" method="POST">
+        @csrf
+        <input type="text" name="parent" value="{{$market->user->id}}" style="display: none" id="">
+
+        <input type="text" name="name" placeholder="نام و نام خانوادگی خود را وارد نمایید" class="border-0 input-style">
+        <select name="" id="" class="float-right mr-5 mt-3  option-style">
+          <option value="">استان</option>
+          <option value="">فارس</option>
+        </select>
+        <select name="" id="" class="float-right mr-5 mt-3  option-style">
+          <option value="">شهر</option>
+          @forelse ($cities as $city)
+          <option value="{{$city->id}}"> {{$city->name}} </option>
+          @empty
+
+          @endforelse
+        </select>
+        <input type="text" name="postal_code" placeholder="کد پستی خود را وارد نمایید"
+          class="mt-3 border-0 input-style">
+        <input type="text" name="address" placeholder="آدرس خود را وارد نمایید" class="mt-3 border-0 input-style">
+        <input type="submit" class="mt-5 login-system" value="ثبت نام">
+      </form>
+      <p class="mt-5 font14"> ثبت نام در سایت به منزله اطلاع و تایید شرایط و قوانین است</p>
+      <a href="https://iranturan.com/rules" class="font12 Rules-link">لینک قوانین</a>
     </div>
-  </form>
-</main>
+    <!-- end register -->
+  </div>
+</div>
 @endsection
