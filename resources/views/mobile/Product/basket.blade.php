@@ -3,9 +3,7 @@
 <main>
 <div class="justify-content-center mt-5">
 	@if ($items->isEmpty())
-	<span class="text-center">
-		محصولی در سبد خرید موجود نمیباشد
-	</span>
+		<img src="{{asset('assets/mobile/img/12356- 1.png')}}" alt="" class="null-img">
 	@else
 
 

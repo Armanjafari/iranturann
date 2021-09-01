@@ -1,167 +1,173 @@
 @font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: bold;
+  src: url('fonts/eot/IRANSansWeb.eot');
+  src: url('fonts/eot/IRANSansWeb_Bold.eot') format('embedded-opentype'),  /* IE6-8 */
+       url('fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+       url('fonts/woff/IRANSansWeb_Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/eot/IRANSansWeb_Medium.eot');
+  src: url('fonts/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+       url('fonts/woff2/IRANSansWeb_Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+       url('fonts/woff/IRANSansWeb_Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/eot/IRANSansWeb_Light.eot');
+  src: url('fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+       url('fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+       url('fonts/woff/IRANSansWeb_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: 200;
+  src: url('fonts/eot/IRANSansWeb_UltraLight.eot');
+  src: url('fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+       url('fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+       url('fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/eot/IRANSansWeb.eot');
+  src: url('fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+       url('fonts/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+       url('fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('fonts/ttf/IRANSansWeb.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-brands-400.eot");
+  src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
+
+.fab {
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 400; }
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-regular-400.eot");
+  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
+
+.far {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400; }
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../webfonts/fa-solid-900.eot");
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
+  *{
     font-family: IRANSans;
-    font-style: normal;
+    box-sizing: border-box;
+  }
+  :root{
+    --Secendry-Color:#33cccc;
+    --warning-color: #E3E399;
+    --red-color:#e74c3c;
+    --Primary-Color:#ffcc33;
+    --Gray-color:#d8d5d5;
+    --font-size-18:18px;
+    --font-size-14:14px;
+    --font-size-6:6px;
+    --font-size-10:10px; 
+    --font-size-7:7px;
+    --font-size-12:12px;
+    --a-color:#000;
+    --font-size-8:8px;
+    
+  }
+  .font12{
+    font-size: var(--font-size-12);
+  }
+  .font14{
+   font-size: var(--font-size-14);
+  }
+  .font18{
+    font-size: var(--font-size-18);
+   }
+   .font6{
+    font-size: var(--font-size-6);
     font-weight: bold;
-    src: url('fonts/eot/IRANSansWeb.eot');
-    src: url('fonts/eot/IRANSansWeb_Bold.eot') format('embedded-opentype'),  /* IE6-8 */
-         url('fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-         url('fonts/woff/IRANSansWeb_Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-         url('fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');
-}
-@font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 500;
-    src: url('fonts/eot/IRANSansWeb_Medium.eot');
-    src: url('fonts/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-         url('fonts/woff2/IRANSansWeb_Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-         url('fonts/woff/IRANSansWeb_Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-         url('fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
-}
-@font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 300;
-    src: url('fonts/eot/IRANSansWeb_Light.eot');
-    src: url('fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-         url('fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-         url('fonts/woff/IRANSansWeb_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-         url('fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
-}
-@font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 200;
-    src: url('fonts/eot/IRANSansWeb_UltraLight.eot');
-    src: url('fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-         url('fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-         url('fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-         url('fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
-}
-@font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: normal;
-    src: url('fonts/eot/IRANSansWeb.eot');
-    src: url('fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-         url('fonts/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-         url('fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-         url('fonts/ttf/IRANSansWeb.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Font Awesome 5 Brands';
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: url("../webfonts/fa-brands-400.eot");
-    src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg"); }
-  
-  .fab {
-    font-family: 'Font Awesome 5 Brands';
-    font-weight: 400; }
-  @font-face {
-    font-family: 'Font Awesome 5 Free';
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: url("../webfonts/fa-regular-400.eot");
-    src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
-  
-  .far {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 400; }
-  @font-face {
-    font-family: 'Font Awesome 5 Free';
-    font-style: normal;
-    font-weight: 900;
-    font-display: block;
-    src: url("../webfonts/fa-solid-900.eot");
-    src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
-    *{
-      font-family: IRANSans;
-      box-sizing: border-box;
-    }
-    :root{
-      --Secendry-Color:#33cccc;
-      --warning-color: #E3E399;
-      --red-color:#e74c3c;
-      --Primary-Color:#ffcc33;
-      --Gray-color:#d8d5d5;
-      --font-size-18:18px;
-      --font-size-14:14px;
-      --font-size-6:6px;
-      --font-size-10:10px; 
-      --font-size-7:7px;
-      --font-size-12:12px;
-      --a-color:#000;
-      
-    }
-    .font12{
-      font-size: var(--font-size-12);
-    }
-    .font14{
-     font-size: var(--font-size-14);
-    }
-    .font18{
-      font-size: var(--font-size-18);
-     }
-     .font6{
-      font-size: var(--font-size-6);
-      font-weight: bold;
-     }
-     .font7{
-      font-size: var(--font-size-7);
-      font-weight: bold;
-     }
-     .font10{
-      font-size: var(--font-size-10);
-      font-weight: bold;
-      color: #363636;
-     }
-   body{
-     background-color: #f9f9f9 !important;
    }
-   .form-control-1{
-      background-color: var(--warning-color);
-      background-image: url("https://iranturan.com/assets/img/iconfinder_search_115695.svg");
-      background-repeat: no-repeat;
-      background-position: 1em;
-      border-radius: 10px;
+   .font7{
+    font-size: var(--font-size-7);
+    font-weight: bold;
    }
-   .seller-img{
-     width: 50px;
-     height: 50px;
+   .font10{
+    font-size: var(--font-size-10);
+    font-weight: bold;
+    color: #363636;
    }
-   .seller-text{
-     background-color: var(--warning-color);
-     border-radius: 5px;
-     border: none;
+   .font8{
+    font-size: var(--font-size-8);
+    font-weight: bold;
+    color: #363636;
    }
-   .seller-text1{
-     margin-top: 2rem;
-   }
+ body{
+   background-color: #f9f9f9 !important;
+ }
+ .form-control-1{
+    background-color: var(--warning-color);
+    background-image: url("https://iranturan.com/assets/img/iconfinder_search_115695.svg");
+    background-repeat: no-repeat;
+    background-position: 1em;
+    border-radius: 10px;
+ }
+ .seller-img{
+   width: 50px;
+   height: 50px;
+ }
+ .seller-text{
+   background-color: var(--warning-color);
+   border-radius: 5px;
+   border: none;
+ }
+ .seller-text1{
+   margin-top: 2rem;
+ }
 .Social-Networks{
-  width: 20px;
-  height: 20px;
+width: 20px;
+height: 20px;
 }
 .banner{
-  width: 100%;
-  height: 7em;
-  border-radius: 5px;
+width: 100%;
+height: 7em;
+border-radius: 5px;
 }
 .img-product{
-  width: 100px;
-  height: 100px;
+width: 100px;
+height: 100px;
 }
 .box-product{
-  background-color: #fff;
+background-color: #fff;
 }
 .fa-star{
- font-size: 8px !important;
- color: #FCFC2F;
+font-size: 8px !important;
+color: #FCFC2F;
 }
 .unchecked{
-  color: #eee !important;
+color: #eee !important;
 }
 .Discount{
 background-color: #ff0000;
@@ -170,13 +176,13 @@ padding: 0.4em;
 border-radius: 5px;
 }
 .stare-box{
- height: 20px;
+height: 20px;
 }
 .price-line {
-  color: #9B9393;
-  text-decoration: line-through;
-      text-decoration-color: currentcolor;
-  text-decoration-color: #8E8E8E;
+color: #9B9393;
+text-decoration: line-through;
+    text-decoration-color: currentcolor;
+text-decoration-color: #8E8E8E;
 }
 .content2{
 overflow: hidden;
@@ -189,357 +195,424 @@ height: 70px;
 z-index: 1000;
 }
 .content{
-  overflow: hidden;
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  padding: 1em;
-  background-color: #fff;
-  height: 70px;
-  z-index: 1000;
-  }
+overflow: hidden;
+bottom: 0;
+position: fixed;
+width: 100%;
+padding: 1em;
+background-color: #fff;
+height: 70px;
+z-index: 1000;
+}
 .box-menu{  
-  height: 30px;
-  font-size: var(--font-size-14);
-  border-radius: 5px;
+height: 30px;
+font-size: var(--font-size-14);
+border-radius: 5px;
 }
 .fas1{
-  color: #BFBFBF;
+color: #BFBFBF;
 }
 .box-menu>a>p{
-  color: #BFBFBF;
+color: #BFBFBF;
 }
 .btn-category{
-  background-color: #E9E995;
-  display: inline-block;
-  padding: 1em;
-  font-size: var(--font-size-10);
-  border-radius: 5px;
-  width: 100px;
-  height: 40px;
-  text-align: center;
+background-color: #E9E995;
+display: inline-block;
+padding: 1em;
+font-size: var(--font-size-10);
+border-radius: 5px;
+width: 100px;
+height: 40px;
+text-align: center;
 }
 .link-category{
-  color: black;
+color: black;
 }
 @media screen and (min-width: 310px) and (max-width: 350px){
- .btn-category{
-   width: 90px !important;
-   height: 40px !important;
- }
+.btn-category{
+ width: 90px !important;
+ height: 40px !important;
+}
 }
 
 .img-box{
-  background-color: #fff;
-  margin-top: 4.7rem;
+background-color: #fff;
+margin-top: 4.7rem;
 }
 
 .img-single-product{
-  width: 300px;
-  height: 300px;
+width: 300px;
+height: 300px;
 }
 .breadcrumb{
 background-color: #f9f9f9 !important;
 }
 .link-breadcrumb{
-  color: #1FC7FC;
+color: #1FC7FC;
 }
 .id-product{
-  color: #1FC7FC;
+color: #1FC7FC;
 }
 .icons-product{
-  opacity: 0.5;
-  width: 20px;
-  height: 20px;
+opacity: 0.5;
+width: 20px;
+height: 20px;
 }
 
 .Description{
-  background-color: #fff;
+background-color: #fff;
 }
 .nav-link{
-  color: black !important;
+color: black !important;
 }
 .nav-item>.active{
-  background-color: #f9f9f9 !important;
-  color: #221EDE !important;
+background-color: #f9f9f9 !important;
+color: #221EDE !important;
 }
 a{
-  text-decoration: none !important;
+text-decoration: none !important;
 }
 .product-action{
- color: #fff;
- background-color: #FF3A3A;
- border-radius: 20px;
- font-size: var(--font-size-14);
- padding: 0.8em 1em 0.8em 1em;
+color: #fff;
+background-color: #FF3A3A;
+border-radius: 20px;
+font-size: var(--font-size-14);
+padding: 0.8em 1em 0.8em 1em;
 }
 .product-action:hover{
-  color: #fff;
+color: #fff;
 }
 .bogredirect{
- margin: auto;
-  width: 300px;
-  height: 150px;
-  background-color: #fff;
-  margin-top: 2em;
+margin: auto;
+width: 300px;
+height: 150px;
+background-color: #fff;
+margin-top: 2em;
 }
 .img-403{
-  width: 200px;
-  height: 100px;
+width: 200px;
+height: 100px;
 }
 .Go-back{
-  color: black;
-  background-color: #D4CE01;
-  padding: 0.6em 0.8em 0.6em 0.8em;
-  border-radius: 10px;
+color: black;
+background-color: #D4CE01;
+padding: 0.6em 0.8em 0.6em 0.8em;
+border-radius: 10px;
 }
 .size-product{
-  background-color: #fff;
-  height: 40px;
-  cursor: pointer;
+background-color: #fff;
+height: 40px;
+cursor: pointer;
+}
+.size-product2{
+background-color: #fff;
+width: 70px;
+
+cursor: pointer;
+border: 1px solid #E5E5E5;
+border-radius: 5px;
 }
 .text-size{
-  color: #787575;
+color: #787575;
 }
 .size-arrow{
-  width: 20px;
-  height: 20px;
+width: 20px !important;
+height: 20px !important;
+}
+.size-arrow1{
+width: 10px !important;
+height: 10px !important;
 }
 .button-size{
-  background-color: #fff;
-  color: #404040;
-  border: 1px solid #C5C3C3;
-  border-radius: 7px;
+background-color: #fff;
+color: #404040;
+border: 1px solid #C5C3C3;
+border-radius: 7px;
 }
 .login-text{
-  height: 100vh;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  width: 100%;
-  flex-direction: column;
+height: 100vh;
+display: flex;
+place-items: center;
+justify-content: center;
+width: 100%;
+flex-direction: column;
 }
 .input-style{
- border-radius: 5px;
- outline: none;
- padding: 0.8em;
- width: 80%;
- box-shadow: 0px 0px 5px 1px #bebebe;
+border-radius: 5px;
+outline: none;
+padding: 0.8em;
+width: 80%;
+box-shadow: 0px 0px 5px 1px #bebebe;
 }
 .input-style:focus{
-  box-shadow: 0px 0px 5px 3px #E9E995;
+box-shadow: 0px 0px 5px 3px #E9E995;
 }
 .input-style::placeholder{
-  color: #898989;
-  font-size: var(--font-size-12);
+color: #898989;
+font-size: var(--font-size-12);
 }
 .loginsystem{
-  background-color: #1FC7FC;
-  color: #fff;
-  border-radius: 5px;
-  padding: 0.8em 0em 0.8em 0em;
-  width: 80%;
-  border: none;
+background-color: #1FC7FC;
+color: #fff;
+border-radius: 5px;
+padding: 0.8em 0em 0.8em 0em;
+width: 80%;
+border: none;
 }
 .virtification{
-  background-color: #1FC7FC;
-  width: 80%;
-  border-radius: 5px;
-  padding: 0.8em 0em 0.8em 0em;
-  border: none;
-  color: #fff;
+background-color: #1FC7FC;
+width: 80%;
+border-radius: 5px;
+padding: 0.8em 0em 0.8em 0em;
+border: none;
+color: #fff;
 }
 
 .submit-thone-text{
-  color: #898989;
+color: #898989;
 }
 .register-box{
-  width: 100%;
+width: 100%;
 }
 .option-style{
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
-  color: #898989;
-  padding: 0.3em;
+background-color: #fff;
+border: none;
+border-radius: 5px;
+color: #898989;
+padding: 0.3em;
 }
 .option-style:focus{
-  box-shadow: 0px 0px 5px 3px #E9E995;
+box-shadow: 0px 0px 5px 3px #E9E995;
 }
 .login-system{
-  background-color: #1FC7FC;
-  color: #fff;
-  border-radius: 5px;
-  padding: 0.8em 0em 0.8em 0em;
-  width: 50%;
-  border: none;
+background-color: #1FC7FC;
+color: #fff;
+border-radius: 5px;
+padding: 0.8em 0em 0.8em 0em;
+width: 50%;
+border: none;
 }
 .Rules-link{
-  color: #1FC7FC;
-  cursor: pointer;
+color: #1FC7FC;
+cursor: pointer;
 }
 .profile-box-order {
-  top: calc(100% + 2px);
-  width: 100%;
-  -webkit-box-shadow: 0 3px 8px 0 rgb(0 0 0 / 30%);
-  box-shadow: 0 3px 8px 0 rgb(0 0 0 / 30%);
-  background: #fff;
-  border-radius: 8px;
-  text-align: right;
-  overflow: hidden;
-  top: 60px;
-  left: 10px;
+top: calc(100% + 2px);
+width: 100%;
+-webkit-box-shadow: 0 3px 8px 0 rgb(0 0 0 / 30%);
+box-shadow: 0 3px 8px 0 rgb(0 0 0 / 30%);
+background: #fff;
+border-radius: 8px;
+text-align: right;
+overflow: hidden;
+top: 60px;
+left: 10px;
 }
 .text-profile-box{
-  color: #575656;
+color: #575656;
 }
 .information-box1 {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border-radius: 1.2em !important;
-  border: 5px solid #f5f5f5;
-  box-shadow: 1px 1px 6px 1px #B4B2B2;
+position: relative;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-ms-flex-direction: column;
+flex-direction: column;
+min-width: 0;
+word-wrap: break-word;
+background-color: #fff;
+background-clip: border-box;
+border-radius: 1.2em !important;
+border: 5px solid #f5f5f5;
+box-shadow: 1px 1px 6px 1px #B4B2B2;
 }
 .information-box1 {
-  word-wrap: break-word;
+word-wrap: break-word;
 }
 .Personal-Information {
-  font-size: 1em;
-  font-weight: bold;
-  border-bottom: 3px dashed #10747B;
+font-size: 1em;
+font-weight: bold;
+border-bottom: 3px dashed #10747B;
 }
 .box-card {
-  border-radius: 1em;
+border-radius: 1em;
 }
 .name-last {
-  color: #CFD8DC;
-  font-size: 1.2em;
+color: #CFD8DC;
+font-size: 1.2em;
 }
 .name1 {
-  font-size: 1.2em;
+font-size: 1.2em;
 }
 .card {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
+position: relative;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-ms-flex-direction: column;
+flex-direction: column;
+min-width: 0;
+word-wrap: break-word;
+background-color: #fff;
+background-clip: border-box;
+border: 1px solid rgba(0,0,0,.125);
+border-radius: .25rem;
 }
 .btn-Record {
-  background-color: #1FC7FC;
-  padding: 1em 4em;
-  color: #fff;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 2px 4px 4px 0px #ded6d6;
-  border: none;
-  outline: none !important;
+background-color: #1FC7FC;
+padding: 1em 4em;
+color: #fff;
+border-radius: 10px;
+text-align: center;
+box-shadow: 2px 4px 4px 0px #ded6d6;
+border: none;
+outline: none !important;
 }
 .information-box2{
-  background-color: #f9f9f9;
+background-color: #f9f9f9;
 }
 .first-name label {
-  position: absolute;
-  background-color: #fff;
-  margin-top: -1em;
-  margin-right: 1em;
-  padding-right: 1em;
-  padding-left: 1em;
-  font-size: 1.1em !important;
+position: absolute;
+background-color: #fff;
+margin-top: -1em;
+margin-right: 1em;
+padding-right: 1em;
+padding-left: 1em;
+font-size: 1.1em !important;
 }
 label {
-  display: inline-block;
-  margin-bottom: .5rem;
+display: inline-block;
+margin-bottom: .5rem;
 }
 .form-control {
-  color: #495057;
-  background-color: #fff;
-  outline: none !important;
-  box-shadow: 0px 0px 4px 0.1rem #EAEA2A;
-  border: none !important;
+color: #495057;
+background-color: #fff;
+outline: none !important;
+box-shadow: 0px 0px 4px 0.1rem #EAEA2A;
+border: none !important;
 }
 .discount2{
-  font-size: 14px;
+font-size: 14px;
 }
 .discount{
-  font-size:8px;
-  border-bottom: 3px dashed #10747B;
+font-size:8px;
+border-bottom: 3px dashed #10747B;
 }
 .nav-tabs {
-  font-size: 10px;
+font-size: 10px;
 }
 #nav-tabContent {
-  font-size: 12px !important;
+font-size: 12px !important;
 }
 .c-profile-order__list-item {
-  background-color: #fff;
-  border: 1px solid #dfdfdf;
-  border-radius: 8px;
-  width: 100%;
+background-color: #fff;
+border: 1px solid #dfdfdf;
+border-radius: 8px;
+width: 100%;
 }
 .c-profile-order__list-item-parcel-product{
-  width: 64px;
-  height: 64px;
+width: 64px;
+height: 64px;
 }
 .o-link--has-arrow {
-  color: #00bfd6;
-  font-size: 16px;
-  font-size: 1.143rem;
-  line-height: 28px;
-  font-weight: 700;
-  cursor: pointer;
-  background: transparent;
+color: #00bfd6;
+font-size: 16px;
+font-size: 1.143rem;
+line-height: 28px;
+font-weight: 700;
+cursor: pointer;
+background: transparent;
 }
 .o-link--has-arrow {
-  font-size: 12px !important;
-  margin-top: 10px;
+font-size: 12px !important;
+margin-top: 10px;
 }
 .img-cart{
-  width: 175px;
-  height: 180px;
+width: 175px;
+height: 200px;
 }
 .color-cart{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+width: 10px;
+height: 10px;
+border-radius: 50%;
 }
 .card-cart{
-  height: 180px;
+height: 200px;
 }
 .fa-trash{
-  font-size: 10px;
-  color: rgb(163, 163, 163);
+font-size: 10px;
+color: rgb(163, 163, 163);
 }
 .option-style2{
-  background-color: #fff;
-  border-radius: 5px;
-  color: #898989;
-  padding: 0.1em;
-  border: 1px solid rgb(170, 169, 169);
-  width: 40%;
+background-color: #fff;
+border-radius: 5px;
+color: #898989;
+padding: 0.1em;
+border: 1px solid rgb(170, 169, 169);
+width: 30%;
 }
 .broz{
-  color: #fff;
+color: #fff;
 }
 .owl-carousel{
-  direction: ltr;
+direction: ltr;
+}
+
+.null-img{
+width: 100%;
+height: 100%;
+}
+.alert-box-success{
+overflow: hidden;
+position: absolute;
+top: 0;
+left: 10%;
+right: 10%;
+width:80%;
+padding: 1em;
+background-color: #fff;
+z-index: 10000;
+border-left: 10px solid #008716;
+margin-top: 20%;  
+}
+.alert-box-error{
+overflow: hidden;
+position: absolute;
+top: 0;
+left: 10%;
+right: 10%;
+width:80%;
+padding: 1em;
+background-color: #fff;
+z-index: 10000;
+border-left: 10px solid #DA2222;  
+margin-top: 20%; 
+}
+.alert-box-warning{
+overflow: hidden;
+position: absolute;
+top: 0;
+left: 10%;
+right: 10%;
+width:80%;
+padding: 1em;
+background-color: #fff;
+z-index: 10000;
+border-left: 10px solid #D1D42A;  
+margin-top: 20%; 
+}
+.color-boreder{
+width: 30px;
+height: 30px;
+border: 0.2em solid rgb(255, 255, 255) !important;
+}
+.active-color{
+border: 0.2em solid #60f3f3 !important;
+}
+.active-menu{
+color: #000000;
 }
