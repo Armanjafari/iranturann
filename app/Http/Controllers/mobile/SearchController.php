@@ -10,7 +10,7 @@ class SearchController extends Controller
 {
     public function search(Market $market)
     {
-         // 
+        
         foreach ($market->products as $product) {
             return $product->pure()->where('persian_title' ,'LIKE','%' . 'samsung' . '%')
             ->orWhere('persian_title' ,'LIKE','%' .'samsung')
