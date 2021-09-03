@@ -10,11 +10,11 @@
         <input type="text" name="parent" value="{{$market->user->id}}" style="display: none" id="">
 
         <input type="text" name="name" placeholder="نام و نام خانوادگی خود را وارد نمایید" class="border-0 input-style">
-        <select name="" id="" class="float-right mr-5 mt-3  option-style">
+        <select name="city" id="" class="float-right mr-5 mt-3  option-style">
           <option value="">استان</option>
           <option value="">فارس</option>
         </select>
-        <select name="" id="" class="float-right mr-5 mt-3  option-style">
+        <select name="city" id="" class="float-right mr-5 mt-3  option-style">
           <option value="">شهر</option>
           @forelse ($cities as $city)
           <option value="{{$city->id}}"> {{$city->name}} </option>
