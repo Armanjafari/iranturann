@@ -3,8 +3,8 @@
 <main>
   <form action="{{ route('mobile.register.with.code',$market->id) }}" method="POST">
     @csrf
-    <div class="col-lg-6 m-auto col-sm-7 col-12">
-      <div class="card  border-color-promiry">
+    <div class="col-lg-6 m-auto col-sm-7 mb-5 col-12">
+      <div class="card  border-color-promiry mb-5">
         <div class="card-body text-right  col-md-12">
           <p class="login-register ml-auto mr-auto font-weight-bold">ثبت نام</p><br>
           <div id="first_name" class="mt-5 mr-lg-5">
@@ -37,11 +37,12 @@
             <textarea type="text" name="address" class="form-control w-75" placeholder="ادرس خود را وارد کنید"> </textarea>
           </div>
           <div class="text-center ml-lg-5">
-            <input type="submit" class="button mt-5  pt-3 pb-3 btn-login sign-up" value="ورود به سیستم">
+            <input type="submit" class="button mt-5  pt-3 pb-3 btn-login sign-up" value="ثبت نام">
           </div>
-          <div class="text-right p-3">
-            <span>ثبت نام در سایت به منزله اطلاع و تایید شرایط و قوانین است</span>
-            <a href="https://iranturan.com/rules" class="mr-3 text-success">لینک قوانین</a>
+          <div class="text-center mt-3 p-3">
+            <input type="checkbox" name="" id="exampleCheck1`">
+            <label for="exampleCheck1">قوانین را می پذیرم</label>
+            <a  class="mr-3 text-success"  href="https://iranturan.com/rules">لینک قوانین</a>
            </div>
         </div>
       </div>
