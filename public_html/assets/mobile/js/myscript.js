@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    $(".btn-category").click(function(){
+        $(".btn-category").css("box-shadow","2px 2px 2px 2px #FCFC2F")
+    })
     $(".close").click(function () { 
         $(".alert-box-success").hide();
     });
