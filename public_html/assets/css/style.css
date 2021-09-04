@@ -2115,9 +2115,7 @@ color: #FFCC33;
 font-size: 20px;
 border: 1px solid #FFCC33;
 }
-.btn-categry:focus{
-  box-shadow: 2px 2px 2px 2px #FCFC2F;
-}
+
 .Seller{
 border-radius: 10px;
 padding: 0.5em 5em 0.5em 5em;

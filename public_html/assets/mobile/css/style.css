@@ -225,6 +225,9 @@ width: 100px;
 height: 40px;
 text-align: center;
 }
+.btn-category:focus{
+  box-shadow: 2px 2px 2px 2px #FCFC2F;
+}
 .link-category{
 color: black;
 }
