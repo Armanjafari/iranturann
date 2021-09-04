@@ -3,10 +3,7 @@
 <main>
 <div class="justify-content-center mt-5">
 	@if ($items->isEmpty())
-	<p>
-		محصولی در سبد خرید موجود نمیباشد
-		<a href="{{ route('mobile.show.market',$market->id) }}">محصولات</a>
-	</p>
+		<img src="{{asset('assets/mobile/img/12356- 1.png')}}" alt="" class="null-img">
 	@else
 
 
