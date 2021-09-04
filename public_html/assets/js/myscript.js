@@ -1,6 +1,9 @@
 $(document).ready(function(){
   $(".close").click(function(){
       $("#popup").hide();
+      $(".btn-categry").click(function(){
+          $(".btn-categry").css("box-shadow","#FCFC2F");
+      })
   })
     $('#owl-mobile25').owlCarousel({
         loop:true,
