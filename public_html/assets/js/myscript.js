@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $(".close").click(function(){
       $("#popup").hide();
+    
   })
     $('#owl-mobile25').owlCarousel({
         loop:true,

@@ -210,7 +210,7 @@ font-size: var(--font-size-14);
 border-radius: 5px;
 }
 .fas1{
-color: #BFBFBF;
+color: #828282;
 }
 .box-menu>a>p{
 color: #BFBFBF;
@@ -224,6 +224,9 @@ border-radius: 5px;
 width: 100px;
 height: 40px;
 text-align: center;
+}
+.btn-category:focus{
+  box-shadow: 2px 2px 2px 2px #FCFC2F;
 }
 .link-category{
 color: black;
@@ -564,7 +567,7 @@ direction: ltr;
 
 .null-img{
 width: 100%;
-height: 100%;
+height: 550px;
 }
 .alert-box-success{
 overflow: hidden;

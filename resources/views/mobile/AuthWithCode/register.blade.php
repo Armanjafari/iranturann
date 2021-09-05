@@ -1,5 +1,9 @@
 @extends('mobile.layout.master')
 @section('content')
+
+<main>
+  
+
 <div class="container-fluid mb-5">
   <div class="row mb-5">
     <!-- start register -->
@@ -10,11 +14,11 @@
         <input type="text" name="parent" value="{{$market->user->id}}" style="display: none" id="">
 
         <input type="text" name="name" placeholder="نام و نام خانوادگی خود را وارد نمایید" class="border-0 input-style">
-        <select name="" id="" class="float-right mr-5 mt-3  option-style">
+        <select name="city" id="" class="float-right mr-5 mt-3  option-style">
           <option value="">استان</option>
           <option value="">فارس</option>
         </select>
-        <select name="" id="" class="float-right mr-5 mt-3  option-style">
+        <select name="city" id="" class="float-right mr-5 mt-3  option-style">
           <option value="">شهر</option>
           @forelse ($cities as $city)
           <option value="{{$city->id}}"> {{$city->name}} </option>
@@ -27,8 +31,10 @@
         <input type="text" name="address" placeholder="آدرس خود را وارد نمایید" class="mt-3 border-0 input-style">
         <input type="submit" class="mt-5 login-system" value="ثبت نام">
       </form>
-      <p class="mt-5 font14"> ثبت نام در سایت به منزله اطلاع و تایید شرایط و قوانین است</p>
+      <input type="checkbox" name="" id="exampleCheck1">
+      <label for="exampleCheck1" class="mt-5 font14"> قوانین را می پذیرم</label>
       <a href="https://iranturan.com/rules" class="font12 Rules-link">لینک قوانین</a>
+
     </div>
     <!-- end register -->
   </div>
