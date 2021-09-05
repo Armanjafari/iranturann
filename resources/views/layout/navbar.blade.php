@@ -70,7 +70,6 @@
                             <span class="badge badge-danger position-absolute text-light mt-0 mr-0">{{ $basket->itemCount() }}</span> <img src="{{ asset('assets/img/svg element/Icon awesome-shopping-cart.svg') }}" alt="" class="m-1"></a>
                         @guest
                      
-                                
                                 <a class="text-center btn-logo" href="{{ route('login_with_code') }}"><img src="{{asset('assets/img/svg element/ورود.svg')}}" alt="" class="pt-1 pl-1">ورود/ثبت نام</a>
                         @endguest
                         @auth       

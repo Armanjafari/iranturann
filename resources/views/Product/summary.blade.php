@@ -1,4 +1,5 @@
 @inject('cost' , 'App\Support\Cost\Contracts\CostInterface')
+
 <div class="card bg-light">
 	<div class="card-body">
 		<h4> پرداخت </h4>
@@ -41,4 +42,5 @@
 		</div>
 	</div>
 </div>
+
 

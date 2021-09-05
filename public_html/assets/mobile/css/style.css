@@ -152,7 +152,7 @@ height: 20px;
 }
 .banner{
 width: 100%;
-height: 7em;
+height: 15.6em;
 border-radius: 5px;
 }
 .img-product{
@@ -211,6 +211,9 @@ border-radius: 5px;
 }
 .fas1{
 color: #828282;
+}
+.table-basket1{
+  font-size: 8px;
 }
 .box-menu>a>p{
 color: #BFBFBF;
@@ -618,4 +621,7 @@ border: 0.2em solid #60f3f3 !important;
 }
 .active-menu{
 color: #000000;
+}
+.broz1{
+  font-size: 8px;
 }

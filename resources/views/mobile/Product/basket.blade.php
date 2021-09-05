@@ -1,16 +1,11 @@
 @extends('mobile.layout.master')
 @section('content')
 <main>
-<div class="justify-content-center mt-5">
 	@if ($items->isEmpty())
 		<img src="{{asset('assets/mobile/img/12356- 1.png')}}" alt="" class="null-img">
 	@else
-
-
-	<div class="row">
-		<div class="col-lg-7 bg-light mt-5 pr-0 pl-0">
-
-			<table class="table text-center table-striped table-bordered w-100 table-basket1">
+		<div class="col-lg-7 col-12 bg-light mt-5 pr-0 pl-0">
+	<table class="table text-center table-striped table-bordered w-100 table-basket1">
 				<thead>
 					<tr>
 						<th>نام</th>
@@ -66,15 +61,16 @@
 
 				</tbody>
 			</table>
+			
 		</div>
-		<div class="col-lg-5 text-right mt-5">
+		<div class="col-lg-5  text-right mt-5" style="margin-bottom: 7em">
 			@include('Product.summary')
 			<a href="{{ route('mobile.basket.checkout.form',$market->id) }}" class="btn mt-4  btn-primary btn-lg w-100 d-block"> ثبت و
 				ادامه سفارش </a>
 		</div>
-	</div>
+
 	@endif
-</div>
+
 
 </main>
 @endsection
