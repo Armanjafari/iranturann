@@ -120,7 +120,7 @@
            <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{route('show.market', $market->id)}}"> {{$market->market_name}} </a>
            </div>
            <div class="mt-2 mr-lg-5">
-              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="دانلود" style="width:15px; display:inline-block" class=""> </a>
+              <a href="{{$market->applink ?? ''}}" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="دانلود" style="width:15px; display:inline-block" class=""> </a>
               </div>
          </div>     
         @empty
@@ -151,7 +151,7 @@
            <div class="mt-2 mr-lg-5"> <a class="shopping-centre-caption" href="{{route('show.market', $messenger->id)}}">{{$messenger->market_name}}</a>
            </div>
            <div class="mt-2 mr-lg-5">
-              <a href="" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="دانلود" style="width:15px; display:inline-block" class=""> </a>
+              <a href="{{$messenger->applink ?? ''}}" class="link-application discount mr-3">لینک دانلود اپلیکیشن  <img src="{{asset('assets/img/svg element/دانلود.svg')}}" alt="دانلود" style="width:15px; display:inline-block" class=""> </a>
               </div>
          </div>     
         @empty

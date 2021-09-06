@@ -52,10 +52,10 @@
             </div>
             </div>
             <div class="modal-body">
-            <a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">واتساپ
-<img src="{{asset('assets/img/svg element/icons8-whatsapp.svg')}}" class="ml-1" alt=""></a>
+            <a href="whatsapp://send?text={{$user->market->applink ?? ''}}" data-action="share/whatsapp/share">واتساپ
+            <img src="{{asset('assets/img/svg element/icons8-whatsapp.svg')}}" class="ml-1" alt=""></a>
             <a href="" class="mr-3"><img src="{{asset('assets/img/svg element/telegram.svg')}}" alt=""> تلگرام</a>
-            <a href="sms:?body=this is for test" class="mr-3">
+            <a href="sms:?body={{$user->market->applink ?? ''}}" class="mr-3">
             <i class="fas fa-sms"></i>
             پیامک
           </a> 

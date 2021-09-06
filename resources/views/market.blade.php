@@ -15,7 +15,7 @@
                                 <img src="{{$seller->images()->whereType("logo")->first()->address}}" alt=""
                                         class="rounded-circle" style="width: 80px;height:80px;">
                                 <span class="discount"> {{$seller->market_name}} </span>
-                                <a href="" class="link-application discount mr-3"><img
+                                <a href="{{$seller->applink ?? ''}}" class="link-application discount mr-3"><img
                                                 src="{{asset('assets/img/svg element/دانلود.svg')}}" alt=""
                                                 style="width:15px; display:inline-block" class="ml-2">لینک دانلود
                                         اپلیکیشن</a>

@@ -72,6 +72,8 @@ class MarketController extends Controller
                 'instagram' => $request->input('instagram'),
                 'type' => $request->input('type'),
                 'description' => $request->input('description'),
+                'applink' => $request->input('applink') ?? '',
+
             ]);
             $this->createImage($user, $request);
             DB::commit();
@@ -107,6 +109,7 @@ class MarketController extends Controller
             'shaba_number' => 'required',
             'agent_id' => 'required',
             'slug' => 'required',
+            'applink' => 'url',
 
         ]); // fix password
         DB::beginTransaction();
@@ -136,6 +139,7 @@ class MarketController extends Controller
                 'instagram' => $request->input('instagram'),
                 'type' => $request->input('type'),
                 'description' => $request->input('description'),
+                'applink' => $request->input('applink') ?? '',
             ]);
             if ($market->user->shipings == null) {
                 $market->user->shipings()->create([

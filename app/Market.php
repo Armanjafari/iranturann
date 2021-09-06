@@ -26,6 +26,7 @@ class Market extends Model
     'wallet',
     'profit',
     'description',
+    'applink',
 ];
 
     public function agent()

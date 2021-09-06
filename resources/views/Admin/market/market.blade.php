@@ -122,6 +122,13 @@
                                 class="form-control p-3 form-control-one" placeholder=" شماره شبا خود را وارد کنید">
                         </div>
                     </div>
+                    <div class="col-lg-6 mt-5">
+                        <div class="first-name">
+                            <label class="label">لینک آپ</label>
+                            <input type="text" name="applink" value="{{ old('applink') }}"
+                                class="form-control p-3 form-control-one" placeholder=" شماره شبا خود را وارد کنید">
+                        </div>
+                    </div>
                     <div class="col-lg-6 mt-4-5">
                         <div class="card form-control-one">
                             <div class="card-body">

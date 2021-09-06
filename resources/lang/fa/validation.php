@@ -178,5 +178,6 @@ return [
         'province'              => 'استان',
         'phone_number'                  => 'شماره تلفن',
         'center'              => 'مرکز خرید',
+        'applink'              => 'لینک اپلیکیشن',
     ],
 ];

@@ -20,7 +20,7 @@
             
                 <form>
                     <button class="font7 p-2 seller-text mr-2 mt-3">{{ $seller->market_name }}</button>
-                    <a href="{{ $seller->app ?? '' }}" class="font7 p-2 seller-text mr-2 mt-3">ارسال لینک اپ</a>
+                    <a href="{{ $seller->applink ?? '' }}" class="font7 p-2 seller-text mr-2 mt-3">ارسال لینک اپ</a>
                     <button class="font7 p-2 seller-text mr-2 mt-3">{{ $seller->user->phone_number }}</button>
                  </form>
    
