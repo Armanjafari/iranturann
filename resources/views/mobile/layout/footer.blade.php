@@ -1,5 +1,5 @@
 <footer class="mt-5">
-  <div class="container-fluid col-lg-12" style="border: 1px solid black;">
+  <div class="container-fluid col-lg-12 footer-box">
     <div class="row">
       <div class="col-lg-2 text-center col-sm-6 col-6">
         <img src="{{ asset('assets/img/svg element/iconfinder_box_1540166.svg') }}" alt="">

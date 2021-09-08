@@ -3041,3 +3041,6 @@ height: 20px !important;
   width: 800px;
   height: 500px;
 }
+.footer-box{
+  border: 1px solid black;
+}
