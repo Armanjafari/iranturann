@@ -252,6 +252,7 @@ Route::prefix('mobile')->namespace('mobile')->group(function () {
         });
 
     Route::get('market/{market}/category/list', 'CategoryController@list')->name('mobile.category.list');
+    Route::get('market/{market}/category/{category}', 'CategoryController@single')->name('mobile.category');
     Route::get('market/{market}/search', 'SearchController@search')->name('mobile.search');
 
 });
