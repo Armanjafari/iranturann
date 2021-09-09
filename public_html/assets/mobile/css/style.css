@@ -401,6 +401,7 @@ border: none;
 .Rules-link{
 color: #1FC7FC;
 cursor: pointer;
+font-weight: bold;
 }
 .profile-box-order {
 top: calc(100% + 2px);
