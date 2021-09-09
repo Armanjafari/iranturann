@@ -679,6 +679,9 @@ header > .navbar {
   .btn-logo {
     display: none;
   }
+  .owner-product{
+    width: 80px !important;
+  }
   .mobile-nav > .mt-1 {
     background-color: #ffcc33;
     padding: 0.9em;

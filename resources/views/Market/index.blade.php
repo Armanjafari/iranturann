@@ -33,7 +33,7 @@
             <form action="{{ route('market.add.product') }}" method="post" class="mr-2">
                 @csrf
                 <div class="product-card col-12 mb-3">
-                    <a href="{{route('owner.product',$product->id)}}" class="w-100">
+                    <a href="{{route('owner.product',$product->id)}}" class="owner-product">
                         <img src="{{ $product->images->first()->address ?? '#' }}" alt=""
                             class="img-product-size mr-auto ml-auto">
                         <caption>
