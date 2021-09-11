@@ -8,16 +8,12 @@
     <div class="card mt-3 text-right">
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-4">
                     <form action="{{ route('edit.market.category',$market->id) }}" method="POST">
-                        @csrf
-                        <div class="card">
-                            <div class="card-header text-center  text-info">
-                                انتخاب سردسته
-                            </div>
+                        @csrf                
+                <div class="col-lg-12 mt-2 mr-5">
+                    <input class="btn-Record text-light" type="submit" value="ثبت دسته">
                             @include('alerts.success')
                             @include('alerts.errors')
-                            <div class="container mt-3">
                                 <select name="categories[]" class="form-control" multiple>
 
                                     @forelse ($categories as $category)
@@ -30,14 +26,11 @@
                                     @empty
 
                                     @endforelse
-                            </div>
-                        </div>
                 </div>
-                <div class="col-lg-12 mt-2 mr-5">
-                    <input class="btn-Record text-light" type="submit" value="ثبت دسته">
-                    </form>
-                </div>
+
             </div>
+        </form>
+
         </div>
     </div>
 </div>
