@@ -5,8 +5,9 @@
             <!-- start search box -->
 
               <div class="col-12  mt-3">
-                  <form action="">
-                  <input type="search" class="form-control form-control-1" placeholder="جستجو...">
+                  <form action="{{ route('mobile.search',$market->id) }}" method="GET">
+                    @csrf
+                  <input name="query" type="search" class="form-control form-control-1" placeholder="جستجو...">
                 </form>
                 </div>
              <!-- end search box -->
@@ -61,7 +62,7 @@
                  <img src="{{$product->product->pure->images->first()->address}}" alt="" class="img-product">
                 </figure>
                 <figcaption>
-                    <p class="font10 mb-0">{{mb_substr($product->product->pure->persian_title,0,30)}}</p>
+                    <p class="font10 mb-0">{{mb_substr($product->product->pure->persian_title,0,18)}}</p>
                 </figcaption>
                 <div class="text-center stare-box">
                     <span class="fa fa-star unchecked" aria-hidden="true"></span>

@@ -30,7 +30,8 @@ class CategoryController extends Controller
             
         }
         $products = collect($products);
+        $products = $products->where('is_active', 1);
         $products = $products->unique('product_id');
-        dd($products);
+        return view('mobile.singleCategory', compact('products', 'market','category'));
     }
 }

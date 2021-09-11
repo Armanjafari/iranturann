@@ -626,3 +626,28 @@ color: #000000;
 .broz1{
   font-size: 8px;
 }
+.box-product-header{
+  height: 50px;
+  background-color: #fff;
+}
+.svg-back{
+  width: 25px;
+  height: 25px;
+}
+.categry1{
+ border: 2px solid #FCFC2F;
+ padding: 0.2em 2.8em 0.2em 2.8em;
+ border-radius: 5px;
+}
+.category2{
+  margin-top: 0.8em;
+}
+input[type='right']{
+text-align: right;  
+}
+.category3{
+  border: 2px solid #FCFC2F;
+  border-radius: 5px;
+  width: 100%;
+  height: 30px;
+}

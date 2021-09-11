@@ -12,6 +12,9 @@ class SearchController extends Controller
     public function search(Market $market , Request $request)
     {
         // TODO refactor this moudle
+        $request->validate([
+            'query' => 'required|min:2',
+        ]);
         $query = $request->input('query');
         $pures = [];
         foreach ($market->products as $product) {
@@ -38,8 +41,9 @@ class SearchController extends Controller
             }
         }
         $products = collect($products);
+        $products = $products->where('is_active', 1);
         $products = $products->unique('product_id');
-        dd($products);
+        return view('mobile.search',compact('products', 'market', 'query'));
 
     }
 }
