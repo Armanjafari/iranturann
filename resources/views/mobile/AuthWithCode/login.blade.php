@@ -11,7 +11,6 @@
                <input type="tel" name="phone_number" placeholder="شماره موبایل خود راوارد کنید" class="border-0 input-style">
             <input type="submit" class="mt-3 loginsystem" value="ورود به سیستم">
                </form>
-               <a href="" class="font14  mt-3 Rules-link">ثبت نام</a> 
            </div>
             <!-- end login -->
            </div>
