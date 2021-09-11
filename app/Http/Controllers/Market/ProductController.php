@@ -9,6 +9,7 @@ use App\Pure;
 use App\Waranty;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
@@ -140,15 +141,23 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         // dd($request->all());
+        $market = auth()->user()->market;
         $query = $request->input('query');
         if(!$request->has('query'))
         return response()->json(['error' => 'ورودی وارد نشده ']);
-        $result = Pure::where('persian_title' ,'LIKE','%' . $query . '%')
-        ->orWhere('persian_title' ,'LIKE','%' .$query)
-        ->orWhere('persian_title' ,'LIKE',$query.'%' )
-        ->orWhere('title' ,'LIKE','%' . $query . '%')
-        ->orWhere('title' ,'LIKE',$query . '%')
-        ->orWhere('title' ,'LIKE','%' . $query)->get();
+        $pures = [];
+        foreach ($market->products as $product) {
+            $product = $product->pure()->where('persian_title' ,'LIKE','%' . $query . '%')
+            ->orWhere('persian_title' ,'LIKE','%' .$query)
+            ->orWhere('persian_title' ,'LIKE',$query.'%' )
+            ->orWhere('title' ,'LIKE','%' . $query . '%')
+            ->orWhere('title' ,'LIKE',$query . '%')
+            ->orWhere('title' ,'LIKE','%' . $query)->get();
+            array_push($pures ,$product);
+        }
+
+        Arr::flatten($pures);
+        dd($pures);
         // if ($result)
         // return response()->json(['error' => ' محصولی پیدا نشد ']);
         return view('Market.indexSearch');

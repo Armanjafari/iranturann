@@ -229,6 +229,9 @@ Route::prefix('mobile')->namespace('mobile')->group(function () {
         Route::get('market/{market}/login/a', 'LoginController@showLoginForm')->name('mobile.login');
         Route::get('market/{market}/logout/a', 'LoginController@logout')->name('mobile.logout');
         Route::post('market/{market}/register/withcode/a', 'LoginController@register')->name('mobile.register.with.code');
+        
+        Route::get('market/{market}/registerForm/withcode/a', 'LoginController@registerForm')->name('mobile.register.Form');
+        
         Route::post('market/{market}/loginwithcode/a', 'LoginController@login')->name('mobile.login_with_code');
         Route::get('market/{market}/verify/a', 'LoginController@verifyForm')->name('mobile.verify_login_code');
         Route::post('market/{market}/verify/a/', 'LoginController@codeValidator')->name('mobile.validate_code');

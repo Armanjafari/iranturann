@@ -14,26 +14,28 @@
         <input type="text" name="parent" value="{{$market->user->id}}" style="display: none" id="">
 
         <input type="text" name="name" placeholder="نام و نام خانوادگی خود را وارد نمایید" class="border-0 input-style">
-        <select name="city" id="" class="float-right mr-5 mt-3  option-style">
+        <select  id="provinces" class="float-right mr-5 mt-3  option-style">
           <option value="">استان</option>
-          <option value="">فارس</option>
-        </select>
-        <select name="city" id="" class="float-right mr-5 mt-3  option-style">
-          <option value="">شهر</option>
-          @forelse ($cities as $city)
-          <option value="{{$city->id}}"> {{$city->name}} </option>
+          @forelse ($provinces as $province)
+          <option value="{{$province->id}}">{{$province->name}}</option>
           @empty
-
+            
           @endforelse
+        </select>
+        <select name="city" id="cities" class="float-right mr-5 mt-3  option-style">
+          <option value="">شهر</option>
         </select>
         <input type="text" name="postal_code" placeholder="کد پستی خود را وارد نمایید"
           class="mt-3 border-0 input-style">
         <input type="text" name="address" placeholder="آدرس خود را وارد نمایید" class="mt-3 border-0 input-style">
+        <div>
+        <input type="checkbox" name="rules" id="exampleCheck1">
+        <label for="exampleCheck1" class="mt-5 font14"> قوانین را می پذیرم</label>
+        <a href="https://iranturan.com/rules" class="font12 Rules-link">لینک قوانین</a>
+      </div>
         <input type="submit" class="mt-5 login-system" value="ثبت نام">
       </form>
-      <input type="checkbox" name="" id="exampleCheck1">
-      <label for="exampleCheck1" class="mt-5 font14"> قوانین را می پذیرم</label>
-      <a href="https://iranturan.com/rules" class="font12 Rules-link">لینک قوانین</a>
+
 
     </div>
     <!-- end register -->

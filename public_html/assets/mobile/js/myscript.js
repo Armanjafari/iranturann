@@ -30,3 +30,26 @@ $(document).ready(function () {
         }   
     });  
 });
+  $(document).ready(function () {
+  $("#provinces").change(function () {
+    var conceptName = $("#provinces").find(":selected").val();
+    const $url = "https://iranturan.com/api/v1/province?province=" + conceptName    
+    $("#cities").show()
+
+    $.ajax({  
+      type: "GET",
+      url: $url,
+      data: "",
+      dataType: "json",
+      success: function (data) {
+        $("#cities").empty();
+        for (var $i = 0; $i <data.cities.length;$i++) {
+        option = document.createElement("option");
+          option.innerHTML = `${data.cities[$i].name}`;
+          option.value = data.cities[$i].id
+          $("#cities").append(option);      
+        }
+      },
+    });
+  });
+});

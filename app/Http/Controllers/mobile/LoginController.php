@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CodeValidator;
 use App\Http\Requests\LoginWithCodeValidator;
 use App\Market;
+use App\Province;
 use App\Services\MeliPayamak\MeliPayamak;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -52,12 +53,21 @@ class LoginController extends Controller
         session()->put('phone_number', $phone_number);
         $user = User::where('phone_number',$phone_number)->first();
         if (!$user) {
-            $cities = City::all();
-            return view('mobile.AuthWithCode.register',compact('cities' , 'market'));
+            return redirect()->route('mobile.register.Form',$market->id);
         }
 
         $this->sendSms($user , 'code');//mobile.verify
         return redirect()->route('mobile.verify_login_code',$market->id);
+
+    }
+    public function registerForm(Market $market)
+    {
+        if (Auth::check()) {
+            return redirect()->route('mobile.show.market',$market->id);   
+           }
+        $provinces = Province::all();
+        return view('mobile.AuthWithCode.register',compact('provinces' , 'market'));
+
 
     }
     public function sendSms($user, $method)
@@ -104,6 +114,7 @@ class LoginController extends Controller
             'city' => 'required',
             'postal_code' => 'required',
             'address' => 'required',
+            'rules' => 'accepted',
         ]);
         $user = User::create([
             'name' => $request->input('name'),
