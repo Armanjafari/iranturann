@@ -30,7 +30,6 @@
           <tr>
             <td>{{$customer->name}}</td>
             <td>{{$customer->phone_number}}</td>
-    
           </tr>
           @empty
 
