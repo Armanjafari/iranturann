@@ -36,6 +36,7 @@ Route::namespace('Auth')->group(function () {
 Route::namespace('Auth\AuthCode')->group(function () {
     Route::get('loginwithcode/', 'LoginWithCodeController@showLoginForm')->name('login.with.code.form');
     Route::post('register/withcode/', 'LoginWithCodeController@register')->name('register.with.code');
+    Route::get('register/form/withcode/', 'LoginWithCodeController@registerForm')->name('register.form.with.code');
     Route::post('loginwithcode/', 'LoginWithCodeController@login')->name('login_with_code');
     Route::get('verify', 'LoginWithCodeController@verifyForm')->name('verify_login_code');
     Route::post('verify', 'LoginWithCodeController@codeValidator')->name('validate_code');

@@ -7,6 +7,7 @@ use App\City;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CodeValidator;
 use App\Http\Requests\LoginWithCodeValidator;
+use App\Province;
 use App\Services\MeliPayamak\MeliPayamak;
 use App\Services\Notifications\Notification;
 use App\User;
@@ -36,14 +37,16 @@ class LoginWithCodeController extends Controller
         session()->put('phone_number', $phone_number);
         $user = User::where('phone_number',$phone_number)->first();
         if (!$user) {
-            $cities = City::all();
-            return view('AuthWithCode.register',compact('cities'));
+                return redirect()->route('register.form.with.code');
         }
+
         $this->sendSms($user , 'code');
         return redirect()->route('verify_login_code');
-        
-
-
+    }
+    public function registerForm()
+    {
+        $provinces = Province::all();
+        return view('AuthWithCode.register',compact('provinces'));
     }
     public function sendSms($user, $method)
     {

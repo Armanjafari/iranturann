@@ -15,20 +15,22 @@
                                 <img src="{{$seller->images()->whereType("logo")->first()->address}}" alt=""
                                         class="rounded-circle" style="width: 80px;height:80px;">
                                 <span class="discount"> {{$seller->market_name}} </span>
+                                @if (!is_null($seller->applink))
                                 <a href="{{$seller->applink ?? ''}}" class="link-application discount mr-3"><img
-                                                src="{{asset('assets/img/svg element/دانلود.svg')}}" alt=""
-                                                style="width:15px; display:inline-block" class="ml-2">لینک دانلود
-                                        اپلیکیشن</a>
+                                        src="{{asset('assets/img/svg element/دانلود.svg')}}" alt=""
+                                        style="width:15px; display:inline-block" class="ml-2">لینک دانلود
+                                اپلیکیشن</a>    
+                                @endif
+                                
                                 <div class="float-left bg-light p-3 mt-3">
+                                        <a href="{{'https://instagram.com/' . $market->instagram ?? ''}}">
+                                        <span class="bazar2">instagram</span>
                                         <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}"
-                                                        class="instagram1" alt=""></span>
+                                                        class="instagram1" alt=""></span></a>
+                                        <a href="{{'https://wa.me/+98' . $seller->user->phone_number}}">
                                         <span class="bazar2">whatsapp</span>
                                         <span class="mr-2"><img src="{{asset('assets/img/whatsapp-icon.svg')}}"
-                                                        class="instagram1" alt=""></span>
-                                        <span class="bazar2">telegram</span>
-                                        <span class="mr-2"><img src="{{asset('assets/img/svg element/تلگرام2.svg')}}"
-                                                        alt="" class="instagram1"></span>
-                                        <span class="bazar2">instagram</span>
+                                                        class="instagram1" alt=""></span></a>
                                 </div>
                         </div>
                         <img src="{{$seller->images()->whereType("market_picture")->first()->address}}" alt=""

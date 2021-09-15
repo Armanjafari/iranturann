@@ -66,7 +66,7 @@ class MarketController extends Controller
                 // $product->pure
                 foreach ($full->orders as $order) {
                     //  dd($order->pivot->market->categories->first()->pivot);
-                    if ($order->payment->status >= 1)
+                    if ($order->payment->status >= 1 && $order->payment->status != 100)
                     {
                         array_push($ord, $order);
                         $order->pivot->wherePivot('market_id' , $user->market->id);

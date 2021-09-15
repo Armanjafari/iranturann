@@ -14,16 +14,17 @@
           </div>
           <div id="" class="mt-5 mr-lg-5">
             <label> استان </label>
-            <select name="province" class="" id="">
-              <option value=""> </option>
-            </select>
-            <label> شهر </label>
-            <select name="city" id="">
-              @forelse ($cities as $city)
-              <option value="{{$city->id}}"> {{$city->name}} </option>
+            <select id="provinces" name="province" class="" id="">
+              @forelse ($provinces as $province)
+              <option value="{{$province->id}}"> {{$province->name}} </option>
               @empty
                 
               @endforelse
+              <option value=""> </option>
+            </select>
+            <label> شهر </label>
+            <select id="cities" name="city" id="">
+              <option value=""></option>
             </select>
           </div>
           <div id="first_name" class="mt-5 mr-lg-5">
