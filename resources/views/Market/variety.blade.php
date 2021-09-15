@@ -15,17 +15,23 @@
 
 @endforelse
 </div>
+<div class="text-center mt-2">
+    <a href="{{route('market.index')}}" class="btn btn-success">
+        <i class="fa fa-plus"></i>
+       افزودن محصول به فروشگاه
+    </a>
+</div>
 <div class="col-lg-12 mt-3 pr-0 pl-0">
  <div class="row">
   @forelse (Auth::user()->market->products as $product)
         <form action="{{ route('market.variety.add.form') }}" method="GET">
             @csrf
-        <div class="product-card col-6 mb-3">
+        <div class="product-card col-12 mb-3">
             <a class="w-100" href="{{route('market.variety.index',$product->id)}}">
                 <img src="{{ $product->pure->images->first()->address ?? '#' }}" alt=""
                     class="img-product-size mr-auto ml-auto">
                 <caption>
-                    <p class="mt-3 caption-product mb-0">{{substr($product->persian_title ,20)}}</p>
+                    <p class="mt-3 caption-product mb-0">{{mb_substr($product->persian_title ,0,20)}}</p>
                 </caption>
                 <select name="product" style="display: none">
                     <option value="{{$product->id}}"></option>
@@ -40,11 +46,6 @@
 
 @endforelse
 </div>
-<div class="text-center mt-2">
-    <a href="{{route('market.index')}}" class="btn btn-success">
-        <i class="fa fa-plus"></i>
-       افزودن محصول به فروشگاه
-    </a>
-</div><br><br><br><br>
+<br><br><br><br>
   </div>
 @endsection
