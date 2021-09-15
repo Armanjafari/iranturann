@@ -27,11 +27,11 @@
         <form action="{{ route('market.variety.add.form') }}" method="GET">
             @csrf
         <div class="product-card col-12 mb-3">
-            <a class="w-100" href="{{route('market.variety.index',$product->id)}}">
+            <a class="owner-product" href="{{route('market.variety.index',$product->id)}}">
                 <img src="{{ $product->pure->images->first()->address ?? '#' }}" alt=""
                     class="img-product-size mr-auto ml-auto">
                 <caption>
-                    <p class="mt-3 caption-product mb-0">{{mb_substr($product->persian_title ,0,20)}}</p>
+                    <p class="mt-3 caption-product mb-0">{{mb_substr($product->pure->persian_title ,0,20)}}</p>
                 </caption>
                 <select name="product" style="display: none">
                     <option value="{{$product->id}}"></option>
