@@ -23,7 +23,7 @@
                                 @endif
                                 
                                 <div class="float-left bg-light p-3 mt-3">
-                                        <a href="{{'https://instagram.com/' . $market->instagram ?? ''}}">
+                                        <a href="{{'https://instagram.com/' . $seller->instagram ?? ''}}">
                                         <span class="bazar2">instagram</span>
                                         <span class=""><img src="{{asset('assets/img/svg element/رنگی.svg')}}"
                                                         class="instagram1" alt=""></span></a>

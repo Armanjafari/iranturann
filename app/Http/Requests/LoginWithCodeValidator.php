@@ -24,7 +24,7 @@ class LoginWithCodeValidator extends FormRequest
     public function rules()
     {
         return [
-            'phone_number' => 'required|numeric|starts_with:0|min:10',
+            'phone_number' => 'required|starts_with:0|min:10',
         ];
     }
     
